@@ -1,48 +1,11 @@
 ---
 sidebar_position: 1
-slug: /
 ---
 
-# Tutorial Intro
+# What is Value Investing?
 
-Let's discover **Docusaurus in less than 10 minutes**. abc
+Value investing is a financial strategy where investors choose stocks that appear to be trading for less than their intrinsic or book value. This approach is based on the idea that the market overreacts to good and bad news, creating stock price movements that do not correspond with a company's long-term fundamentals. At the core of value investing is the concept of the margin of safety, which is the difference between a stock's market price and its perceived true value.
 
-## Getting Started
+Prominent figures such as Warren Buffett and Benjamin Graham are well-known proponents of value investing. They advocate for selecting undervalued stocks that offer potential for stable, long-term growth. However, this method is not without its challenges. Value investing demands patience, a deep understanding of financial statements, and the resilience to endure market volatility.
 
-Get started by **creating a new site**.
-
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
-
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+Investors drawn to value investing are typically those who are looking to build a portfolio of strong, undervalued stocks with the expectation that they will provide substantial returns over time. Despite the challenges, many have found value investing to be a rewarding strategy that capitalizes on market inefficiencies.

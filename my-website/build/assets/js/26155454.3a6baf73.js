@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[3381],{6309:e=>{e.exports=JSON.parse('{"label":"facebook","permalink":"/intelligent-investors/my-website/build/blog/tags/facebook","allTagsPath":"/intelligent-investors/my-website/build/blog/tags","count":1,"unlisted":false}')}}]);
