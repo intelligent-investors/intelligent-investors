@@ -32,6 +32,14 @@ const config = {
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'vi'],
+    localeConfigs: {
+      en: {
+        label: 'English'
+      },
+      vi: {
+        label: 'Tiếng Việt'
+      }
+    }
   },
 
   presets: [
@@ -84,6 +92,10 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },
+          {
+            type: 'localeDropdown',
+            position: 'left'
+          }
         ],
       },
       footer: {
