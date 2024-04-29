@@ -19,7 +19,11 @@ export default function Cashflow() {
 
   // Function to update the person state to a new random person
   const handleChangePerson = () => {
-    setPerson(getRandomPerson(people));
+    let newPerson;
+    do {
+      newPerson = getRandomPerson(people);
+    } while (newPerson.name === person.name); // Keep selecting until a different person is found
+    setPerson(newPerson);
   };
 
   return (
@@ -29,13 +33,13 @@ export default function Cashflow() {
         <tbody>
           <tr>
             <th style={{ border: '1px solid black', padding: '8px' }}>Name</th>
-            <th style={{ border: '1px solid black', padding: '8px' }}>Role</th>
+            <th style={{ border: '1px solid black', padding: '8px' }}>Profession</th>
             <th style={{ border: '1px solid black', padding: '8px' }}>Salary</th>
           </tr>
           <tr>
             <td style={{ border: '1px solid black', padding: '8px' }}>{person.name}</td>
             <td style={{ border: '1px solid black', padding: '8px' }}>{person.role}</td>
-            <td style={{ border: '1px solid black', padding: '8px' }}>${person.salary.toLocaleString()}</td>
+            <td style={{ border: '1px solid black', padding: '8px', color: 'red' }}>${person.salary.toLocaleString()}</td>
           </tr>
         </tbody>
       </table>
