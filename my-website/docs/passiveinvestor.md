@@ -1,8 +1,7 @@
 ---
-title: Passive Investors
-id: passive-investor
+sidebar_position: 2
 ---
-
+ 
 # Passive Investing
 
 ## Passive Investor: A Smart Choice for the New Era

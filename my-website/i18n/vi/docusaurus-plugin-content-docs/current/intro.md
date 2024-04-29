@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Đầu tư Giá trị là gì?
+# Đầu tư Giá trị là gì
 
 Đầu tư giá trị là một chiến lược tài chính nơi các nhà đầu tư chọn cổ phiếu có vẻ như đang được giao dịch với giá thấp hơn so với giá trị nội tại hoặc giá trị sổ sách của chúng. Phương pháp này dựa trên ý tưởng rằng thị trường phản ứng thái quá với tin tức tốt và xấu, tạo ra những biến động giá cổ phiếu không tương ứng với cơ bản lâu dài của công ty. Tại trung tâm của đầu tư giá trị là khái niệm về biên an toàn, đó là sự chênh lệch giữa giá thị trường của cổ phiếu và giá trị thực tưởng của nó.
 

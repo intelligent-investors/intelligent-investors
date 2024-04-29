@@ -1,11 +1,11 @@
 ---
-title: Nhà đầu tư thụ động
-id: passive-investor
+sidebar_position: 2
 ---
 
 # Nhà đầu tư thụ động
 
 Nhà đầu tư thụ động: Lựa chọn thông minh cho Thời đại mới
+
 Trong thế giới đầu tư ngày nay, nhà đầu tư thụ động đang ngày càng trở nên phổ biến. Đây là phương pháp đầu tư dựa trên nguyên tắc giữ các khoản đầu tư lâu dài mà không cần can thiệp thường xuyên. Phương pháp này dựa trên lý thuyết cho rằng thị trường tài chính về lâu dài sẽ mang lại lợi nhuận ổn định, bất chấp những biến động ngắn hạn.
 
 ## Đặc điểm của nhà đầu tư thụ động
