@@ -52,6 +52,8 @@ const config = {
           path: 'docs',
           include: ['**/*.md', '**/*.mdx'],
           sidebarPath: './sidebars.js',
+          sidebarCollapsed: false,
+          sidebarCollapsible: false,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl:
