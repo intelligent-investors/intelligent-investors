@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# What is Value Investing?
+# Value Investing
 
 Value investing is a financial strategy where investors choose stocks that appear to be trading for less than their intrinsic or book value. This approach is based on the idea that the market overreacts to good and bad news, creating stock price movements that do not correspond with a company's long-term fundamentals. At the core of value investing is the concept of the margin of safety, which is the difference between a stock's market price and its perceived true value.
 
