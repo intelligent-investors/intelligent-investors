@@ -53,6 +53,7 @@ const sidebars = {
       label: 'Business Analysis & Valuation',
       items: [
         'business-analysis-and-valuation/business-analysis',
+        'business-analysis-and-valuation/business-valuation',
       ],
     },
   ],
