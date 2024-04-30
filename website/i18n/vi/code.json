@@ -285,5 +285,14 @@
   "theme.unlistedContent.message": {
     "message": "Trang này không được công khai. Công cụ tìm kiếm sẽ không đánh chỉ mục cho trang này và chỉ những người có liên kết mới có thể truy cập được trang.",
     "description": "The unlisted content banner message"
+  },
+  "siteConfig.title": {
+    "message": "Nhà đầu tư thông minh"
+  },
+  "siteConfig.tagline": {
+    "message": "Đầu tư Giá trị"
+  },
+  "item.label.Tutorials": {
+    "message": "Hướng dẫn"
   }
 }

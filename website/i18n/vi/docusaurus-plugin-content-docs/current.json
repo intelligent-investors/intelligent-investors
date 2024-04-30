@@ -2,5 +2,20 @@
   "version.label": {
     "message": "Next",
     "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Before You Invest": {
+    "message": "Trước khi đầu tư",
+    "description": "The label for category Before You Invest in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.What to Invest in": {
+    "message": "Nên đầu tư gì",
+    "description": "The label for category What to Invest in in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Securities Investment": {
+    "message": "Đầu tư chứng khoán",
+    "description": "The label for category Securities Investment in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Business Analysis & Valuation": {
+    "message": "Phân tích & định giá doanh nghiệp"
   }
 }
