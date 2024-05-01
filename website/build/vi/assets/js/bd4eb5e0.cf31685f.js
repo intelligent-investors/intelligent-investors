@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[348],{347:s=>{s.exports=JSON.parse('{"label":"business-analysis","permalink":"/intelligent-investors/website/build/vi/blog/tags/business-analysis","allTagsPath":"/intelligent-investors/website/build/vi/blog/tags","count":1,"unlisted":false}')}}]);

@@ -90,7 +90,7 @@ const config = {
             position: 'left',
             label: 'Tutorials',
           },
-          // {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/intelligent-investors/intelligent-investors',
             label: 'GitHub',
