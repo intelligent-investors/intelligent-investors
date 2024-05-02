@@ -1,5 +1,5 @@
 ---
-slug: welcome
+slug: vea
 title: VEA
 authors: anhv
 tags: [business-analysis]
@@ -14,22 +14,4 @@ import { BusinessData } from '@site/src/components/CompanyCard';
 
 Hiện nay, thị trường tiêu thụ động cơ diesel nhỏ (dưới 30 mã lực), máy kéo và máy nông nghiệp từ 03 nguồn chính, gồm: Sản phẩm nội địa, sản phẩm nhập khẩu Trung Quốc và các máy cũ nhập khẩu từ Nhật, Hàn Quốc... Sản phẩm nội địa chủ yếu do các đơn vị của Tổng công ty Máy Động lực và Máy Nông nghiệp Việt Nam (VEAM) sản xuất và lắp ráp. Sản phẩm của Trung Quốc gồm hai dòng chính, nhập khẩu từ các nhà sản xuất chính thống và nhập khẩu biên mậu từ các nhà sản xuất tư nhân chủ yếu là các máy nhái, máy giả nhãn hiệu của các nhà sản xuất chính thống.
 
-## THÔNG TIN CƠ BẢN
-
-* Mã SIC	VEA
-* Mã ngành ICB	2757
-* Năm thành lập	12/05/1990
-* Vốn điều lệ	13288.0 tỷ
-* Số lượng nhân sự	716
-* THÔNG TIN NIÊM YẾT
-* Ngày niêm yết	02/07/2018
-* Nơi niêm yết	UPCOM
-* Giá chào sàn (VNĐ)	27,600
-* Ngày phát hành cuối	01/07/2020
-* KL đang niêm yết	1,328,800,000
-
-<CompanyCard 
-  name={BusinessData.name} 
-  description={BusinessData.description} 
-  address={BusinessData.address}
-/>
+<CompanyCard {...BusinessData}/>
