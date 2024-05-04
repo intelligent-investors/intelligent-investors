@@ -7,7 +7,7 @@ import {
 const { Meta } = Card;
 
 // Component for the Company Card
-const CompanyCard = ({ name, description, address, revenue, profit, management, totalAssets, debt, firstSkill }) => {
+const CompanyCard = ({ name, description, address, marketCap, revenue, profit, management, totalAssets, debt, firstSkill }) => {
   const items = [
     {
       key: '1',
@@ -38,6 +38,12 @@ const CompanyCard = ({ name, description, address, revenue, profit, management, 
           <br/>
           <Row gutter={16}>
             <Col span={12}>
+              <Statistic title="Vốn hoá thị trường (VND)" value={marketCap} />
+            </Col>
+          </Row>
+          <br/>
+          <Row gutter={16}>
+            <Col span={12}>
               <Statistic title="Doanh Thu (VND)" value={revenue} />
             </Col>
             <Col span={12}>
@@ -53,6 +59,7 @@ const CompanyCard = ({ name, description, address, revenue, profit, management, 
               <Statistic title="Nợ (VND)" value={debt}/>
             </Col>
           </Row>
+          
           <br/>
           <Col span={20}>
             <li>
@@ -79,9 +86,11 @@ const BusinessData = {
   address: "Bộ Công Thương, 655 Phố Vũ Tông Phan, Khương Đình, Thanh Xuân, Hà Nội, Việt Nam",
   revenue: "3.8k tỷ",
   profit: "6.2k tỷ",
+  marketCap: "48.9k tỷ",
   management: "Đội ngũ quản lý từ nhà nước",
   totalAssets: "27.1k tỷ",
   debt: "1.4k tỷ",
+  price: "36.80",
   firstSkill: {
     "name": "Liên doanh sản xuất Ô tô",
     "description": "Chiếm 50% thị trường ô tô của Việt Nam (Toyota, Honda)"
