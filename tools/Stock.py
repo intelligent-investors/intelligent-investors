@@ -2,6 +2,7 @@ from dataclasses import dataclass
 
 @dataclass
 class Stock:
+    ticker: str
     price: float
     stockholder_equity: list
     net_income: list
@@ -27,16 +28,17 @@ class Stock:
         bvps = book_value / self.total_shares
         pe_ratio = self.price / eps
         pb_ratio = self.price / bvps
-        return (f"Stock(price={self.price}, total_shares={self.total_shares}, eps={eps:.2f}, "
+        return (f"Stock(ticker={self.ticker}, price={self.price}, total_shares={self.total_shares}, eps={eps:.2f}, "
                 f"pe={pe_ratio:.2f}, book_value={book_value}, bvps={bvps:.2f}, pb={pb_ratio:.2f})")
 
 if __name__ == '__main__':
     # Ticker VEA
-    stock = Stock(
+    example_stock = Stock(
+        ticker="VEA",
         price=36800,
         stockholder_equity=[27163711893525],
         net_income=[1420106147334, 1559684055781, 1525485712150, 1789587057259],
         total_shares=1328800000
     )
 
-    print(stock)
+    print(example_stock)
