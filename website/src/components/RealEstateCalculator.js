@@ -3,29 +3,39 @@ import { InputNumber, Input, Button, Space, Form, Table } from 'antd';
 
 const RealEstateCalculator = () => {
   const defaultLoanAmount = 1000000000;
-  const defaultInterestRate = 7;
-  const defaultLoanTerm = 360;
+  const defaultInterestRate = 8;
+  const defaultLoanTerm = 36;
   const [loanAmount, setLoanAmount] = useState(defaultLoanAmount);
   const [interestRate, setInterestRate] = useState(defaultInterestRate);
   const [loanTerm, setLoanTerm] = useState(defaultLoanTerm);
   const [monthlyPayment, setMonthlyPayment] = useState(null);
   const [schedule, setSchedule] = useState([]);
 
-  const generateAmortizationSchedule = (principal, rate, term, payment) => {
+  const generateAmortizationSchedule = (principal, rate, term) => {
     let balance = principal;
     const tempSchedule = [];
-
+    let interestPayment, principalPayment, totalPayment;
+    tempSchedule.push({
+      key: 0,
+      month: 0,
+      principalPayment: "",
+      interestPayment: "",
+      totalPayment: "",
+      remainingBalance: formatNumber(principal)
+    })
     for (let i = 1; i <= term; i++) {
-      const interest = balance * rate;
-      const principalPayment = payment - interest;
+      interestPayment = balance  * rate;
+      principalPayment = principal / term;
+      totalPayment = interestPayment + principalPayment;
+
       balance -= principalPayment;
 
       tempSchedule.push({
         key: i,
         month: i,
         principalPayment: formatNumber(principalPayment),
-        interestPayment: formatNumber(interest),
-        totalPayment: formatNumber(payment),
+        interestPayment: formatNumber(interestPayment),
+        totalPayment: formatNumber(totalPayment),
         remainingBalance: formatNumber(balance)
       });
     }
@@ -34,6 +44,8 @@ const RealEstateCalculator = () => {
   };
 
   const formatNumber = (number) => {
+    const num = parseFloat(number);
+    if(num === 0 || Math.abs(num) < 0.00005) return '0';
     return new Intl.NumberFormat('en-US', {
       style: 'decimal',
       minimumFractionDigits: 2,
@@ -56,7 +68,7 @@ const RealEstateCalculator = () => {
     }).format(payment);
 
     setMonthlyPayment(formattedPayment);
-    generateAmortizationSchedule(principal, monthlyInterestRate, numberOfPayments, payment);
+    generateAmortizationSchedule(principal, monthlyInterestRate, numberOfPayments);
   };
 
   const layout = {
