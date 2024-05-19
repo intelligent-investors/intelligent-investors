@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[212],{348:s=>{s.exports=JSON.parse('[{"label":"business-analysis","permalink":"/intelligent-investors/website/build/blog/tags/business-analysis","count":1}]')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[2295],{337:e=>{e.exports=JSON.parse('{"label":"sector-analysis","permalink":"/intelligent-investors/website/build/blog/tags/sector-analysis","allTagsPath":"/intelligent-investors/website/build/blog/tags","count":1,"unlisted":false}')}}]);
