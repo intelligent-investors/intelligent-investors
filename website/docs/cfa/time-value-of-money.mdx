@@ -86,8 +86,81 @@ Notice here that the EAR increases as the compounding frequency increases.
 
 The limit of shorter and shorter compounding periods is called continuous compounding. To convert an annual stated rate to the EAR with continuous compounding, we use the formula $$e^r - 1 = \text{EAR}$$.
 
-For 6%, we have $$e^0.06 - 1 = 6.1837%$$. The keystrokes are `0.06` `[2nd]` `[e^x]` `[−]` `1` `[=]` = 0.061837.
+For 6%, we have $$e^{0.06} - 1 = 6.1837%$$. The keystrokes are `0.06` `[2nd]` `[e^x]` `[−]` `1` `[=]` = 0.061837.
 
+## D. Calculate and interpret the future value (FV) and present value (PV) of a single sum of money, an ordinary annuity, an annuity due, a perpetuity (PV only), and a series of unequal cash flows.
+
+### Future Value of a Single Sum
+
+*Future value* is the amount to which a current deposit will grow over time when it is placed in an account paying compound interest. The FV, also called the compound value, is simply an example of compound interest at work.
+
+The formula for the FV of a *single* cash flow is:
+
+$$
+FV = PV(1 + I/Y)^N
+$$
+
+where:
+
+* $$PV$$ = amount of money invested today (the present value)
+* $$I/Y$$ = rate of return per compounding period
+* $$N$$ = total number of compounding periods
+
+In this expression, the investment involves a single cash outflow, PV, which occurs today, at t = 0 on the timeline. The single sum FV formula will determine the value of an investment at the end of N compounding periods, given that it can earn a fully compounded rate of return, I/Y, over all of the periods.
+
+The factor $$(1 + I/Y)^N$$ represents the compounding rate on an investment and is frequently referred to as the **future value factor**, or the **future value interest factor**, for a single cash flow at I/Y over N compounding periods. These are the values that appear in interest factor tables, which we will not be using.
+
+**Example: FV of a single sum**
+
+Calculate the FV of a **$300** investment at the end of **ten years** if it earns an annually compounded rate of return of **8%**.
+
+Answer:
+
+To solve this problem with your calculator, input the relevant data and compute FV.
+
+$$N = 10; I/Y = 8; PV = -300; CPT → FV = 647.68$$
+
+Professor's Note: Note the negative sign on PV. This is not necessary, but it makes the FV come out as a positive number. If you enter PV as a positive number, ignore the negative sign that appears on the FV.
+
+This relatively simple problem could also be solved using the following equation.
+
+$$FV = 300(1 + 0.08)^{10} = 647.68$$
+
+On the TI calculator, enter `1.08` `[yx]` `10` `[x]` `300` `[=]`.
+
+### Present Value of a Single Sum
+
+The PV of a single sum is today’s value of a cash flow that is to be received at some point in the future. In other words, it is the amount of money that must be invested today, at a given rate of return over a given period of time, in order to end up with a specified FV. As previously mentioned, the process for finding the PV of a cash flow is known as *discounting* (i.e., future cash flows are “discounted” back to the present). The interest rate used in the discounting process is commonly referred to as the **discount rate** but may also be referred to as the **opportunity cost**, **required rate of return**, and **the cost of capital**. Whatever you want to call it, it represents the annual compound rate of return that can be earned on an investment.
+
+The relationship between PV and FV can be seen by examining the FV expression stated earlier. Rewriting the FV equation in terms of PV, we get:
+
+$$
+PV = FV \times \left[ \frac{1}{(1 + I/Y)^N} \right] = \frac{FV}{(1 + I/Y)^N}
+$$
+
+Note that for a single future cash flow, PV is always less than the FV whenever the discount rate is positive.
+
+The quantity $$1/(1 + I/Y)^N$$ in the PV equation is frequently referred to as the **present value factor**, **present value interest factor**, or **discount factor** for a single cash flow at $$I/Y$$ over $$N$$ compounding periods.
+
+**Example: PV of a single sum**
+
+Given a discount rate of **9%**, calculate the PV of a **$1,000** cash flow that will be received in **five years**.
+
+Answer:
+
+To solve this problem, input the relevant data and compute PV.
+
+$$N = 5; I/Y = 9; FV = 1,000; CPT → PV = -649.93 \text{(ignore the sign)}$$
+
+Professor's Note: With single sum PV problems, you can either enter FV as a positive number and ignore the negative sign on PV or enter FV as a negative number.
+
+This relatively simple problem could also be solved using the following PV equation.
+
+$$PV = 1,000 / (1 + 0.09)^5 = 649.93$$
+
+On the TI, enter `1.09` `[yx]` `5` `[=]` `[1/x]` `[x]` `1,000` `[=]`.
+
+The PV computed here implies that at a rate of 9%, an investor will be indifferent between \$1,000 in five years and \$649.93 today. Put another way, \$649.93 is the amount that must be invested today at a 9% rate of return in order to generate a cash flow of \$1,000 at the end of five years.
 
 ## References
 

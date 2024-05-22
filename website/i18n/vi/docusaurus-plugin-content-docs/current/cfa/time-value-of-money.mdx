@@ -88,6 +88,80 @@ Giới hạn của các kỳ ghép lãi ngắn hơn và ngắn hơn được g�
 
 Với 6%, chúng ta có $$e^{0.06} - 1 = 6.1837\%$$. Các bước tính toán là `0.06` `[2nd]` `[e^x]` `[−]` `1` `[=]` = 0.061837.
 
+## D. Tính toán và giải thích giá trị tương lai (FV) và giá trị hiện tại (PV) của một khoản tiền đơn lẻ, niên kim thông thường, niên kim đến hạn, vĩnh viễn (chỉ PV), và một chuỗi các dòng tiền không đều nhau.
+
+### Giá trị tương lai của một khoản tiền đơn lẻ
+
+*Giá trị tương lai* là số tiền mà một khoản tiền gửi hiện tại sẽ tăng lên theo thời gian khi nó được đặt trong một tài khoản trả lãi kép. FV, còn được gọi là giá trị kép, đơn giản là một ví dụ về lãi kép hoạt động.
+
+Công thức cho FV của một *dòng tiền* đơn lẻ là:
+
+$$
+FV = PV(1 + I/Y)^N
+$$
+
+trong đó:
+
+* $$PV$$ = số tiền đầu tư hôm nay (giá trị hiện tại)
+* $$I/Y$$ = tỷ suất lợi nhuận mỗi kỳ ghép lãi
+* $$N$$ = tổng số kỳ ghép lãi
+
+Trong biểu thức này, đầu tư liên quan đến một dòng tiền ra đơn lẻ, PV, xảy ra hôm nay, tại t = 0 trên dòng thời gian. Công thức FV cho một khoản tiền đơn lẻ sẽ xác định giá trị của khoản đầu tư vào cuối các kỳ ghép lãi N, với giả định rằng nó có thể kiếm được một tỷ suất lợi nhuận ghép lãi hoàn toàn, I/Y, trong suốt các kỳ hạn.
+
+Hệ số $$(1 + I/Y)^N$$ đại diện cho tỷ lệ ghép lãi trên một khoản đầu tư và thường được gọi là **hệ số giá trị tương lai**, hoặc **hệ số lãi suất giá trị tương lai**, cho một dòng tiền đơn lẻ tại I/Y trong các kỳ ghép lãi N. Đây là các giá trị xuất hiện trong các bảng hệ số lãi suất, mà chúng ta sẽ không sử dụng.
+
+**Ví dụ: FV của một khoản tiền đơn lẻ**
+
+Tính toán FV của một khoản đầu tư **$300** vào cuối **mười năm** nếu nó kiếm được tỷ suất lợi nhuận ghép lãi hàng năm là **8%**.
+
+Trả lời:
+
+Để giải quyết vấn đề này với máy tính của bạn, nhập dữ liệu liên quan và tính toán FV.
+
+$$N = 10; I/Y = 8; PV = -300; CPT → FV = 647.68$$
+
+Ghi chú của Giáo sư: Lưu ý dấu âm trên PV. Điều này không cần thiết, nhưng nó làm cho FV ra một số dương. Nếu bạn nhập PV là một số dương, hãy bỏ qua dấu âm xuất hiện trên FV.
+
+Vấn đề tương đối đơn giản này cũng có thể được giải quyết bằng cách sử dụng phương trình sau.
+
+$$FV = 300(1 + 0.08)^{10} = 647.68$$
+
+Trên máy tính TI, nhập `1.08` `[yx]` `10` `[x]` `300` `[=]`.
+
+### Giá trị hiện tại của một khoản tiền đơn lẻ
+
+PV của một khoản tiền đơn lẻ là giá trị hôm nay của một dòng tiền sẽ được nhận vào một thời điểm nào đó trong tương lai. Nói cách khác, đó là số tiền phải đầu tư hôm nay, với một tỷ suất lợi nhuận nhất định trong một khoảng thời gian nhất định, để có được một FV xác định. Như đã đề cập trước đó, quá trình tìm PV của một dòng tiền được gọi là *chiết khấu* (tức là các dòng tiền tương lai được “chiết khấu” trở lại hiện tại). Tỷ suất lợi nhuận sử dụng trong quá trình chiết khấu thường được gọi là **tỷ lệ chiết khấu** nhưng cũng có thể được gọi là **chi phí cơ hội**, **tỷ suất lợi nhuận yêu cầu**, và **chi phí vốn**. Dù bạn muốn gọi nó là gì, nó đại diện cho tỷ suất lợi nhuận kép hàng năm có thể kiếm được từ một khoản đầu tư.
+
+Mối quan hệ giữa PV và FV có thể được thấy bằng cách xem xét biểu thức FV đã nêu trước đó. Viết lại phương trình FV dưới dạng PV, chúng ta có:
+
+$$
+PV = FV \times \left[ \frac{1}{(1 + I/Y)^N} \right] = \frac{FV}{(1 + I/Y)^N}
+$$
+
+Lưu ý rằng đối với một dòng tiền tương lai đơn lẻ, PV luôn nhỏ hơn FV bất cứ khi nào tỷ lệ chiết khấu là dương.
+
+Lượng $$1/(1 + I/Y)^N$$ trong phương trình PV thường được gọi là **hệ số giá trị hiện tại**, **hệ số lãi suất giá trị hiện tại**, hoặc **hệ số chiết khấu** cho một dòng tiền đơn lẻ tại $$I/Y$$ trong các kỳ ghép lãi $$N$$.
+
+**Ví dụ: PV của một khoản tiền đơn lẻ**
+
+Với tỷ lệ chiết khấu là **9%**, tính toán PV của một dòng tiền **$1,000** sẽ được nhận trong **năm năm**.
+
+Trả lời:
+
+Để giải quyết vấn đề này, nhập dữ liệu liên quan và tính toán PV.
+
+$$N = 5; I/Y = 9; FV = 1,000; CPT → PV = -649.93 \text{(bỏ qua dấu)}$$
+
+Ghi chú của Giáo sư: Với các vấn đề PV đơn lẻ, bạn có thể nhập FV là một số dương và bỏ qua dấu âm trên PV hoặc nhập FV là một số âm.
+
+Vấn đề tương đối đơn giản này cũng có thể được giải quyết bằng cách sử dụng phương trình PV sau.
+
+$$PV = 1,000 / (1 + 0.09)^5 = 649.93$$
+
+Trên TI, nhập `1.09` `[yx]` `5` `[=]` `[1/x]` `[x]` `1,000` `[=]`.
+
+PV được tính toán ở đây ngụ ý rằng với tỷ lệ 9%, một nhà đầu tư sẽ không phân biệt giữa \$1,000 trong năm năm và \$649.93 hôm nay. Nói cách khác, \$649.93 là số tiền phải đầu tư hôm nay với tỷ suất lợi nhuận 9% để tạo ra dòng tiền \$1,000 vào cuối năm năm.
+
 ## References
 
 * https://youssef-serghini.weebly.com/5-the-time-value-of-money.html
