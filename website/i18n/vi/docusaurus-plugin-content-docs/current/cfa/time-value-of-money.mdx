@@ -33,6 +33,61 @@ $$
 \end{align*}
 $$
 
+## C. Tính toán và diễn giải lãi suất hiệu quả hàng năm (EAR), dựa trên lãi suất hàng năm được công bố và tần suất ghép lãi, và giải quyết các vấn đề về giá trị thời gian của tiền khi các kỳ ghép lãi không phải hàng năm.
+
+Các tổ chức tài chính thường công bố lãi suất dưới dạng **lãi suất hàng năm**, cùng với tần suất ghép lãi, thay vì công bố lãi suất dưới dạng **lãi suất định kỳ** — lãi suất kiếm được trong một kỳ ghép lãi.
+
+Ví dụ, một ngân hàng sẽ công bố lãi suất tiết kiệm là 8%, ghép lãi hàng quý, thay vì 2% mỗi quý. Lãi suất mà nhà đầu tư thực sự nhận được do ghép lãi được gọi là **lãi suất hiệu quả hàng năm (EAR)**. EAR đại diện cho tỷ suất lợi nhuận hàng năm thực tế nhận được *sau khi đã điều chỉnh cho các kỳ ghép lãi khác nhau*.
+
+EAR có thể được xác định như sau:
+
+$$
+\text{EAR} = (1 + \text{lãi suất định kỳ})^m - 1
+$$
+
+trong đó:
+
+- $$\text{lãi suất định kỳ} = \frac{\text{lãi suất hàng năm được công bố}}{m}$$
+- $$m = \text{số kỳ ghép lãi trong một năm}$$
+
+Rõ ràng, EAR cho một lãi suất công bố là 8% *ghép lãi hàng năm* không giống như EAR cho 8% *ghép lãi nửa năm, hoặc hàng quý*. Thật vậy, bất cứ khi nào lãi suất kép được sử dụng, lãi suất công bố và lãi suất thực tế (hiệu quả) chỉ bằng nhau khi lãi suất được ghép hàng năm. Nếu không, tần suất ghép lãi càng lớn thì EAR càng cao so với lãi suất công bố.
+
+Việc tính toán EAR là cần thiết khi so sánh các khoản đầu tư có các kỳ ghép lãi khác nhau. Nó cho phép so sánh tỷ lệ lãi suất một cách đồng đều.
+
+**Ví dụ: Tính toán EAR**
+
+Tính EAR nếu lãi suất hàng năm được công bố là $$12\%$$, ghép lãi hàng quý.
+
+Trả lời:
+Ở đây m = 4, do đó lãi suất định kỳ là $$\frac{12}{4} = 3\%$$.
+
+Do đó, $$\text{EAR} = (1 + 0.03)^4 - 1 = 1.1255 - 1 = 0.1255 = 12.55\%$$.
+
+Giải pháp này sử dụng phím `[y^x]` trên máy tính tài chính của bạn.
+
+Các bước chính xác trên TI để tính toán trên là `1.03` `[y^x]` `4` `[=]`.
+
+Trên HP, các bước là `1.03` `[ENTER]` `4` `[y^x]`.
+
+**Ví dụ: Tính toán EAR cho một loạt các tần suất ghép lãi**
+
+Sử dụng lãi suất công bố là 6%, tính toán EAR cho các tần suất ghép lãi nửa năm, hàng quý, hàng tháng và hàng ngày.
+
+Trả lời:
+
+EAR với:
+
+* ghép lãi nửa năm = (1 + 0.03)^2 - 1 = 1.06090 - 1 = 0.06090 = 6.090%
+* ghép lãi hàng quý  = (1 + 0.015)^4 - 1 = 1.06136 - 1 = 0.06136 = 6.136%
+* ghép lãi hàng tháng    = (1 + 0.005)^12 - 1 = 1.06168 - 1 = 0.06168 = 6.168%
+* ghép lãi hàng ngày      = (1 + 0.00016438)^365 - 1 = 1.06183 - 1 = 0.06183 = 6.183%
+
+Lưu ý rằng EAR tăng lên khi tần suất ghép lãi tăng lên.
+
+Giới hạn của các kỳ ghép lãi ngắn hơn và ngắn hơn được gọi là ghép lãi liên tục. Để chuyển đổi lãi suất hàng năm sang EAR với ghép lãi liên tục, chúng ta sử dụng công thức $$e^r - 1 = \text{EAR}$$.
+
+Với 6%, chúng ta có $$e^{0.06} - 1 = 6.1837\%$$. Các bước tính toán là `0.06` `[2nd]` `[e^x]` `[−]` `1` `[=]` = 0.061837.
+
 ## References
 
 * https://youssef-serghini.weebly.com/5-the-time-value-of-money.html

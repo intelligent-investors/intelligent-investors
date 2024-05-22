@@ -34,6 +34,61 @@ $$
 \end{align*}
 $$
 
+## C. Calculate and interpret the effective annual rate, given the stated annual interest rate and the frequency of compounding, and solve time value of money problems when compounding periods are other than annual.
+
+Financial institutions usually quote rates as stated **annual interest rates**, along with a compounding frequency, as opposed to quoting rates as **periodic rates** — the rate of interest earned over a single compounding period.
+
+For example, a bank will quote a savings rate as 8%, compounded quarterly, rather than 2% per quarter. The rate of interest that investors actually realize as a result of compounding is known as the **effective annual rate (EAR)**. EAR represents the annual rate of return actually being earned *after adjustments have been made for different compounding periods*.
+
+EAR may be determined as follows:
+
+$$
+\text{EAR} = (1 + \text{periodic rate})^m - 1
+$$
+
+where:
+
+- $$\text{periodic rate} = \frac{\text{stated annual rate}}{m}$$
+- $$m = \text{the number of compounding periods per year}$$
+
+Obviously, the EAR for a stated rate of 8% *compounded annually* is not the same as the EAR for 8% *compounded semiannually, or quarterly*. Indeed, whenever compound interest is being used, the stated rate and the actual (effective) rate of interest are equal only when interest is compounded annually. Otherwise, the greater the compounding frequency, the greater the EAR will be in comparison to the stated rate.
+
+The computation of EAR is necessary when comparing investments that have different compounding periods. It allows for an apples-to-apples rate comparison.
+
+**Example: Computing EAR**
+
+Compute EAR if the stated annual rate is $$12%$$, compounded quarterly.
+
+Answer:
+Here m = 4, so the periodic rate is $$\frac{12}{4} = 3\%$$.
+
+Thus, $$\text{EAR} = (1 + 0.03)^4 - 1 = 1.1255 - 1 = 0.1255 = 12.55\% $$.
+
+This solution uses the `[y^x]` key on your financial calculator.
+
+The exact keystrokes on the TI for the above computation are `1.03` `[y^x]` `4` `[=]`.
+
+On the HP, the strokes are `1.03` `[ENTER]` `4` `[y^x]`.
+
+**Example: Computing EARs for a range of compounding frequencies**
+
+Using a stated rate of 6%, compute EARs for semiannual, quarterly, monthly, and daily compounding.
+
+Answer:
+EAR with:
+
+* semiannual compounding = (1 + 0.03)^2 - 1 = 1.06090 - 1 = 0.06090 = 6.090%
+* quarterly compounding  = (1 + 0.015)^4 - 1 = 1.06136 - 1 = 0.06136 = 6.136%
+* monthly compounding    = (1 + 0.005)^12 - 1 = 1.06168 - 1 = 0.06168 = 6.168%
+* daily compounding      = (1 + 0.00016438)^365 - 1 = 1.06183 - 1 = 0.06183 = 6.183%
+
+Notice here that the EAR increases as the compounding frequency increases.
+
+The limit of shorter and shorter compounding periods is called continuous compounding. To convert an annual stated rate to the EAR with continuous compounding, we use the formula $$e^r - 1 = \text{EAR}$$.
+
+For 6%, we have $$e^0.06 - 1 = 6.1837%$$. The keystrokes are `0.06` `[2nd]` `[e^x]` `[−]` `1` `[=]` = 0.061837.
+
+
 ## References
 
 * https://youssef-serghini.weebly.com/5-the-time-value-of-money.html
