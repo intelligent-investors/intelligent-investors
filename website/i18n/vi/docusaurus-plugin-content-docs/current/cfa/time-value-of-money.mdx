@@ -1,3 +1,5 @@
+import Figure1 from "./images/figure1.png";
+
 # Giá trị thời gian của tiền
 
 ## A. Diễn giải lãi suất như là tỷ lệ lợi nhuận yêu cầu, tỷ lệ chiết khấu, hoặc chi phí cơ hội.
@@ -161,6 +163,36 @@ $$PV = 1,000 / (1 + 0.09)^5 = 649.93$$
 Trên TI, nhập `1.09` `[yx]` `5` `[=]` `[1/x]` `[x]` `1,000` `[=]`.
 
 PV được tính toán ở đây ngụ ý rằng với tỷ lệ 9%, một nhà đầu tư sẽ không phân biệt giữa \$1,000 trong năm năm và \$649.93 hôm nay. Nói cách khác, \$649.93 là số tiền phải đầu tư hôm nay với tỷ suất lợi nhuận 9% để tạo ra dòng tiền \$1,000 vào cuối năm năm.
+
+## Niên kim
+
+Một **niên kim** là một dòng *dòng tiền bằng nhau* xuất hiện tại *khoảng thời gian bằng nhau* trong một khoảng thời gian nhất định. Nhận $1,000 mỗi năm vào cuối mỗi năm trong tám năm tới là một ví dụ về niên kim. Có hai loại niên kim: **niên kim thông thường** và **niên kim đến hạn**. *Niên kim thông thường* là loại niên kim phổ biến nhất. Nó được đặc trưng bởi các dòng tiền xuất hiện vào *cuối* mỗi kỳ hạn. Đây là một mẫu dòng tiền điển hình cho nhiều ứng dụng đầu tư và tài chính doanh nghiệp. Loại niên kim khác được gọi là *niên kim đến hạn*, trong đó các khoản thanh toán hoặc nhận tiền xuất hiện vào đầu mỗi kỳ hạn (tức là, khoản thanh toán đầu tiên là hôm nay tại t = 0).
+
+Tính toán giá trị hiện tại (PV) hoặc giá trị tương lai (FV) của một niên kim bằng máy tính của bạn không khó hơn so với một dòng tiền đơn lẻ. Bạn sẽ biết bốn trong năm biến số liên quan và giải cho biến thứ năm (hoặc PV hoặc FV). Sự khác biệt giữa các bài toán giá trị hiện tại (TVM) của số tiền đơn lẻ và niên kim là thay vì giải PV hoặc FV của một dòng tiền đơn lẻ, chúng ta giải PV hoặc FV của một dòng tiền định kỳ bằng nhau, trong đó kích thước của dòng tiền định kỳ được xác định bởi biến thanh toán (PMT) trên máy tính của bạn.
+
+**Ví dụ: Giá trị tương lai của niên kim thông thường**
+
+Giá trị tương lai của một niên kim thông thường trả \$150 mỗi năm vào cuối mỗi năm trong 15 năm tới, với mức lợi nhuận dự kiến là 7%, là bao nhiêu?
+
+Trả lời:
+
+Vấn đề này có thể được giải quyết bằng cách nhập các dữ liệu liên quan và tính FV.
+
+$$N = 15; I/Y = 7; PMT = -150; CPT → FV = 3,769.35$$
+
+Điều ngầm hiểu ở đây là PV = 0, thiết lập chức năng TVM.
+
+Dòng thời gian cho các dòng tiền trong vấn đề này được minh họa trong hình dưới đây.
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure1} style={{width: 800}} />
+</div>
+
+Như đã chỉ ra ở đây, tổng giá trị kép của các dòng tiền cá nhân trong niên kim thông thường 15 năm này là \$3,769.35. Lưu ý rằng các khoản thanh toán niên kim tự nó lên tới \$2,250 = 15 × \$150, và số dư là lãi suất kiếm được với mức 7% mỗi năm.
+
+Để tìm PV của một niên kim thông thường, chúng ta sử dụng dòng tiền tương lai, PMT, mà chúng ta đã sử dụng với các vấn đề niên kim FV, nhưng chúng ta chiết khấu các dòng tiền trở về hiện tại (thời gian = 0) thay vì ghép lãi chúng lên đến ngày kết thúc của niên kim.
+
+Ở đây một lần nữa, biến PMT là một khoản thanh toán định kỳ đơn lẻ, không phải tổng của tất cả các khoản thanh toán (hoặc tiền gửi) trong niên kim. PVAO đo lường PV tập thể của một dòng tiền mặt đều nhau nhận được vào cuối mỗi kỳ ghép lãi trong một số kỳ hạn định trước, N, với một tỷ lệ lợi nhuận xác định, I/Y. Các ví dụ sau minh họa cách xác định PV của một niên kim thông thường bằng cách sử dụng máy tính tài chính.
 
 ## References
 

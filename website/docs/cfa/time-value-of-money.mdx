@@ -1,3 +1,5 @@
+import Figure1 from "./images/figure1.png";
+
 # Time Value Of Money
 
 ## A. Interpret interest rates as required rates of return, discount rates, or opportunity costs
@@ -161,6 +163,36 @@ $$PV = 1,000 / (1 + 0.09)^5 = 649.93$$
 On the TI, enter `1.09` `[yx]` `5` `[=]` `[1/x]` `[x]` `1,000` `[=]`.
 
 The PV computed here implies that at a rate of 9%, an investor will be indifferent between \$1,000 in five years and \$649.93 today. Put another way, \$649.93 is the amount that must be invested today at a 9% rate of return in order to generate a cash flow of \$1,000 at the end of five years.
+
+## Annuities
+
+An **annuity** is a stream of *equal cash flows* that occurs at *equal intervals* over a given period. Receiving $1,000 per year at the end of each of the next eight years is an example of an annuity. There are two types of annuities: **ordinary annuities** and **annuities due**. The *ordinary annuity* is the most common type of annuity. It is characterized by cash flows that occur at the *end* of each compounding period. This is a typical cash flow pattern for many investment and business finance applications. The other type of annuity is called an *annuity due*, where payments or receipts occur at the beginning of each period (i.e., the first payment is today at t = 0).
+
+Computing the FV or PV of an annuity with your calculator is no more difficult than it is for a single cash flow. You will know four of the five relevant variables and solve for the fifth (either PV or FV). The difference between single sum and annuity TVM problems is that instead of solving for the PV or FV of a single cash flow, we solve for the PV or FV of a stream of equal periodic cash flows, where the size of the periodic cash flow is defined by the payment (PMT) variable on your calculator.
+
+**Example: FV of an ordinary annuity**
+
+What is the future value of an ordinary annuity that pays $150 per year at the end of each of the next 15 years, given the investment is expected to earn a 7% rate of return?
+
+Answer:
+
+This problem can be solved by entering the relevant data and computing FV.
+
+$$N = 15; I/Y = 7; PMT = -150; CPT → FV = 3,769.35$$
+
+Implicit here is that PV = 0, clearing the TVM functions sets.
+
+The time line for the cash flows in this problem is depicted in the figure below.
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure1} style={{width: 800}} />
+</div>
+
+As indicated here, the sum of the compounded values of the individual cash flows in this 15-year ordinary annuity is \$3,769.35. Note that the annuity payments themselves amounted to \$2,250 = 15 × \$150, and the balance is the interest earned at the rate of 7% per year.
+
+To find the PV of an ordinary annuity, we use the future cash flow stream, PMT, that we used with FV annuity problems, but we discount the cash flows back to the present (time = 0) rather than compounding them forward to the terminal date of the annuity.
+
+Here again, the PMT variable is a single periodic payment, not the total of all the payments (or deposits) in the annuity. The PVAO measures the collective PV of a stream of equal cash flows received at the end of each compounding period over a stated number of periods, N, given a specified rate of return, I/Y. The following examples illustrate how to determine the PV of an ordinary annuity using a financial calculator.
 
 ## References
 
