@@ -1,5 +1,6 @@
 import Figure1 from "./images/figure1.png";
 import Figure2 from "./images/figure2.png";
+import Figure3 from "./images/figure3.png";
 
 # Giá trị thời gian của tiền
 
@@ -234,6 +235,43 @@ Nhập dữ liệu liên quan và giải cho $$PV_{0}$$.
 $$N = 2; I/Y = 9; PMT = 0; FV = -323.97; CPT → PV = PV_{0} = 272.68$$
 
 Trong giải pháp này, niên kim được coi là niên kim thông thường. PV được tính một giai đoạn trước khi khoản thanh toán đầu tiên bắt đầu, và chúng tôi chiết khấu $$PV_{2} =$$ \$$$323.97$$ trong hai năm. Chúng tôi cần nhấn mạnh điểm quan trọng này. Chức năng PV niên kim trên máy tính của bạn được đặt ở chế độ "END" sẽ cung cấp cho bạn giá trị một giai đoạn trước khi niên kim bắt đầu. Mặc dù niên kim bắt đầu tại $$t = 3$$, chúng tôi chỉ chiết khấu kết quả trong hai giai đoạn để có giá trị hiện tại ($$t = 0$$).
+
+### Giá Trị Tương Lai của Niên Kim Đầu Kỳ
+
+Đôi khi cần phải tính FV của một niên kim đầu kỳ ($$FVA_{D}$$), một niên kim mà các khoản thanh toán (hoặc gửi tiền) xảy ra vào đầu mỗi kỳ tính lãi kép.
+May mắn thay, máy tính tài chính của chúng ta có thể được sử dụng để làm điều này, nhưng với một sự điều chỉnh nhỏ - máy tính phải được đặt ở chế độ đầu kỳ `(BGN)`. Để chuyển đổi giữa các chế độ `BGN` và `END` trên TI, nhấn `[2nd]` `[BGN]` `[2nd]` `[SET]`. Khi điều này được thực hiện, “BGN” sẽ xuất hiện ở góc trên bên phải của cửa sổ hiển thị. Nếu màn hình hiển thị chế độ mong muốn, nhấn `[2nd]` `[QUIT]`.
+Bạn sẽ thường muốn máy tính của mình ở chế độ niên kim thông thường (`END`), vì vậy hãy nhớ chuyển ra khỏi chế độ BGN sau khi làm việc với các bài toán niên kim đầu kỳ. Lưu ý rằng không có gì xuất hiện ở góc trên bên phải của cửa sổ hiển thị khi TI được đặt ở chế độ `END`. Cần đề cập rằng trong khi các khoản thanh toán của niên kim đầu kỳ được thực hiện hoặc nhận vào đầu mỗi kỳ, FV của một niên kim đầu kỳ được tính vào cuối kỳ cuối cùng.
+
+Một cách khác để tính FV của một niên kim đầu kỳ là tính FV của một niên kim thông thường, và chỉ cần nhân kết quả $$FV$$ với $$[1 + \text{tỷ lệ lãi kép định kỳ} (I/Y)]$$. Về mặt ký hiệu, điều này có thể được biểu diễn như sau:
+
+$$
+\text{FVA}_{D} = \text{FVA}_{O} \times (1 + I/Y)
+$$
+
+Các ví dụ sau minh họa cách tính FV của một niên kim đầu kỳ.
+
+**Ví dụ: FV của một niên kim đầu kỳ**
+
+Giá trị tương lai của một niên kim trả \$100 mỗi năm vào đầu mỗi năm trong ba năm tới, bắt đầu từ hôm nay, nếu các dòng tiền có thể được đầu tư với tỷ lệ hàng năm là 10% là bao nhiêu? Lưu ý trong dòng thời gian trong hình dưới đây rằng FV được tính vào cuối năm cuối cùng trong vòng đời của niên kim, năm thứ 3, mặc dù khoản thanh toán cuối cùng xảy ra vào đầu năm thứ 3 (cuối năm thứ 2).
+
+Trả lời:
+
+Để giải quyết vấn đề này, hãy đặt máy tính của bạn ở chế độ BGN (`[2nd]` `[BGN]` `[2nd]` `[SET]` `[2nd]` `[QUIT]` trên **TI** hoặc `[g]` `[BEG]` trên **HP**), sau đó nhập dữ liệu liên quan và tính FV:
+
+$$N = 3, I/Y = 10, PMT = 100, CPT → FV = 364.10$$
+
+*FV của một Niên Kim Đầu Kỳ*
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure3} style={{width: 400}} />
+</div>
+
+Ngoài ra, chúng ta có thể tính FV cho một niên kim thông thường và nhân nó với $$1 + I/Y$$. Để máy tính của bạn ở chế độ `END`, nhập các giá trị sau:
+
+$$N = 3, I/Y = 10, PMT = 100, CPT → FVA_{0} = 331.00$$
+
+$$\text{FVA}_D = \text{FVA}_O \times (1 + I/Y) = 331.00 \times 1.10 = 364.10$$
+
 
 ## References
 

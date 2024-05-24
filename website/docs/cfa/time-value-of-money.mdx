@@ -1,5 +1,6 @@
 import Figure1 from "./images/figure1.png";
 import Figure2 from "./images/figure2.png";
+import Figure3 from "./images/figure3.png";
 
 # Time Value Of Money
 
@@ -235,6 +236,41 @@ $$N = 2; I/Y = 9; PMT = 0; FV = -323.97; CPT → PV = PV_{0} = 272.68$$
 
 In this solution, the annuity was treated as an ordinary annuity. The PV was computed one period before the first payment, and we discounted $$PV_{2} =$$ \$$$323.97$$ over two years. We need to stress this important point. The PV annuity function on your calculator set in "END" mode gives you the value one period before the annuity begins. Although the annuity begins at $$t = 3$$, we discounted the result for only two periods to get the present ($$t = 0$$) value.
 
+### Future Value of an Annuity Due
+
+Sometimes it is necessary to find the FV of an annuity due ($$FVA_{D}$$), an annuity where the annuity payments (or deposits) occur at the beginning of each compounding period.
+Fortunately, our financial calculators can be used to do this, but with one slight modification—the calculator must be set to the beginning-of-period `(BGN)` mode. To switch between the `BGN` and `END` modes on the TI, press `[2nd]` `[BGN]` `[2nd]` `[SET]`. When this is done, “BGN” will appear in the upper right corner of the display window. If the display indicates the desired mode, press `[2nd]` `[QUIT]`.
+You will normally want your calculator to be in the ordinary annuity (`END`) mode, so remember to switch out of BGN mode after working annuity due problems. Note that nothing appears in the upper right corner of the display window when the TI is set to the `END` mode. It should be mentioned that while annuity due payments are made or received at the beginning of each period, the FV of an annuity due is calculated as of the end of the last period.
+
+Another way to compute the FV of an annuity due is to calculate the FV of an ordinary annuity, and simply multiply the resulting $$FV$$ by $$[1 + \text{periodic compounding rate} (I/Y)]$$. Symbolically, this can be expressed as:
+
+$$
+\text{FVA}_{D} = \text{FVA}_{O} \times (1 + I/Y)
+$$
+
+The following examples illustrate how to compute the FV of an annuity due.
+
+**Example: FV of an annuity due**
+
+What is the future value of an annuity that pays \$100 per year at the beginning of each of the next three years, commencing today, if the cash flows can be invested at an annual rate of 10%? Note in the time line in the figure below that the FV is computed as of the end of the last year in the life of the annuity, year 3, even though the final payment occurs at the beginning of year 3 (end of year 2).
+
+Answer:
+
+To solve this problem, put your calculator in the BGN mode (`[2nd]` `[BGN]` `[2nd]` `[SET]` `[2nd]` `[QUIT]` on the **TI** or `[g]` `[BEG]` on the **HP**), then input the relevant data and compute FV:
+
+$$N = 3, I/Y = 10, PMT = 100, CPT → FV = 364.10$$
+
+*FV of an Annuity Due*
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure3} style={{width: 400}} />
+</div>
+
+Alternatively, we could calculate the FV for an ordinary annuity and multiply it by $$1 + I/Y$$. Leaving your calculator in the `END` mode, enter the following inputs:
+
+$$N = 3, I/Y = 10, PMT = 100, CPT → FVA_{0} = 331.00$$
+
+$$\text{FVA}_D = \text{FVA}_O \times (1 + I/Y) = 331.00 \times 1.10 = 364.10$$
 
 ## References
 
