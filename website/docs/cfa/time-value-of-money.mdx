@@ -1,4 +1,5 @@
 import Figure1 from "./images/figure1.png";
+import Figure2 from "./images/figure2.png";
 
 # Time Value Of Money
 
@@ -192,7 +193,48 @@ As indicated here, the sum of the compounded values of the individual cash flows
 
 To find the PV of an ordinary annuity, we use the future cash flow stream, PMT, that we used with FV annuity problems, but we discount the cash flows back to the present (time = 0) rather than compounding them forward to the terminal date of the annuity.
 
-Here again, the PMT variable is a single periodic payment, not the total of all the payments (or deposits) in the annuity. The PVAO measures the collective PV of a stream of equal cash flows received at the end of each compounding period over a stated number of periods, N, given a specified rate of return, I/Y. The following examples illustrate how to determine the PV of an ordinary annuity using a financial calculator.
+Here again, the PMT variable is a *single* periodic payment, *not* the total of all the payments (or deposits) in the annuity. The PVAO measures the collective PV of a stream of equal cash flows received at the end of each compounding period over a stated number of periods, N, given a specified rate of return, I/Y. The following examples illustrate how to determine the PV of an ordinary annuity using a financial calculator.
+
+**Example: PV of an ordinary annuity**
+
+What is the PV of an annuity that pays \$200 per year at the end of each of the next 13 years given a 6% discount rate?
+
+Answer:
+
+The payments occur at the end of the year, so this annuity is an ordinary annuity. To solve this problem, enter the relevant information and compute PV.
+
+$$N = 13; I/Y = 6; PMT = -200; CPT → PV = 1,770.54$$
+
+The \$1,770.54 computed here represents the amount of money that an investor would need to invest *today* at a 6% rate of return to generate 13 end-of-year cash flows of \$200 each.
+
+**Example: PV of an ordinary annuity beginning later than t = 1**
+
+What is the present value of four \$100 end-of-year payments if the first payment is to be received three years from today and the appropriate rate of return is 9%?
+
+Answer:
+
+The time line for this cash flow stream is shown in the following figure.
+
+PV of an Annuity Beginning at $$t = 3$$
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure2} style={{width: 800}} />
+</div>
+
+Step 1: Find the present value of the annuity as of the end of year 2 ($$PV_{2}$$).
+
+Input the relevant data and solve for $$PV_{2}$$.
+
+$$N = 4; I/Y = 9; PMT = -100; CPT → PV = PV_{2} = 323.97$$
+
+Step 2: Find the present value of $PV_{2}$.
+
+Input the relevant data and solve for $$PV_{0}$$.
+
+$$N = 2; I/Y = 9; PMT = 0; FV = -323.97; CPT → PV = PV_{0} = 272.68$$
+
+In this solution, the annuity was treated as an ordinary annuity. The PV was computed one period before the first payment, and we discounted $$PV_{2} =$$ \$$$323.97$$ over two years. We need to stress this important point. The PV annuity function on your calculator set in "END" mode gives you the value one period before the annuity begins. Although the annuity begins at $$t = 3$$, we discounted the result for only two periods to get the present ($$t = 0$$) value.
+
 
 ## References
 

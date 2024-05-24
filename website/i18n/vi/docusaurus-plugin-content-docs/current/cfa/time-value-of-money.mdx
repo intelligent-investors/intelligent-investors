@@ -1,4 +1,5 @@
 import Figure1 from "./images/figure1.png";
+import Figure2 from "./images/figure2.png";
 
 # Giá trị thời gian của tiền
 
@@ -193,6 +194,46 @@ Như đã chỉ ra ở đây, tổng giá trị kép của các dòng tiền cá
 Để tìm PV của một niên kim thông thường, chúng ta sử dụng dòng tiền tương lai, PMT, mà chúng ta đã sử dụng với các vấn đề niên kim FV, nhưng chúng ta chiết khấu các dòng tiền trở về hiện tại (thời gian = 0) thay vì ghép lãi chúng lên đến ngày kết thúc của niên kim.
 
 Ở đây một lần nữa, biến PMT là một khoản thanh toán định kỳ đơn lẻ, không phải tổng của tất cả các khoản thanh toán (hoặc tiền gửi) trong niên kim. PVAO đo lường PV tập thể của một dòng tiền mặt đều nhau nhận được vào cuối mỗi kỳ ghép lãi trong một số kỳ hạn định trước, N, với một tỷ lệ lợi nhuận xác định, I/Y. Các ví dụ sau minh họa cách xác định PV của một niên kim thông thường bằng cách sử dụng máy tính tài chính.
+
+**Ví dụ: PV của niên kim thông thường**
+
+Giá trị hiện tại (PV) của một niên kim trả \$200 mỗi năm vào cuối mỗi năm trong 13 năm tới với tỷ lệ chiết khấu 6% là bao nhiêu?
+
+Trả lời:
+
+Các khoản thanh toán diễn ra vào cuối năm, vì vậy niên kim này là một niên kim thông thường. Để giải quyết vấn đề này, nhập các thông tin liên quan và tính toán PV.
+
+$$N = 13; I/Y = 6; PMT = -200; CPT → PV = 1,770.54$$
+
+Số tiền \$1,770.54 được tính ở đây đại diện cho số tiền mà một nhà đầu tư cần đầu tư *hôm nay* với tỷ lệ lợi nhuận 6% để tạo ra 13 dòng tiền cuối năm mỗi dòng \$200.
+
+**Ví dụ: PV của niên kim thông thường bắt đầu sau t = 1**
+
+Giá trị hiện tại của bốn khoản thanh toán cuối năm $100 nếu khoản thanh toán đầu tiên được nhận sau ba năm kể từ hôm nay và tỷ lệ lợi tức thích hợp là 9% là bao nhiêu?
+
+Câu trả lời:
+
+Dòng thời gian cho dòng tiền này được hiển thị trong hình sau.
+
+PV của một niên kim bắt đầu tại $$t = 3$$
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure2} style={{width: 800}} />
+</div>
+
+Bước 1: Tìm giá trị hiện tại của niên kim vào cuối năm thứ 2 ($$PV_{2}$$).
+
+Nhập dữ liệu liên quan và giải cho $$PV_{2}$$.
+
+$$N = 4; I/Y = 9; PMT = -100; CPT → PV = PV_{2} = 323.97$$
+
+Bước 2: Tìm giá trị hiện tại của $PV_{2}$.
+
+Nhập dữ liệu liên quan và giải cho $$PV_{0}$$.
+
+$$N = 2; I/Y = 9; PMT = 0; FV = -323.97; CPT → PV = PV_{0} = 272.68$$
+
+Trong giải pháp này, niên kim được coi là niên kim thông thường. PV được tính một giai đoạn trước khi khoản thanh toán đầu tiên bắt đầu, và chúng tôi chiết khấu $$PV_{2} =$$ \$$$323.97$$ trong hai năm. Chúng tôi cần nhấn mạnh điểm quan trọng này. Chức năng PV niên kim trên máy tính của bạn được đặt ở chế độ "END" sẽ cung cấp cho bạn giá trị một giai đoạn trước khi niên kim bắt đầu. Mặc dù niên kim bắt đầu tại $$t = 3$$, chúng tôi chỉ chiết khấu kết quả trong hai giai đoạn để có giá trị hiện tại ($$t = 0$$).
 
 ## References
 
