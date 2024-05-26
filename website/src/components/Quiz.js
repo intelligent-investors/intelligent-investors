@@ -1,52 +1,63 @@
-import {
-  Card
-} from 'antd';
+import { Button, Card } from 'antd';
 import React, { useState } from 'react';
-const { Meta } = Card;
+import '../css/quiz.css';
 
-// Component for the Quiz
-const Quiz = ({ 
-  question, options, correctAnswer
-}) => {
-  const [selectedOption, setSelectedOption] = useState(null);
+
+const Quiz = ({ questions }) => {
+  const [answers, setAnswers] = useState(Array(questions.length).fill(null));
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isCorrectAnswer, setIsCorrectAnswer] = useState(false);
 
-  const handleOptionChange = (event) => {
-    setSelectedOption(event.target.value);
+  const handleOptionChange = (questionIndex, selectedOption) => {
+    const newAnswers = [...answers];
+    newAnswers[questionIndex] = selectedOption;
+    setAnswers(newAnswers);
   };
 
   const handleSubmit = () => {
     setIsSubmitted(true);
-    setIsCorrectAnswer(selectedOption === correctAnswer);
   };
 
+  const getAnswerLabel = (index) => String.fromCharCode(65 + index);
+
   return (
-    <div>
-      <h2>{question}</h2>
-      <form>
-        {options.map((option, index) => (
-          <div key={index}>
-            <label>
-              <input
-                type="radio"
-                value={option}
-                checked={selectedOption === option}
-                onChange={handleOptionChange}
-                disabled={isSubmitted}
-              />
-              {option}
-            </label>
-          </div>
-        ))}
-      </form>
-      <button onClick={handleSubmit} disabled={isSubmitted}>Submit</button>
-      {isSubmitted && (
-        <div>
-          {isCorrect ? <p>Correct!</p> : <p>Incorrect. The correct answer is {correctAnswer}.</p>}
+    <Card title="Quiz">
+      {questions.map((question, index) => (
+        <div key={index} className="question-container">
+          <p>{index + 1}. {question.question}</p>
+          <form>
+            {question.answer.map((option, i) => (
+              <div key={i}>
+                <label>
+                  <input
+                    type="radio"
+                    value={option.value}
+                    checked={answers[index] === option.value}
+                    onChange={() => handleOptionChange(index, option.value)}
+                    disabled={isSubmitted}
+                  />
+                  {getAnswerLabel(i)}. {option.value}
+                </label>
+              </div>
+            ))}
+          </form>
+          {isSubmitted && (
+            <p className={answers[index] === question.answer.find(opt => opt.correct === "true").value ? "correct" : "incorrect"}>
+              {answers[index] === question.answer.find(opt => opt.correct === "true").value
+                ? "Correct!"
+                : `Incorrect. The correct answer is ${question.answer.find(opt => opt.correct === "true").value}.`}
+              <br />
+              {question.answer.find(opt => opt.correct === "true").explaination}
+            </p>
+          )}
+          {index < questions.length - 1 && <hr className="divider" />}
         </div>
+      ))}
+      {!isSubmitted && (
+        <Button type="primary" onClick={handleSubmit} style={{ marginTop: '20px' }}>
+          Submit
+        </Button>
       )}
-    </div>
+    </Card>
   );
 };
 
