@@ -1,6 +1,7 @@
 import Figure1 from "./images/figure1.png";
 import Figure2 from "./images/figure2.png";
 import Figure3 from "./images/figure3.png";
+import Figure4 from "./images/figure4.png";
 
 # Giá trị thời gian của tiền
 
@@ -272,6 +273,43 @@ $$N = 3, I/Y = 10, PMT = 100, CPT → FVA_{0} = 331.00$$
 
 $$\text{FVA}_D = \text{FVA}_O \times (1 + I/Y) = 331.00 \times 1.10 = 364.10$$
 
+### Giá Trị Hiện Tại của Niên Kim Đầu Kỳ
+
+Trong khi ít phổ biến hơn so với các bài toán về niên kim thông thường, một số bài toán có thể yêu cầu bạn tìm **giá trị hiện tại của niên kim đầu kỳ (PVAD)**. Sử dụng máy tính tài chính, điều này thực sự không phải là vấn đề lớn. Với niên kim đầu kỳ, **có một kỳ chiết khấu ít hơn** vì dòng tiền đầu tiên xảy ra tại t = 0 và do đó đã là giá trị hiện tại của nó. Điều này ngụ ý rằng, tất cả các yếu tố khác đều bằng nhau, giá trị hiện tại của niên kim đầu kỳ sẽ lớn hơn giá trị hiện tại của niên kim thông thường.
+
+Như bạn sẽ thấy trong ví dụ tiếp theo, có hai cách để tính giá trị hiện tại của niên kim đầu kỳ. Cách thứ nhất là đặt máy tính ở chế độ `BGN` và sau đó nhập tất cả các biến liên quan (`PMT`, `I/Y`, và `N`) như bạn thường làm. Cách thứ hai, và dễ dàng hơn nhiều, là coi dòng tiền như một niên kim thông thường trong N kỳ gộp, và chỉ cần nhân giá trị hiện tại kết quả với [1 + tỷ lệ gộp định kỳ (I/Y)].
+
+Biểu tượng hóa, điều này có thể được phát biểu như sau:
+
+$$
+\text{PVA}_D = \text{PVA}_O \times (1 + I/Y)
+$$
+
+Lợi thế của phương pháp thứ hai này là bạn để máy tính của mình ở chế độ END và không gặp rủi ro quên thiết lập lại. Bất kể quy trình nào được sử dụng, giá trị hiện tại tính được được đưa ra vào đầu kỳ đầu tiên, $t = 0$.
+
+**Ví dụ: PV của niên kim đầu kỳ**
+
+Với tỷ lệ chiết khấu là 10%, giá trị hiện tại của niên kim có các khoản thanh toán $200 vào đầu mỗi năm trong ba năm tới, bắt đầu từ hôm nay là bao nhiêu?
+
+Trả lời:
+
+Đầu tiên, hãy giải quyết vấn đề này bằng cách sử dụng chế độ `BGN` của máy tính. Đặt máy tính của bạn vào chế độ BGN (`[2nd]` `[BGN]` `[2nd]` `[SET]` `[2nd]` `[QUIT]` trên máy TI hoặc `[g]` `[BEG]` trên máy HP), nhập dữ liệu liên quan và tính PV.
+
+$$N = 3; I/Y = 10; PMT = -200; CPT → \text{PVA}_D = 547.11$$
+
+Dòng thời gian cho vấn đề này được hiển thị trong hình dưới đây.
+
+PV của niên kim đầu kỳ
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure4} style={{width: 400}} />
+</div>
+
+Ngoài ra, vấn đề này có thể được giải quyết bằng cách để máy tính của bạn ở chế độ `END`. Đầu tiên, tính PV của một niên kim thông thường trong 3 năm. Sau đó nhân PV này với (1 + I/Y). Để sử dụng cách tiếp cận này, hãy nhập các đầu vào liên quan và tính PV.
+
+$$N = 3; I/Y = 10; PMT = -200; CPT → \text{PVA}_O = 497.37$$
+
+$$\text{PVA}_D = \text{PVA}_O \times (1 + I/Y) = 497.37 \times 1.10 = 547.11$$
 
 ## References
 

@@ -1,6 +1,7 @@
 import Figure1 from "./images/figure1.png";
 import Figure2 from "./images/figure2.png";
 import Figure3 from "./images/figure3.png";
+import Figure4 from "./images/figure4.png";
 
 # Time Value Of Money
 
@@ -271,6 +272,44 @@ Alternatively, we could calculate the FV for an ordinary annuity and multiply it
 $$N = 3, I/Y = 10, PMT = 100, CPT → FVA_{0} = 331.00$$
 
 $$\text{FVA}_D = \text{FVA}_O \times (1 + I/Y) = 331.00 \times 1.10 = 364.10$$
+
+### Present Value of an Annuity Due
+
+While less common than those for ordinary annuities, some problems may require you to find the **PV of an annuity due (PVAD)**. Using a financial calculator, this really shouldn’t be much of a problem. With an annuity due, **there is one less discounting period** since the first cash flow occurs at t = 0 and thus is already its PV. This implies that, all else equal, the PV of an annuity due will be greater than the PV of an ordinary annuity.
+
+As you will see in the next example, there are two ways to compute the PV of an annuity due. The first is to put the calculator in the `BGN` mode and then input all the relevant variables (`PMT`, `I/Y`, and `N`) as you normally would. The second, and far easier way, is to treat the cash flow stream as an ordinary annuity over N compounding periods, and simply multiply the resulting PV by [1 + periodic compounding rate (I/Y)].
+
+Symbolically, this can be stated as:
+
+$$
+\text{PVA}_D = \text{PVA}_O \times (1 + I/Y)
+$$
+
+The advantage of this second method is that you leave your calculator in the END mode and won’t run the risk of forgetting to reset it. Regardless of the procedure used, the computed PV is given as of the beginning of the first period, $t = 0$.
+
+**Example: PV of an annuity due**
+
+Given a discount rate of 10%, what is the present value of an annuity that makes $200 payments at the beginning of each of the next three years, starting today?
+
+Answer:
+
+First, let’s solve this problem using the calculator’s `BGN` mode. Set your calculator to the BGN mode (`[2nd]` `[BGN]` `[2nd]` `[SET]` `[2nd]` `[QUIT]` on the TI or `[g]` `[BEG]` on the HP), enter the relevant data, and compute PV.
+
+$$N = 3; I/Y = 10; PMT = -200; CPT → \text{PVA}_D = 547.11$$
+
+The time line for this problem is shown in the following figure.
+
+PV of an Annuity Due
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure4} style={{width: 400}} />
+</div>
+
+Alternatively, this problem can be solved by leaving your calculator in the `END` mode. First, compute the PV of an ordinary 3-year annuity. Then multiply this PV by (1 + I/Y). To use this approach, enter the relevant inputs and compute PV.
+
+$$N = 3; I/Y = 10; PMT = -200; CPT → \text{PVA}_O = 497.37$$
+
+$$\text{PVA}_D = \text{PVA}_O \times (1 + I/Y) = 497.37 \times 1.10 = 547.11$$
 
 ## References
 
