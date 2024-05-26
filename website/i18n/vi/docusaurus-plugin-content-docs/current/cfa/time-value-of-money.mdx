@@ -311,6 +311,50 @@ $$N = 3; I/Y = 10; PMT = -200; CPT → \text{PVA}_O = 497.37$$
 
 $$\text{PVA}_D = \text{PVA}_O \times (1 + I/Y) = 497.37 \times 1.10 = 547.11$$
 
+### Giá trị hiện tại của niên kim vĩnh viễn (perpetuity)
+
+Một **niên kim vĩnh viễn** (perpetuity) là một công cụ tài chính trả một khoản tiền *cố định* theo các khoảng thời gian nhất định trong một khoảng thời gian *vô hạn*. Về bản chất, niên kim vĩnh viễn là một loại niên kim vô thời hạn. Hầu hết các cổ phiếu ưu đãi là các ví dụ về niên kim vĩnh viễn vì chúng hứa hẹn trả lãi cố định hoặc cổ tức mãi mãi. 
+
+Bỏ qua các chi tiết toán học phức tạp, hệ số khấu trừ cho một niên kim vĩnh viễn chỉ đơn giản là một chia cho tỷ lệ hoàn vốn thích hợp (tức là, $1/r$). Do đó, chúng ta có thể tính toán **Giá trị hiện tại (Giá trị hiện tại)** (PV) của một niên kim vĩnh viễn.
+
+$$
+\text{PV}_{perpetuity} = \frac{PMT}{I/Y}
+$$
+
+**Giá trị hiện tại** của một niên kim vĩnh viễn là dòng tiền cố định theo kỳ chia cho tỷ lệ hoàn vốn kỳ hạn thích hợp.
+
+Cũng giống như các ứng dụng *giá trị thời gian của tiền (TVM)* khác, phương trình $\text{PV}_{perpetuity}$ có thể được giải để tìm các ẩn số. Trên thực tế, bạn có thể giải cho bất kỳ biến số nào trong ba biến số liên quan, với điều kiện giá trị của hai biến số còn lại đã biết.
+
+**Ví Dụ: Giá trị hiện tại của một niên kim vĩnh viễn**
+
+Công ty Kodon phát hành cổ phiếu ưu đãi sẽ trả cổ tức hàng năm là \$4.50 bắt đầu từ năm sau và dự định tuân theo chính sách cổ tức này mãi mãi. Với tỷ lệ hoàn vốn 8%, giá trị của cổ phiếu ưu đãi của Kodon hôm nay là bao nhiêu?
+
+Trả lời:
+Vì giá trị của cổ phiếu là PV của tất cả các cổ tức trong tương lai, ta có:
+
+$$
+PV_{perpetuity} = \frac{4.50}{0.08} = \$56.25
+$$
+
+Do đó, nếu nhà đầu tư yêu cầu tỷ lệ hoàn vốn 8%, nhà đầu tư nên sẵn sàng trả \$56.25 cho mỗi cổ phiếu ưu đãi của Kodon. Lưu ý rằng PV của một niên kim vĩnh viễn là giá trị của nó một kỳ trước kỳ thanh toán tiếp theo.
+
+**Ví Dụ: Giá trị hiện tại của một niên kim vĩnh viễn hoãn lại**
+
+Giả sử cổ phiếu ưu đãi của Kodon trong ví dụ trước dự kiến trả cổ tức đầu tiên sau bốn năm và không tích lũy (tức là không trả cổ tức trong ba năm đầu). Với tỷ lệ hoàn vốn yêu cầu là 8%, giá trị của cổ phiếu ưu đãi của Kodon hôm nay là bao nhiêu?
+
+Trả lời:
+Như trong ví dụ trước,
+
+$$
+PV_{perpetuity} = \frac{4.50}{0.08} = \$56.25,
+$$
+
+nhưng vì cổ tức đầu tiên được trả vào $t = 4$, nên PV này là giá trị tại $t = 3$. Để có giá trị của cổ phiếu ưu đãi hôm nay, ta phải chiết khấu giá trị này trong ba kỳ:
+
+$$
+\frac{56.25}{(1.08)^3} = \$44.65.
+$$
+
 ## References
 
 * https://youssef-serghini.weebly.com/5-the-time-value-of-money.html

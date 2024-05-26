@@ -311,6 +311,56 @@ $$N = 3; I/Y = 10; PMT = -200; CPT → \text{PVA}_O = 497.37$$
 
 $$\text{PVA}_D = \text{PVA}_O \times (1 + I/Y) = 497.37 \times 1.10 = 547.11$$
 
+### Present Value of a Perpetuity
+
+A **perpetuity** is a financial instrument that pays a *fixed* amount of money at set intervals over
+an *infinite* period of time. In essence, a perpetuity is a perpetual annuity. Most preferred
+stocks are examples of perpetuities since they promise fixed interest or dividend payments
+forever. Without going into all the excruciating mathematical details, the discount factor for a
+perpetuity is just one divided by the appropriate rate of return (i.e., 1/r). Given this, we can
+compute the PV of a perpetuity.
+
+$$
+\text{PV}_{perpetuity} = \frac{PMT}{I/Y}
+$$
+
+The PV of a perpetuity is the fixed periodic cash flow divided by the appropriate periodic rate
+of return.
+
+As with other TVM applications, it is possible to solve for unknown variables in the
+$\text{PV}_{perpetuity}$ equation. In fact, you can solve for any one of the three relevant variables, given the values for the other two.
+
+**EXAMPLE: PV of a perpetuity**
+
+Kodon Corporation issues preferred stock that will pay \$4.50 per year in annual dividends beginning next year and plans to follow this dividend policy forever. Given an 8% rate of return, what is the value of Kodon’s preferred stock today?
+
+Answer:
+Given that the value of the stock is the PV of all future dividends, we have:
+
+$$
+PV_{perpetuity} = \frac{4.50}{0.08} = \$56.25
+$$
+
+Thus, if an investor requires an 8% rate of return, the investor should be willing to pay \$56.25 for each share of Kodon’s preferred stock. Note that the PV of a perpetuity is its value one period before its next payment.
+
+
+**EXAMPLE: PV of a deferred perpetuity**
+
+Assume the Kodon preferred stock in the preceding examples is scheduled to pay its first dividend in four years, and is non-cumulative (i.e., does not pay any dividends for the first three years). Given an \$8% required rate of return, what is the value of Kodon’s preferred stock today?
+
+Answer:
+As in the previous example, 
+
+$$
+PV_{perpetuity} = \frac{4.50}{0.08} = \$56.25,
+$$
+
+but because the first dividend is paid at $t = 4$, this PV is the value at $t = 3$ . To get the value of the preferred stock today, we must discount this value for three periods:
+
+$$
+\frac{56.25}{(1.08)^3} = \$44.65.
+$$
+
 ## References
 
 * https://youssef-serghini.weebly.com/5-the-time-value-of-money.html
