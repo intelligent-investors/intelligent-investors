@@ -2,6 +2,7 @@ import Figure1 from "./images/figure1.png";
 import Figure2 from "./images/figure2.png";
 import Figure3 from "./images/figure3.png";
 import Figure4 from "./images/figure4.png";
+import Figure5 from "./images/figure5.png";
 
 # Time Value Of Money
 
@@ -398,6 +399,66 @@ $$
 * A. \$81.82.
 * B. \$99.00.
 * C. \$122.22.
+
+### Uneven Cash Flows
+
+It is not uncommon to have applications in investments and corporate finance where it is necessary to evaluate a cash flow stream that is not equal from period to period. The time line in Figure depicts such a cash flow stream.
+
+**Figure: Time Line for Uneven Cash Flows**
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure5} style={{width: 400}} />
+</div>
+
+This three-year cash flow series is not an annuity since the cash flows are different every year. In essence, this series of uneven cash flows is nothing more than a stream of annual single sum cash flows. Thus, to find the PV or FV of this cash flow stream, all we need to do is sum the PVs or FVs of the individual cash flows.
+
+**EXAMPLE: Computing the FV of an uneven cash flow series**
+
+Using a rate of return of 10%, compute the future value of the three-year uneven cash flow stream described above at the end of the third year.
+
+Answer:
+
+The FV for the cash flow stream is determined by first computing the FV of each individual cash flow, then summing the FVs of the individual cash flows.
+
+$$
+FV_1: PV = -300; I/Y = 10; N = 2; CPT \rightarrow FV = FV_1 = 363
+$$
+
+$$
+FV_2: PV = -600; I/Y = 10; N = 1; CPT \rightarrow FV = FV_2 = 660
+$$
+
+$$
+FV_3: PV = -200; I/Y = 10; N = 0; CPT \rightarrow FV = FV_3 = 200
+$$
+
+$$
+FV \text{ of cash flow stream} = \Sigma FV_{\text{individual}} = 1,223
+$$
+
+**EXAMPLE: Computing PV of an uneven cash flow series**
+
+Compute the present value of this three-year uneven cash flow stream described previously using a 10% rate of return.
+
+Answer:
+
+This problem is solved by first computing the PV of each individual cash flow, then summing the PVs of the individual cash flows, which yields the PV of the cash flow stream. Again the signs of the cash flows are preserved.
+
+$$
+PV_1: FV = 300; I/Y = 10; N = 1; CPT \rightarrow PV = PV_1 = -272.73
+$$
+
+$$
+PV_2: FV = 600; I/Y = 10; N = 2; CPT \rightarrow PV = PV_2 = -495.87
+$$
+
+$$
+PV_3: FV = 200; I/Y = 10; N = 3; CPT \rightarrow PV = PV_3 = -150.26
+$$
+
+$$
+PV \text{ of cash flow stream} = \sum PV_{\text{individual}} = \$918.86
+$$
 
 ## References
 

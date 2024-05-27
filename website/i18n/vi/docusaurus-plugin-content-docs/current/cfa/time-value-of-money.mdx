@@ -2,6 +2,7 @@ import Figure1 from "./images/figure1.png";
 import Figure2 from "./images/figure2.png";
 import Figure3 from "./images/figure3.png";
 import Figure4 from "./images/figure4.png";
+import Figure5 from "./images/figure5.png";
 
 # Giá trị thời gian của tiền
 
@@ -392,6 +393,66 @@ $$
 * A. \$81.82.
 * B. \$99.00.
 * C. \$122.22.
+
+### Dòng tiền không đều
+
+Không hiếm khi có những ứng dụng trong đầu tư và tài chính doanh nghiệp mà cần phải đánh giá một dòng tiền không đều từ kỳ này sang kỳ khác. Dòng thời gian trong hình minh họa cho một dòng tiền như vậy.
+
+**Hình: Dòng thời gian cho dòng tiền không đều**
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure5} style={{width: 400}} />
+</div>
+
+Dòng tiền ba năm này không phải là một niên kim vì các dòng tiền khác nhau mỗi năm. Về cơ bản, loạt dòng tiền không đều này không khác gì một loạt các dòng tiền đơn lẻ hàng năm. Do đó, để tìm PV hoặc FV của dòng tiền này, tất cả những gì chúng ta cần làm là tổng hợp PV hoặc FV của các dòng tiền riêng lẻ.
+
+**VÍ DỤ: Tính FV của một loạt dòng tiền không đều**
+
+Sử dụng tỷ lệ lợi nhuận là 10%, hãy tính giá trị tương lai của loạt dòng tiền không đều ba năm được mô tả ở trên vào cuối năm thứ ba.
+
+Trả lời:
+
+FV cho dòng tiền được xác định bằng cách đầu tiên tính FV của mỗi dòng tiền riêng lẻ, sau đó tổng hợp FV của các dòng tiền riêng lẻ.
+
+$$
+FV_1: PV = -300; I/Y = 10; N = 2; CPT \rightarrow FV = FV_1 = 363
+$$
+
+$$
+FV_2: PV = -600; I/Y = 10; N = 1; CPT \rightarrow FV = FV_2 = 660
+$$
+
+$$
+FV_3: PV = -200; I/Y = 10; N = 0; CPT \rightarrow FV = FV_3 = 200
+$$
+
+$$
+FV \text{ của dòng tiền} = \Sigma FV_{\text{các dòng tiền riêng lẻ}} = 1,223
+$$
+
+**VÍ DỤ: Tính PV của một loạt dòng tiền không đồng đều**
+
+Tính giá trị hiện tại của dòng tiền không đồng đều ba năm được mô tả trước đó bằng cách sử dụng tỷ lệ hoàn vốn 10%.
+
+Trả lời:
+
+Vấn đề này được giải quyết bằng cách tính PV của từng dòng tiền riêng lẻ, sau đó tổng hợp PV của các dòng tiền riêng lẻ, điều này cho ra PV của dòng tiền. Dấu hiệu của các dòng tiền vẫn được giữ nguyên.
+
+$$
+PV_1: FV = 300; I/Y = 10; N = 1; CPT \rightarrow PV = PV_1 = -272.73
+$$
+
+$$
+PV_2: FV = 600; I/Y = 10; N = 2; CPT \rightarrow PV = PV_2 = -495.87
+$$
+
+$$
+PV_3: FV = 200; I/Y = 10; N = 3; CPT \rightarrow PV = PV_3 = -150.26
+$$
+
+$$
+PV \text{ của dòng tiền} = \sum PV_{\text{các dòng tiền riêng lẻ}} = \$918.86
+$$
 
 ## References
 
