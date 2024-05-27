@@ -454,6 +454,107 @@ $$
 PV \text{ của dòng tiền} = \sum PV_{\text{các dòng tiền riêng lẻ}} = \$918.86
 $$
 
+### Giải Quyết Vấn Đề Giá Trị Thời Gian của Tiền Khi Kỳ Tính Lãi Khác Hàng Năm
+
+Trong khi nền tảng khái niệm của các phép tính TVM không bị ảnh hưởng bởi kỳ tính lãi, tần suất tính lãi thường xuyên hơn có tác động đến việc tính FV và PV. Cụ thể, vì *tăng* tần suất tính lãi sẽ làm tăng tỷ lệ lãi suất thực, nó cũng *tăng* FV của một dòng tiền nhất định và *giảm* PV của một dòng tiền nhất định.
+
+**VÍ DỤ: Ảnh hưởng của tần suất tính lãi đến FV và PV**
+
+Tính FV một năm kể từ bây giờ của \$1,000 hôm nay và PV của \$1,000 sẽ nhận được một năm kể từ bây giờ sử dụng lãi suất hàng năm là 6% với một loạt các kỳ tính lãi.
+
+Trả lời:
+Ảnh hưởng của Tần Suất Tính Lãi
+
+$$
+\begin{array}{|l|c|c|c|c|}
+\hline
+\text{Tần Suất Tính Lãi} & \text{Tỷ Lệ Lãi Suất Mỗi Kỳ} & \text{Tỷ Lệ Hàng Năm Hiệu Quả} & \text{Giá Trị Tương Lai} & \text{Giá Trị Hiện Tại} \\
+\hline
+\text{Hàng năm (m = 1)} & 6.000\% & 6.00\% & \$1,060.00 & \$943.396 \\
+\text{Nửa năm (m = 2)} & 3.000\% & 6.090\% & \$1,060.90 & \$942.596 \\
+\text{Hàng quý (m = 4)} & 1.500\% & 6.136\% & \$1,061.36 & \$942.184 \\
+\text{Hàng tháng (m = 12)} & 0.500\% & 6.168\% & \$1,061.68 & \$941.905 \\
+\text{Hàng ngày (m = 365)} & 0.016438\% & 6.183\% & \$1,061.83 & \$941.769 \\
+\hline
+\end{array}
+$$
+
+Có hai cách để sử dụng máy tính tài chính của bạn để tính PV và FV dưới các tần suất tính lãi khác nhau:
+
+1. Điều chỉnh chế độ số kỳ mỗi năm (`P/Y`) trên máy tính của bạn để tương ứng với tần suất tính lãi (ví dụ: đối với hàng quý, `P/Y` = 4). CHÚNG TÔI KHÔNG KHUYẾN NGHỊ CÁCH NÀY!
+2. Giữ máy tính ở chế độ tính lãi hàng năm (`P/Y` = 1) và nhập `I/Y` là tỷ lệ lãi suất mỗi kỳ tính lãi, và N là số kỳ tính lãi trong khoảng thời gian đầu tư. Cho *m* bằng số kỳ tính lãi mỗi năm, các công thức cơ bản cho dữ liệu đầu vào của máy tính được xác định như sau:
+
+$$
+I/Y = \text{lãi suất hàng năm} / m
+$$
+
+$$
+N = \text{số năm} × m
+$$
+
+Các phép tính cho các giá trị FV và PV trong ví dụ trước:
+
+$$
+PV_A: FV = -1,000; I/Y = 6 / 1 = 6; N = 1 × 1 = 1: CPT → PV = PV_A = 943.396
+$$
+
+$$
+PV_S: FV = -1,000; I/Y = 6 / 2 = 3; N = 1 × 2 = 2:
+CPT → PV = PV_S = 942.596
+$$
+
+$$
+PV_Q: FV = -1,000; I/Y = 6 / 4 = 1.5; N = 1 × 4 = 4:
+CPT → PV = PV_Q = 942.184
+$$
+
+$$
+PV_M: FV = -1,000; I/Y = 6 / 12 = 0.5; N = 1 × 12 = 12:
+CPT → PV = PV_M = 941.905
+$$
+
+$$
+PV_D: FV = -1,000; I/Y = 6 / 365 = 0.016438; N = 1 × 365 = 365:
+CPT → PV = PV_D = 941.769
+$$
+
+$$
+FV_A: PV = -1,000; I/Y = 6 / 1 = 6; N = 1 × 1 = 1:
+CPT → FV = FV_A = 1,060.00
+$$
+
+$$
+FV_S: PV = -1,000; I/Y = 6 / 2 = 3; N = 1 × 2 = 2:
+CPT → FV = FV_S = 1,060.90
+$$
+
+$$
+FV_Q: PV = -1,000; I/Y = 6 / 4 = 1.5; N = 1 × 4 = 4:
+CPT → FV = FV_Q = 1,061.36
+$$
+
+$$
+FV_M: PV = -1,000; I/Y = 6 / 12 = 0.5; N = 1 × 12 = 12:
+CPT → FV = FV_M = 1,061.68
+$$
+
+$$
+FV_D: PV = -1,000; I/Y = 6 / 365 = 0.016438; N = 1 × 365 = 365:
+CPT → FV = FV_D = 1,061.83
+$$
+
+**VÍ DỤ: FV của một khoản đơn lẻ sử dụng tính lãi hàng quý**
+
+Tính FV của \$2,000 hôm nay, năm năm kể từ hôm nay sử dụng lãi suất 12%, tính lãi hàng quý.
+
+Trả lời:
+
+Để giải quyết vấn đề này, nhập dữ liệu liên quan và tính FV:
+
+$$
+N = 5 × 4 = 20; I/Y = 12 / 4 = 3; PV = -\$2,000; CPT → FV = \$3,612.22
+$$
+
 ## References
 
 * https://youssef-serghini.weebly.com/5-the-time-value-of-money.html

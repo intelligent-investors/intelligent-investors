@@ -460,6 +460,107 @@ $$
 PV \text{ of cash flow stream} = \sum PV_{\text{individual}} = \$918.86
 $$
 
+### Solving Time Value of Money Problems When Compounding Periods Are Other Than Annual
+
+While the conceptual foundations of TVM calculations are not affected by the compounding period, more frequent compounding does have an impact on FV and PV computations. Specifically, since an *increase* in the frequency of compounding increases the effective rate of interest, it also *increases* the FV of a given cash flow and *decreases* the PV of a given cash flow.
+
+**EXAMPLE: The effect of compounding frequency on FV and PV**
+
+Compute the FV one year fr om now of \$1,000 today and the PV of \$1,000 to be received one year from now using a stated annual interest rateF of 6% with a range of compounding periods.
+
+Answer:
+Compounding Frequency Effect
+
+$$
+\begin{array}{|l|c|c|c|c|}
+\hline
+\text{Compounding Frequency} & \text{Interest Rate per Period} & \text{Effective Annual Rate} & \text{Future Value} & \text{Present Value} \\
+\hline
+\text{Annual (m = 1)} & 6.000\% & 6.00\% & \$1,060.00 & \$943.396 \\
+\text{Semiannual (m = 2)} & 3.000 & 6.090 & 1,060.90 & 942.596 \\
+\text{Quarterly (m = 4)} & 1.500 & 6.136 & 1,061.36 & 942.184 \\
+\text{Monthly (m = 12)} & 0.500 & 6.168 & 1,061.68 & 941.905 \\
+\text{Daily (m = 365)} & 0.016438 & 6.183 & 1,061.83 & 941.769 \\
+\hline
+\end{array}
+$$
+
+There are two ways to use your financial calculator to compute PVs and FVs under different compounding frequencies:
+
+1. Adjust the number of periods per year (`P/Y`) mode on your calculator to correspond to the compounding frequency (e.g., for quarterly, `P/Y` = 4). WE DO NOT RECOMMEND THIS APPROACH!
+2. Keep the calculator in the annual compounding mode (`P/Y` = 1) and enter `I/Y` as the interest rate per compounding period, and N as the number of compounding periods in the investment horizon. Letting *m* equal the number of compounding periods per year, the basic formulas for the calculator input data are determined as follows:
+
+$$
+I/Y = \text{the annual interest rate} / m
+$$
+
+$$
+N = \text{the number of years} × m
+$$
+
+The computations for the FV and PV amounts in the previous example are:
+
+$$
+PV_A: FV = -1,000; I/Y = 6 / 1 = 6; N = 1 × 1 = 1: CPT → PV = PV_A = 943.396
+$$
+
+$$
+PV_S: FV = -1,000; I/Y = 6 / 2 = 3; N = 1 × 2 = 2:
+CPT → PV = PV_S = 942.596
+$$
+
+$$
+PV_Q: FV = -1,000; I/Y = 6 / 4 = 1.5; N = 1 × 4 = 4:
+CPT → PV = PV_Q = 942.184
+$$
+
+$$
+PV_M: FV = -1,000; I/Y = 6 / 12 = 0.5; N = 1 × 12 = 12:
+CPT → PV = PV_M = 941.905
+$$
+
+$$
+PV_D: FV = -1,000; I/Y = 6 / 365 = 0.016438; N = 1 × 365 = 365:
+CPT → PV = PV_D = 941.769
+$$
+
+$$
+FV_A: PV = -1,000; I/Y = 6 / 1 = 6; N = 1 × 1 = 1:
+CPT → FV = FV_A = 1,060.00
+$$
+
+$$
+FV_S: PV = -1,000; I/Y = 6 / 2 = 3; N = 1 × 2 = 2:
+CPT → FV = FV_S = 1,060.90
+$$
+
+$$
+FV_Q: PV = -1,000; I/Y = 6 / 4 = 1.5; N = 1 × 4 = 4:
+CPT → FV = FV_Q = 1,061.36
+$$
+
+$$
+FV_M: PV = -1,000; I/Y = 6 / 12 = 0.5; N = 1 × 12 = 12:
+CPT → FV = FV_M = 1,061.68
+$$
+
+$$
+FV_D: PV = -1,000; I/Y = 6 / 365 = 0.016438; N = 1 × 365 = 365:
+CPT → FV = FV_D = 1,061.83
+$$
+
+**EXAMPLE: FV of a single sum using quarterly compounding**
+
+Compute the FV of \$2,000 today, five years from today using an interest rate of 12%, compounded quarterly.
+
+Answer:
+
+To solve this problem, enter the relevant data and compute FV:
+
+$$
+N = 5 × 4 = 20; I/Y = 12 / 4 = 3; PV = -\$2,000; CPT → FV = \$3,612.22
+$$
+
 ## References
 
 * https://youssef-serghini.weebly.com/5-the-time-value-of-money.html
