@@ -3,6 +3,7 @@ import Figure2 from "./images/figure2.png";
 import Figure3 from "./images/figure3.png";
 import Figure4 from "./images/figure4.png";
 import Figure5 from "./images/figure5.png";
+import Figure6 from "./images/figure5.png";
 
 # Giá trị thời gian của tiền
 
@@ -554,6 +555,104 @@ Trả lời:
 $$
 N = 5 × 4 = 20; I/Y = 12 / 4 = 3; PV = -\$2,000; CPT → FV = \$3,612.22
 $$
+
+## E. Chứng minh việc sử dụng dòng thời gian trong mô hình hóa và giải quyết các vấn đề giá trị thời gian của tiền.
+
+Trong hầu hết các vấn đề giá trị hiện tại (PV) mà chúng ta đã thảo luận, dòng tiền đã được chiết khấu về thời kỳ hiện tại. Trong trường hợp này, PV được nói là được đánh chỉ số tại t = 0, hoặc chỉ số thời gian là t = 0. Ví dụ, PV của một niên kim thông thường 3 năm được đánh chỉ số tại t = 0 được tính toán vào đầu năm 1 (t = 0). Đối lập với tình huống này là một niên kim thông thường 3 năm không bắt đầu cho đến năm thứ 4 và kéo dài đến năm thứ 6. Sẽ không có gì lạ khi muốn biết PV của niên kim này vào đầu năm thứ 4, trong trường hợp này chỉ số thời gian là t = 3. Dòng thời gian cho niên kim này được trình bày trong Hình dưới đây.
+
+**Hình: Đánh chỉ số Dòng Thời Gian khác với t = 0**
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure6} style={{width: 600}} />
+</div>
+
+Các ví dụ sau đây sẽ minh họa cách tính toán I/Y, N, hoặc PMT trong các bài toán niên kim.
+
+:::info[**Ví dụ**: Tính toán một khoản thanh toán niên kim cần thiết để đạt được FV cho trước]
+
+Với tỷ lệ lợi nhuận dự kiến là 7%, cần phải gửi bao nhiêu vào cuối mỗi năm trong 15 năm tới để tích lũy được \$3,000?
+
+**Trả lời:**
+
+Để giải quyết vấn đề này, nhập ba giá trị đã biết liên quan và tính toán PMT.
+
+$$
+N = 15; I/Y = 7; FV = +\$3,000; CPT → PMT = –\$119.38 \ \text{(bỏ qua dấu)}
+$$
+
+:::
+
+:::info[**Ví dụ**: Tính toán khoản thanh toán khoản vay]
+
+Giả sử bạn đang xem xét việc xin một khoản vay \$2,000 sẽ được hoàn trả bằng các khoản thanh toán cuối năm bằng nhau trong 13 năm tới. Nếu lãi suất hàng năm cho khoản vay là 6%, khoản thanh toán của bạn sẽ là bao nhiêu?
+
+**Trả lời:**
+
+Kích thước của khoản thanh toán cuối năm có thể được xác định bằng cách nhập các giá trị cho ba biến đã biết và tính toán PMT.
+
+$$
+N = 13; I/Y = 6; PV = –2,000; CPT → PMT = \$225.92
+$$
+
+:::
+
+:::info[**Ví dụ**: Tính toán số kỳ hạn trong một niên kim]
+
+Có bao nhiêu khoản thanh toán cuối năm \$100 cần thiết để tích lũy được \$920 nếu tỷ lệ chiết khấu là 9%?
+
+**Trả lời:**
+
+Số khoản thanh toán cần thiết có thể được xác định bằng cách nhập dữ liệu liên quan và tính toán N.
+
+$$
+I/Y = 9\%; FV = \$920; PMT = –\$100; CPT → N = 7 \ \text{năm}
+$$
+
+Sẽ mất bảy khoản thanh toán hàng năm \$100, được gộp lại với lãi suất 9% hàng năm, để tích lũy giá trị đầu tư \$920.
+
+:::note[**Lưu ý của Giáo sư**]
+Hãy nhớ quy ước dấu. PMT và FV phải có dấu ngược nhau nếu không máy tính của bạn sẽ hiển thị thông báo lỗi.
+:::
+
+:::info[**Ví dụ**: Tính toán số năm trong một niên kim thông thường]
+
+Giả sử bạn có một niên kim thông thường \$1,000 với lợi nhuận 8%. Có bao nhiêu khoản rút cuối năm \$150 hàng năm có thể được thực hiện?
+
+**Trả lời:**
+
+Số năm trong niên kim có thể được xác định bằng cách nhập ba biến liên quan và tính toán N.
+
+$$
+I/Y = 8; PMT = 150; PV = –1,000; CPT → N = 9.9 \ \text{năm}
+$$
+:::
+
+:::info[**Ví dụ**: Tính toán tỷ lệ lợi nhuận cho một niên kim]
+
+Giả sử bạn có cơ hội đầu tư \$100 vào cuối mỗi năm trong 5 năm tới để đổi lấy \$600 vào cuối năm thứ 5. Tỷ lệ lợi nhuận hàng năm trên khoản đầu tư này là bao nhiêu?
+
+**Trả lời:**
+
+Tỷ lệ lợi nhuận trên khoản đầu tư này có thể được xác định bằng cách nhập dữ liệu liên quan và giải quyết I/Y.
+
+$$
+N = 5; FV = \$600; PMT = –100; CPT → I/Y = 9.13\%
+$$
+:::
+
+:::info[**Ví dụ**: Tính toán tỷ lệ chiết khấu cho một niên kim]
+
+Bạn sẽ kiếm được tỷ lệ lợi nhuận bao nhiêu trên một niên kim thông thường yêu cầu khoản gửi \$700 hôm nay và hứa hẹn sẽ trả \$100 mỗi năm vào cuối mỗi năm trong 10 năm tới?
+
+**Trả lời:**
+
+Tỷ lệ chiết khấu trên niên kim này được xác định bằng cách nhập ba giá trị đã biết và tính toán I/Y.
+
+$$
+N = 10; PV = –700; PMT = 100; CPT → I/Y = 7.07\%
+$$
+
+:::
 
 ## References
 

@@ -3,6 +3,7 @@ import Figure2 from "./images/figure2.png";
 import Figure3 from "./images/figure3.png";
 import Figure4 from "./images/figure4.png";
 import Figure5 from "./images/figure5.png";
+import Figure6 from "./images/figure6.png";
 
 # Time Value Of Money
 
@@ -560,6 +561,112 @@ To solve this problem, enter the relevant data and compute FV:
 $$
 N = 5 × 4 = 20; I/Y = 12 / 4 = 3; PV = -\$2,000; CPT → FV = \$3,612.22
 $$
+
+## E. Demonstrate the use of a time line in modeling and solving time value of money problems.
+
+In most of the PV problems we have discussed, cash flows were discounted back to the current period. In this case, the PV is said to be indexed to t = 0, or the time index is t = 0. For example, the PV of a 3-year ordinary annuity that is indexed to t = 0 is computed at the beginning of Year 1 (t = 0). Contrast this situation with another 3-year ordinary annuity that doesn’t start until Year 4 and extends to Year 6. It would not be uncommon to want to know the PV of this annuity at the beginning of Year 4, in which case the time index is t = 3. The time line for this annuity is presented in the following Figure.
+
+**Figure: Indexing Time Line to Other Than t = 0**
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure6} style={{width: 600}} />
+</div>
+
+The following examples will illustrate how to compute I/Y, N, or PMT in annuity problems.
+
+:::info[**Example**: Computing an annuity payment needed to achieve a given FV]
+
+At an expected rate of return of 7%, how much must be deposited at the end of each year for the next 15
+years to accumulate \$3,000?
+
+**Answer:**
+
+To solve this problem, enter the three relevant known values and compute PMT.
+
+$$
+N = 15; I/Y = 7; FV = +\$3,000; CPT → PMT = –\$119.38 \ \text{(ignore sign)}
+$$
+
+:::
+
+:::info[**EXAMPLE**: Computing a loan payment]
+
+Suppose you are considering applying for a \$2,000 loan that will be repaid with equal end-of-year
+payments over the next 13 years. If the annual interest rate for the loan is 6%, how much will your
+payments be?
+
+**Answer:**
+
+The size of the end-of-year loan payment can be determined by inputting values for the three known
+variables and computing PMT.
+
+$$
+N = 13; I/Y = 6; PV = –2,000; CPT → PMT = \$225.92
+$$
+
+:::
+
+:::info[**EXAMPLE**: Computing the number of periods in an annuity]
+
+How many \$100 end-of-year payments are required to accumulate \$920 if the discount rate is 9%?
+
+**Answer:**
+
+The number of payments necessary can be determined by inputting the relevant data and computing N.
+
+$$
+I/Y = 9\%; FV = \$920; PMT = –\$100; CPT → N = 7 \ \text{years}
+$$
+
+It will take seven annual \$100 payments, compounded at 9% annually, to accrue an investment value of
+$920.
+
+:::note[**PROFESSOR’S NOTE**]
+Remember the sign convention. PMT and FV must have opposite signs or your calculator will issue an error message.
+:::
+
+:::info[**EXAMPLE**: Computing the number of years in an ordinary annuity]
+
+Suppose you have a \$1,000 ordinary annuity earning an 8% return. How many annual end-of-year \$150
+withdrawals can be made?
+
+**Answer:**
+
+The number of years in the annuity can be determined by entering the three relevant variables and
+computing N.
+
+$$
+I/Y = 8; PMT = 150; PV = –1,000; CPT → N = 9.9 \ \text{years}
+$$
+:::
+
+:::info[**EXAMPLE**: Computing the rate of return for an annuity]
+
+Suppose you have the opportunity to invest \$100 at the end of each of the next five years in exchange for
+\$600 at the end of the fifth year. What is the annual rate of return on this investment?
+
+**Answer:**
+
+The rate of return on this investment can be determined by entering the relevant data and solving for I/Y.
+
+$$
+N = 5; FV = \$600; PMT = –100; CPT → I/Y = 9.13\%
+$$
+:::
+
+:::info[**EXAMPLE**: Computing the discount rate for an annuity]
+
+What rate of return will you earn on an ordinary annuity that requires a \$700 deposit today and promises to pay \$100 per year at the end of each of the next 10 years?
+
+**Answer:**
+
+The discount rate on this annuity is determined by entering the three known values and computing I/Y.
+
+$$
+N = 10; PV = –700; PMT = 100; CPT → I/Y = 7.07\%
+$$
+
+:::
 
 ## References
 
