@@ -701,6 +701,36 @@ $$
 
 :::
 
+### Mối Quan Hệ Giữa Giá Trị Hiện Tại, Giá Trị Tương Lai, và Dòng Tiền
+
+Như chúng tôi đã giải thích trong phần thảo luận về niên kim và chuỗi dòng tiền không đều, tổng giá trị hiện tại của các dòng tiền là giá trị hiện tại của chuỗi. Tổng giá trị tương lai (tại thời điểm tương lai = n) của một chuỗi dòng tiền là giá trị tương lai của chuỗi dòng tiền đó.
+
+Một cách hiểu về giá trị hiện tại của một chuỗi dòng tiền là số tiền cần phải gửi vào ngân hàng hôm nay để có thể thực hiện các khoản rút tiền trong tương lai và tiêu hết tài khoản bằng khoản rút cuối cùng. Hãy minh họa điều này với các dòng tiền \$100 vào Năm 1, \$200 vào Năm 2, \$300 vào Năm 3, và lãi suất giả định là 10%.
+
+Tính giá trị hiện tại của ba dòng tiền này như sau:
+
+$$
+\frac{100}{1.1} + \frac{200}{1.1^2} + \frac{300}{1.1^3} = \$481.59
+$$
+
+Nếu chúng ta gửi \$481.59 vào một tài khoản có lãi suất 10%, vào cuối năm chúng ta sẽ có 481.59 × 1.1 = \$529.75. Rút \$100 sẽ còn lại \$429.75.
+
+Trong năm thứ hai, số tiền \$429.75 sẽ tăng lên 429.75 × 1.1 = \$472.73. Rút \$200 sẽ còn lại \$272.73.
+
+Trong năm thứ ba, số tiền \$272.73 sẽ tăng lên 272.73 × 1.1 = \$300, để khoản rút cuối cùng là \$300 sẽ làm rỗng tài khoản.
+
+Cách hiểu về giá trị tương lai của một chuỗi dòng tiền cũng rất đơn giản. Giá trị tương lai trả lời câu hỏi, "Sẽ có bao nhiêu tiền trong tài khoản khi khoản gửi cuối cùng trong chuỗi được thực hiện?" Sử dụng ba dòng tiền \$100, \$200, và \$300 cùng lãi suất 10%, chúng ta có thể tính giá trị tương lai của chuỗi này như sau:
+
+$$
+100(1.1)^2 + 200(1.1) + 300 = \$641
+$$
+
+Đây đơn giản là tổng giá trị tại t = 3 của mỗi dòng tiền. Lưu ý rằng giá trị tại t = 3 và giá trị hiện tại (t = 0) của chuỗi liên quan đến lãi suất, $$481.59(1.1)^3 = 641$$.
+
+Dòng tiền \$100 (khoản gửi) đến vào t = 1, vì vậy nó sẽ nhận lãi suất 10% gộp cho hai kỳ (đến t = 3). Dòng tiền \$200 (khoản gửi) sẽ nhận lãi suất 10% giữa t = 2 và t = 3, và dòng tiền cuối cùng (khoản gửi) \$300 được thực hiện tại t = 3, vì vậy \$300 là giá trị tương lai (t = 3) của dòng tiền đó.
+
+Chúng ta cũng có thể nhìn vào giá trị tương lai theo cách tài khoản tăng trưởng theo thời gian. Tại t = 1 chúng ta gửi \$100, vì vậy tại t = 2 nó đã tăng lên \$110 và khoản gửi \$200 tại t = 2 làm cho số dư tài khoản là \$310. Trong kỳ tiếp theo, số tiền \$310 tăng lên 310 × 1.1 = \$341 tại t = 3, và việc thêm khoản gửi cuối cùng \$300 làm số dư tài khoản là \$641. Đây tất nhiên là giá trị tương lai mà chúng ta đã tính ban đầu.
+
 ## References
 
 * https://youssef-serghini.weebly.com/5-the-time-value-of-money.html
