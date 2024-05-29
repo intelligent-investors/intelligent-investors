@@ -4,6 +4,7 @@ import Figure3 from "./images/figure3.png";
 import Figure4 from "./images/figure4.png";
 import Figure5 from "./images/figure5.png";
 import Figure6 from "./images/figure6.png";
+import Figure7 from "./images/figure7.png";
 
 # Time Value Of Money
 
@@ -665,6 +666,52 @@ The discount rate on this annuity is determined by entering the three known valu
 $$
 N = 10; PV = –700; PMT = 100; CPT → I/Y = 7.07\%
 $$
+
+:::
+
+### Funding a Future Obligation
+
+There are many TVM applications where it is necessary to determine the size of the deposit(s) that must be made over a specified period in order to meet a future liability, such as setting up a funding program for future college tuition or a retirement program. In most of these applications, the objective is to determine the size of the payment(s) or deposit(s) necessary to meet a particular monetary goal.
+
+:::info[**EXAMPLE**: Computing the required payment to fund an annuity due]
+
+Suppose you must make five annual $1,000 payments, the first one starting at the beginning of Year 4 (end of Year 3). To accumulate the money to make these payments, you want to make three equal payments into an investment account, the first to be made one year from today. Assuming a 10% rate of return, what is the amount of these three payments?
+
+**Answer:**
+
+The time line for this annuity problem is shown in the following figure.
+
+**Funding an Annuity Due**
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure7} style={{width: 600}} />
+</div>
+
+The **first step** in this type of problem is to determine the amount of money that must be available at the beginning of Year 4 (t = 3) in order to satisfy the payment requirements. This amount is the PV of a 5-year annuity due at the beginning of Year 4 (end of Year 3). To determine this amount, set your calculator to the `BGN` mode, enter the relevant data, and compute `PV`.
+
+$$
+N = 5; I/Y = 10; PMT = -1,000; CPT → PV = PV_{3} = \$4,169.87
+$$
+
+Alternatively, you can leave your calculator in the `END` mode, compute the `PV` of a 5-year ordinary annuity, and multiply by 1.10.
+
+$$
+N = 5; I/Y = 10; PMT = -1,000; CPT → PV = 3,790.79 × 1.1 = PV_{3} = \$4,169.87
+$$
+
+A third alternative, with the calculator in `END` mode, is to calculate the t = 3 value of the last four annuity payments and then add \$1,000.
+
+$$
+N = 4; I/Y = 10; PMT = -1,000; CPT → PV = 3,169.87 + 1,000 = \$4,169.87 = PV_{3}
+$$
+
+$PV_{3}$ becomes the FV that you need three years from today from your three equal end-of-year deposits. To determine the amount of the three payments necessary to meet this funding requirement, be sure that your calculator is in the `END` mode, input the relevant data, and compute `PMT`.
+
+$$
+N = 3; I/Y = 10; FV = -4,169.87; CPT → PMT = \$1,259.78
+$$
+
+The **second part** of this problem is an ordinary annuity. If you changed your calculator to `BGN` mode and failed to put it back in the `END` mode, you will get a PMT of \$1,145, which is incorrect.
 
 :::
 

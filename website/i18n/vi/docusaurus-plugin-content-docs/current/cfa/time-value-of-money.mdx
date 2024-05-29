@@ -3,7 +3,8 @@ import Figure2 from "./images/figure2.png";
 import Figure3 from "./images/figure3.png";
 import Figure4 from "./images/figure4.png";
 import Figure5 from "./images/figure5.png";
-import Figure6 from "./images/figure5.png";
+import Figure6 from "./images/figure6.png";
+import Figure7 from "./images/figure7.png";
 
 # Giá trị thời gian của tiền
 
@@ -651,6 +652,52 @@ Tỷ lệ chiết khấu trên niên kim này được xác định bằng cách
 $$
 N = 10; PV = –700; PMT = 100; CPT → I/Y = 7.07\%
 $$
+
+:::
+
+### Tài trợ một nghĩa vụ trong tương lai
+
+Có nhiều ứng dụng của TVM (Giá trị thời gian của tiền) mà trong đó cần xác định kích thước của khoản tiền gửi phải được thực hiện trong một khoảng thời gian nhất định để đáp ứng một nghĩa vụ tài chính trong tương lai, chẳng hạn như thiết lập một chương trình tài trợ cho học phí đại học trong tương lai hoặc một chương trình hưu trí. Trong hầu hết các ứng dụng này, mục tiêu là xác định kích thước của khoản thanh toán hoặc khoản tiền gửi cần thiết để đạt được một mục tiêu tiền tệ cụ thể.
+
+:::info[**VÍ DỤ**: Tính toán khoản thanh toán cần thiết để tài trợ cho một niên kim đầu kỳ]
+
+Giả sử bạn phải thực hiện năm khoản thanh toán hàng năm $1,000, bắt đầu từ đầu Năm 4 (cuối Năm 3). Để tích lũy tiền để thực hiện các khoản thanh toán này, bạn muốn thực hiện ba khoản thanh toán bằng nhau vào một tài khoản đầu tư, khoản đầu tiên sẽ được thực hiện một năm kể từ hôm nay. Giả sử tỷ suất lợi nhuận là 10%, số tiền của ba khoản thanh toán này là bao nhiêu?
+
+**Câu trả lời:**
+
+Dòng thời gian cho vấn đề niên kim này được hiển thị trong hình sau.
+
+**Tài trợ cho một niên kim đầu kỳ**
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure7} style={{width: 600}} />
+</div>
+
+**Bước đầu tiên** trong loại vấn đề này là xác định số tiền phải có vào đầu Năm 4 (t = 3) để đáp ứng các yêu cầu thanh toán. Số tiền này là PV của một niên kim đầu kỳ 5 năm tại đầu Năm 4 (cuối Năm 3). Để xác định số tiền này, hãy đặt máy tính của bạn ở chế độ `BGN`, nhập dữ liệu liên quan và tính `PV`.
+
+$$
+N = 5; I/Y = 10; PMT = -1,000; CPT → PV = PV_{3} = \$4,169.87
+$$
+
+Ngoài ra, bạn có thể để máy tính của bạn ở chế độ `END`, tính toán `PV` của một niên kim thông thường 5 năm và nhân với 1.10.
+
+$$
+N = 5; I/Y = 10; PMT = -1,000; CPT → PV = 3,790.79 × 1.1 = PV_{3} = \$4,169.87
+$$
+
+Một cách thay thế thứ ba, với máy tính ở chế độ `END`, là tính giá trị t = 3 của bốn khoản thanh toán niên kim cuối cùng và sau đó cộng \$1,000.
+
+$$
+N = 4; I/Y = 10; PMT = -1,000; CPT → PV = 3,169.87 + 1,000 = \$4,169.87 = PV_{3}
+$$
+
+$PV_{3}$ trở thành FV mà bạn cần có ba năm kể từ hôm nay từ ba khoản tiền gửi cuối năm bằng nhau. Để xác định số tiền của ba khoản thanh toán cần thiết để đáp ứng yêu cầu tài trợ này, hãy chắc chắn rằng máy tính của bạn ở chế độ `END`, nhập dữ liệu liên quan và tính `PMT`.
+
+$$
+N = 3; I/Y = 10; FV = -4,169.87; CPT → PMT = \$1,259.78
+$$
+
+**Phần thứ hai** của vấn đề này là một niên kim thông thường. Nếu bạn đã chuyển máy tính của mình sang chế độ `BGN` và không đặt lại chế độ `END`, bạn sẽ nhận được PMT là \$1,145, điều này là không chính xác.
 
 :::
 
