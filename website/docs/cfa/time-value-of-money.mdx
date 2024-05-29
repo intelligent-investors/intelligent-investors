@@ -745,6 +745,111 @@ The \$100 cash flow (deposit) comes at t = 1, so it will earn interest of 10% co
 
 We can also look at the future value in terms of how the account grows over time. At t = 1 we deposit \$100, so at t = 2 it has grown to \$110 and the \$200 deposit at t = 2 makes the account balance \$310. Over the next period, the \$310 grows to 310 × 1.1 = \$341 at t = 3, and the addition of the final \$300 deposit puts the account balance at $641. This is, of course, the future value we calculated initially.
 
+:::note[**PROFESSOR’S NOTE**]
+This last view of the future value of a series of cash flows suggests a quick way to calculate the
+future value of an uneven cash flow series. The process described previously for the future value of
+a series of end-of-period payments can be written mathematically as [(100 × 1.1) + 200] × 1.1 + 300
+= 641, and this might be a quick way to do some future value problems.
+:::
+
+Note that questions on the future value of an *annuity due* refer to the amount in the account
+one period after the last deposit is made. If the three deposits considered here were made at
+the beginning of each period (at t = 0, 1, 2) the amount in the account at the end of three years
+(t = 3) would be 10% higher (i.e., 641 × 1.1 = $705.10).
+
+The **cash flow additivity principle** refers to the fact that present value of any stream of cash
+flows equals the sum of the present values of the cash flows. There are different applications
+of this principle in time value of money problems. If we have two series of cash flows, the
+sum of the present values of the two series is the same as the present values of the two series
+taken together, adding cash flows that will be paid at the same point in time. We can also
+divide up a series of cash flows any way we like, and the present value of the “pieces” will
+equal the present value of the original series.
+
+:::info[**EXAMPLE**: Additivity principle]
+
+A security will make the following payments at the end of the next four years: \$100, \$100, \$400, and \$100. Calculate the present value of these cash flows using the concept of the present value of an annuity when the appropriate discount rate is 10%.
+
+**Answer:**
+
+We can divide the cash flows so that we have:
+
+| t = 1 | t = 2 | t = 3 | t = 4 | |
+|------|-------|-------|-------|--|
+| 100  | 100   | 100   | 100   | cash flow series #1 |
+| 0    | 0     | 300   | 0     | cash flow series #2 |
+|------|-------|-------|-------| |
+| $100 | $100  | $400  | $100  | |
+
+The additivity principle tells us that to get the present value of the original series, we can just add the present values of series #1 (a 4-period annuity) and series #2 (a single payment three periods from now).
+
+For the annuity: $$N = 4; PMT = 100; FV = 0; I/Y = 10; CPT → PV = -\$316.99$$
+
+For the single payment: $$N = 3; PMT = 0; FV = 300; I/Y = 10; CPT → PV = -\$225.39$$
+
+The sum of these two values is $$316.99 + 225.39 = \$542.38$$.
+
+The sum of these two (present) values is identical (except for rounding) to the sum of the present values of the payments of the original series:
+
+$$
+\frac{100}{1.1} + \frac{100}{1.1^2} + \frac{400}{1.1^3} + \frac{100}{1.1^4} = \$542.38
+$$
+
+:::
+
+### 📝 Quiz
+
+1. An analyst estimates that XYZ’s earnings will grow from \$3.00 a share to \$4.50 per share
+over the next eight years. The rate of growth in XYZ’s earnings is closest to:
+
+* A. 4.9%.
+* B. 5.2%.
+* C. 6.7%.
+
+2. If \$5,000 is invested in a fund offering a rate of return of 12% per year, approximately how
+many years will it take for the investment to reach \$10,000?
+
+* A. 4 years.
+* B. 5 years.
+* C. 6 years.
+
+3. An investment is expected to produce the cash flows of \$500, \$200, and \$800 at the end of
+the next three years. If the required rate of return is 12%, the present value of this
+investment is closest to:
+
+* A. $835.
+* B. $1,175.
+* C. $1,235.
+
+4. If \$10,000 is invested today in an account that earns interest at a rate of 9.5%, what is the
+value of the equal withdrawals that can be taken out of the account at the end of each of the
+next five years if the investor plans to deplete the account at the end of the time period?
+
+* A. $2,453.
+* B. $2,604.
+* C. $2,750.
+
+5. Given an 11% rate of return, the amount that must be put into an investment account at the
+end of each of the next 10 years in order to accumulate \$60,000 to pay for a child’s
+education is closest to:
+
+* A. $2,500.
+* B. $3,588.
+* C. $4,432.
+
+6. An investor will receive an annuity of \$4,000 a year for 10 years. The first payment is to be
+received five years from today. At a 9% discount rate, this annuity’s worth today is closest to:
+
+* A. $16,684.
+* B. $18,186.
+* C. $25,671.
+
+7. An investor is looking at a \$150,000 home. If 20% must be put down and the balance is
+financed at 9% over the next 30 years, what is the monthly mortgage payment?
+
+* A. $799.33.
+* B. $895.21.
+* C. $965.55.
+
 ## References
 
 * https://youssef-serghini.weebly.com/5-the-time-value-of-money.html

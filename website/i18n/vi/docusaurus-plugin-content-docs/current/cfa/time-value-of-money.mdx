@@ -731,6 +731,89 @@ Dòng tiền \$100 (khoản gửi) đến vào t = 1, vì vậy nó sẽ nhận 
 
 Chúng ta cũng có thể nhìn vào giá trị tương lai theo cách tài khoản tăng trưởng theo thời gian. Tại t = 1 chúng ta gửi \$100, vì vậy tại t = 2 nó đã tăng lên \$110 và khoản gửi \$200 tại t = 2 làm cho số dư tài khoản là \$310. Trong kỳ tiếp theo, số tiền \$310 tăng lên 310 × 1.1 = \$341 tại t = 3, và việc thêm khoản gửi cuối cùng \$300 làm số dư tài khoản là \$641. Đây tất nhiên là giá trị tương lai mà chúng ta đã tính ban đầu.
 
+:::note[**GHI CHÚ CỦA GIÁO SƯ**]
+Cách nhìn này về giá trị tương lai của một chuỗi dòng tiền cho thấy một cách nhanh chóng để tính giá trị tương lai của một chuỗi dòng tiền không đều. Quá trình đã được mô tả trước đó để tính giá trị tương lai của một chuỗi các khoản thanh toán cuối kỳ có thể được viết dưới dạng toán học như sau: \[(100 × 1.1) + 200\] × 1.1 + 300 = 641, và đây có thể là một cách nhanh chóng để giải một số bài toán giá trị tương lai.
+:::
+
+Lưu ý rằng các câu hỏi về giá trị tương lai của một *niên kim trả trước* đề cập đến số tiền trong tài khoản một kỳ sau khi khoản tiền gửi cuối cùng được thực hiện. Nếu ba khoản tiền gửi được xem xét ở đây được thực hiện vào đầu mỗi kỳ (tại t = 0, 1, 2) thì số tiền trong tài khoản vào cuối ba năm (t = 3) sẽ cao hơn 10\% (tức là, 641 × 1.1 = \$705.10).
+
+**Nguyên tắc cộng dòng tiền** đề cập đến thực tế rằng giá trị hiện tại của bất kỳ dòng tiền nào bằng tổng giá trị hiện tại của các dòng tiền đó. Có nhiều ứng dụng khác nhau của nguyên tắc này trong các bài toán giá trị thời gian của tiền. Nếu chúng ta có hai loạt dòng tiền, tổng giá trị hiện tại của hai loạt này sẽ bằng với giá trị hiện tại của hai loạt dòng tiền được cộng lại với nhau, thêm các dòng tiền sẽ được thanh toán tại cùng một thời điểm. Chúng ta cũng có thể chia một loạt dòng tiền bất kỳ cách nào chúng ta muốn, và giá trị hiện tại của các “mảnh” sẽ bằng giá trị hiện tại của loạt dòng tiền ban đầu.
+
+:::info[**VÍ DỤ**: Nguyên tắc cộng tính]
+
+Một chứng khoán sẽ thực hiện các khoản thanh toán sau vào cuối bốn năm tới: \$100, \$100, \$400 và \$100. Tính giá trị hiện tại của các dòng tiền này bằng cách sử dụng khái niệm giá trị hiện tại của niên kim khi tỷ lệ chiết khấu thích hợp là 10%.
+
+**Trả lời:**
+
+Chúng ta có thể chia các dòng tiền như sau:
+
+| t = 1 | t = 2 | t = 3 | t = 4 | |
+|------|-------|-------|-------|--|
+| 100  | 100   | 100   | 100   | chuỗi dòng tiền #1 |
+| 0    | 0     | 300   | 0     | chuỗi dòng tiền #2 |
+|------|-------|-------|-------| |
+| $100 | $100  | $400  | $100  | |
+
+Nguyên tắc cộng tính cho chúng ta biết rằng để tính giá trị hiện tại của chuỗi gốc, chúng ta có thể chỉ cần cộng các giá trị hiện tại của chuỗi #1 (một niên kim 4 kỳ) và chuỗi #2 (một khoản thanh toán duy nhất sau ba kỳ).
+
+Đối với niên kim: $$N = 4; PMT = 100; FV = 0; I/Y = 10; CPT → PV = -\$316.99$$
+
+Đối với khoản thanh toán duy nhất: $$N = 3; PMT = 0; FV = 300; I/Y = 10; CPT → PV = -\$225.39$$
+
+Tổng của hai giá trị này là $$316.99 + 225.39 = \$542.38$$.
+
+Tổng của hai giá trị hiện tại này là giống nhau (ngoại trừ làm tròn) với tổng giá trị hiện tại của các khoản thanh toán của chuỗi gốc:
+
+$$
+\frac{100}{1.1} + \frac{100}{1.1^2} + \frac{400}{1.1^3} + \frac{100}{1.1^4} = \$542.38
+$$
+
+:::
+
+### 📝 Luyện tập
+
+1. Một nhà phân tích ước tính rằng thu nhập của XYZ sẽ tăng từ \$3.00 một cổ phiếu lên \$4.50 một cổ phiếu trong vòng tám năm tới. Tỷ lệ tăng trưởng trong thu nhập của XYZ gần với:
+
+* A. 4.9%.
+* B. 5.2%.
+* C. 6.7%.
+
+2. Nếu đầu tư \$5,000 vào một quỹ với tỷ suất sinh lợi là 12% mỗi năm, khoảng bao nhiêu năm sẽ cần để khoản đầu tư này đạt \$10,000?
+
+* A. 4 năm.
+* B. 5 năm.
+* C. 6 năm.
+
+3. Một khoản đầu tư dự kiến sẽ tạo ra các dòng tiền lần lượt là \$500, \$200 và \$800 vào cuối ba năm tới. Nếu tỷ suất sinh lợi yêu cầu là 12%, giá trị hiện tại của khoản đầu tư này gần với:
+
+* A. \$835.
+* B. \$1,175.
+* C. \$1,235.
+
+4. Nếu đầu tư \$10,000 vào hôm nay vào một tài khoản mà lãi suất là 9.5%, giá trị của các khoản rút đều có thể lấy ra từ tài khoản vào cuối mỗi năm trong năm năm tới nếu nhà đầu tư dự định rút hết tài khoản vào cuối thời gian là bao nhiêu?
+
+* A. \$2,453.
+* B. \$2,604.
+* C. \$2,750.
+
+5. Với tỷ suất sinh lợi là 11%, số tiền cần phải đưa vào tài khoản đầu tư vào cuối mỗi năm trong 10 năm tới để tích lũy được \$60,000 để trả cho việc học của con là gần với:
+
+* A. \$2,500.
+* B. \$3,588.
+* C. \$4,432.
+
+6. Một nhà đầu tư sẽ nhận được một niên kim là \$4,000 mỗi năm trong 10 năm. Khoản thanh toán đầu tiên sẽ được nhận sau năm năm kể từ hôm nay. Với tỷ lệ chiết khấu là 9%, giá trị hiện tại của niên kim này gần với:
+
+* A. \$16,684.
+* B. \$18,186.
+* C. \$25,671.
+
+7. Một nhà đầu tư đang xem xét một ngôi nhà trị giá \$150,000. Nếu phải đặt cọc 20% và số dư được tài trợ với lãi suất 9% trong 30 năm tới, khoản thanh toán thế chấp hàng tháng là bao nhiêu?
+
+* A. \$799.33.
+* B. \$895.21.
+* C. \$965.55.
+
 ## References
 
 * https://youssef-serghini.weebly.com/5-the-time-value-of-money.html
