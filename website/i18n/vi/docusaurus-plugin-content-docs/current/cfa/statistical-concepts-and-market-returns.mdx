@@ -1,3 +1,29 @@
 # Khái niệm Thống kê và Lợi tức Thị trường
 
 ## A: Phân biệt giữa thống kê mô tả và thống kê suy diễn, giữa tổng thể và mẫu, và giữa các loại thang đo lường.
+
+Thuật ngữ **thống kê** được sử dụng để chỉ dữ liệu (ví dụ, lợi tức trung bình của cổ phiếu XYZ là 8% trong 10 năm qua) và các phương pháp chúng ta sử dụng để phân tích dữ liệu. Phương pháp thống kê được chia thành hai loại, **thống kê mô tả** hoặc **thống kê suy diễn**.
+
+*Thống kê mô tả* được sử dụng để tóm tắt các đặc điểm quan trọng của các tập dữ liệu lớn. Chủ đề này tập trung vào việc sử dụng thống kê mô tả để tổng hợp một lượng lớn dữ liệu số thành thông tin hữu ích.
+
+*Thống kê suy diễn*, sẽ được thảo luận trong các chủ đề sau, liên quan đến các thủ tục được sử dụng để đưa ra dự báo, ước tính hoặc phán đoán về một tập dữ liệu lớn dựa trên các đặc điểm thống kê của một tập nhỏ hơn (một mẫu).
+
+Một **quần thể** được định nghĩa là tập hợp tất cả các thành viên có thể có của một nhóm được nêu. Một cắt ngang của lợi tức của tất cả các cổ phiếu được giao dịch trên Sở giao dịch chứng khoán New York (NYSE) là một ví dụ về quần thể.
+
+Thường xuyên quá tốn kém hoặc mất thời gian để lấy các phép đo cho mọi thành viên của một quần thể, nếu điều đó thậm chí là khả thi. Trong trường hợp này, một mẫu có thể được sử dụng. Một **mẫu** được định nghĩa là một tập hợp con của quần thể quan tâm. Sau khi một quần thể đã được định nghĩa, một mẫu có thể được rút ra từ quần thể, và các đặc điểm của mẫu có thể được sử dụng để mô tả quần thể nói chung. Ví dụ, một mẫu của 30 cổ phiếu có thể được chọn từ tất cả các cổ phiếu niêm yết trên NYSE để đại diện cho quần thể của tất cả các cổ phiếu được giao dịch trên NYSE.
+
+### Các Loại Thang Đo
+
+Các phương pháp thống kê khác nhau sử dụng các cấp độ đo lường khác nhau, hay còn gọi là thang đo. **Thang đo** có thể được phân loại vào một trong bốn hạng mục chính:
+
+- **Thang đo định danh (nominal scales)** Thang đo định danh là cấp độ đo lường chứa ít thông tin nhất. Quan sát được phân loại hoặc đếm mà không có thứ tự cụ thể. Ví dụ, gán số 1 cho quỹ trái phiếu đô thị, số 2 cho quỹ trái phiếu doanh nghiệp, và cứ thế cho mỗi phong cách quỹ.
+
+- **Thang đo thứ tự (ordinal scales)** Thang đo thứ tự đại diện cho cấp độ đo lường cao hơn thang đo định danh. Khi làm việc với thang đo thứ tự, mỗi quan sát được gán cho một trong nhiều hạng mục. Sau đó, các hạng mục này được sắp xếp theo thứ tự liên quan đến một đặc điểm cụ thể. Ví dụ, xếp hạng 1,000 cổ phiếu tăng trưởng nhỏ theo hiệu suất có thể được thực hiện bằng cách gán số 1 cho 100 cổ phiếu có hiệu suất tốt nhất, số 2 cho 100 cổ phiếu có hiệu suất tốt tiếp theo, và cứ thế, gán số 10 cho 100 cổ phiếu có hiệu suất tệ nhất. Dựa trên loại đo lường này, có thể kết luận rằng một cổ phiếu được xếp hạng 3 tốt hơn một cổ phiếu được xếp hạng 4, nhưng thang đo không tiết lộ điều gì về sự khác biệt về hiệu suất hay liệu sự khác biệt giữa 3 và 4 có giống như sự khác biệt giữa 4 và 5 hay không.
+
+- **Thang đo khoảng (interval scale)** Thang đo khoảng cung cấp xếp hạng tương đối, giống như thang đo thứ tự, cộng thêm sự đảm bảo rằng các khoảng cách giữa các giá trị thang đo là bằng nhau. Đo nhiệt độ theo độ là một ví dụ điển hình. Chắc chắn, 49°C nóng hơn 32°C, và sự khác biệt nhiệt độ giữa 49°C và 32°C là giống như sự khác biệt giữa 67°C và 50°C. Điểm yếu của thang đo khoảng là việc đo lường số không không nhất thiết chỉ ra sự vắng mặt hoàn toàn của thứ chúng ta đang đo lường. Điều này có nghĩa là các tỷ lệ dựa trên thang đo khoảng là vô nghĩa. Ví dụ, 30°F không phải là nóng gấp ba lần so với 10°F.
+
+- **Thang đo tỷ lệ (ratio scales)** Thang đo tỷ lệ đại diện cho cấp độ đo lường tinh vi nhất. Thang đo tỷ lệ cung cấp xếp hạng và các khoảng cách bằng nhau giữa các giá trị thang đo, và chúng còn có một điểm không thực sự là gốc. Thứ tự, khoảng cách, và tỷ lệ đều có ý nghĩa với thang đo tỷ lệ. Đo lường tiền tệ là một ví dụ tốt. Nếu bạn có không đô la, bạn không có sức mua, nhưng nếu bạn có 4,00 đô la, bạn có gấp đôi sức mua so với người có 2,00 đô la.
+
+:::note[**GHI CHÚ CỦA GIÁO SƯ**]
+Ứng viên đôi khi sử dụng từ tiếng Pháp cho đen, *noir*, để nhớ các loại thang đo theo thứ tự chính xác: Nominal, Ordinal, Interval, Ratio.
+:::
