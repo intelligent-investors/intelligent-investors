@@ -1,3 +1,8 @@
+import Figure1 from "./images/statistical/figure1.png";
+import Figure2 from "./images/statistical/figure2.png";
+import Figure3 from "./images/statistical/figure3.png";
+import Figure4 from "./images/statistical/figure4.png";
+
 # Khái niệm Thống kê và Lợi tức Thị trường
 
 ## A: Phân biệt giữa thống kê mô tả và thống kê suy diễn, giữa tổng thể và mẫu, và giữa các loại thang đo lường.
@@ -168,3 +173,100 @@ Sử dụng dữ liệu trong Bảng A để xây dựng bảng phân phối t�
 Việc đếm và tính số lượng quan sát tạo ra một bảng phân phối tần số tóm tắt mô hình lợi nhuận hàng năm trên cổ phiếu phổ thông của Intelco. Chú ý rằng khoảng với tần suất (tuyệt đối) lớn nhất là khoảng ($$0\% ≤ R_t < 10\%$$), bao gồm bảy quan sát lợi nhuận. Đối với bất kỳ bảng phân phối tần số nào, khoảng với tần suất lớn nhất được gọi là **khoảng mô đun**.
 
 :::
+
+## C: Tính toán và diễn giải tần suất tương đối và tần suất tương đối tích lũy, dựa trên bảng phân phối tần suất.
+
+**Tần suất tương đối** là một cách hữu ích khác để trình bày dữ liệu. Tần suất tương đối được tính bằng cách chia tần suất tuyệt đối của mỗi khoảng trả về cho tổng số quan sát. Nói một cách đơn giản, tần suất tương đối là phần trăm của tổng số quan sát nằm trong mỗi khoảng. Tiếp tục với ví dụ của chúng ta, tần suất tương đối được trình bày trong hình sau.
+
+**Hình: Tần suất tuyệt đối và tần suất tương đối của lợi tức Intelco**
+
+<table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'center' }}>
+  <thead style={{ backgroundColor: 'transparent'}}>
+    <tr style={{ backgroundColor: 'transparent', borderTop: '2px solid black', borderBottom: '2px solid black'}}>
+      <th style={{ borderLeft: 'none', borderRight: 'none', borderTop: 'none' }}>Khoảng</th>
+      <th style={{ borderLeft: 'none', borderRight: 'none', borderTop: 'none' }}>Tần suất tuyệt đối</th>
+      <th style={{ borderLeft: 'none', borderRight: 'none', borderTop: 'none' }}>Tần suất tương đối</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>−30% ≤ R<sub>t</sub> &lt; −20%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>1</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>1/20 = 0.05, hoặc 5%</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>−20% ≤ R<sub>t</sub> &lt; −10%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>2</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>2/20 = 0.10, hoặc 10%</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>−10% ≤ R<sub>t</sub> &lt; 0%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>3</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>3/20 = 0.15, hoặc 15%</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>0% ≤ R<sub>t</sub> &lt; 10%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>7</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>7/20 = 0.35, hoặc 35%</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>10% ≤ R<sub>t</sub> &lt; 20%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>3</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>3/20 = 0.15, hoặc 15%</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>20% ≤ R<sub>t</sub> &lt; 30%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>2</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>2/20 = 0.10, hoặc 10%</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>30% ≤ R<sub>t</sub> &lt; 40%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>1</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>1/20 = 0.05, hoặc 5%</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>40% ≤ R<sub>t</sub> &lt; 50%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>1</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>1/20 = 0.05, hoặc 5%</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black', borderBottom: '2px solid black' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>Tổng</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>20</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>100%</td>
+    </tr>
+  </tbody>
+</table>
+
+Ngoài ra, cũng có thể tính toán **tần suất tuyệt đối tích lũy** và **tần suất tương đối tích lũy** bằng cách cộng dồn tần suất tuyệt đối hoặc tương đối bắt đầu từ khoảng thấp nhất và tiến lên khoảng cao nhất. Tần suất tương đối và tần suất tương đối tích lũy cho ví dụ lợi tức cổ phiếu Intelco được trình bày trong hình sau.
+
+Tần suất tuyệt đối tích lũy hoặc tần suất tương đối tích lũy cho bất kỳ khoảng nào là tổng của tần suất tuyệt đối hoặc tương đối cho đến và bao gồm khoảng đó. Ví dụ, tần suất tuyệt đối tích lũy cho $R_t < 10\%$ là $13 = 1 + 2 + 3 + 7$ và tần suất tương đối tích lũy trên khoảng này là $5\% + 10\% + 15\% + 35\% = 65\%$.
+
+**Hình: Tần suất tương đối và tần suất tương đối tích lũy của lợi tức Intelco**
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure1} style={{width: 1000}} />
+</div>
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure2} style={{width: 800}} />
+</div>
+
+## D: Mô tả các thuộc tính của một tập dữ liệu được trình bày dưới dạng biểu đồ histogram hoặc đa giác tần suất.
+
+**Histogram** là biểu đồ trình bày phân phối tần suất tuyệt đối. Một histogram đơn giản là biểu đồ cột của dữ liệu liên tục đã được phân loại thành một phân phối tần suất. Điểm hấp dẫn của một histogram là nó cho phép chúng ta nhanh chóng thấy nơi mà hầu hết các quan sát tập trung.
+
+Để xây dựng một histogram, các khoảng được chia theo tỷ lệ trên trục ngang và tần suất tuyệt đối được chia theo tỷ lệ trên trục dọc. Histogram cho dữ liệu lợi nhuận của Intelco trong Bảng B từ ví dụ trước được cung cấp trong Hình 3.
+
+**Hình 3: Biểu đồ Histogram của Dữ liệu Lợi nhuận Cổ phiếu Intelco**
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure3} style={{width: 800}} />
+</div>
+
+Để xây dựng một **đa giác tần suất**, điểm giữa của mỗi khoảng được vẽ trên trục ngang, và tần suất tuyệt đối cho khoảng đó được vẽ trên trục dọc. Mỗi điểm sau đó được kết nối bằng một đường thẳng. Đa giác tần suất cho dữ liệu lợi nhuận được sử dụng trong ví dụ của chúng ta được minh họa trong Hình 4.
+
+**Hình 4: Đa giác Tần suất của Dữ liệu Lợi nhuận Cổ phiếu Intelco**
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure4} style={{width: 800}} />
+</div>

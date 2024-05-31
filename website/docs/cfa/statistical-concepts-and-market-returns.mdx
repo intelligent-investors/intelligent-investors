@@ -1,3 +1,8 @@
+import Figure1 from "./images/statistical/figure1.png";
+import Figure2 from "./images/statistical/figure2.png";
+import Figure3 from "./images/statistical/figure3.png";
+import Figure4 from "./images/statistical/figure4.png";
+
 # Statistical Concepts and Market Returns
 
 ## A: Distinguish between descriptive statistics and inferential statistics, between a population and a sample, and among the types of measurement scales.
@@ -167,3 +172,100 @@ Use the data in Table A to construct a frequency distribution for the returns on
 Tallying and counting the observations generates a frequency distribution that summarizes the pattern of annual returns on Intelco common stock. Notice that the interval with the greatest (absolute) frequency is the ($$0\% ≤ R_t < 10\%$$) interval, which includes seven return observations. For any frequency distribution, the interval with the greatest frequency is referred to as the **modal interval**.
 
 :::
+
+## C: Calculate and interpret relative frequencies and cumulative relative frequencies, given a frequency distribution.
+
+The **relative frequency** is another useful way to present data. The relative frequency is calculated by dividing the absolute frequency of each return interval by the total number of observations. Simply stated, relative frequency is the percentage of total observations falling within each interval. Continuing with our example, the relative frequencies are presented in the following figure.
+
+**Figure: Absolute and Relative Frequencies of Intelco Returns**
+
+<table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'center' }}>
+  <thead style={{ backgroundColor: 'transparent'}}>
+    <tr style={{ backgroundColor: 'transparent', borderTop: '2px solid black', borderBottom: '2px solid black'}}>
+      <th style={{ borderLeft: 'none', borderRight: 'none', borderTop: 'none' }}>Intervals</th>
+      <th style={{ borderLeft: 'none', borderRight: 'none', borderTop: 'none' }}>Absolute Frequency</th>
+      <th style={{ borderLeft: 'none', borderRight: 'none', borderTop: 'none' }}>Relative Frequency</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>−30% ≤ R<sub>t</sub> &lt; −20%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>1</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>1/20 = 0.05, or 5%</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>−20% ≤ R<sub>t</sub> &lt; −10%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>2</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>2/20 = 0.10, or 10%</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>−10% ≤ R<sub>t</sub> &lt; 0%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>3</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>3/20 = 0.15, or 15%</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>0% ≤ R<sub>t</sub> &lt; 10%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>7</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>7/20 = 0.35, or 35%</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>10% ≤ R<sub>t</sub> &lt; 20%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>3</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>3/20 = 0.15, or 15%</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>20% ≤ R<sub>t</sub> &lt; 30%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>2</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>2/20 = 0.10, or 10%</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>30% ≤ R<sub>t</sub> &lt; 40%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>1</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>1/20 = 0.05, or 5%</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>40% ≤ R<sub>t</sub> &lt; 50%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>1</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>1/20 = 0.05, or 5%</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black', borderBottom: '2px solid black' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>Total</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>20</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>100%</td>
+    </tr>
+  </tbody>
+</table>
+
+It is also possible to compute the **cumulative absolute frequency** and **cumulative relative frequency** by summing the absolute or relative frequencies starting at the lowest interval and progressing through the highest. The relative and cumulative relative frequencies for the Intelco stock returns example are presented in the following figure.
+
+The cumulative absolute frequency or cumulative relative frequency for any given interval is the sum of the absolute or relative frequencies up to and including the given interval. For example, the cumulative absolute frequency for $R_t < 10\%$ is $13 = 1 + 2 + 3 + 7$ and the cumulative relative frequency over this range is $5\% + 10\% + 15\% + 35\% = 65\%$.
+
+**Figure: Relative and Cumulative Frequencies of Intelco Returns**
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure1} style={{width: 1000}} />
+</div>
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure2} style={{width: 800}} />
+</div>
+
+## D: Describe the properties of a data set presented as a histogram or a frequency polygon.
+
+A **histogram** is the graphical presentation of the absolute frequency distribution. A histogram is simply a bar chart of continuous data that has been classified into a frequency distribution. The attractive feature of a histogram is that it allows us to quickly see where most of the observations are concentrated.
+
+To construct a histogram, the intervals are scaled on the horizontal axis and the absolute frequencies are scaled on the vertical axis. The histogram for the Intelco returns data in Table B from the previous example is provided in Figure 3.
+
+**Figure 3: Histogram of Intelco Stock Return Data**
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure3} style={{width: 800}} />
+</div>
+
+To construct a **frequency polygon**, the midpoint of each interval is plotted on the horizontal axis, and the absolute frequency for that interval is plotted on the vertical axis. Each point is then connected with a straight line. The frequency polygon for the returns data used in our example is illustrated in Figure 4.
+
+**Figure 4: Frequency Polygon of Intelco Stock Return Data**
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure4} style={{width: 800}} />
+</div>
