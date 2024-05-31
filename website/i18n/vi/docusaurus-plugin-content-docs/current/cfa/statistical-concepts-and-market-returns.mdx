@@ -45,3 +45,126 @@ bằng bất kỳ loại thang đo nào.
 :::note[**GHI CHÚ CỦA GIÁO SƯ**]
 Các khoảng (intervals) cũng được gọi là các lớp (classes)
 :::
+
+
+Quy trình sau đây mô tả cách xây dựng phân bố tần suất.
+
+**Bước 1: Xác định các khoảng.** Bước đầu tiên trong việc xây dựng phân bố tần suất là xác định các khoảng mà các phép đo dữ liệu (quan sát) sẽ được gán. Một khoảng, còn được gọi là một lớp, là tập hợp các giá trị mà một quan sát có thể nhận. Phạm vi giá trị cho mỗi khoảng phải có giới hạn dưới và giới hạn trên và phải bao hàm tất cả, không trùng lặp. Các khoảng phải tương hỗ độc lập với nhau sao cho mỗi quan sát chỉ có thể được đặt vào một khoảng, và tổng số các khoảng phải bao phủ toàn bộ phạm vi giá trị cho toàn bộ quần thể. Số lượng các khoảng được sử dụng là một yếu tố quan trọng. Nếu sử dụng quá ít khoảng, dữ liệu có thể được tóm tắt quá rộng và các đặc điểm quan trọng có thể bị mất. Ngược lại, nếu sử dụng quá nhiều khoảng, dữ liệu có thể không được tóm tắt đủ.
+
+**Bước 2: Đếm các quan sát.** Sau khi các khoảng đã được xác định, các quan sát phải được đếm hoặc được gán cho khoảng thích hợp của chúng.
+
+**Bước 3: Tính toán các quan sát.** Sau khi đã đếm các bộ dữ liệu, số lượng quan sát được gán cho mỗi khoảng phải được tính toán. Tần suất tuyệt đối, hay đơn giản là tần suất, là số lượng thực tế các quan sát rơi vào một khoảng nhất định.
+
+
+:::info[**VÍ DỤ**: Xây dựng một bảng phân phối tần số]
+
+Sử dụng dữ liệu trong Bảng A để xây dựng bảng phân phối tần số cho lợi nhuận trên cổ phiếu phổ thông của Intelco.
+
+<table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'center' }}>
+  <thead style={{ backgroundColor: 'transparent'}}>
+    <tr style={{ backgroundColor: 'transparent', borderTop: 'none', borderBottom: '2px solid black'}}>
+      <th colSpan="4" style={{backgroundColor: 'transparent', borderLeft: 'none', borderRight: 'none', borderTop: 'none'}}>Bảng A: Lợi nhuận hàng năm của Intelco, Inc. Cổ phiếu phổ thông</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black', padding: '10px' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>10.4%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>22.5%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>11.1%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>-12.4%</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black', padding: '10px'}}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>9.8%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>17.0%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>2.8%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>8.4%</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black', padding: '10px' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>34.6%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>-28.6%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>0.6%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>5.0%</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black', padding: '10px' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>-17.6%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>5.6%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>8.9%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>40.4%</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', borderBottom: '2px solid black', borderTop: '0px solid black', padding: '10px' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>-1.0%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>-4.2%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>-5.2%</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>21.0%</td>
+    </tr>
+  </tbody>
+</table>
+
+**Trả lời:**
+
+*Bước 1: Xác định khoảng.* Đối với cổ phiếu của Intelco, khoảng lợi nhuận là 69.0% (-28.6\% $\rightarrow$ 40.4%). Sử dụng khoảng lợi nhuận *1%* sẽ dẫn đến 69 khoảng riêng biệt, điều này là quá nhiều trong trường hợp này. Vì vậy, chúng ta sẽ sử dụng tám khoảng không chồng chéo nhau với độ rộng *10%*. Các khoảng lợi nhuận thấp nhất sẽ là $$-30\% ≤ R_t < -20\%$$, và các khoảng sẽ tăng lên đến $$40\% ≤ R_t ≤ 50\%$$.
+
+*Bước 2: Đếm và tính số lượng quan sát trong mỗi khoảng.* Số lượng và số lượng quan sát được trình bày trong Bảng B.
+
+<table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'center' }}>
+  <thead style={{ backgroundColor: 'transparent'}}>
+    <tr style={{ backgroundColor: 'transparent', borderTop: 'none', borderBottom: '2px solid black'}}>
+      <th colSpan="3" style={{backgroundColor: 'transparent', borderLeft: 'none', borderRight: 'none', borderTop: 'none'}}>Bảng B: Số lượng và Tần suất tuyệt đối cho Dữ liệu Lợi nhuận</th>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', borderTop: 'none', borderBottom: '2px solid black'}}>
+      <th style={{ borderLeft: 'none', borderRight: 'none', borderTop: 'none' }}>Khoảng</th>
+      <th style={{ borderLeft: 'none', borderRight: 'none', borderTop: 'none' }}>Số lượng</th>
+      <th style={{ borderLeft: 'none', borderRight: 'none', borderTop: 'none' }}>Tần suất tuyệt đối</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black', padding: '10px' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>$$-30\% \leq R_t < -20\%$$</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>/</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>1</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black', padding: '10px' }}> 
+      <td style={{ border: '0px solid black', padding: '10px' }}>$$-20\% \leq R_t < -10\%$$</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>//</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>2</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black', padding: '10px'}}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>$$-10\% \leq R_t < 0\%$$</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>///</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>3</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black', padding: '10px' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>$$0\% \leq R_t < 10\%$$</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>///////</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>7</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black', padding: '10px' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>$$10\% \leq R_t < 20\%$$</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>///</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>3</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black', padding: '10px' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>$$20\% \leq R_t < 30\%$$</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>//</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>2</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', border: '0px solid black', padding: '10px' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>$$30\% \leq R_t < 40\%$$</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>/</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>1</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', borderBottom: '2px solid black', borderTop: '0px solid black', padding: '10px' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }}>$$40\% \leq R_t < 50\%$$</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>/</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>1</td>
+    </tr>
+    <tr style={{ backgroundColor: 'transparent', borderBottom: '2px solid black', borderTop: '0px solid black', padding: '10px' }}>
+      <td style={{ border: '0px solid black', padding: '10px' }} colSpan="2">Tổng</td>
+      <td style={{ border: '0px solid black', padding: '10px' }}>20</td>
+    </tr>
+  </tbody>
+</table>
+
+Việc đếm và tính số lượng quan sát tạo ra một bảng phân phối tần số tóm tắt mô hình lợi nhuận hàng năm trên cổ phiếu phổ thông của Intelco. Chú ý rằng khoảng với tần suất (tuyệt đối) lớn nhất là khoảng ($$0\% ≤ R_t < 10\%$$), bao gồm bảy quan sát lợi nhuận. Đối với bất kỳ bảng phân phối tần số nào, khoảng với tần suất lớn nhất được gọi là **khoảng mô đun**.
+
+:::
