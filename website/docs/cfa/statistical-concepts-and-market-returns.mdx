@@ -320,3 +320,87 @@ To construct a **frequency polygon**, the midpoint of each interval is plotted o
 * B. the range of observations within each interval.
 * C. the intervals into which the observations are arranged.
 
+## 2. MEANS AND VARIANCE
+
+### E: Calculate and interpret measures of central tendency, including the population mean, sample mean, arithmetic mean, weighted average or mean, geometric mean, harmonic mean, median, and mode.
+
+Measures of central tendency identify the center, or average, of a data set. This central point can then be used to represent the typical, or expected, value in the data set.
+
+To compute the **population mean**, all the observed values in the population are summed ($\sum X$) and divided by the number of observations in the population, N. Note that the population mean is unique in that a given population only has one mean. The population mean is expressed as:
+
+$$
+\mu = \frac{\sum_{i=1}^{N} x_i}{N}
+$$
+
+The **sample mean** is the sum of all the values in a sample of a population, $\sum X$, divided by the number of observations in the sample, n. It is used to make *inferences* about the population mean. The sample mean is expressed as:
+
+$$
+\bar{X} = \frac{\sum_{i=1}^{n} X_i}{n}
+$$
+
+Note the use of $\mathbf{n}$, the sample size, versus $\mathbf{N}$, the population size.
+
+
+:::info[**EXAMPLE**: Population mean and sample mean]
+
+You have calculated the stock returns for AXZ Corporation over the last five years as 25\%, 34\%, 19\%, 54\%, and 17\%. Given this information, estimate the mean of the distribution of returns.
+
+**Answer:**
+
+The sample mean can be used as an estimate of the mean of the distribution:
+
+$$
+\bar{X} = \text{sample mean} = \frac{25 + 34 + 19 + 54 + 17}{5} = 29.8\%
+$$
+
+:::
+
+The population mean and sample mean are both examples of **arithmetic means**. The arithmetic mean is the sum of the observation values divided by the number of observations. It is the most widely used measure of central tendency and has the following properties:
+
+- All interval and ratio data sets have an arithmetic mean.
+- All data values are considered and included in the arithmetic mean computation.
+- A data set has only one arithmetic mean (i.e., the arithmetic mean is unique).
+- The sum of the deviations of each observation in the data set from the mean is always zero.
+
+The arithmetic mean is the only measure of central tendency for which the sum of the deviations from the mean is zero. Mathematically, this property can be expressed as follows:
+
+$$
+\text{sum of mean deviations} = \sum_{i=1}^{n} (X_i - \overline{X}) = 0
+$$
+
+Unusually large or small values can have a disproportionate effect on the computed value for the arithmetic mean. The mean of 1, 2, 3, and 50 is 14 and is not a good indication of what the individual data values really are. On the positive side, the arithmetic mean uses all the information available about the observations. The arithmetic mean of a sample from a population is the best estimate of both the true mean of the sample and the value of the next observation.
+
+The computation of a **weighted mean** recognizes that different observations may have a disproportionate influence on the mean. The weighted mean of a set of numbers is computed with the following equation:
+
+$$
+\overline{X}_w = \sum_{i=1}^{n} w_i X_i = (w_1 X_1 + w_2 X_2 + \ldots + w_n X_n)
+$$
+
+where:
+* $$X_1, X_2, \ldots, X_n$$ = observed values
+* $$w_1, w_2, \ldots, w_n$$ = corresponding weights associated with each of the observations such that $$\sum w_i = 1$$
+
+Cả giá trị trung bình tổng thể và giá trị trung bình mẫu đều là ví dụ của **trung bình số học**. Trung bình số học là tổng của các giá trị quan sát chia cho số lượng quan sát. Đây là thước đo xu hướng trung tâm được sử dụng rộng rãi nhất và có các tính chất sau:
+
+- Tất cả các tập dữ liệu khoảng và tỷ lệ đều có trung bình số học.
+- Tất cả các giá trị dữ liệu được xem xét và bao gồm trong tính toán trung bình số học.
+- Một tập dữ liệu chỉ có một trung bình số học (tức là trung bình số học là duy nhất).
+- Tổng các độ lệch của mỗi quan sát trong tập dữ liệu so với trung bình luôn bằng không.
+
+Trung bình số học là thước đo xu hướng trung tâm duy nhất mà tổng các độ lệch so với trung bình bằng không. Về mặt toán học, tính chất này có thể được biểu diễn như sau:
+
+$$
+\text{tổng của các độ lệch trung bình} = \sum_{i=1}^{n} (X_i - \overline{X}) = 0
+$$
+
+Các giá trị lớn hoặc nhỏ bất thường có thể có ảnh hưởng không cân đối đến giá trị trung bình số học được tính. Trung bình của 1, 2, 3 và 50 là 14 và không phải là một chỉ số tốt về các giá trị dữ liệu thực sự là gì. Ở mặt tích cực, trung bình số học sử dụng tất cả thông tin có sẵn về các quan sát. Trung bình số học của một mẫu từ một tổng thể là ước tính tốt nhất của cả trung bình thực sự của mẫu và giá trị của quan sát tiếp theo.
+
+Việc tính toán **trung bình có trọng số** nhận ra rằng các quan sát khác nhau có thể có ảnh hưởng không cân đối đến trung bình. Trung bình có trọng số của một tập hợp các số được tính với phương trình sau:
+
+$$
+\overline{X}_w = \sum_{i=1}^{n} w_i X_i = (w_1 X_1 + w_2 X_2 + \ldots + w_n X_n)
+$$
+
+trong đó:
+* $$X_1, X_2, \ldots, X_n$$ = các giá trị quan sát
+* $$w_1, w_2, \ldots, w_n$$ = các trọng số tương ứng liên quan đến từng quan sát sao cho $$\sum w_i = 1$$
