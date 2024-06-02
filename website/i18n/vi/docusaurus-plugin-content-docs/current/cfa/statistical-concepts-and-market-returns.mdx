@@ -353,3 +353,181 @@ $$
 $$
 
 :::
+
+Cả giá trị trung bình tổng thể và giá trị trung bình mẫu đều là ví dụ của **trung bình số học**. Trung bình số học là tổng của các giá trị quan sát chia cho số lượng quan sát. Đây là thước đo xu hướng trung tâm được sử dụng rộng rãi nhất và có các tính chất sau:
+
+- Tất cả các tập dữ liệu khoảng và tỷ lệ đều có trung bình số học.
+- Tất cả các giá trị dữ liệu được xem xét và bao gồm trong tính toán trung bình số học.
+- Một tập dữ liệu chỉ có một trung bình số học (tức là trung bình số học là duy nhất).
+- Tổng các độ lệch của mỗi quan sát trong tập dữ liệu so với trung bình luôn bằng không.
+
+Trung bình số học là thước đo xu hướng trung tâm duy nhất mà tổng các độ lệch so với trung bình bằng không. Về mặt toán học, tính chất này có thể được biểu diễn như sau:
+
+$$
+\text{tổng của các độ lệch trung bình} = \sum_{i=1}^{n} (X_i - \overline{X}) = 0
+$$
+
+Các giá trị lớn hoặc nhỏ bất thường có thể có ảnh hưởng không cân đối đến giá trị trung bình số học được tính. Trung bình của 1, 2, 3 và 50 là 14 và không phải là một chỉ số tốt về các giá trị dữ liệu thực sự là gì. Ở mặt tích cực, trung bình số học sử dụng tất cả thông tin có sẵn về các quan sát. Trung bình số học của một mẫu từ một tổng thể là ước tính tốt nhất của cả trung bình thực sự của mẫu và giá trị của quan sát tiếp theo.
+
+Việc tính toán **trung bình có trọng số** nhận ra rằng các quan sát khác nhau có thể có ảnh hưởng không cân đối đến trung bình. Trung bình có trọng số của một tập hợp các số được tính với phương trình sau:
+
+$$
+\overline{X}_w = \sum_{i=1}^{n} w_i X_i = (w_1 X_1 + w_2 X_2 + \ldots + w_n X_n)
+$$
+
+trong đó:
+* $$X_1, X_2, \ldots, X_n$$ = các giá trị quan sát
+* $$w_1, w_2, \ldots, w_n$$ = các trọng số tương ứng liên quan đến từng quan sát sao cho $$\sum w_i = 1$$
+
+:::info[**VÍ DỤ**: Trung bình có trọng số như là lợi nhuận của danh mục đầu tư]
+
+Một danh mục đầu tư bao gồm 50% cổ phiếu phổ thông, 40% trái phiếu và 10% tiền mặt. Nếu lợi nhuận trên cổ phiếu phổ thông là 12%, lợi nhuận trên trái phiếu là 7%, và lợi nhuận trên tiền mặt là 3%, thì lợi nhuận của danh mục đầu tư là bao nhiêu?
+
+**Trả lời:**
+
+$$
+\overline{X}_W = w_{stock} R_{stock} + w_{bonds} R_{bonds} + w_{cash} R_{cash}
+$$
+
+$$
+\overline{X}_W = (0.50 \times 0.12) + (0.40 \times 0.07) + (0.10 \times 0.03) = 0.091, \text{ hay 9.1\%}
+$$
+
+:::
+
+Ví dụ minh họa một khái niệm đầu tư cực kỳ quan trọng: *lợi tức của một danh mục đầu tư là trung bình có trọng số của các lợi tức của các tài sản riêng lẻ trong danh mục đầu tư*. Trọng số tài sản là trọng số thị trường, giá trị thị trường của từng tài sản so với giá trị thị trường của toàn bộ danh mục đầu tư.
+
+**Trung vị** là điểm giữa của một tập dữ liệu khi dữ liệu được sắp xếp theo thứ tự tăng dần hoặc giảm dần. Một nửa các quan sát nằm trên trung vị và một nửa nằm dưới. Để xác định trung vị, sắp xếp dữ liệu từ giá trị cao nhất đến thấp nhất, hoặc từ thấp nhất đến cao nhất, và tìm quan sát ở giữa.
+
+Trung vị quan trọng vì trung bình số học có thể bị ảnh hưởng bởi các giá trị cực kỳ lớn hoặc nhỏ (giá trị ngoại lệ). Khi điều này xảy ra, trung vị là một thước đo xu hướng trung tâm tốt hơn trung bình số học vì nó không bị ảnh hưởng bởi các giá trị cực đoan có thể thực sự là kết quả của các lỗi trong dữ liệu.
+
+:::info[**VÍ DỤ: Trung vị sử dụng số lượng quan sát lẻ**]
+
+Trung vị lợi nhuận của năm nhà quản lý danh mục đầu tư với hồ sơ lợi nhuận hàng năm hóa trong 10 năm là bao nhiêu: 30\%, 15\%, 25\%, 21\%, và 23\%?
+
+**Trả lời:**
+
+Đầu tiên, sắp xếp lợi nhuận theo thứ tự giảm dần.
+
+30\%, 25\%, 23\%, 21\%, 15\%
+
+Sau đó, chọn quan sát có số lượng quan sát bằng nhau phía trên và phía dưới nó - quan sát ở giữa. Với tập dữ liệu này, quan sát thứ ba, 23\%, là giá trị trung vị.
+
+:::
+
+:::info[**VÍ DỤ: Trung vị sử dụng số lượng quan sát chẵn**]
+
+Giả sử chúng ta thêm một nhà quản lý thứ sáu vào ví dụ trước với lợi nhuận là 28\%. Trung vị lợi nhuận là bao nhiêu?
+
+**Trả lời:**
+
+Sắp xếp lợi nhuận theo thứ tự giảm dần cho chúng ta:
+
+30\%, 28\%, 25\%, 23\%, 21\%, 15\%
+
+Với số lượng quan sát chẵn, không có giá trị giữa duy nhất. Giá trị trung vị trong trường hợp này là trung bình số học của hai quan sát ở giữa, 25\% và 23\%. Vì vậy, trung vị lợi nhuận của sáu nhà quản lý là 24.0\% = 0.5(25 + 23).
+:::
+
+Chú ý rằng trong khi chúng ta tính giá trị trung bình của 1, 2, 3, và 50 là 14, trung vị là 2.5. Nếu dữ liệu là 1, 2, 3, và 4 thay vào đó, giá trị trung bình số học và trung vị đều là 2.5.
+
+**Mode (yếu vị)** là giá trị xuất hiện thường xuyên nhất trong một tập dữ liệu. Một tập dữ liệu có thể có nhiều hơn một mode hoặc thậm chí không có mode nào. Khi một phân phối có một giá trị xuất hiện thường xuyên nhất, nó được gọi là **unimodal (đơn yếu vị)**. Khi một tập dữ liệu có hai hoặc ba giá trị xuất hiện thường xuyên nhất, nó được gọi tương ứng là **bimodal (hai yếu vị)**  hoặc **trimodal (ba yếu vị)**.
+
+:::info[**VÍ DỤ: Mode**]
+Mode của tập dữ liệu sau là gì?
+
+Tập dữ liệu: [30\%, 28\%, 25\%, 23\%, 28\%, 15\%, 5\%]
+
+**Trả lời:**
+
+Mode là 28\% vì nó là giá trị xuất hiện thường xuyên nhất.
+:::
+
+**Trung bình nhân** thường được sử dụng khi tính toán lợi nhuận đầu tư qua nhiều giai đoạn hoặc khi đo lường tỷ lệ tăng trưởng kép. Công thức tổng quát cho trung bình nhân, $$G$$, như sau:
+
+$$
+G = \sqrt[n]{X_1 \times X_2 \times ... \times X_n} = (X_1 \times X_2 \times ... \times X_n)^{1/n}
+$$
+
+Lưu ý rằng phương trình này chỉ có nghiệm nếu tích dưới dấu căn là không âm.
+
+Khi tính trung bình nhân cho một tập dữ liệu lợi nhuận, cần cộng 1 vào mỗi giá trị dưới dấu căn và sau đó trừ 1 từ kết quả. Lợi nhuận trung bình nhân $$R_G$$ có thể được tính bằng công thức sau:
+
+$$
+1 + R_G = \sqrt[n]{(1 + R_1) \times (1 + R_2) \times ... \times (1 + R_n)}
+$$
+
+trong đó:
+
+* $$R_t$$ = lợi nhuận cho giai đoạn $$t$$
+
+:::info[**Ví dụ: Lợi nhuận trung bình nhân**]
+
+Trong ba năm qua, lợi nhuận của cổ phiếu phổ thông của Công ty Acme lần lượt là -9,34%, 23,45% và 8,92%. Tính tỷ lệ lợi nhuận hàng năm kép trong giai đoạn 3 năm.
+
+**Trả lời:**
+
+$$
+1 + R_G = \sqrt[3]{(1 - 0.0934) \times (1 + 0.2345) \times (1 + 0.0892)}
+$$
+
+$$
+1 + R_G = \sqrt[3]{0.9066 \times 1.2345 \times 1.0892} = \sqrt[3]{1.21903}
+$$
+
+$$
+1 + R_G = (1.21903)^{1/3} = 1.06825
+$$
+
+$$
+R_G = 1.06825 - 1 = 6.825\%
+$$
+
+Giải bài toán này bằng máy tính của bạn như sau:
+- Trên TI, nhập `1.21903` `[y^x]` `3` `[1/x]` `[=]`
+- Trên HP, nhập `1.21903` `[ENTER]` `3` `[1/x]` `[y^x]`
+
+:::
+
+:::note[**Lưu ý của Giáo sư**]
+
+Trung bình nhân luôn nhỏ hơn hoặc bằng trung bình số học, và sự khác biệt tăng lên khi sự phân tán của các quan sát tăng lên. Chỉ khi nào trung bình số học và trung bình nhân bằng nhau là khi không có sự biến đổi trong các quan sát (tức là tất cả các quan sát đều bằng nhau).
+
+:::
+
+Một **trung bình điều hòa** được sử dụng cho một số tính toán nhất định, chẳng hạn như chi phí trung bình của các cổ phiếu mua theo thời gian. Trung bình điều hòa được tính như sau:
+
+$$
+X_H = \frac{N}{\sum_{i=1}^{N} \frac{1}{X_i}}
+$$
+
+trong đó có $$ N $$ giá trị của $$ X_i $$.
+
+:::info[**VÍ DỤ**: Tính toán chi phí trung bình bằng trung bình điều hòa]
+Một nhà đầu tư mua \$1,000 cổ phiếu quỹ mỗi tháng, và trong ba tháng qua giá mỗi cổ phiếu lần lượt là \$8, \$9, và \$10. Chi phí trung bình mỗi cổ phiếu là bao nhiêu?
+
+**Trả lời**:
+
+$$
+X_H = \frac{3}{\frac{1}{8} + \frac{1}{9} + \frac{1}{10}} = \$8.926 \text{ mỗi cổ phiếu}
+$$
+
+Để kiểm tra kết quả này, tính tổng số cổ phiếu đã mua như sau:
+
+$$
+\frac{1,000}{8} + \frac{1,000}{9} + \frac{1,000}{10} = 336.11 \text{ cổ phiếu}
+$$
+
+Giá trung bình là:
+
+$$
+\frac{3,000}{336.11} = \$8.926 \text{ mỗi cổ phiếu}
+$$
+:::
+
+Ví dụ trên minh họa cách hiểu trung bình điều hòa trong ứng dụng phổ biến nhất của nó. Lưu ý rằng giá trung bình mỗi cổ phiếu (\$8.93) thấp hơn giá trung bình số học của các giá cổ phiếu,
+
+$$
+\frac{8 + 9 + 10}{3} = 9
+$$
+
+Đối với các giá trị không bằng nhau: trung bình điều hòa $$ < $$ trung bình hình học $$ < $$ trung bình số học. Sự thật toán học này là cơ sở cho lợi ích được cho là của việc mua cùng một số tiền cổ phiếu quỹ mỗi tháng hoặc mỗi tuần. Một số người gọi thực hành này là "đầu tư định kỳ theo đô la."

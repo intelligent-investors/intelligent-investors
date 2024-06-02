@@ -380,27 +380,154 @@ where:
 * $$X_1, X_2, \ldots, X_n$$ = observed values
 * $$w_1, w_2, \ldots, w_n$$ = corresponding weights associated with each of the observations such that $$\sum w_i = 1$$
 
-Cả giá trị trung bình tổng thể và giá trị trung bình mẫu đều là ví dụ của **trung bình số học**. Trung bình số học là tổng của các giá trị quan sát chia cho số lượng quan sát. Đây là thước đo xu hướng trung tâm được sử dụng rộng rãi nhất và có các tính chất sau:
+:::info[**EXAMPLE**: Weighted mean as a portfolio return]
 
-- Tất cả các tập dữ liệu khoảng và tỷ lệ đều có trung bình số học.
-- Tất cả các giá trị dữ liệu được xem xét và bao gồm trong tính toán trung bình số học.
-- Một tập dữ liệu chỉ có một trung bình số học (tức là trung bình số học là duy nhất).
-- Tổng các độ lệch của mỗi quan sát trong tập dữ liệu so với trung bình luôn bằng không.
+A portfolio consists of 50% common stocks, 40% bonds, and 10% cash. If the return on common stocks is 12%, the return on bonds is 7%, and the return on cash is 3%, what is the portfolio return?
 
-Trung bình số học là thước đo xu hướng trung tâm duy nhất mà tổng các độ lệch so với trung bình bằng không. Về mặt toán học, tính chất này có thể được biểu diễn như sau:
+**Answer:**
 
 $$
-\text{tổng của các độ lệch trung bình} = \sum_{i=1}^{n} (X_i - \overline{X}) = 0
+\overline{X}_W = w_{stock} R_{stock} + w_{bonds} R_{bonds} + w_{cash} R_{cash}
 $$
 
-Các giá trị lớn hoặc nhỏ bất thường có thể có ảnh hưởng không cân đối đến giá trị trung bình số học được tính. Trung bình của 1, 2, 3 và 50 là 14 và không phải là một chỉ số tốt về các giá trị dữ liệu thực sự là gì. Ở mặt tích cực, trung bình số học sử dụng tất cả thông tin có sẵn về các quan sát. Trung bình số học của một mẫu từ một tổng thể là ước tính tốt nhất của cả trung bình thực sự của mẫu và giá trị của quan sát tiếp theo.
-
-Việc tính toán **trung bình có trọng số** nhận ra rằng các quan sát khác nhau có thể có ảnh hưởng không cân đối đến trung bình. Trung bình có trọng số của một tập hợp các số được tính với phương trình sau:
-
 $$
-\overline{X}_w = \sum_{i=1}^{n} w_i X_i = (w_1 X_1 + w_2 X_2 + \ldots + w_n X_n)
+\overline{X}_W = (0.50 \times 0.12) + (0.40 \times 0.07) + (0.10 \times 0.03) = 0.091, \text{ or 9.1\%}
 $$
 
-trong đó:
-* $$X_1, X_2, \ldots, X_n$$ = các giá trị quan sát
-* $$w_1, w_2, \ldots, w_n$$ = các trọng số tương ứng liên quan đến từng quan sát sao cho $$\sum w_i = 1$$
+:::
+
+The example illustrates an extremely important investments concept: *the return for a portfolio is the weighted average of the returns of the individual assets in the portfolio*. Asset weights are market weights, the market value of each asset relative to the market value of the entire portfolio.
+
+The **median** is the midpoint of a data set when the data is arranged in ascending or descending order. Half the observations lie above the median and half are below. To determine the median, arrange the data from the highest to the lowest value, or lowest to highest value, and find the middle observation.
+
+The median is important because the arithmetic mean can be affected by extremely large or small values (outliers). When this occurs, the median is a better measure of central tendency than the mean because it is not affected by extreme values that may actually be the result of errors in the data.
+
+:::info[**EXAMPLE: The median using an odd number of observations**]
+
+What is the median return for five portfolio managers with 10-year annualized total returns record of: 30\%, 15\%, 25\%, 21\%, and 23\%?
+
+**Answer:**
+
+First, arrange the returns in descending order.
+
+30\%, 25\%, 23\%, 21\%, 15\%
+
+Then, select the observation that has an equal number of observations above and below it—the one in the middle. For the given data set, the third observation, 23\%, is the median value.
+
+:::
+
+:::info[**EXAMPLE: The median using an even number of observations**]
+Suppose we add a sixth manager to the previous example with a return of 28%. What is the median return?
+
+**Answer:**
+
+Arranging the returns in descending order gives us:
+
+30\%, 28\%, 25\%, 23\%, 21\%, 15\%
+
+With an even number of observations, there is no single middle value. The median value in this case is the arithmetic mean of the two middle observations, 25\% and 23\%. Thus, the median return for the six managers is 24.0\% = 0.5(25 + 23).
+:::
+
+Consider that while we calculated the mean of 1, 2, 3, and 50 as 14, the median is 2.5. If the data were 1, 2, 3, and 4 instead, the arithmetic mean and median would both be 2.5.
+
+The **mode** is the value that occurs most frequently in a data set. A data set may have more than one mode or even no mode. When a distribution has one value that appears most frequently, it is said to be **unimodal**. When a set of data has two or three values that occur most frequently, it is said to be **bimodal** or **trimodal**, respectively.
+
+:::info[**EXAMPLE: The mode**]
+What is the mode of the following data set?
+
+Data set: [30\%, 28\%, 25\%, 23\%, 28\%, 15\%, 5\%]
+
+**Answer:**
+
+The mode is 28\% because it is the value appearing most frequently.
+:::
+
+The **geometric mean** is often used when calculating investment returns over multiple periods or when measuring compound growth rates. The general formula for the geometric mean, $$G$$, is as follows:
+
+$$
+G = \sqrt[n]{X_1 \times X_2 \times ... \times X_n} = (X_1 \times X_2 \times ... \times X_n)^{1/n}
+$$
+
+Note that this equation has a solution only if the product under the radical sign is non-negative.
+
+When calculating the geometric mean for a returns data set, it is necessary to add 1 to each value under the radical and then subtract 1 from the result. The geometric mean return $$R_G$$ can be computed using the following equation:
+
+$$
+1 + R_G = \sqrt[n]{(1 + R_1) \times (1 + R_2) \times ... \times (1 + R_n)}
+$$
+
+where:
+
+* $$R_t$$ = the return for period $$t$$
+
+:::info[**EXAMPLE: Geometric mean return**]
+
+For the last three years, the returns for Acme Corporation common stock have been -9.34%, 23.45%, and 8.92%. Compute the compound annual rate of return over the 3-year period.
+
+**Answer:**
+
+$$
+1 + R_G = \sqrt[3]{(1 - 0.0934) \times (1 + 0.2345) \times (1 + 0.0892)}
+$$
+
+$$
+1 + R_G = \sqrt[3]{0.9066 \times 1.2345 \times 1.0892} = \sqrt[3]{1.21903}
+$$
+
+$$
+1 + R_G = (1.21903)^{1/3} = 1.06825
+$$
+
+$$
+R_G = 1.06825 - 1 = 6.825\%
+$$
+
+Solve this type of problem with your calculator as follows:
+- On the TI, enter `1.21903` `[y^x]` `3` `[1/x]` `[=]`
+- On the HP, enter `1.21903` `[ENTER]` `3` `[1/x]` `[y^x]`
+
+:::
+
+:::note[**PROFESSOR’S NOTE**]
+
+The geometric mean is always less than or equal to the arithmetic mean, and the difference increases as the dispersion of the observations increases. The only time the arithmetic and geometric means are equal is when there is no variability in the observations (i.e., all observations are equal).
+
+:::
+
+A **harmonic mean** is used for certain computations, such as the average cost of shares purchased over time. The harmonic mean is calculated as 
+
+$$
+X_H = \frac{N}{\sum_{i=1}^{N} \frac{1}{X_i}}
+$$
+
+where there are $$ N $$ values of $$ X_i $$.
+
+:::info[**EXAMPLE**: Calculating average cost with the harmonic mean]
+An investor purchases \$1,000 of mutual fund shares each month, and over the last three months the prices paid per share were \$8, \$9, and \$10. What is the average cost per share?
+
+**Answer**:
+
+$$
+X_H = \frac{3}{\frac{1}{8} + \frac{1}{9} + \frac{1}{10}} = \$8.926 \text{ per share}
+$$
+
+To check this result, calculate the total shares purchased as 
+
+$$
+\frac{1,000}{8} + \frac{1,000}{9} + \frac{1,000}{10} = 336.11 \text{ shares}
+$$
+
+The average price is 
+
+$$
+\frac{3,000}{336.11} = \$8.926 \text{ per share}
+$$
+:::
+
+The previous example illustrates the interpretation of the harmonic mean in its most common application. Note that the average price paid per share ($8.93) is less than the arithmetic average of the share prices, 
+
+$$
+\frac{8 + 9 + 10}{3} = 9
+$$
+
+For values that are not all equal: harmonic mean $$ < $$ geometric mean $$ < $$ arithmetic mean. This mathematical fact is the basis for the claimed benefit of purchasing the same dollar amount of mutual fund shares each month or each week. Some refer to this practice as "dollar cost averaging."
