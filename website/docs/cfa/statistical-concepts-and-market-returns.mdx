@@ -2,6 +2,9 @@ import Figure1 from "./images/statistical/figure1.png";
 import Figure2 from "./images/statistical/figure2.png";
 import Figure3 from "./images/statistical/figure3.png";
 import Figure4 from "./images/statistical/figure4.png";
+import Figure6_1 from "./images/statistical/figure6_1.png";
+import Figure6_2 from "./images/statistical/figure6_2.png";
+import Figure6_3 from "./images/statistical/figure6_3.png";
 
 # Statistical Concepts and Market Returns
 
@@ -816,3 +819,108 @@ The 65th percentile is closest to:
 * A. 5.85.
 * B. 6.55.
 * C. 8.70.
+
+### H: Calculate and interpret the proportion of observations falling within a specified number of standard deviations of the mean using Chebyshev’s inequality.
+
+**Chebyshev’s inequality** states that for any set of observations, whether sample or population data and regardless of the shape of the distribution, the percentage of the observations that lie within $$k$$ standard deviations of the mean is *at least* $$1 - \frac{1}{k^2}$$ for all $$k > 1$$.
+
+$$
+\Pr (|X - \mu| \geq k \sigma) \leq \frac{1}{k^2}
+$$
+
+:::info[**EXAMPLE: Chebyshev’s inequality**]
+
+What is the minimum percentage of any distribution that will lie within $$±2$$ standard deviations of the mean?
+
+**Answer:**
+
+Applying Chebyshev’s inequality, we have:
+
+$$1 - \frac{1}{k^2} = 1 - \frac{1}{2^2} = 1 - \frac{1}{4} = 0.75$$ or 75%
+:::
+
+According to Chebyshev’s inequality, the following relationships hold for any distribution. At least:
+
+- 36% of observations lie within ±1.25 standard deviations of the mean.
+- 56% of observations lie within ±1.50 standard deviations of the mean.
+- 75% of observations lie within ±2 standard deviations of the mean.
+- 89% of observations lie within ±3 standard deviations of the mean.
+- 94% of observations lie within ±4 standard deviations of the mean.
+
+The importance of Chebyshev’s inequality is that it applies to any distribution. If we actually know the underlying distribution is normal, for example, we can be even more precise about the percentage of observations that will fall within 2 or 3 standard deviations of the mean.
+
+
+### I: Calculate and interpret the coefficient of variation.
+
+A direct comparison between two or more measures of dispersion may be difficult. For instance, suppose you are comparing the annual returns distribution for retail stocks with a mean of 8% and an annual returns distribution for a real estate portfolio with a mean of 16%. A direct comparison between the dispersion of the two distributions is not meaningful because of the relatively large difference in their means. To make a meaningful comparison, a relative measure of dispersion must be used. **Relative dispersion** is the amount of variability in a distribution relative to a reference point or benchmark. Relative dispersion is commonly measured with the **coefficient of variation** ($$CV$$), which is computed as:
+
+$$
+CV = \frac{s_x}{\overline{x}} == \frac{\text{standard deviation of x}}{\text{average value of x}}
+$$
+
+$$CV$$ measures the amount of dispersion in a distribution relative to the distribution’s mean. It is useful because it enables us to make a direct comparison of dispersion across different sets of data. In an investments setting, the CV is used to measure the risk (variability) per unit of expected return (mean).
+
+:::info[**EXAMPLE: Coefficient of variation**]
+You have just been presented with a report that indicates that the mean monthly return on T-bills is 0.25% with a standard deviation of 0.36%, and the mean monthly return for the S&P 500 is 1.09% with a standard deviation of 7.30%. Your unit manager has asked you to compute the CV for these two investments and to interpret your results.
+
+Answer:
+
+$$
+\text{CV}_\text{T-bills} = \frac{0.36}{0.25} = 1.44
+$$
+
+$$
+\text{CV}_\text{S\&P 500} = \frac{7.30}{1.09} = 6.70
+$$
+
+These results indicate that there is **less dispersion (risk)** per unit of monthly return for T-bills than there is for the S&P 500 (1.44 versus 6.70).
+:::
+
+:::note[**PROFESSOR’S NOTE**]
+
+To remember the formula for CV, remember that the coefficient of variation is a measure of variation, so standard deviation goes in the numerator. CV is variation per unit of return.
+
+:::
+
+### J: Explain skewness and the meaning of a positively or negatively skewed return distribution.
+
+A distribution is **symmetrical** if it is shaped identically on both sides of its mean. Distributional symmetry implies that intervals of losses and gains will exhibit the same frequency. For example, a symmetrical distribution with a mean return of zero will have losses in the –6% to –4% interval as frequently as it will have gains in the +4% to +6% interval. The extent to which a returns distribution is symmetrical is important because the degree of symmetry tells analysts if deviations from the mean are more likely to be positive or negative.
+
+**Skewness**, or skew, refers to the extent to which a distribution is not symmetrical. Nonsymmetrical distributions may be either positively or negatively skewed and result from the occurrence of outliers in the data set. **Outliers** are observations with extraordinarily large values, either positive or negative.
+
+- A **positively skewed** distribution is characterized by many outliers in the upper region, or right tail. A positively skewed distribution is said to be skewed right because of its relatively long upper (right) tail.
+
+- A **negatively skewed** distribution has a disproportionately large amount of outliers that fall within its lower (left) tail. A negatively skewed distribution is said to be skewed left because of its long lower tail.
+
+### K: Describe the relative locations of the mean, median, and mode for a unimodal, nonsymmetrical distribution.
+
+Skewness affects the location of the mean, median, and mode of a distribution.
+
+- For a **symmetrical distribution**, the mean, median, and mode are equal.
+- For a **positively skewed**, unimodal distribution, the mode is less than the median, which is less than the mean. The mean is affected by outliers; in a positively skewed distribution, there are large, positive outliers which will tend to “pull” the mean upward, or more positive.
+  - An example of a positively skewed distribution is that of housing prices. Suppose that you live in a neighborhood with 100 homes; 99 of them sell for \$100,000, and one sells for \$1,000,000. The median and the mode will be \$100,000, but the mean will be \$109,000. Hence, the mean has been “pulled” upward (to the right) by the existence of one home (outlier) in the neighborhood.
+- For a **negatively skewed**, unimodal distribution, the mean is less than the median, which is less than the mode. In this case, there are large, negative outliers that tend to “pull” the mean downward (to the left).
+
+:::info[**PROFESSOR’S NOTE**]
+The key to remembering how measures of central tendency are affected by skewed data is to recognize that skew affects the mean more than the median and mode, and the mean is “pulled” in the direction of the skew. The relative location of the mean, median, and mode for different distribution shapes is shown in the following figures. Note the median is between the other two measures for positively or negatively skewed distributions.
+
+**Figures: Effect of Skewness on Mean, Median, and Mode**
+
+*Symmetrical* ($$\text{mean} = \text{median} = \text{mode}$$)
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure6_1} style={{width: 600}} />
+</div>
+
+*Positive (right) skew* ($$\text{mean} > \text{median} > \text{mode}$$)
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure6_2} style={{width: 600}} />
+</div>
+
+*Negative (left) skew* ($$\text{mean} < \text{median} < \text{mode}$$)
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure6_3} style={{width: 600}} />
+</div>
+:::

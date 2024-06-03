@@ -2,6 +2,9 @@ import Figure1 from "./images/statistical/figure1.png";
 import Figure2 from "./images/statistical/figure2.png";
 import Figure3 from "./images/statistical/figure3.png";
 import Figure4 from "./images/statistical/figure4.png";
+import Figure6_1 from "./images/statistical/figure6_1.png";
+import Figure6_2 from "./images/statistical/figure6_2.png";
+import Figure6_3 from "./images/statistical/figure6_3.png";
 
 # Khái niệm Thống kê và Lợi tức Thị trường
 
@@ -816,3 +819,107 @@ Phần trăm vị thứ 65 gần nhất với:
 * A. 5,85.
 * B. 6,55.
 * C. 8,70.
+
+### H: Tính toán và diễn giải tỷ lệ các quan sát nằm trong một số độ lệch chuẩn xác định từ trung bình bằng cách sử dụng bất đẳng thức Chebyshev.
+
+**Bất đẳng thức Chebyshev** phát biểu rằng đối với bất kỳ tập hợp quan sát nào, dù là dữ liệu mẫu hay dữ liệu dân số và bất kể hình dạng của phân phối, tỷ lệ phần trăm các quan sát nằm trong $$k$$ độ lệch chuẩn từ trung bình là *ít nhất* $$1 - \frac{1}{k^2}$$ cho tất cả các $$k > 1$$.
+
+$$
+\Pr (|X - \mu| \geq k \sigma) \leq \frac{1}{k^2}
+$$
+
+:::info[**VÍ DỤ: Bất đẳng thức Chebyshev**]
+
+Tỷ lệ phần trăm tối thiểu của bất kỳ phân phối nào sẽ nằm trong phạm vi $$±2$$ độ lệch chuẩn từ trung bình là bao nhiêu?
+
+**Trả lời:**
+
+Áp dụng bất đẳng thức Chebyshev, chúng ta có:
+
+$$1 - \frac{1}{k^2} = 1 - \frac{1}{2^2} = 1 - \frac{1}{4} = 0.75$$ hoặc 75%
+:::
+
+Theo bất đẳng thức Chebyshev, các mối quan hệ sau đây áp dụng cho bất kỳ phân phối nào. Ít nhất:
+
+- 36% quan sát nằm trong ±1.25 độ lệch chuẩn từ trung bình.
+- 56% quan sát nằm trong ±1.50 độ lệch chuẩn từ trung bình.
+- 75% quan sát nằm trong ±2 độ lệch chuẩn từ trung bình.
+- 89% quan sát nằm trong ±3 độ lệch chuẩn từ trung bình.
+- 94% quan sát nằm trong ±4 độ lệch chuẩn từ trung bình.
+
+Tầm quan trọng của bất đẳng thức Chebyshev là nó áp dụng cho bất kỳ phân phối nào. Nếu chúng ta thực sự biết phân phối cơ bản là phân phối chuẩn, ví dụ, chúng ta có thể chính xác hơn về tỷ lệ phần trăm các quan sát sẽ nằm trong phạm vi 2 hoặc 3 độ lệch chuẩn từ trung bình.
+
+### I: Tính toán và diễn giải hệ số biến thiên.
+
+So sánh trực tiếp giữa hai hoặc nhiều thước đo độ phân tán có thể gặp khó khăn. Ví dụ, giả sử bạn đang so sánh phân phối lợi nhuận hàng năm cho cổ phiếu bán lẻ với trung bình là 8% và phân phối lợi nhuận hàng năm cho một danh mục bất động sản với trung bình là 16%. So sánh trực tiếp giữa độ phân tán của hai phân phối là không có ý nghĩa do sự chênh lệch lớn về trung bình của chúng. Để thực hiện so sánh có ý nghĩa, một thước đo tương đối về độ phân tán phải được sử dụng. **Độ phân tán tương đối** là lượng biến thiên trong một phân phối tương đối với một điểm tham chiếu hoặc tiêu chuẩn. Độ phân tán tương đối thường được đo bằng **hệ số biến thiên** ($$CV$$), được tính như sau:
+
+$$
+CV = \frac{s_x}{\overline{x}} == \frac{\text{độ lệch chuẩn của x}}{\text{giá trị trung bình của x}}
+$$
+
+$$CV$$ đo lường lượng phân tán trong một phân phối tương đối với trung bình của phân phối đó. Nó hữu ích vì cho phép chúng ta thực hiện so sánh trực tiếp về độ phân tán giữa các tập dữ liệu khác nhau. Trong bối cảnh đầu tư, CV được sử dụng để đo lường rủi ro (biến thiên) trên mỗi đơn vị lợi nhuận kỳ vọng (trung bình).
+
+:::info[**VÍ DỤ: Hệ số biến thiên**]
+Bạn vừa được trình bày một báo cáo cho thấy rằng lợi nhuận trung bình hàng tháng trên T-bills là 0.25% với độ lệch chuẩn là 0.36%, và lợi nhuận trung bình hàng tháng của S&P 500 là 1.09% với độ lệch chuẩn là 7.30%. Quản lý đơn vị của bạn đã yêu cầu bạn tính toán CV cho hai khoản đầu tư này và diễn giải kết quả của bạn.
+
+Trả lời:
+
+$$
+\text{CV}_\text{T-bills} = \frac{0.36}{0.25} = 1.44
+$$
+
+$$
+\text{CV}_\text{S\&P 500} = \frac{7.30}{1.09} = 6.70
+$$
+
+Những kết quả này chỉ ra rằng có **ít sự phân tán (rủi ro)** trên mỗi đơn vị lợi nhuận hàng tháng đối với T-bills hơn là đối với S&P 500 (1.44 so với 6.70).
+:::
+
+:::note[**GHI CHÚ CỦA GIÁO SƯ**]
+
+Để nhớ công thức cho CV, hãy nhớ rằng hệ số biến thiên là một thước đo về biến thiên, vì vậy độ lệch chuẩn nằm ở tử số. CV là biến thiên trên mỗi đơn vị lợi nhuận.
+
+:::
+
+### J: Giải thích độ nghiêng và ý nghĩa của phân phối lợi nhuận lệch dương hoặc lệch âm.
+
+Một phân phối được gọi là **đối xứng** nếu nó có hình dạng giống nhau ở cả hai bên của giá trị trung bình. Đối xứng phân phối ngụ ý rằng các khoảng lỗ và lãi sẽ có tần suất xuất hiện như nhau. Ví dụ, một phân phối đối xứng với lợi nhuận trung bình bằng không sẽ có tần suất lỗ trong khoảng –6% đến –4% như tần suất lãi trong khoảng +4% đến +6%. Mức độ đối xứng của phân phối lợi nhuận là quan trọng vì mức độ đối xứng cho các nhà phân tích biết liệu các sai lệch so với giá trị trung bình có khả năng là dương hay âm.
+
+**Độ nghiêng**, hay độ lệch, đề cập đến mức độ mà một phân phối không đối xứng. Các phân phối không đối xứng có thể lệch dương hoặc lệch âm và kết quả từ sự xuất hiện của các giá trị ngoại lệ trong tập dữ liệu. **Giá trị ngoại lệ** là các quan sát có giá trị cực kỳ lớn, có thể là dương hoặc âm.
+
+- Một phân phối **lệch dương** được đặc trưng bởi nhiều giá trị ngoại lệ trong vùng phía trên, hoặc đuôi phải. Một phân phối lệch dương được cho là lệch phải vì đuôi phía trên (phải) của nó tương đối dài.
+
+- Một phân phối **lệch âm** có một lượng lớn không tỷ lệ các giá trị ngoại lệ nằm trong đuôi phía dưới (trái). Một phân phối lệch âm được cho là lệch trái vì đuôi dưới của nó dài.
+
+### K: Mô tả vị trí tương đối của trung bình, trung vị và mốt đối với một phân phối đơn đỉnh, không đối xứng.
+
+Độ lệch ảnh hưởng đến vị trí của trung bình, trung vị và mốt của một phân phối.
+
+- Đối với một **phân phối đối xứng**, trung bình, trung vị và mốt bằng nhau.
+- Đối với một phân phối đơn đỉnh **lệch phải** (lệch dương), mốt nhỏ hơn trung vị, và trung vị nhỏ hơn trung bình. Trung bình bị ảnh hưởng bởi các giá trị ngoại lai; trong một phân phối lệch phải, có các giá trị ngoại lai lớn và dương sẽ "kéo" trung bình lên cao hơn, hoặc dương hơn.
+  - Một ví dụ về phân phối lệch phải là giá nhà. Giả sử bạn sống trong một khu phố có 100 căn nhà; 99 căn nhà bán với giá 100,000 đô la, và một căn bán với giá 1,000,000 đô la. Trung vị và mốt sẽ là 100,000 đô la, nhưng trung bình sẽ là 109,000 đô la. Vì vậy, trung bình đã bị "kéo" lên (sang phải) bởi sự tồn tại của một căn nhà (giá trị ngoại lai) trong khu phố.
+- Đối với một phân phối đơn đỉnh **lệch trái** (lệch âm), trung bình nhỏ hơn trung vị, và trung vị nhỏ hơn mốt. Trong trường hợp này, có các giá trị ngoại lai lớn và âm sẽ "kéo" trung bình xuống (sang trái).
+
+:::info[**GHI CHÚ CỦA GIÁO SƯ**]
+Điều quan trọng để nhớ cách các số đo xu hướng trung tâm bị ảnh hưởng bởi dữ liệu lệch là nhận ra rằng độ lệch ảnh hưởng đến trung bình nhiều hơn so với trung vị và mốt, và trung bình bị "kéo" theo hướng của độ lệch. Vị trí tương đối của trung bình, trung vị và mốt đối với các dạng phân phối khác nhau được hiển thị trong các hình sau. Lưu ý rằng trung vị nằm giữa hai số đo kia đối với các phân phối lệch dương hoặc lệch âm.
+
+**Hình ảnh: Ảnh hưởng của độ lệch đến trung bình, trung vị và mốt**
+
+*Đối xứng* ($$\text{mean} = \text{median} = \text{mode}$$)
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure6_1} style={{width: 600}} />
+</div>
+
+*Lệch phải (dương)* ($$\text{mean} > \text{median} > \text{mode}$$)
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure6_2} style={{width: 600}} />
+</div>
+
+*Lệch trái (âm)* ($$\text{mean} < \text{median} < \text{mode}$$)
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure6_3} style={{width: 600}} />
+</div>
+:::
