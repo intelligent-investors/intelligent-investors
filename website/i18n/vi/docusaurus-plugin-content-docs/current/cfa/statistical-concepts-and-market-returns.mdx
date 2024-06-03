@@ -567,3 +567,252 @@ $$
 
 Khi dữ liệu được sắp xếp theo thứ tự tăng dần, tứ phân vị thứ ba là một phần tư (0.25) của đường từ điểm dữ liệu thứ tám (18\%) đến điểm dữ liệu thứ chín (19\%), hoặc 18.25\%. Điều này có nghĩa là 75\% tất cả các quan sát nằm dưới 18.25\%.
 :::
+
+### G: Tính toán và diễn giải 1) khoảng và độ lệch trung bình tuyệt đối và 2) phương sai và độ lệch chuẩn của một tổng thể và của một mẫu.
+
+*Phân tán* được định nghĩa là *sự biến động xung quanh xu hướng trung tâm*. Chủ đề chung trong tài chính và đầu tư là sự đánh đổi giữa phần thưởng và sự biến động, trong đó xu hướng trung tâm là thước đo phần thưởng và phân tán là thước đo rủi ro.
+
+**Khoảng** là một thước đo biến động tương đối đơn giản, nhưng khi sử dụng cùng với các thước đo khác, nó cung cấp thông tin cực kỳ hữu ích. Khoảng là khoảng cách giữa giá trị lớn nhất và giá trị nhỏ nhất trong tập dữ liệu, hay:
+
+$$
+\text{range} = \text{maximum value} - \text{minimum value}
+$$
+
+:::info[**EXAMPLE: Khoảng**]
+Khoảng của lợi tức tổng hàng năm trong 5 năm cho năm nhà quản lý đầu tư là bao nhiêu nếu lợi tức cá nhân của các nhà quản lý lần lượt là 30\%, 12\%, 25\%, 20\%, và 23\%?
+
+**Trả lời:**
+
+$$
+\text{range} = 30 - 12 = 18\%
+$$
+:::
+
+**Độ lệch trung bình tuyệt đối** (MAD) là trung bình của các giá trị tuyệt đối của độ lệch của các quan sát cá nhân so với trung bình số học.
+
+$$
+\text{MAD} = \frac{\sum_{i=1}^n |X_i - \bar{X}|}{n}
+$$
+
+Việc tính toán MAD sử dụng các giá trị tuyệt đối của mỗi độ lệch so với trung bình vì tổng của các độ lệch thực tế so với trung bình số học là bằng không.
+
+:::info[**EXAMPLE: MAD**]
+
+MAD của lợi tức đầu tư của năm nhà quản lý đã thảo luận ở ví dụ trước là bao nhiêu? Nó được diễn giải như thế nào?
+
+**Trả lời:**
+
+lợi tức hàng năm: [30%, 12%, 25%, 20%, 23%]
+
+$$
+\bar{X} = \frac{30 + 12 + 25 + 20 + 23}{5} = 22\%
+$$
+
+$$
+\text{MAD} = \frac{|30 - 22| + |12 - 22| + |25 - 22| + |20 - 22| + |23 - 22|}{5}
+$$
+
+$$
+\text{MAD} = \frac{8 + 10 + 3 + 2 + 1}{5} = 4.8\%
+$$
+
+:::
+
+Kết quả này có thể được diễn giải là, trung bình, một lợi tức cá nhân sẽ lệch ±4.8% so với lợi tức trung bình 22%.
+
+**Phương sai của tổng thể** được định nghĩa là trung bình của các độ lệch bình phương so với trung bình. Phương sai tổng thể ($$\sigma^2$$) sử dụng các giá trị cho tất cả các thành viên của tổng thể và được tính bằng công thức sau:
+
+$$
+\sigma^2 = \frac{\sum_{i=1}^N (X_i - \mu)^2}{N}
+$$
+
+:::info[**EXAMPLE**: Phương sai tổng thể, $$\sigma^2$$]
+
+Giả sử lợi tức tổng hàng năm trong 5 năm của năm nhà quản lý đầu tư được sử dụng trong ví dụ trước đại diện cho tất cả các nhà quản lý tại một công ty đầu tư nhỏ. Phương sai tổng thể của các lợi tức này là bao nhiêu?
+
+**Trả lời:**
+
+$$
+\mu = \frac{[30+12+25+20+23]}{5} = 22\%
+$$
+
+$$
+\sigma^2 = \frac{[(30-22)^2 + (12-22)^2 + (25-22)^2 + (20-22)^2 + (23-22)^2]}{5}
+$$
+
+$$
+= 35.60 \left( \sigma_0^2 \right)
+$$
+
+Diễn giải kết quả này, chúng ta có thể nói rằng biến động trung bình so với lợi tức trung bình là 35.60% bình phương. Nếu chúng ta tính toán bằng cách sử dụng số thập phân thay vì phần trăm, phương sai sẽ là 0.00356. Phần trăm bình phương là gì? Đúng vậy, điều này vô nghĩa, nhưng hãy xem chúng ta có thể làm gì để nó có ý nghĩa hơn.
+:::
+
+Như bạn vừa thấy, một vấn đề lớn khi sử dụng phương sai là khó khăn trong việc diễn giải nó. Phương sai được tính toán, không giống như trung bình, là theo đơn vị bình phương của đo lường. Làm thế nào để diễn giải phần trăm bình phương, đô la bình phương, hoặc yên bình phương? Vấn đề này được giảm nhẹ thông qua việc sử dụng **độ lệch chuẩn**. **Độ lệch chuẩn của tổng thể**, $$\sigma$$, là căn bậc hai của phương sai tổng thể và được tính như sau:
+
+$$
+\sigma = \sqrt{\frac{\sum_{i=1}^N (x_i - \mu)^2}{N}}
+$$
+
+:::info[**EXAMPLE**: Độ lệch chuẩn của tổng thể, $$\sigma$$]
+Sử dụng dữ liệu từ các ví dụ trước, tính toán độ lệch chuẩn của tổng thể.
+
+**Trả lời:**
+
+$$
+\sigma = \sqrt{\frac{(30 - 22)^2 + (12 - 22)^2 + (25 - 22)^2 + (20 - 22)^2 + (23 - 22)^2}{5}} = \sqrt{35.60} = 5.97\%
+$$
+
+Tính toán bằng cách sử dụng số thập phân thay vì phần trăm, chúng ta sẽ có:
+
+$$
+\sigma^2 = 0.00356 \text{ và } \sigma = \sqrt{0.00356} = 0.05966 = 5.97\%
+$$
+
+Vì độ lệch chuẩn của tổng thể và trung bình của tổng thể đều được biểu thị bằng cùng một đơn vị (phần trăm), các giá trị này dễ dàng liên quan đến nhau. Kết quả của ví dụ này cho thấy rằng lợi tức trung bình là 22\% và độ lệch chuẩn quanh trung bình là 5.97\%. Lưu ý rằng điều này lớn hơn MAD 4.8\%, một kết quả ($$\sigma > \text{MAD}$$) thường đúng.
+:::
+
+**Phương sai của mẫu**, $$s^2$$, là thước đo độ phân tán áp dụng khi chúng ta đánh giá một mẫu gồm $$n$$ quan sát từ một tổng thể. Phương sai của mẫu được tính bằng công thức sau:
+
+$$
+s^2 = \frac{\sum_{i=1}^{n} (X_i - \overline{X})^2}{n-1}
+$$
+
+Trong ví dụ của chúng ta về phương sai tổng thể, chúng ta đã định nghĩa tổng thể là lợi tức tạo ra bởi năm nhà quản lý trong một công ty trong một khoảng thời gian năm năm cụ thể. Chúng ta đã tính toán độ lệch chuẩn của lợi tức của những nhà quản lý trong khoảng thời gian năm năm cụ thể đó. Nếu có 10 nhà quản lý tại công ty, năm lợi tức mà chúng ta sử dụng sẽ là một mẫu của lợi tức của các nhà quản lý cho công ty đó.
+
+Trong thực tế, chúng ta hiếm khi có dữ liệu lợi tức lịch sử bao gồm toàn bộ tổng thể. Xem xét lợi tức của chỉ số S&P 500 trong 50 năm qua. Để ước tính độ lệch chuẩn của lợi tức trên chỉ số này, chúng ta sẽ tính toán độ lệch chuẩn của mẫu, vì 50 năm lợi tức là một mẫu của tất cả các kết quả lợi tức có thể có cho chỉ số này. Lợi tức sẽ là một tổng thể nếu chúng ta được yêu cầu tính toán độ lệch chuẩn (tổng thể) của lợi tức S&P 500 trong khoảng thời gian 50 năm cụ thể, thay vì để ước tính độ lệch chuẩn của lợi tức S&P 500 nói chung.
+
+Sự khác biệt đáng chú ý nhất so với công thức cho phương sai tổng thể là mẫu số của $$s^2$$ là $$n-1$$, ít hơn một so với kích thước mẫu $$n$$, trong khi $$\sigma^2$$ sử dụng toàn bộ kích thước tổng thể $$N$$. Một khác biệt khác là việc sử dụng trung bình mẫu, $$\overline{X}$$, thay vì trung bình tổng thể, $$\mu$$. Dựa trên lý thuyết toán học đằng sau các thủ tục thống kê, việc sử dụng toàn bộ số quan sát mẫu, $$n$$, thay vì $$n-1$$ như là số chia trong tính toán $$s^2$$, sẽ hệ thống *đánh giá thấp* tham số tổng thể, $$\sigma^2$$, đặc biệt là đối với kích thước mẫu nhỏ. Sự đánh giá thấp có hệ thống này khiến phương sai mẫu trở thành cái gọi là **ước lượng thiên lệch** của phương sai tổng thể. Sử dụng $$n-1$$ thay vì $$n$$ trong mẫu số, tuy nhiên, cải thiện các thuộc tính thống kê của $$s^2$$ như là một ước lượng của $$\sigma^2$$. Do đó, $$s^2$$, như được biểu thị trong phương trình trước, được coi là một ước lượng không thiên lệch của $$\sigma^2$$.
+
+:::info[**EXAMPLE**: Phương sai của mẫu]
+Giả sử rằng lợi tức tổng hàng năm trong 5 năm của năm nhà quản lý đầu tư được sử dụng trong các ví dụ trước chỉ đại diện cho một mẫu của các nhà quản lý tại một công ty đầu tư lớn. Phương sai của mẫu của các lợi tức này là bao nhiêu?
+
+**Trả lời:**
+
+$$
+\bar{X} = \frac{{30 + 12 + 25 + 20 + 23}}{5} = 22\%
+$$
+
+$$
+s^2 = \frac{{(30 - 22)^2 + (12 - 22)^2 + (25 - 22)^2 + (20 - 22)^2 + (23 - 22)^2}}{5 - 1} = (44.5 \%^2)
+$$
+
+Do đó, phương sai của mẫu là 44.5($$\%^2$$) có thể được diễn giải là một ước lượng không thiên lệch của phương sai tổng thể. Lưu ý rằng 44.5 "phần trăm bình phương" là 0.00445 và bạn sẽ nhận được giá trị này nếu bạn đặt lợi tức phần trăm ở dạng số thập phân [ví dụ, $$(0.30 - 0.22)^2$$, v.v.].
+:::
+
+Như với độ lệch chuẩn của tổng thể, **độ lệch chuẩn của mẫu** có thể được tính bằng cách lấy căn bậc hai của phương sai mẫu. Độ lệch chuẩn của mẫu, \( s \), được định nghĩa là:
+
+$$
+s = \sqrt{\frac{\sum_{i=1}^n (X_i - \overline{X})^2}{n-1}}
+$$
+
+:::info[**EXAMPLE**: Độ lệch chuẩn của mẫu]
+
+Tính toán độ lệch chuẩn của mẫu dựa trên kết quả của ví dụ trước.
+
+**Trả lời:**
+
+Vì phương sai của mẫu trong ví dụ trước được tính là 44.5(%\(^2\)), độ lệch chuẩn của mẫu là:
+
+$$
+s = [44.5(\% ^2)]^{1/2} = 6.67\% \text{ hoặc } \sqrt{0.00445} = 0.0667
+$$
+
+Kết quả cho thấy rằng độ lệch chuẩn của mẫu, $$ s = 6.67\% $$, có thể được diễn giải là một ước lượng không thiên lệch của độ lệch chuẩn tổng thể, $$ \sigma $$.
+
+:::
+
+### 📝 LUYỆN TẬP
+
+**Sử dụng dữ liệu sau để trả lời các câu hỏi từ 1 đến 9.**
+
+**Lợi nhuận cổ phiếu hàng năm của XYZ Corp.**
+
+| 2013 | 2014 | 2015 | 2016 | 2017 | 2018 |
+|------|------|------|------|------|------|
+| 22%  | 5%   | –7%  | 11%  | 2%   | 11%  |
+
+1. Lợi nhuận trung bình cộng của cổ phiếu XYZ là bao nhiêu?
+
+* A. 7,3%
+* B. 8,0%
+* C. 11,0%
+
+2. Lợi nhuận trung vị của cổ phiếu XYZ là bao nhiêu?
+
+* A. 7,3%
+* B. 8,0%
+* C. 11,0%
+
+3. Giá trị mode của các lợi nhuận cổ phiếu XYZ là bao nhiêu?
+
+* A. 7,3%
+* B. 8,0%
+* C. 11,0%
+
+4. Biên độ lợi nhuận của cổ phiếu XYZ là bao nhiêu?
+
+* A. 11,0%
+* B. 22,0%
+* C. 29,0%
+
+5. Độ lệch trung bình tuyệt đối của lợi nhuận cổ phiếu XYZ là bao nhiêu?
+
+* A. 5,20%
+* B. 7,33%
+* C. 29,0%
+
+6. Giả sử phân phối lợi nhuận cổ phiếu XYZ là một tổng thể, phương sai tổng thể là bao nhiêu?
+
+* A. 6,8\%²
+* B. 7,7\%²
+* C. 80,2\%²
+
+7. Giả sử phân phối lợi nhuận cổ phiếu XYZ là một tổng thể, độ lệch chuẩn tổng thể là bao nhiêu?
+
+* A. 5,02\%
+* B. 8,96\%
+* C. 46,22\%
+
+8. Giả sử phân phối lợi nhuận cổ phiếu XYZ là một mẫu, phương sai mẫu gần nhất với:
+
+* A. 5,0\%²
+* B. 72,4\%²
+* C. 96,3\%²
+
+9. Giả sử phân phối lợi nhuận cổ phiếu XYZ là một mẫu, độ lệch chuẩn mẫu là bao nhiêu?
+
+* A. 9,8\%
+* B. 72,4\%
+* C. 96,3\%
+
+**Sử dụng dữ liệu sau để trả lời các câu hỏi 10 và 11.**
+
+Lợi nhuận hàng năm của cổ phiếu thường FJW qua các năm 2013, 2014, 2015 và 2016 lần lượt là 15%, 19%, −8%, và 14%.
+
+10. Lợi nhuận trung bình cộng của cổ phiếu thường FJW là bao nhiêu?
+
+* A. 10,00%.
+* B. 14,00%.
+* C. 15,25%.
+
+11. Lợi nhuận trung bình hình học của cổ phiếu thường FJW là bao nhiêu?
+
+* A. 9,45%.
+* B. 14,21%.
+* C. Không thể xác định vì có một lợi nhuận âm.
+
+12. Trung bình điều hòa của 3, 4, và 5 là:
+
+* A. 3,74.
+* B. 3,83.
+* C. 4,12.
+
+13. Với các quan sát sau:
+
+$$2, 4, 5, 6, 7, 9, 10, 11$$
+
+Phần trăm vị thứ 65 gần nhất với:
+
+* A. 5,85.
+* B. 6,55.
+* C. 8,70.

@@ -567,3 +567,252 @@ $$
 
 When the data is arranged in ascending order, the third quartile is one-fourth (0.25) of the way from the eighth data point (18\%) to the ninth data point (19\%), or 18.25\%. This means that 75\% of all observations lie below 18.25\%.
 :::
+
+### G: Calculate and interpret 1) a range and a mean absolute deviation and 2) the variance and standard deviation of a population and of a sample.
+
+*Dispersion* is defined as the *variability around the central tendency*. The common theme in finance and investments is the tradeoff between reward and variability, where the central tendency is the measure of the reward and dispersion is a measure of risk.
+
+The **range** is a relatively simple measure of variability, but when used with other measures it provides extremely useful information. The range is the distance between the largest and the smallest value in the data set, or:
+
+$$
+\text{range} = \text{maximum value} - \text{minimum value}
+$$
+
+:::info[**EXAMPLE: The range**]
+What is the range for the 5-year annualized total returns for five investment managers if the managers' individual returns were 30\%, 12\%, 25\%, 20\%, and 23\%?
+
+**Answer:**
+
+$$
+\text{range} = 30 - 12 = 18\%
+$$
+:::
+
+The **mean absolute deviation** (MAD) is the average of the absolute values of the deviations of individual observations from the arithmetic mean.
+
+$$
+\text{MAD} = \frac{\sum_{i=1}^n |X_i - \bar{X}|}{n}
+$$
+
+The computation of the MAD uses the absolute values of each deviation from the mean because the sum of the actual deviations from the arithmetic mean is zero.
+
+:::info[**EXAMPLE: MAD**]
+
+What is the MAD of the investment returns for the five managers discussed in the preceding example? How is it interpreted?
+
+**Answer:**
+
+annualized returns: [30%, 12%, 25%, 20%, 23%]
+
+$$
+\bar{X} = \frac{30 + 12 + 25 + 20 + 23}{5} = 22\%
+$$
+
+$$
+\text{MAD} = \frac{|30 - 22| + |12 - 22| + |25 - 22| + |20 - 22| + |23 - 22|}{5}
+$$
+
+$$
+\text{MAD} = \frac{8 + 10 + 3 + 2 + 1}{5} = 4.8\%
+$$
+
+:::
+
+This result can be interpreted to mean that, on average, an individual return will deviate ±4.8% from the mean return of 22%.
+
+The **population variance** is defined as the average of the squared deviations from the mean. The population variance ($$\sigma^2$$) uses the values for all members of a population and is calculated using the following formula:
+
+$$
+\sigma^2 = \frac{\sum_{i=1}^N (X_i - \mu)^2}{N}
+$$
+
+:::info[**EXAMPLE**: Population variance, $$\sigma^2$$]
+
+Assume the 5-year annualized total returns for the five investment managers used in the earlier example represent all of the managers at a small investment firm. What is the population variance of returns?
+
+**Answer:**
+
+$$
+\mu = \frac{[30+12+25+20+23]}{5} = 22\%
+$$
+
+$$
+\sigma^2 = \frac{[(30-22)^2 + (12-22)^2 + (25-22)^2 + (20-22)^2 + (23-22)^2]}{5}
+$$
+
+$$
+= 35.60 \left( \sigma_0^2 \right)
+$$
+
+Interpreting this result, we can say that the average variation from the mean return is 35.60% squared. Had we done the calculation using decimals instead of whole percents, the variance would be 0.00356. What is a percent squared? Yes, this is nonsense, but let's see what we can do so that it makes more sense.
+:::
+
+As you have just seen, a major problem with using the variance is the difficulty of interpreting it. The computed variance, unlike the mean, is in terms of squared units of measurement. How does one interpret squared percents, squared dollars, or squared yen? This problem is mitigated through the use of the *standard deviation*. The **population standard deviation**, $$\sigma$$, is the square root of the population variance and is calculated as follows:
+
+$$
+\sigma = \sqrt{\frac{\sum_{i=1}^N (x_i - \mu)^2}{N}}
+$$
+
+:::info[**EXAMPLE**: Population standard deviation, $$\sigma$$]
+Using the data from the preceding examples, compute the population standard deviation.
+
+**Answer:**
+
+$$
+\sigma = \sqrt{\frac{(30 - 22)^2 + (12 - 22)^2 + (25 - 22)^2 + (20 - 22)^2 + (23 - 22)^2}{5}} = \sqrt{35.60} = 5.97\%
+$$
+
+Calculated with decimals instead of whole percents, we would get:
+
+$$
+\sigma^2 = 0.00356 \text{ and } \sigma = \sqrt{0.00356} = 0.05966 = 5.97\%
+$$
+
+Since the population standard deviation and population mean are both expressed in the same units (percent), these values are easy to relate. The outcome of this example indicates that the mean return is 22\% and the standard deviation about the mean is 5.97\%. Note that this is greater than the MAD of 4.8\%, a result ($$\sigma > \text{MAD}$$) that holds in general.
+:::
+
+The **sample variance**, $$s^2$$, is the measure of dispersion that applies when we are evaluating a sample of $$n$$ observations from a population. The sample variance is calculated using the following formula:
+
+$$
+s^2 = \frac{\sum_{i=1}^{n} (X_i - \overline{X})^2}{n-1}
+$$
+
+In our example for population variance, we defined the population as the returns generated by the five managers at a firm over a specific five-year period. We calculated the standard deviation of those managers’ returns for the specific five-year period. If there were 10 managers at the firm, the five returns we used would be a sample of manager returns for that firm.
+
+In practice, we seldom have historical returns data that comprise an entire population. Consider the returns for the S&P 500 index over the last 50 years. To estimate the standard deviation of returns on the index, we would calculate the sample standard deviation, because 50 years of returns are a sample of all the possible returns outcomes for the index. The returns would be a population if we were asked to calculate the (population) standard deviation of S&P 500 returns over the specific 50-year period, rather than to estimate the standard deviation of S&P 500 returns in general.
+
+The most noteworthy difference from the formula for population variance is that the denominator for $$s^2$$ is $$n-1$$, one less than the sample size $$n$$, where $$\sigma^2$$ uses the entire population size $$N$$. Another difference is the use of the sample mean, $$\overline{X}$$, instead of the population mean, $$\mu$$. Based on the mathematical theory behind statistical procedures, the use of the entire number of sample observations, $$n$$, instead of $$n-1$$ as the divisor in the computation of $$s^2$$, will systematically *underestimate* the population parameter, $$\sigma^2$$, particularly for small sample sizes. This systematic underestimation causes the sample variance to be what is referred to as a **biased estimator** of the population variance. Using $$n-1$$ instead of $$n$$ in the denominator, however, improves the statistical properties of $$s^2$$ as an estimator of $$\sigma^2$$. Thus, $$s^2$$, as expressed in the previous equation, is considered to be an unbiased estimator of $$\sigma^2$$.
+
+:::info[**EXAMPLE**: Sample variance]
+Assume that the 5-year annualized total returns for the five investment managers used in the preceding examples represent only a sample of the managers at a large investment firm. What is the sample variance of these returns?
+
+**Answer:**
+
+$$
+\bar{X} = \frac{{30 + 12 + 25 + 20 + 23}}{5} = 22\%
+$$
+
+$$
+s^2 = \frac{{(30 - 22)^2 + (12 - 22)^2 + (25 - 22)^2 + (20 - 22)^2 + (23 - 22)^2}}{5 - 1} = (44.5 \%^2)
+$$
+
+Thus, the sample variance of 44.5($$\%^2$$) can be interpreted to be an unbiased estimator of the population variance. Note that 44.5 "percent squared" is 0.00445 and you will get this value if you put the percent returns in decimal form [e.g., $$(0.30 - 0.22)^2$$, etc.].
+:::
+
+As with the population standard deviation, the **sample standard deviation** can be calculated by taking the square root of the sample variance. The sample standard deviation, \( s \), is defined as:
+
+$$
+s = \sqrt{\frac{\sum_{i=1}^n (X_i - \overline{X})^2}{n-1}}
+$$
+
+:::info[**EXAMPLE**: Sample standard deviation]
+
+Compute the sample standard deviation based on the result of the preceding example.
+
+**Answer:**
+
+Since the sample variance for the preceding example was computed to be 44.5(%\(^2\)), the sample standard deviation is:
+
+$$
+s = [44.5(\% ^2)]^{1/2} = 6.67\% \text{ or } \sqrt{0.00445} = 0.0667
+$$
+
+The results shown here mean that the sample standard deviation, $$ s = 6.67\% $$, can be interpreted as an unbiased estimator of the population standard deviation, $$ \sigma $$.
+
+:::
+
+### 📝 QUIZ
+
+**Use the following data to answer Questions 1 through 9.**
+
+**XYZ Corp. Annual Stock Returns**
+
+| 2013 | 2014 | 2015 | 2016 | 2017 | 2018 |
+|------|------|------|------|------|------|
+| 22%  | 5%   | –7%  | 11%  | 2%   | 11%  |
+
+1. What is the arithmetic mean return for XYZ stock?
+
+* A. 7.3%
+* B. 8.0%
+* C. 11.0%
+
+2. What is the median return for XYZ stock?
+
+* A. 7.3%
+* B. 8.0%
+* C. 11.0%
+
+3. What is the mode of the returns for XYZ stock?
+
+* A. 7.3%
+* B. 8.0%
+* C. 11.0%
+
+4. What is the range for XYZ stock returns?
+
+* A. 11.0%
+* B. 22.0%
+* C. 29.0%
+
+5. What is the mean absolute deviation for XYZ stock returns?
+
+* A. 5.20%
+* B. 7.33%
+* C. 29.0%
+
+6. Assuming that the distribution of XYZ stock returns is a population, what is the population variance?
+
+* A. 6.8\%²
+* B. 7.7\%²
+* C. 80.2\%²
+
+7. Assuming that the distribution of XYZ stock returns is a population, what is the population standard deviation?
+
+* A. 5.02\%
+* B. 8.96\%
+* C. 46.22\%
+
+8. Assuming that the distribution of XYZ stock returns is a sample, the sample variance is closest to:
+
+* A. 5.0\%²
+* B. 72.4\%²
+* C. 96.3\%²
+
+9. Assuming that the distribution of XYZ stock returns is a sample, what is the sample standard deviation?
+
+* A. 9.8\%
+* B. 72.4\%
+* C. 96.3\%
+
+**Use the following data to answer Questions 10 and 11.**
+
+The annual returns for FJW’s common stock over the years 2013, 2014, 2015, and 2016 were 15%, 19%, −8%, and 14%.
+
+10. What is the arithmetic mean return for FJW’s common stock?
+
+* A. 10.00%.
+* B. 14.00%.
+* C. 15.25%.
+
+11. What is the geometric mean return for FJW’s common stock?
+
+* A. 9.45%.
+* B. 14.21%.
+* C. It cannot be determined because one of the returns is negative.
+
+12. The harmonic mean of 3, 4, and 5 is:
+
+* A. 3.74.
+* B. 3.83.
+* C. 4.12.
+
+13. Given the following observations:
+
+$$2, 4, 5, 6, 7, 9, 10, 11$$
+
+The 65th percentile is closest to:
+
+* A. 5.85.
+* B. 6.55.
+* C. 8.70.
