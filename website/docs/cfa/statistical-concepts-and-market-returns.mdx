@@ -5,6 +5,7 @@ import Figure4 from "./images/statistical/figure4.png";
 import Figure6_1 from "./images/statistical/figure6_1.png";
 import Figure6_2 from "./images/statistical/figure6_2.png";
 import Figure6_3 from "./images/statistical/figure6_3.png";
+import Figure7 from "./images/statistical/figure7.png";
 
 # Statistical Concepts and Market Returns
 
@@ -924,3 +925,20 @@ The key to remembering how measures of central tendency are affected by skewed d
 <img src={Figure6_3} style={{width: 600}} />
 </div>
 :::
+
+### L: Explain measures of sample skewness and kurtosis.
+
+**Kurtosis** is a measure of the degree to which a distribution is more or less “peaked” than a normal distribution. **Leptokurtic** describes a distribution that is more peaked than a normal distribution, whereas **platykurtic** refers to a distribution that is less peaked, or flatter than a normal distribution. A distribution is **mesokurtic** if it has the same kurtosis as a normal distribution.
+
+As indicated in the following figure, a leptokurtic return distribution will have more returns clustered around the mean and more returns with large deviations from the mean (fatter tails). Relative to a normal distribution, a leptokurtic distribution will have a greater percentage of small deviations from the mean and a greater percentage of extremely large deviations from the mean. This means that there is a relatively greater probability of an observed value being either close to the mean or far from the mean. With regard to an investment returns distribution, a greater likelihood of a large deviation from the mean return is often perceived as an increase in risk.
+
+**Figure: Kurtosis**
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure7} style={{width: 600}} />
+</div>
+
+A distribution is said to exhibit **excess kurtosis** if it has either more or less kurtosis than the normal distribution. The computed kurtosis for all normal distributions is three. Statisticians, however, sometimes report excess kurtosis, which is defined as kurtosis minus three. Thus, a normal distribution has excess kurtosis equal to zero, a leptokurtic distribution has excess kurtosis greater than zero, and platykurtic distributions will have excess kurtosis less than zero.
+
+Kurtosis is critical in a risk management setting. Most research about the distribution of securities returns has shown that returns are not normally distributed. Actual securities returns tend to exhibit both skewness and kurtosis. Skewness and kurtosis are critical concepts for risk management because when securities returns are modeled using an assumed normal distribution, the predictions from the models will not take into account the potential for extremely large, negative outcomes. In fact, most risk managers put very little emphasis on the mean and standard deviation of a distribution and focus more on the distribution of returns in the tails of the distribution—that is where the risk is. In general, greater positive kurtosis and more negative skew in returns distributions indicates increased risk.
+

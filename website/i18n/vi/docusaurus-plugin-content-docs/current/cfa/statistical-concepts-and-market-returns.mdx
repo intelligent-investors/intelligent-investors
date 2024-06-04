@@ -5,6 +5,7 @@ import Figure4 from "./images/statistical/figure4.png";
 import Figure6_1 from "./images/statistical/figure6_1.png";
 import Figure6_2 from "./images/statistical/figure6_2.png";
 import Figure6_3 from "./images/statistical/figure6_3.png";
+import Figure7 from "./images/statistical/figure7.png";
 
 # Khái niệm Thống kê và Lợi tức Thị trường
 
@@ -923,3 +924,20 @@ Một phân phối được gọi là **đối xứng** nếu nó có hình dạ
 <img src={Figure6_3} style={{width: 600}} />
 </div>
 :::
+
+### L: Giải thích các biện pháp của độ lệch và độ nhọn của mẫu.
+
+**Độ nhọn (Kurtosis)** là một thước đo mức độ mà một phân phối có độ "nhọn" hơn hoặc kém "nhọn" hơn so với phân phối chuẩn. **Leptokurtic** mô tả một phân phối có độ nhọn hơn so với phân phối chuẩn, trong khi **platykurtic** đề cập đến một phân phối kém nhọn hơn, hoặc phẳng hơn so với phân phối chuẩn. Một phân phối là **mesokurtic** nếu nó có độ nhọn giống như phân phối chuẩn.
+
+Như được chỉ ra trong hình dưới đây, một phân phối lợi tức *leptokurtic* sẽ có nhiều lợi tức tập trung quanh giá trị trung bình và nhiều lợi tức có độ lệch lớn so với giá trị trung bình (đuôi dày hơn). So với phân phối chuẩn, một phân phối leptokurtic sẽ có tỷ lệ phần trăm các độ lệch nhỏ so với giá trị trung bình lớn hơn và tỷ lệ phần trăm các độ lệch cực kỳ lớn so với giá trị trung bình lớn hơn. Điều này có nghĩa là có xác suất tương đối lớn hơn của một giá trị quan sát được nằm gần giá trị trung bình hoặc xa giá trị trung bình. Liên quan đến phân phối lợi tức đầu tư, khả năng lớn hơn của một độ lệch lớn so với lợi tức trung bình thường được coi là sự gia tăng rủi ro.
+
+**Figure: Kurtosis**
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure7} style={{width: 600}} />
+</div>
+
+
+Một phân phối được cho là có **độ lồi dư thừa** nếu nó có độ lồi lớn hơn hoặc nhỏ hơn so với phân phối chuẩn. Độ lồi được tính toán cho tất cả các phân phối chuẩn là ba. Tuy nhiên, các nhà thống kê đôi khi báo cáo độ lồi dư thừa, được định nghĩa là độ lồi trừ ba. Do đó, một phân phối chuẩn có độ lồi dư thừa bằng không, một phân phối leptokurtic có độ lồi dư thừa lớn hơn không, và các phân phối platykurtic sẽ có độ lồi dư thừa nhỏ hơn không.
+
+Độ lồi rất quan trọng trong bối cảnh quản lý rủi ro. Hầu hết các nghiên cứu về phân phối lợi nhuận chứng khoán cho thấy rằng lợi nhuận không được phân phối bình thường. Lợi nhuận chứng khoán thực tế có xu hướng thể hiện cả độ lệch và độ lồi. Độ lệch và độ lồi là những khái niệm quan trọng cho quản lý rủi ro vì khi lợi nhuận chứng khoán được mô hình hóa bằng cách sử dụng phân phối chuẩn giả định, các dự đoán từ các mô hình sẽ không tính đến khả năng xảy ra các kết quả tiêu cực cực lớn. Trên thực tế, hầu hết các nhà quản lý rủi ro rất ít nhấn mạnh vào giá trị trung bình và độ lệch chuẩn của một phân phối và tập trung nhiều hơn vào phân phối lợi nhuận ở các phần đuôi của phân phối — đó là nơi rủi ro nằm. Nhìn chung, độ lồi dương lớn hơn và độ lệch âm nhiều hơn trong phân phối lợi nhuận cho thấy rủi ro tăng lên.
