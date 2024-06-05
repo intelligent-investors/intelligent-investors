@@ -972,3 +972,34 @@ $$
 \text{độ nhọn dư} = \text{độ nhọn mẫu} - 3
 $$
 
+### M: So sánh việc sử dụng trung bình số học và trung bình hình học khi phân tích lợi nhuận đầu tư.
+
+Vì lợi nhuận hàng năm trong quá khứ được tính gộp từng giai đoạn, nên trung bình hình học của lợi nhuận hàng năm trong quá khứ là thước đo phù hợp cho hiệu suất trong quá khứ. Nó cho chúng ta lợi nhuận *tổng hợp* trung bình hàng năm. Với lợi nhuận hàng năm là 10%, 15%, -4%, 9%, và 5% trong năm năm, trung bình hình học của $[(1.10)(1.15)(0.96)(1.09)(1.05)]^{1/5} - 1 = 6.81\%$ cho chúng ta biết tỷ lệ duy nhất mà, nếu tính gộp trong năm giai đoạn, sẽ dẫn đến cùng mức tăng tài sản như các tỷ lệ lợi nhuận hàng năm riêng lẻ.
+
+Trung bình số học của $(10\% + 15\% - 4\% + 9\% + 5\%) / 5 = 7\%$ là, tuy nhiên, ước tính tốt nhất về mặt thống kê cho lợi nhuận năm tiếp theo khi chỉ có năm kết quả lợi nhuận. Để ước tính lợi nhuận *nhiều năm* (ví dụ: lợi nhuận hàng năm dự kiến trong ba năm tới), trung bình hình học 6.81% là thước đo phù hợp.
+
+Hãy xem xét mô hình dự báo nơi lợi nhuận sẽ là +100% hoặc -50% mỗi năm trong hai năm. Lưu ý rằng khi lợi nhuận là +100% vào Năm 1 và -50% vào Năm 2, trung bình hình học hàng năm là $[(1 + 100\%)(1 - 50\%)]^{1/2} - 1 = 0\%$ và trung bình số học hàng năm là $(100\% - 50\%)/2 = 25\%$.
+
+Hãy xem xét mô hình cây sau đây cho hai năm với các kết quả +100% và -50% có khả năng như nhau và tài sản ban đầu là $1,000:
+
+```
+                 $4,000 (Xác suất = 25%)
+               /
+        $2,000
+       /       \
+$1,000           $1,000 (Xác suất = 50%)
+       \       /
+         $500
+               \
+                  $250  (Xác suất = 25%)
+```
+
+
+Mỗi giá trị tài sản cuối cùng có xác suất 25%, do đó tài sản kỳ vọng cuối cùng đơn giản là
+
+$$
+\$(4,000 + 1,000 + 1,000 + 250)/4 = \$1,562.50, \ \text{hoặc} \ \$0.25(4,000) + 0.50(1,000) + 0.25(250) = \$1,562.50.
+$$
+
+Điều này phù hợp với việc kiếm được tỷ lệ lợi nhuận hàng năm tổng hợp bằng với trung bình số học là 25%,
+ $$\$1.25^2 \times 1,000 = \$1,562.50 $$, nhưng không phù hợp với việc kiếm được tỷ lệ lợi nhuận trung bình hình học là 0%. Đối với mỗi năm đơn lẻ, tỷ lệ lợi nhuận kỳ vọng đơn giản là trung bình của $$+100\%$$ và $$-50\%$$ vì những kết quả này có khả năng như nhau.
