@@ -942,3 +942,63 @@ A distribution is said to exhibit **excess kurtosis** if it has either more or l
 
 Kurtosis is critical in a risk management setting. Most research about the distribution of securities returns has shown that returns are not normally distributed. Actual securities returns tend to exhibit both skewness and kurtosis. Skewness and kurtosis are critical concepts for risk management because when securities returns are modeled using an assumed normal distribution, the predictions from the models will not take into account the potential for extremely large, negative outcomes. In fact, most risk managers put very little emphasis on the mean and standard deviation of a distribution and focus more on the distribution of returns in the tails of the distribution—that is where the risk is. In general, greater positive kurtosis and more negative skew in returns distributions indicates increased risk.
 
+### Measures of Sample Skew and Kurtosis
+
+**Sample skewness** is equal to the sum of the cubed deviations from the mean divided by the cubed standard deviation and by the number of observations. Sample skewness for large samples is computed as:
+
+$$
+\text{sample skewness} = \frac{1}{n} \sum_{i=1}^{n} \frac{(x_i - \overline{x})^3}{s^3}
+$$
+
+where:
+- $$ s $$ = sample standard deviation
+
+Note that the denominator is always positive, but that the numerator can be positive or negative, depending on whether observations above the mean or observations below the mean tend to be further from the mean on average. When a distribution is right skewed, sample skewness is positive because the deviations above the mean are larger on average. A left-skewed distribution has a negative sample skewness.
+
+Dividing by standard deviation cubed standardizes the statistic and allows **interpretation of the skewness measure**. If relative skewness is equal to zero, the data is not skewed. Positive levels of relative skewness imply a positively skewed distribution, whereas negative values of relative skewness imply a negatively skewed distribution. Values of sample skewness in excess of $$0.5$$ in absolute value are considered significant.
+
+**Sample kurtosis** is measured using deviations raised to the fourth power.
+
+$$
+\text{sample kurtosis} = \frac{1}{n} \sum_{i=1}^{n} \frac{(x_i - \overline{x})^4}{s^4}
+$$
+
+where:
+- $$ s $$ = sample standard deviation
+
+To **interpret kurtosis**, note that it is measured relative to the *kurtosis of a normal distribution*, which is $$3$$. Positive values of excess kurtosis indicate a distribution that is leptokurtic (more peaked, fat tails), whereas negative values indicate a platykurtic distribution (less peaked, thin tails). Excess kurtosis values that exceed 1.0 in absolute value are considered large. We can calculate kurtosis relative to that of a normal distribution as:
+
+$$
+\text{excess kurtosis} = \text{sample kurtosis} - 3
+$$
+
+### M: Compare the use of arithmetic and geometric means when analyzing investment returns.
+
+Since past annual returns are compounded each period, the geometric mean of past annual returns is the appropriate measure of past performance. It gives us the average annual *compound* return. With annual returns of 10%, 15%, -4%, 9%, and 5% over five years, the geometric mean return of $[(1.10)(1.15)(0.96)(1.09)(1.05)]^{1/5} - 1 = 6.81\%$ tells us the single rate that, if compounded over the five periods, would lead to the same increase in wealth as the individual annual rates of return.
+
+The arithmetic mean of $(10\% + 15\% - 4\% + 9\% + 5\%) / 5 = 7\%$ is, however, the statistically best estimator of the next year's returns given only the five years of return outcomes. To estimate *multi-year* returns (e.g. expected annual return over the next three years), the geometric mean of 6.81% is the appropriate measure.
+
+Consider also a forward-looking model where returns will be either +100% or -50% each year for two years. Note that when returns are +100% in Year 1 and -50% in Year 2, the annual geometric mean return is $[(1 + 100\%)(1 - 50\%)]^{1/2} - 1 = 0\%$ and the arithmetic mean annual return is $(100\% - 50\%)/2 = 25\%$.
+
+Consider the following tree model for two years where the outcomes of +100% and -50% are equally likely and beginning wealth is $1,000:
+
+```
+                 $4,000 (Prob = 25%)
+               /
+        $2,000
+       /       \
+$1,000           $1,000 (Prob = 50%)
+      \        /
+         $500
+               \
+                 $250 (Prob = 25%)
+```
+
+Each of the four possible ending wealth values has a 25\% probability, so the expected ending wealth is simply
+
+$$
+\$(4,000 + 1,000 + 1,000 + 250)/4 = \$1,562.50, \ \text{or} \ \$0.25(4,000) + 0.50(1,000) + 0.25(250) = \$1,562.50.
+$$
+
+This is consistent with earning a compound annual rate of return equal to the arithmetic mean of 25%,
+ $$\$1.25^2 \times 1,000 = \$1,562.50 $$, but not with earning the geometric mean return of 0%. For each single year, the expected rate of return is simply the average of $$+100\%$$ and $$-50\%$$ since those outcomes are equally likely.

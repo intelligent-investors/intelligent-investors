@@ -941,3 +941,34 @@ Như được chỉ ra trong hình dưới đây, một phân phối lợi tức
 Một phân phối được cho là có **độ lồi dư thừa** nếu nó có độ lồi lớn hơn hoặc nhỏ hơn so với phân phối chuẩn. Độ lồi được tính toán cho tất cả các phân phối chuẩn là ba. Tuy nhiên, các nhà thống kê đôi khi báo cáo độ lồi dư thừa, được định nghĩa là độ lồi trừ ba. Do đó, một phân phối chuẩn có độ lồi dư thừa bằng không, một phân phối leptokurtic có độ lồi dư thừa lớn hơn không, và các phân phối platykurtic sẽ có độ lồi dư thừa nhỏ hơn không.
 
 Độ lồi rất quan trọng trong bối cảnh quản lý rủi ro. Hầu hết các nghiên cứu về phân phối lợi nhuận chứng khoán cho thấy rằng lợi nhuận không được phân phối bình thường. Lợi nhuận chứng khoán thực tế có xu hướng thể hiện cả độ lệch và độ lồi. Độ lệch và độ lồi là những khái niệm quan trọng cho quản lý rủi ro vì khi lợi nhuận chứng khoán được mô hình hóa bằng cách sử dụng phân phối chuẩn giả định, các dự đoán từ các mô hình sẽ không tính đến khả năng xảy ra các kết quả tiêu cực cực lớn. Trên thực tế, hầu hết các nhà quản lý rủi ro rất ít nhấn mạnh vào giá trị trung bình và độ lệch chuẩn của một phân phối và tập trung nhiều hơn vào phân phối lợi nhuận ở các phần đuôi của phân phối — đó là nơi rủi ro nằm. Nhìn chung, độ lồi dương lớn hơn và độ lệch âm nhiều hơn trong phân phối lợi nhuận cho thấy rủi ro tăng lên.
+
+### Đo lường Độ Lệch và Độ Nhọn Mẫu
+
+**Độ lệch mẫu** bằng tổng các độ lệch lập phương từ trung bình chia cho độ lệch chuẩn lập phương và cho số lượng quan sát. Độ lệch mẫu cho các mẫu lớn được tính như sau:
+
+$$
+\text{độ lệch mẫu} = \frac{1}{n} \sum_{i=1}^{n} \frac{(x_i - \overline{x})^3}{s^3}
+$$
+
+trong đó:
+- $$ s $$ = độ lệch chuẩn mẫu
+
+Lưu ý rằng mẫu số luôn dương, nhưng tử số có thể dương hoặc âm, tùy thuộc vào việc các quan sát trên trung bình hay các quan sát dưới trung bình có xu hướng xa trung bình hơn. Khi một phân phối lệch phải, độ lệch mẫu là dương vì các độ lệch trên trung bình lớn hơn trung bình. Một phân phối lệch trái có độ lệch mẫu là âm.
+
+Chia cho độ lệch chuẩn lập phương chuẩn hóa thống kê và cho phép **diễn giải thước đo độ lệch**. Nếu độ lệch tương đối bằng không, dữ liệu không bị lệch. Các mức độ lệch tương đối dương cho thấy một phân phối bị lệch dương, trong khi các giá trị âm của độ lệch tương đối cho thấy một phân phối bị lệch âm. Các giá trị độ lệch mẫu vượt quá $$0.5$$ theo giá trị tuyệt đối được coi là đáng kể.
+
+**Độ nhọn mẫu** được đo bằng cách sử dụng các độ lệch nâng lên lũy thừa bốn.
+
+$$
+\text{độ nhọn mẫu} = \frac{1}{n} \sum_{i=1}^{n} \frac{(x_i - \overline{x})^4}{s^4}
+$$
+
+trong đó:
+- $$ s $$ = độ lệch chuẩn mẫu
+
+Để **diễn giải độ nhọn**, lưu ý rằng nó được đo tương đối với *độ nhọn của phân phối chuẩn*, là $$3$$. Các giá trị dương của độ nhọn dư cho thấy một phân phối là nhọn (nhọn hơn, đuôi dày), trong khi các giá trị âm cho thấy một phân phối là phẳng (ít nhọn hơn, đuôi mỏng). Các giá trị độ nhọn dư vượt quá 1.0 theo giá trị tuyệt đối được coi là lớn. Chúng ta có thể tính toán độ nhọn tương đối với phân phối chuẩn như sau:
+
+$$
+\text{độ nhọn dư} = \text{độ nhọn mẫu} - 3
+$$
+
