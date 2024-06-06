@@ -221,3 +221,135 @@ $$
 * A. luôn xảy ra cùng nhau.
 * B. không thể xảy ra cùng nhau.
 * C. đôi khi có thể xảy ra cùng nhau.
+
+## 2: KỲ VỌNG CÓ ĐIỀU KIỆN, TƯƠNG QUAN
+
+### G: Phân biệt giữa các sự kiện phụ thuộc và độc lập.
+
+Các sự kiện độc lập là các sự kiện mà việc xảy ra của một sự kiện không ảnh hưởng đến việc xảy ra của các sự kiện khác. Định nghĩa của các sự kiện độc lập có thể được biểu diễn bằng xác suất có điều kiện. Các sự kiện A và B độc lập nếu và chỉ nếu:
+
+$$
+P(A | B) = P(A), \text{ hoặc tương đương, } P(B | A) = P(B)
+$$
+
+Nếu điều kiện này không được thỏa mãn, các sự kiện là phụ thuộc (tức là, việc xảy ra của một sự kiện phụ thuộc vào việc xảy ra của sự kiện khác).
+
+Trong ví dụ về lãi suất và suy thoái kinh tế của chúng ta, nhớ rằng các sự kiện I và R không độc lập; việc xảy ra của I ảnh hưởng đến xác suất xảy ra của R. Trong ví dụ này, các điều kiện độc lập cho I và R bị vi phạm vì:
+
+$$
+P(R) = 0.34, \text{ nhưng } P(R | I) = 0.7;
+$$
+
+xác suất của một cuộc suy thoái kinh tế lớn hơn khi có sự gia tăng lãi suất.
+
+Các ví dụ tốt nhất về các sự kiện độc lập được tìm thấy trong các xác suất tiên nghiệm của việc tung xúc xắc hoặc tung đồng xu. Một con xúc xắc không có “trí nhớ”. Do đó, sự kiện tung được số 4 ở lần tung thứ hai là độc lập với việc tung được số 4 ở lần tung thứ nhất. Ý tưởng này có thể được biểu diễn như sau:
+
+$$
+P(4 \text{ ở lần tung thứ hai } | 4 \text{ ở lần tung thứ nhất }) = P(4 \text{ ở lần tung thứ hai }) = 1/6 \text{ hoặc } 0.167
+$$
+
+Ý tưởng về các sự kiện độc lập cũng áp dụng cho việc tung đồng xu:
+
+$$
+P(\text{mặt ngửa ở đồng xu thứ nhất } | \text{ mặt ngửa ở đồng xu thứ hai}) = P(\text{mặt ngửa ở đồng xu thứ nhất}) = 1/2 \text{ hoặc } 0.50
+$$
+
+### H: Tính toán và diễn giải một xác suất vô điều kiện bằng cách sử dụng quy tắc xác suất toàn phần.
+
+**Quy tắc xác suất toàn phần** nêu bật mối quan hệ giữa xác suất vô điều kiện và xác suất có điều kiện của các sự kiện loại trừ lẫn nhau và đầy đủ. Nó được sử dụng để giải thích xác suất vô điều kiện của một sự kiện theo các xác suất có điều kiện dựa trên các sự kiện khác.
+
+Nói chung, xác suất vô điều kiện của sự kiện R,
+
+$$
+P(R) = P(R | S_1) × P(S_1) + P(R | S_2) × P(S_2) + . . . + P(R | S_N) × P(S_N)
+$$
+
+trong đó tập hợp các sự kiện $${S_1, S_2, . . . S_N}$$ là loại trừ lẫn nhau và đầy đủ.
+
+:::info[**VÍ DỤ: Ứng dụng đầu tư của xác suất vô điều kiện**]
+Dựa trên ví dụ đang tiếp diễn về lãi suất và suy thoái kinh tế, chúng ta có thể giả định rằng một cuộc suy thoái chỉ có thể xảy ra với một trong hai sự kiện—lãi suất tăng (I) hoặc lãi suất không tăng ($$I^C$$)—vì các sự kiện này loại trừ lẫn nhau và đầy đủ. $$I^C$$ được đọc là "phần bù của I," có nghĩa là "không I." Do đó, xác suất của $$I^C$$ là $$1 - P(I)$$. Vì vậy, hợp lý rằng tổng của hai xác suất kết hợp phải là xác suất vô điều kiện của một cuộc suy thoái. Điều này có thể được diễn đạt như sau:
+
+$$
+P(R) = P(RI) + P(RI^C)
+$$
+
+Áp dụng quy tắc nhân, chúng ta có thể viết lại biểu thức này như sau:
+
+$$
+P(R) = P(R | I) × P(I) + P(R | I^C) × P(I^C)
+$$
+
+Giả sử rằng $$P(R | I) = 0.70, P(R | I^C)$$, xác suất suy thoái nếu lãi suất không tăng, là 10% và rằng $$P(I) = 0.40$$ nên $$P(I^C) = 0.60$$. Xác suất vô điều kiện của một cuộc suy thoái có thể được tính như sau:
+
+$$
+P(R) = P(R | I) × P(I) + P(R | I) × P(I)
+\\
+= (0.70)(0.40) + (0.10)(0.60)
+\\
+= 0.28 + 0.06 = 0.34
+$$
+:::
+
+#### Giá Trị Kỳ Vọng
+
+Giá trị kỳ vọng của một biến ngẫu nhiên là giá trị trung bình có trọng số của các kết quả có thể xảy ra cho biến đó. Biểu diễn toán học cho giá trị kỳ vọng của biến ngẫu nhiên \(X\) là:
+
+$$
+E(X) = \Sigma P(x_i)x_i = P(x_1)x_1 + P(x_2)x_2 + \cdots + P(x_n)x_n
+$$
+
+:::info[**VÍ DỤ**: Thu nhập kỳ vọng trên mỗi cổ phần]
+
+Phân phối xác suất của EPS cho các cửa hàng của Ron được cho trong hình dưới đây. Tính toán thu nhập kỳ vọng trên mỗi cổ phần.
+
+**Phân Phối Xác Suất EPS**
+
+| Xác Suất    | Thu Nhập Trên Mỗi Cổ Phần |
+|-------------|---------------------------|
+| 10%         | £1.80                     |
+| 20%         | £1.60                     |
+| 40%         | £1.20                     |
+| 30%         | £1.00                     |
+
+**Trả Lời:**
+
+Thu nhập kỳ vọng trên mỗi cổ phần đơn giản là giá trị trung bình có trọng số của mỗi EPS có thể xảy ra, trong đó các trọng số là xác suất của mỗi kết quả có thể xảy ra.
+
+$$
+E[\text{EPS}] = 0.10(1.80) + 0.20(1.60) + 0.40(1.20) + 0.30(1.00) = £1.28
+$$
+
+:::
+
+### I: Giải thích việc sử dụng kỳ vọng có điều kiện trong ứng dụng đầu tư.
+
+**Giá trị kỳ vọng hoặc lợi tức có thể được tính toán bằng cách sử dụng xác suất có điều kiện.** Như tên gọi của nó, *giá trị kỳ vọng có điều kiện* phụ thuộc vào kết quả của một sự kiện khác. Một nhà phân tích sẽ sử dụng giá trị kỳ vọng có điều kiện để điều chỉnh kỳ vọng của mình khi có thông tin mới.
+
+Hãy xem xét tác động của một mức thuế đối với nhập khẩu thép lên lợi tức của một cổ phiếu thép nội địa. Lợi tức kỳ vọng của cổ phiếu, giả sử chính phủ áp đặt thuế, sẽ cao hơn lợi tức kỳ vọng nếu thuế không được áp đặt.
+
+Sử dụng quy tắc xác suất tổng, chúng ta có thể ước tính lợi tức kỳ vọng (không có điều kiện) trên cổ phiếu bằng tổng của lợi tức kỳ vọng nếu không có thuế nhân với xác suất không áp đặt thuế cộng với lợi tức kỳ vọng nếu có thuế nhân với xác suất áp đặt thuế.
+
+### J: Giải thích việc sử dụng sơ đồ cây để đại diện cho một vấn đề đầu tư.
+
+Bạn có thể tự hỏi những lợi nhuận và xác suất nào được sử dụng trong việc tính toán giá trị kỳ vọng đến từ đâu. Một khung chung được gọi là **sơ đồ cây** được sử dụng để hiển thị các xác suất của các kết quả khác nhau. Trong hình sau, chúng tôi đã hiển thị ước tính EPS cho bốn kết quả khác nhau: (1) một nền kinh tế tốt và kết quả tương đối tốt tại công ty, (2) một nền kinh tế tốt và kết quả tương đối kém tại công ty, (3) một nền kinh tế kém và kết quả tương đối tốt tại công ty, và (4) một nền kinh tế kém và kết quả tương đối kém tại công ty. Sử dụng các quy tắc xác suất, chúng tôi có thể tính toán xác suất của mỗi bốn kết quả EPS được hiển thị trong các ô bên phải của “cây”.
+
+EPS kỳ vọng là $1.51 được tính đơn giản như sau:
+
+$$
+0.18 \times 1.80 + 0.42 \times 1.70 + 0.24 \times 1.30 + 0.16 \times 1.00 = \$1.51
+$$
+
+Lưu ý rằng xác suất của bốn kết quả có thể xảy ra cộng lại bằng 1.
+
+**Hình: Sơ đồ Cây**
+
+```mermaid
+flowchart LR
+    A[EPS Kỳ vọng = $1.51]
+    A -->|Xác suất \n kinh tế tốt\n60%| B{ }
+    A -->|Xác suất \n kinh tế xấu\n40%| C{ }
+    B -->|30%| D[EPS = $1.80\nProb = 18%]
+    B -->|70%| E[EPS = $1.70\nProb = 42%]
+    C -->|60%| F[EPS = $1.30\nProb = 24%]
+    C -->|40%| G[EPS = $1.00\nProb = 16%]
+```

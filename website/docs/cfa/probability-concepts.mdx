@@ -221,3 +221,135 @@ $$
 * A. always occur together.
 * B. cannot occur together.
 * C. can sometimes occur together.
+
+## 2: CONDITIONAL EXPECTATIONS, CORRELATION
+
+### G: Distinguish between dependent and independent events.
+
+Independent events refer to events for which the occurrence of one has no influence on the occurrence of the others. The definition of independent events can be expressed in terms of conditional probabilities. Events A and B are independent if and only if:
+
+$$
+P(A | B) = P(A), \text{ or equivalently, } P(B | A) = P(B)
+$$
+
+If this condition is not satisfied, the events are dependent events (i.e., the occurrence of one is dependent on the occurrence of the other).
+
+In our interest rate and recession example, recall that events I and R are not independent; the occurrence of I affects the probability of the occurrence of R. In this example, the independence conditions for I and R are violated because:
+
+$$
+P(R) = 0.34, \text{ but } P(R | I) = 0.7;
+$$
+
+the probability of a recession is greater when there is an increase in interest rates.
+
+The best examples of independent events are found with the a priori probabilities of dice tosses or coin flips. A die has “no memory.” Therefore, the event of rolling a 4 on the second toss is independent of rolling a 4 on the first toss. This idea may be expressed as:
+
+$$
+P(4 \text{ on second toss } | 4 \text{ on first toss }) = P(4 \text{ on second toss }) = 1/6 \text{ or } 0.167
+$$
+
+The idea of independent events also applies to flips of a coin:
+
+$$
+P(\text{heads on first coin } | \text{ heads on second coin}) = P(\text{heads on first coin}) = 1/2 \text{ or } 0.50
+$$
+
+### H: Calculate and interpret an unconditional probability using the total probability rule.
+
+The **total probability rule** highlights the relationship between unconditional and conditional probabilities of mutually exclusive and exhaustive events. It is used to explain the unconditional probability of an event in terms of probabilities that are conditional upon other events.
+
+In general, the unconditional probability of event R,
+
+$$
+P(R) = P(R | S_1) × P(S_1) + P(R | S_2) × P(S_2) + . . . + P(R | S_N) × P(S_N)
+$$
+
+where the set of events $${S_1, S_2, . . . S_N}$$ is mutually exclusive and exhaustive.
+
+:::info[**EXAMPLE: An investment application of unconditional probability**]
+Building upon our ongoing example about interest rates and economic recession, we can assume that a recession can only occur with either of the two events—interest rates increase (I) or interest rates do not increase ($$I^C$$)—since these events are mutually exclusive and exhaustive. $$I^C$$ is read "the complement of I," which means "not I." Therefore, the probability of $$I^C$$ is $$1 - P(I)$$. It is logical, therefore, that the sum of the two joint probabilities must be the unconditional probability of a recession. This can be expressed as follows:
+
+$$
+P(R) = P(RI) + P(RI^C)
+$$
+
+Applying the multiplication rule, we may restate this expression as:
+
+$$
+P(R) = P(R | I) × P(I) + P(R | I^C) × P(I^C)
+$$
+
+Assume that $$P(R | I) = 0.70, P(R | I^C)$$, the probability of recession if interest rates do not rise, is 10% and that $$P(I) = 0.40$$ so that $$P(I^C) = 0.60$$. The unconditional probability of a recession can be calculated as follows:
+
+$$
+P(R) = P(R | I) × P(I) + P(R | I) × P(I)
+\\
+= (0.70)(0.40) + (0.10)(0.60)
+\\
+= 0.28 + 0.06 = 0.34
+$$
+:::
+
+#### Expected Value
+
+The expected value of a random variable is the weighted average of the possible outcomes for the variable. The mathematical representation for the expected value of random variable \(X\) is:
+
+$$
+E(X) = \Sigma P(x_i)x_i = P(x_1)x_1 + P(x_2)x_2 + \cdots + P(x_n)x_n
+$$
+
+:::info[**EXAMPLE**: Expected earnings per share]
+
+The probability distribution of EPS for Ron’s Stores is given in the figure below. Calculate the expected earnings per share.
+
+**EPS Probability Distribution**
+
+| Probability | Earnings Per Share |
+|-------------|--------------------|
+| 10%         | £1.80              |
+| 20%         | £1.60              |
+| 40%         | £1.20              |
+| 30%         | £1.00              |
+
+**Answer:**
+
+The expected EPS is simply a weighted average of each possible EPS, where the weights are the probabilities of each possible outcome.
+
+$$
+E[\text{EPS}] = 0.10(1.80) + 0.20(1.60) + 0.40(1.20) + 0.30(1.00) = £1.28
+$$
+
+:::
+
+### I: Explain the use of conditional expectation in investment applications.
+
+**Expected values or returns can be calculated using conditional probabilities.** As the name implies, *conditional expected values* are contingent upon the outcome of some other event. An analyst would use a conditional expected value to revise his expectations when new information arrives.
+
+Consider the effect of a tariff on steel imports on the returns of a domestic steel stock. The stock’s expected return, given that the government imposes the tariff, will be higher than the expected return if the tariff is not imposed.
+
+Using the total probability rule, we can estimate the (unconditional) expected return on the stock as the sum of the expected return given no tariff times the probability a tariff will not be enacted plus the expected return given a tariff times the probability a tariff will be enacted.
+
+### J: Explain the use of a tree diagram to represent an investment problem.
+
+You might well wonder where the returns and probabilities used in calculating expected values come from. A general framework called a **tree diagram** is used to show the probabilities of various outcomes. In the following figure, we have shown estimates of EPS for four different outcomes: (1) a good economy and relatively good results at the company, (2) a good economy and relatively poor results at the company, (3) a poor economy and relatively good results at the company, and (4) a poor economy and relatively poor results at the company. Using the rules of probability, we can calculate the probabilities of each of the four EPS outcomes shown in the boxes on the right-hand side of the “tree.”
+
+The expected EPS of $1.51 is simply calculated as:
+
+$$
+0.18 \times 1.80 + 0.42 \times 1.70 + 0.24 \times 1.30 + 0.16 \times 1.00 = \$1.51
+$$
+
+Note that the probabilities of the four possible outcomes sum to 1.
+
+**Figure: A Tree Diagram**
+
+```mermaid
+flowchart LR
+    A[Expected EPS = $1.51]
+    A -->|Prob. of \n good economy\n60%| B{ }
+    A -->|Prob. of \n poor economy\n40%| C{ }
+    B -->|30%| D[EPS = $1.80\nProb = 18%]
+    B -->|70%| E[EPS = $1.70\nProb = 42%]
+    C -->|60%| F[EPS = $1.30\nProb = 24%]
+    C -->|40%| G[EPS = $1.00\nProb = 16%]
+```
