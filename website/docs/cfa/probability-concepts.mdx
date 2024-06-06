@@ -1,0 +1,146 @@
+import Figure1 from "./images/probability/figure1.png";
+
+# Probability Concepts
+
+This topic review covers important terms and concepts associated with probability theory. Random variables, events, outcomes, conditional probability, and joint probability are described. Probability rules such as the addition rule and multiplication rule are introduced. These rules are frequently used by finance practitioners. Expected value, standard deviation, covariance, and correlation for individual asset and portfolio returns are discussed. A well-prepared candidate will be able to calculate and interpret these widely used measures. This review also discusses counting rules, which lay the foundation for the binomial probability distribution that is covered in the next topic review.
+
+## 1: CONDITIONAL AND JOINT PROBABILITIES
+
+### A: Define a random variable, an outcome, an event, mutually exclusive events, and exhaustive events.
+
+- **A random variable** is an uncertain quantity/number.
+- **An outcome** is an observed value of a random variable.
+- **An event** is a single outcome or a set of outcomes.
+- **Mutually exclusive events** are events that cannot both happen at the same time.
+- **Exhaustive events** are those that include all possible outcomes.
+
+Consider rolling a 6-sided die. The number that comes up is a **random variable**. If you roll a 4, that is an **outcome**. Rolling a 4 is an **event**, and rolling an even number is an **event**. Rolling a 4 and rolling a 6 are **mutually exclusive events**. Rolling an even number and rolling an odd number is a set of mutually exclusive and **exhaustive events**.
+
+### B: State the two defining properties of probability and distinguish among empirical, subjective, and a priori probabilities.
+
+There are **two defining properties of probability**.
+
+- The probability of occurrence of any event ($E_i$) is between 0 and 1 (i.e., $0 \leq P(E_i) \leq 1$).
+- If a set of events, $E_1, E_2, \ldots, E_n$, is mutually exclusive and exhaustive, the probabilities of those events sum to 1 (i.e., $\sum P(E_i) = 1$).
+
+The first of the defining properties introduces the term $P(E_i)$, which is shorthand for the “probability of event i.” If $P(E_i) = 0$, the event will never happen. If $P(E_i) = 1$, the event is certain to occur, and the outcome is not random.
+
+The probability of rolling any one of the numbers 1–6 with a fair die is $1/6 = 0.1667 = 16.7\%$. The set of events—rolling a number equal to 1, 2, 3, 4, 5, or 6—is exhaustive, and the individual events are mutually exclusive, so the probability of this set of events is equal to 1. We are certain that one of the values in this set of events will occur.
+
+An **empirical probability** is established by analyzing past data. An **a priori probability** is determined using a formal reasoning and inspection process. A **subjective probability** is the least formal method of developing probabilities and involves the use of personal judgment. An analyst may know many things about a firm’s performance and have expectations about the overall market that are all used to arrive at a subjective probability, such as, “I believe there is a 70\% probability that Acme Foods will outperform the market this year.” Empirical and a priori probabilities, by contrast, are **objective probabilities**.
+
+### C: State the probability of an event in terms of odds for and against the event.
+
+Stating the **odds** that an event will or will not occur is an alternative way of expressing probabilities. Consider an event that has a probability of occurrence of 0.125, which is one-eighth. The odds that the event will occur are $\frac{0.125}{(1 - 0.125)} = \frac{1/8}{7/8} = \frac{1}{7}$, which we state as, “the odds for the event occurring are one-to-seven.” The odds against the event occurring are the reciprocal of $1/7$, which is seven-to-one.
+
+We can also get the probability of an event from the odds by reversing these calculations. If we know that the odds for an event are one-to-six, we can compute the probability of occurrence as $\frac{1}{1+6} = \frac{1}{7} = 0.1429 = 14.29\%$. Alternatively, the probability that the event will not occur is $\frac{6}{1+6} = \frac{6}{7} = 0.8571 = 85.71\%$.
+
+:::note[**PROFESSOR’S NOTE**]
+While I am quite familiar with the use of odds rather than probabilities at the horse track, I can’t remember encountering odds for a stock or bond. The use of odds at the horse track lets you know how much you will win per \$1 bet on a horse (less the track’s percentage). If you bet on a 15-1 long shot and the horse wins, you will receive \$15 and your \$1 bet will be returned, so the profit is \$15. Of course, if the horse loses, you would lose the \$1 you bet and the “profit” is -\$1.
+
+One last point is that the expected return on the bet is zero, based on the probability of winning expressed in the odds. The probability of the horse winning when the odds are 15-to-1 is $\frac{1}{15+1} = \frac{1}{16}$ and the probability of the horse losing is $15/16$. The expected profit is $$\frac{1}{16} \times \$15 + \frac{15}{16} \times (-\$1) = 0$$.
+:::
+
+### D: Distinguish between unconditional and conditional probabilities.
+
+- **Unconditional probability** (a.k.a. **marginal probability**) refers to the probability of an event regardless of the past or future occurrence of other events. If we are concerned with the probability of an economic recession, regardless of the occurrence of changes in interest rates or inflation, we are concerned with the unconditional probability of a recession.
+
+- **A conditional probability** is one where the occurrence of one event affects the probability of the occurrence of another event. For example, we might be concerned with the probability of a recession **given** that the monetary authority increases interest rates. This is a conditional probability. The key word to watch for here is “given.” Using probability notation, “the probability of A **given** the occurrence of B” is expressed as $$P(A | B)$$, where the vertical bar ($$|$$) indicates “given,” or “conditional upon.” For our interest rate example above, the probability of a recession **given** an increase in interest rates is expressed as $$P(\text{recession}\ | \ \text{increase in interest rates})$$. A conditional probability of an occurrence is also called its **likelihood**.
+
+### E: Explain the multiplication, addition, and total probability rules.
+
+The **multiplication rule of probability** is used to determine the joint probability of two events:
+
+$$
+P(AB) = P(A \mid B) \times P(B)
+$$
+
+The **addition rule of probability** is used to determine the probability that at least one of two events will occur:
+
+$$
+P(A \text{ or } B) = P(A) + P(B) - P(AB)
+$$
+
+The **total probability rule** is used to determine the unconditional probability of an event, given conditional probabilities:
+
+$$
+P(A) = P(A \mid B_1)P(B_1) + P(A \mid B_2)P(B_2) + \ldots + P(A \mid B_N)P(B_N)
+$$
+
+where $$ B_1, B_2, \ldots B_N $$ is a mutually exclusive and exhaustive set of outcomes.
+
+### F: Calculate and interpret 1) the joint probability of two events, 2) the probability that at least one of two events will occur, given the probability of each and the joint probability of the two events, and 3) a joint probability of any number of independent events.
+
+The **joint probability** of two events is the probability that they will both occur. We can calculate this from the conditional probability that A will occur given B occurs (a conditional probability) and the probability that B will occur (the unconditional probability of B). This calculation is sometimes referred to as the **multiplication rule of probability**. Using the notation for conditional and unconditional probabilities we can express this rule as:
+
+$$
+P(AB) = P(A | B) \times P(B)
+$$
+
+This expression is read as follows: “The joint probability of A and B, $$P(AB)$$, is equal to the conditional probability of A given B, $$P(A | B)$$, times the unconditional probability of B, $$P(B)$$.”
+
+This relationship can be rearranged to define the conditional probability of A given B as follows:
+
+$$
+P(A|B) = \frac{P(AB)}{P(B)}
+$$
+
+:::info[**EXAMPLE**: Multiplication rule of probability]
+Consider the following information:
+
+- P(I) = 0.4, the probability of the monetary authority increasing interest rates (I) is 40%.
+- P(R | I) = 0.7, the probability of a recession (R) given an increase in interest rates is 70%.
+
+What is P(RI), the joint probability of a recession and an increase in interest rates?
+
+**Answer:**
+
+Applying the multiplication rule, we get the following result:
+
+$$
+\begin{align*}
+P(RI) &= P(R | I) \times P(I) \\
+P(RI) &= 0.7 \times 0.4 \\
+P(RI) &= 0.28
+\end{align*}
+$$
+
+Don’t let the cumbersome notation obscure the simple logic of this result. If an interest rate increase will occur 40% of the time and lead to a recession 70% of the time when it occurs, the joint probability of an interest rate increase and a resulting recession is (0.4)(0.7) = (0.28) = 28%.
+:::
+
+#### Calculating the Probability That at Least One of Two Events Will Occur
+
+The **addition rule** for probabilities is used to determine the probability that at least one of two events will occur. For example, given two events, A and B, the addition rule can be used to determine the probability that either A or B will occur. If the events are *not* mutually exclusive, double counting must be avoided by subtracting the joint probability that both A and B will occur from the sum of the unconditional probabilities. This is reflected in the following general expression for the addition rule:
+
+$$
+P(A \text{ or } B) = P(A) + P(B) - P(AB)
+$$
+
+For mutually exclusive events, where the joint probability, $$P(AB)$$, is zero, the probability that either A or B will occur is simply the sum of the unconditional probabilities for each event, $$P(A \text{ or } B) = P(A) + P(B)$$.
+
+**Figure: Venn Diagram for Events That Are Not Mutually Exclusive**
+
+<div style={{ textAlign: 'center' }}>
+<img src={Figure1} style={{width: 500}} />
+</div>
+
+The figure illustrates the addition rule with a Venn Diagram and highlights why the joint probability must be subtracted from the sum of the unconditional probabilities. Note that if the events are **mutually exclusive** the sets do not intersect, $$P(AB) = 0$$, and the probability that one of the two events will occur is simply $$P(A) + P(B)$$.
+
+:::info[**EXAMPLE**: Addition rule of probability]
+Using the information in our previous interest rate and recession example and the fact that the unconditional probability of a recession, $$P(R)$$, is 34\%, determine the probability that either interest rates will increase or a recession will occur.
+
+**Answer:**
+Given that $$P(R) = 0.34$$, $$P(I) = 0.40$$, and $$P(RI) = 0.28$$, we can compute $$P(R \text{ or } I)$$ as follows:
+
+$$
+P(R \text{ or } I) = P(R) + P(I) - P(RI)
+$$
+
+$$
+P(R \text{ or } I) = 0.34 + 0.40 - 0.28
+$$
+
+$$
+P(R \text{ or } I) = 0.46
+$$
+:::
