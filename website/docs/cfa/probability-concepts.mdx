@@ -1,4 +1,5 @@
 import Figure1 from "./images/probability/figure1.png";
+import FigureA from "./images/probability/figureA.png";
 
 # Probability Concepts
 
@@ -448,3 +449,72 @@ Properties of correlation of two random variables $$R_i$$ and $$R_j$$ are summar
 - If $$\text{Corr}(R_i, R_j) = 1.0$$, the random variables have perfect positive correlation. This means that a movement in one random variable results in a proportional positive movement in the other relative to its mean.
 - If $$\text{Corr}(R_i, R_j) = -1.0$$, the random variables have perfect negative correlation. This means that a movement in one random variable results in an exact opposite proportional movement in the other relative to its mean.
 - If $$\text{Corr}(R_i, R_j) = 0$$, there is no linear relationship between the variables, indicating that prediction of $$R_i$$ cannot be made on the basis of $$R_j$$ using linear methods.
+
+:::info[**EXAMPLE: Correlation**]
+
+Using our previous example, compute and interpret the correlation of the returns for stocks A and B, given that $\sigma^2(R_A) = 0.0028$ and $\sigma^2(R_B) = 0.0124$ and recalling that $\text{Cov}(R_A, R_B) = 0.0058$.
+
+**Answer:**
+
+First, it is necessary to convert the variances to standard deviations.
+
+$$
+\sigma(R_A) = (0.0028)^{\frac{1}{2}} = 0.0529
+$$
+
+$$
+\sigma(R_B) = (0.0124)^{\frac{1}{2}} = 0.1114
+$$
+
+Now, the correlation between the returns of Stock A and Stock B can be computed as follows:
+
+$$
+\text{Corr}(R_A, R_B) = \frac{0.0058}{(0.0529)(0.1114)} = 0.9842
+$$
+
+The fact that this value is close to +1 indicates that the linear relationship is not only positive but very strong.
+:::
+
+**Scatterplots** are a method for displaying the relationship between two variables. With one variable on the vertical axis and the other on the horizontal axis, their paired observations can each be plotted as a single point. For example, in panel `a` of the following figure, there is a red point showing that when one of the variables (on the horizontal axis) is 9.2, the other variable (on the vertical axis) is 8.5.
+
+The scatterplot in panel `a` is typical of two variables that have no clear relationship. Panel `b` shows two variables that have a strong linear relationship, that is, a high correlation coefficient.
+
+A key advantage of creating scatterplots is that they can reveal non-linear relationships, which are not described by the correlation coefficient. Panel `c` illustrates such a relationship. Although the correlation coefficient for these two variables is close to zero, their scatterplot shows clearly that they are related in a predictable way.
+
+<div style={{ textAlign: 'center' }}>
+<img src={FigureA} style={{width: 700}} />
+</div>
+
+Care should be taken when drawing conclusions based on correlation. Causation isn’t implied just from significant correlation. Even if it were, which variable is “causing” change in the other isn’t revealed by correlation. It is more prudent to say that two variables exhibit positive (or negative) association, suggesting that the nature of any causal relationship is to be separately investigated or based on theory that can be subject to additional tests.
+
+One question that can be investigated is the role of **outliers** (extreme values) in the correlation of two variables. If removing the outliers significantly reduces the calculated correlation, further inquiry is necessary into whether the outliers provide information or are caused by noise (randomness) in the data used.
+
+**Spurious correlation** refers to correlation that is either the result of chance or present due to changes in both variables over time that is caused by their association with a third variable.
+
+For example, we can find instances where two variables that are both related to the inflation rate exhibit significant correlation, but for which causation in either direction is not the case.
+
+In his book _Spurious Correlation_, Tyler Vigen presents the following examples. The correlation between the age of each year’s Miss America and the number of films Nicholas Cage appeared in that year is 87%. This seems a bit random. The correlation between the U.S. spending on science, space, and technology and suicides by hanging, strangulation, and suffocation over the 1999–2009 period is 99.87%. Impressive correlation, but both variables increased in an approximately linear fashion over the period.
+
+:::note[**PROFESSOR’S NOTE**]
+Here, the passage of time seems to be the “third variable” driving the results. Why, I have no idea, but I’m 99.87% sure that neither of the two variables is the cause of the other.
+:::
+
+### 📝 QUIZ
+
+1. Two events are said to be independent if the occurrence of one event:
+
+* A. means that the second event cannot occur.
+* B. means that the second event is certain to occur.
+* C. does not affect the probability of the occurrence of the other event.
+
+2. An analyst estimates that a share price has an 80% probability of increasing if economic growth exceeds 3%, a 40% probability of increasing if economic growth is positive but less than 3%, and a 10% probability of increasing if economic growth is negative. If economic growth has a 25% probability of exceeding 3% and a 25% probability of being negative, what is the probability that the share price increases?
+
+* A. 22.5%
+* B. 42.5%
+* C. 62.5%
+
+3. Possible values for the covariance of two random variables are:
+
+* A. unbounded.
+* B. bounded by 0 and 1.
+* C. bounded by –1 and 1.

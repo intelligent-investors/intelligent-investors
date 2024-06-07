@@ -1,4 +1,5 @@
 import Figure1 from "./images/probability/figure1.png";
+import FigureA from "./images/probability/figureA.png";
 
 # Các Khái Niệm Xác Suất
 
@@ -454,3 +455,72 @@ Các tính chất của tương quan giữa hai biến ngẫu nhiên $$R_i$$ và
 - Nếu $$\text{Corr}(R_i, R_j) = 1.0$$, các biến ngẫu nhiên có tương quan dương hoàn hảo. Điều này có nghĩa là một biến động trong một biến ngẫu nhiên dẫn đến một biến động tỷ lệ dương trong biến kia so với trung bình của nó.
 - Nếu $$\text{Corr}(R_i, R_j) = -1.0$$, các biến ngẫu nhiên có tương quan âm hoàn hảo. Điều này có nghĩa là một biến động trong một biến ngẫu nhiên dẫn đến một biến động ngược lại tỷ lệ chính xác trong biến kia so với trung bình của nó.
 - Nếu $$\text{Corr}(R_i, R_j) = 0$$, không có mối quan hệ tuyến tính giữa các biến, cho thấy rằng việc dự đoán $$R_i$$ không thể được thực hiện dựa trên $$R_j$$ bằng các phương pháp tuyến tính.
+
+:::info[**EXAMPLE: Tương quan**]
+
+Sử dụng ví dụ trước của chúng ta, tính toán và diễn giải mối tương quan của lợi nhuận cho cổ phiếu A và B, với $\sigma^2(R_A) = 0.0028$ và $\sigma^2(R_B) = 0.0124$ và nhớ rằng $\text{Cov}(R_A, R_B) = 0.0058$.
+
+**Câu trả lời:**
+
+Trước hết, cần phải chuyển đổi phương sai thành độ lệch chuẩn.
+
+$$
+\sigma(R_A) = (0.0028)^{\frac{1}{2}} = 0.0529
+$$
+
+$$
+\sigma(R_B) = (0.0124)^{\frac{1}{2}} = 0.1114
+$$
+
+Bây giờ, mối tương quan giữa lợi nhuận của Cổ phiếu A và Cổ phiếu B có thể được tính toán như sau:
+
+$$
+\text{Corr}(R_A, R_B) = \frac{0.0058}{(0.0529)(0.1114)} = 0.9842
+$$
+
+Thực tế rằng giá trị này gần bằng +1 cho thấy mối quan hệ tuyến tính không chỉ tích cực mà còn rất mạnh.
+:::
+
+**Biểu đồ phân tán** là một phương pháp để hiển thị mối quan hệ giữa hai biến. Với một biến trên trục dọc và biến kia trên trục ngang, các quan sát cặp của chúng có thể được vẽ dưới dạng một điểm duy nhất. Ví dụ, trong bảng `a` của Hình sau, có một điểm màu đỏ cho thấy khi một trong các biến (trên trục ngang) bằng 9.2, biến kia (trên trục dọc) bằng 8.5.
+
+Biểu đồ phân tán trong bảng `a` là điển hình của hai biến không có mối quan hệ rõ ràng. Bảng `b` cho thấy hai biến có mối quan hệ tuyến tính mạnh, tức là có hệ số tương quan cao.
+
+Một lợi thế quan trọng của việc tạo biểu đồ phân tán là chúng có thể tiết lộ các mối quan hệ phi tuyến tính, không được mô tả bởi hệ số tương quan. Bảng `c` minh họa một mối quan hệ như vậy. Mặc dù hệ số tương quan của hai biến này gần bằng không, biểu đồ phân tán của chúng cho thấy rõ ràng rằng chúng có mối quan hệ theo một cách dự đoán được.
+
+<div style={{ textAlign: 'center' }}>
+<img src={FigureA} style={{width: 700}} />
+</div>
+
+Cần cẩn thận khi rút ra kết luận dựa trên mối tương quan. Tương quan không có nghĩa là nhân quả chỉ từ mối tương quan có ý nghĩa. Ngay cả khi có, biến nào đang "gây ra" sự thay đổi trong biến khác cũng không được tiết lộ bởi tương quan. Thận trọng hơn, nên nói rằng hai biến thể hiện sự liên kết tích cực (hoặc tiêu cực), cho thấy bản chất của bất kỳ mối quan hệ nhân quả nào cần được điều tra riêng biệt hoặc dựa trên lý thuyết có thể được kiểm tra thêm.
+
+Một câu hỏi có thể được điều tra là vai trò của các giá trị **ngoại lai** (các giá trị cực đoan) trong mối tương quan của hai biến. Nếu việc loại bỏ các giá trị ngoại lai làm giảm đáng kể mối tương quan được tính toán, cần điều tra thêm về việc liệu các giá trị ngoại lai có cung cấp thông tin hay không hoặc chúng bị gây ra bởi nhiễu (ngẫu nhiên) trong dữ liệu được sử dụng.
+
+**Tương quan giả** đề cập đến mối tương quan là kết quả của ngẫu nhiên hoặc hiện diện do sự thay đổi của cả hai biến theo thời gian được gây ra bởi sự liên kết của chúng với một biến thứ ba.
+
+Ví dụ, chúng ta có thể tìm thấy các trường hợp hai biến đều liên quan đến tỷ lệ lạm phát cho thấy mối tương quan đáng kể, nhưng không có sự nhân quả theo hướng nào.
+
+Trong cuốn sách _Spurious Correlation_ của mình, Tyler Vigen đưa ra các ví dụ sau. Mối tương quan giữa tuổi của Hoa hậu Mỹ mỗi năm và số lượng phim Nicholas Cage xuất hiện trong năm đó là 87%. Điều này có vẻ hơi ngẫu nhiên. Mối tương quan giữa chi tiêu của Hoa Kỳ cho khoa học, không gian và công nghệ và số lượng tự tử bằng treo cổ, siết cổ, và ngạt thở trong giai đoạn 1999-2009 là 99.87%. Mối tương quan ấn tượng, nhưng cả hai biến đều tăng theo một cách tuyến tính trong giai đoạn này.
+
+:::note[**GHI CHÚ CỦA GIÁO SƯ**]
+Ở đây, sự trôi qua của thời gian dường như là "biến thứ ba" thúc đẩy kết quả. Tại sao, tôi không biết, nhưng tôi chắc chắn 99.87% rằng không có biến nào trong hai biến là nguyên nhân của biến còn lại.
+:::
+
+### 📝 LUYỆN TẬP
+
+1. Hai sự kiện được cho là độc lập nếu sự xuất hiện của một sự kiện:
+
+* A. có nghĩa là sự kiện thứ hai không thể xảy ra.
+* B. có nghĩa là sự kiện thứ hai chắc chắn sẽ xảy ra.
+* C. không ảnh hưởng đến xác suất xảy ra của sự kiện còn lại.
+
+2. Một nhà phân tích ước tính rằng giá cổ phiếu có xác suất tăng là 80% nếu tăng trưởng kinh tế vượt quá 3%, xác suất tăng là 40% nếu tăng trưởng kinh tế dương nhưng dưới 3%, và xác suất tăng là 10% nếu tăng trưởng kinh tế âm. Nếu tăng trưởng kinh tế có xác suất 25% vượt quá 3% và xác suất 25% là âm, thì xác suất giá cổ phiếu tăng là bao nhiêu?
+
+* A. 22,5%
+* B. 42,5%
+* C. 62,5%
+
+3. Các giá trị có thể có cho hiệp phương sai của hai biến ngẫu nhiên là:
+
+* A. không bị giới hạn.
+* B. bị giới hạn từ 0 đến 1.
+* C. bị giới hạn từ –1 đến 1.
