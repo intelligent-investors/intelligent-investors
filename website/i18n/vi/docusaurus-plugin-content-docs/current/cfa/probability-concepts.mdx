@@ -524,3 +524,92 @@ Trong cuốn sách _Spurious Correlation_ của mình, Tyler Vigen đưa ra các
 * A. không bị giới hạn.
 * B. bị giới hạn từ 0 đến 1.
 * C. bị giới hạn từ –1 đến 1.
+
+## BIẾN ĐỘNG DANH MỤC ĐẦU TƯ, BAYES, VÀ CÁC VẤN ĐỀ ĐẾM
+
+### L: Tính toán và giải thích giá trị kỳ vọng, phương sai và độ lệch chuẩn của một biến ngẫu nhiên và của lợi nhuận trên danh mục đầu tư.
+
+Nhớ rằng giá trị kỳ vọng của một biến ngẫu nhiên là trung bình trọng số của các kết quả có thể xảy ra của nó:
+
+$$
+E(X) = \Sigma P(x_i)x_i = P(x_1)x_1 + P(x_2)x_2 + \ldots + P(x_n)x_n
+$$
+
+Giá trị kỳ vọng và phương sai cho một danh mục đầu tư có thể được xác định bằng cách sử dụng các thuộc tính của từng tài sản riêng lẻ trong danh mục. Để làm điều này, cần thiết lập trọng số danh mục cho từng tài sản. Như đã chỉ ra trong công thức, trọng số, $w$, của tài sản danh mục đầu tư $i$ chỉ đơn giản là giá trị thị trường hiện đang đầu tư vào tài sản chia cho giá trị thị trường hiện tại của toàn bộ danh mục đầu tư.
+
+$$
+w_i = \frac{\text{giá trị thị trường của đầu tư vào tài sản } i}{\text{giá trị thị trường của danh mục đầu tư}}
+$$
+
+**Giá trị kỳ vọng của danh mục đầu tư.** Giá trị kỳ vọng của một danh mục đầu tư gồm $n$ tài sản với trọng số, $w_i$, và giá trị kỳ vọng, $R_i$, có thể được xác định bằng cách sử dụng công thức sau:
+
+$$
+E(R_p) = \sum_{i=1}^{N} w_i E(R_i) = w_1 E(R_1) + w_2 E(R_2) + \ldots + w_n E(R_n)
+$$
+
+Thường thì, chúng ta có lợi nhuận kỳ vọng (thay vì giá kỳ vọng). Khi $R_i$ là lợi nhuận, lợi nhuận kỳ vọng cho một danh mục đầu tư, $E(R_p)$, được tính bằng cách sử dụng trọng số tài sản và cùng công thức như trên.
+
+**Phương sai của danh mục đầu tư.** Phương sai của lợi nhuận danh mục đầu tư sử dụng trọng số danh mục, nhưng theo cách phức tạp hơn:
+
+$$
+\text{Var}(R_p) = \sum_{i=1}^{N} \sum_{j=1}^{N} w_i w_j \text{Cov}(R_i, R_j)
+$$
+
+Phương sai của một danh mục đầu tư gồm tài sản rủi ro $A$ và tài sản rủi ro $B$ có thể được biểu thị như sau:
+
+$$
+\text{Var}(R_p) = w_A w_A \text{Cov}(R_A, R_A) + w_A w_B \text{Cov}(R_A, R_B) + w_B w_A \text{Cov}(R_B, R_A) + w_B w_B \text{Cov}(R_B, R_B)
+$$
+
+:::note[**LƯU Ý CỦA GIÁO SƯ**]
+Trước đó trong Buổi Học này, chúng ta đã tính toán phương sai mẫu từ dữ liệu lịch sử. Ở đây, chúng ta đang tính toán phương sai dựa trên hiệp phương sai từ một mô hình xác suất.
+
+
+Bây giờ, vì $$ \text{Cov}(R_A,R_B) = \text{Cov}(R_B,R_A) $$ và $$ \text{Cov}(R_A,R_A) = \sigma^2(R_A) $$, biểu thức này được rút gọn thành:
+
+$$
+\text{Var}(R_P) = w_A^2 \sigma^2(R_A) + w_B^2 \sigma^2(R_B) + 2w_A w_B \text{Cov}(R_A,R_B)
+$$
+
+Vì $$ \text{Cov}(R_A,R_B) = \sigma(R_B) \sigma(R_A) \rho(R_A,R_B) $$, một cách khác để trình bày công thức này là:
+
+$$
+\text{Var}(R_P) = w_A^2 \sigma^2(R_A) + w_B^2 \sigma^2(R_B) + 2w_A w_B \sigma(R_A) \sigma(R_B) \rho(R_A,R_B)
+$$
+
+:::
+
+:::info[**EXAMPLE**: Độ lệch chuẩn của danh mục đầu tư hai tài sản]
+
+Một danh mục đầu tư có 30% đầu tư vào cổ phiếu với độ lệch chuẩn của lợi nhuận là 20%, và phần còn lại đầu tư vào trái phiếu với độ lệch chuẩn của lợi nhuận là 12%. Tương quan của lợi nhuận trái phiếu với lợi nhuận cổ phiếu là 0,6. Tính toán độ lệch chuẩn của lợi nhuận cho danh mục đầu tư.
+
+**Trả lời:**
+
+Độ lệch chuẩn của danh mục đầu tư là:
+
+$$
+\sqrt{w^2_{\text{cổ phiếu}}\sigma^2_{\text{cổ phiếu}} + w^2_{\text{trái phiếu}}\sigma^2_{\text{trái phiếu}} + 2w_{\text{cổ phiếu}}w_{\text{trái phiếu}}\sigma_{\text{cổ phiếu}}\sigma_{\text{trái phiếu}}\rho_{\text{trái phiếu, cổ phiếu}}}
+$$
+
+$$
+= \sqrt{(0.3^2)(0.20^2) + (0.7^2)(0.12^2) + 2(0.3)(0.7)(0.20)(0.12)(0.60)}
+$$
+
+$$
+= \sqrt{0.0167} = 12.92\%
+$$
+
+Nếu câu hỏi cung cấp hiệp phương sai của lợi nhuận tài sản (0.0144) thay vì tương quan của chúng, thì việc tính toán độ lệch chuẩn của lợi nhuận danh mục đầu tư sẽ là:
+
+$$
+\sqrt{w^2_{\text{cổ phiếu}}\sigma^2_{\text{cổ phiếu}} + w^2_{\text{trái phiếu}}\sigma^2_{\text{trái phiếu}} + 2w_{\text{cổ phiếu}}w_{\text{trái phiếu}}\text{Cov}_{\text{trái phiếu, cổ phiếu}}}
+$$
+
+$$
+= \sqrt{(0.3^2)(0.20^2) + (0.7^2)(0.12^2) + 2(0.3)(0.7)(0.0144)}
+$$
+
+$$
+= \sqrt{0.0167} = 12.92\%
+$$
+:::

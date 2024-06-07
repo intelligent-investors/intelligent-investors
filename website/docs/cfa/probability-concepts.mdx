@@ -518,3 +518,91 @@ Here, the passage of time seems to be the “third variable” driving the resul
 * A. unbounded.
 * B. bounded by 0 and 1.
 * C. bounded by –1 and 1.
+
+## PORTFOLIO VARIANCE, BAYES, AND COUNTING PROBLEMS
+
+### L: Calculate and interpret the expected value, variance, and standard deviation of a random variable and of returns on a portfolio.
+
+Recall that the expected value of a random variable is the weighted average of its possible outcomes:
+
+$$
+E(X) = \Sigma P(x_i)x_i = P(x_1)x_1 + P(x_2)x_2 + \ldots + P(x_n)x_n
+$$
+
+The expected value and variance for a portfolio of assets can be determined using the properties of the individual assets in the portfolio. To do this, it is necessary to establish the portfolio weight for each asset. As indicated in the formula, the weight, $w$, of portfolio asset $i$ is simply the market value currently invested in the asset divided by the current market value of the entire portfolio.
+
+$$
+w_i = \frac{\text{market value of investment in asset } i}{\text{market value of the portfolio}}
+$$
+
+**Portfolio expected value.** The expected value of a portfolio composed of $n$ assets with weights, $w_i$, and expected values, $R_i$, can be determined using the following formula:
+
+$$
+E(R_p) = \sum_{i=1}^{N} w_i E(R_i) = w_1 E(R_1) + w_2 E(R_2) + \ldots + w_n E(R_n)
+$$
+
+More often, we have expected returns (rather than expected prices). When the $R_i$ are returns, the expected return for a portfolio, $E(R_p)$, is calculated using the asset weights and the same formula as above.
+
+**Portfolio variance.** The variance of the portfolio return uses the portfolio weights also, but in a more complicated way:
+
+$$
+\text{Var}(R_p) = \sum_{i=1}^{N} \sum_{j=1}^{N} w_i w_j \text{Cov}(R_i, R_j)
+$$
+
+The variance of a portfolio composed of risky asset $A$ and risky asset $B$ can be expressed as:
+
+$$
+\text{Var}(R_p) = w_A w_A \text{Cov}(R_A, R_A) + w_A w_B \text{Cov}(R_A, R_B) + w_B w_A \text{Cov}(R_B, R_A) + w_B w_B \text{Cov}(R_B, R_B)
+$$
+
+:::note[**PROFESSOR'S NOTE**]
+Earlier in this Study Session we calculated sample variance from historical data. Here, we are calculating variance based on covariance from a probability model.
+
+
+Now, since $$ \text{Cov}(R_A,R_B) = \text{Cov}(R_B,R_A) $$, and $$ \text{Cov}(R_A,R_A) = \sigma^2(R_A) $$, this expression reduces to the following:
+
+$$
+\text{Var}(R_P) = w_A^2 \sigma^2(R_A) + w_B^2 \sigma^2(R_B) + 2w_A w_B \text{Cov}(R_A,R_B)
+$$
+
+Since $$ \text{Cov}(R_A,R_B) = \sigma(R_B) \sigma(R_A) \rho(R_A,R_B) $$, another way to present this formula is:
+
+$$
+\text{Var}(R_P) = w_A^2 \sigma^2(R_A) + w_B^2 \sigma^2(R_B) + 2w_A w_B \sigma(R_A) \sigma(R_B) \rho(R_A,R_B)
+$$
+:::
+
+:::info[**EXAMPLE**: Standard deviation of a two-asset portfolio]
+
+A portfolio is 30% invested in stocks with a standard deviation of returns of 20%, and the remainder is invested in bonds with a standard deviation of returns of 12%. The correlation of bond returns with stock returns is 0.6. Calculate the standard deviation of returns for the portfolio.
+
+**Answer:**
+
+Portfolio standard deviation is:
+
+$$
+\sqrt{w^2_{\text{stocks}}\sigma^2_{\text{stocks}} + w^2_{\text{bonds}}\sigma^2_{\text{bonds}} + 2w_{\text{stocks}}w_{\text{bonds}}\sigma_{\text{stocks}}\sigma_{\text{bonds}}\rho_{\text{bonds, stocks}}}
+$$
+
+$$
+= \sqrt{(0.3^2)(0.20^2) + (0.7^2)(0.12^2) + 2(0.3)(0.7)(0.20)(0.12)(0.60)}
+$$
+
+$$
+= \sqrt{0.0167} = 12.92\%
+$$
+
+If the question had provided the covariance of asset returns (0.0144) rather than their correlation, the calculation of portfolio return standard deviation would have been:
+
+$$
+\sqrt{w^2_{\text{stocks}}\sigma^2_{\text{stocks}} + w^2_{\text{bonds}}\sigma^2_{\text{bonds}} + 2w_{\text{stocks}}w_{\text{bonds}}\text{Cov}_{\text{bonds, stocks}}}
+$$
+
+$$
+= \sqrt{(0.3^2)(0.20^2) + (0.7^2)(0.12^2) + 2(0.3)(0.7)(0.0144)}
+$$
+
+$$
+= \sqrt{0.0167} = 12.92\%
+$$
+:::
