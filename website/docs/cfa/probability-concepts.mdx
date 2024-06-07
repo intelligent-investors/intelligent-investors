@@ -353,3 +353,98 @@ flowchart LR
     C -->|60%| F[EPS = $1.30\nProb = 24%]
     C -->|40%| G[EPS = $1.00\nProb = 16%]
 ```
+
+### K: Calculate and interpret covariance and correlation and interpret a scatterplot.
+
+The variance and standard deviation measure the dispersion, or volatility, of only one variable. In many finance situations, however, we are interested in how two random variables move in relation to each other. For investment applications, one of the most frequently analyzed pairs of random variables is the returns of two assets. Investors and managers frequently ask questions such as, “what is the relationship between the return for Stock A and Stock B?” or, “what is the relationship between the performance of the S&P 500 and that of the automotive industry?”
+
+**Covariance** is a measure of how two assets move together. It is the expected value of the product of the deviations of the two random variables from their respective expected values. A common symbol for the covariance between random variables X and Y is Cov(X, Y). Since we will be mostly concerned with the covariance of asset returns, the following formula has been written in terms of the covariance of the return of asset i, $$ R_i $$, and the return of asset j, $$ R_j $$:
+
+$$
+\text{Cov}(R_i, R_j) = \mathrm{E}[(R_i - \mathrm{E}(R_i))(R_j - \mathrm{E}(R_j))]
+$$
+
+The following are **properties of the covariance**:
+
+- The covariance is a general representation of the same concept as the variance. That is, the variance measures how a random variable moves with itself, and the covariance measures how one random variable moves with another random variable.
+- The covariance of $$ R_A $$ with itself is equal to the variance of $$ R_A $$; that is, $$ \text{Cov}(R_A, R_A) = \text{Var}(R_A) $$.
+- The covariance may range from negative infinity to positive infinity.
+
+To aid in the interpretation of covariance, consider the returns of a stock and of a put option on the stock. These two returns will have a negative covariance because they move in opposite directions. The returns of two automotive stocks would likely have a positive covariance, and the returns of a stock and a riskless asset would have a zero covariance because the riskless asset’s returns never move, regardless of movements in the stock’s return. While the formula for covariance given previously is correct, the method of computing the covariance of returns from a joint probability model uses a probability-weighted average of the products of the random variable’s deviations from their means for each possible outcome. The following example illustrates this calculation.
+
+:::info[**EXAMPLE**: Covariance]
+
+Assume that the economy can be in three possible states (S) next year: boom, normal, or slow economic growth. An expert source has calculated that $$P(boom) = 0.30, P(normal) = 0.50,\ \text{and}\ P(slow) = 0.20$$. The returns for Stock A, $$ R_A $$, and Stock B, $$ R_B $$, under each of the economic states are provided in the probability model as follows. What is the covariance of the returns for Stock A and Stock B?
+
+**Probability Distribution of Returns**
+
+| Event  | P(S) | $$ R_A $$ | $$ R_B $$ |
+|--------|------|-----------|-----------|
+| Boom   | 0.3  | 0.20      | 0.30      |
+| Normal | 0.5  | 0.12      | 0.10      |
+| Slow   | 0.2  | 0.05      | 0.00      |
+
+**Answer:**
+
+First, the expected returns for each of the stocks must be determined.
+
+$$
+E(R_A) = (0.3)(0.20) + (0.5)(0.12) + (0.2)(0.05) = 0.13
+$$
+
+$$
+E(R_B) = (0.3)(0.30) + (0.5)(0.10) + (0.2)(0.00) = 0.14
+$$
+
+The covariance can now be computed using the procedure described in the following table.
+
+**Covariance Computation**
+
+| Event  | P(S) | $$ R_A $$ | $$ R_B $$ | $$ P(S) \times [R_A - E(R_A)] \times [R_B - E(R_B)] $$         |
+|--------|------|-----------|-----------|-------------------------------------------------------------|
+| Boom   | 0.3  | 0.20      | 0.30      | $$ (0.3)(0.2 - 0.13)(0.3 - 0.14) = 0.00336 $$                 |
+| Normal | 0.5  | 0.12      | 0.10      | $$ (0.5)(0.12 - 0.13)(0.1 - 0.14) = 0.00020 $$                |
+| Slow   | 0.2  | 0.05      | 0.00      | $$ (0.2)(0.05 - 0.13)(0 - 0.14) = 0.00224 $$                  |
+
+$$
+\text{Cov}(R_A, R_B) = \sum \{ P(S) \times [R_A - E(R_A)] \times [R_B - E(R_B)] \} = 0.00580
+$$
+
+:::
+
+So far, we have calculated covariance from a probability model. We can also determine covariance using historical data. The calculation of the sample covariance is based on the following formula:
+
+$$
+\text{Cov}_{1,2} = \frac{\sum_{t=1}^{n}\{(R_{t,1} - \overline{R_1})(R_{t,2} - \overline{R_2})\}}{n-1}
+$$
+
+where:
+- $$R_{t,1}$$ = return on Asset 1 in period $$t$$
+- $$R_{t,2}$$ = return on Asset 2 in period $$t$$
+- $$\overline{R_1}$$ = mean return on Asset 1
+- $$\overline{R_2}$$ = mean return on Asset 2
+- $$n$$ = number of periods
+
+In practice, the covariance is difficult to interpret. This is mostly because it can take on extremely large values, ranging from negative to positive infinity, and, like the variance, these values are expressed in terms of square units.
+
+To make the covariance of two random variables easier to interpret, it may be divided by the product of the random variables’ standard deviations. The resulting value is called the **correlation coefficient**, or simply, **correlation**. The relationship between covariances, standard deviations, and correlations can be seen in the following expression for the correlation of the returns for asset $$i$$ and $$j$$:
+
+$$
+\text{Corr} (R_i, R_j) = \frac{\text{Cov}(R_i, R_j)}{\sigma (R_i) \sigma (R_j)}
+$$
+
+which implies
+
+$$
+\text{Cov}(R_i, R_j) = \text{Corr} (R_i, R_j) \sigma (R_i) \sigma (R_j)
+$$
+
+The correlation between two random return variables may also be expressed as $$\rho(R_i,R_j)$$, or $$\rho_{i,j}$$. Correlation can be forward-looking if it uses covariance from a probability model, or backward-looking if it uses sample covariance from historical data.
+
+Properties of correlation of two random variables $$R_i$$ and $$R_j$$ are summarized here:
+- Correlation measures the strength of the linear relationship between two random variables.
+- Correlation has no units.
+- The correlation ranges from $$-1$$ to $$+1$$. That is, $$-1 \leq \text{Corr}(R_i, R_j) \leq +1$$.
+- If $$\text{Corr}(R_i, R_j) = 1.0$$, the random variables have perfect positive correlation. This means that a movement in one random variable results in a proportional positive movement in the other relative to its mean.
+- If $$\text{Corr}(R_i, R_j) = -1.0$$, the random variables have perfect negative correlation. This means that a movement in one random variable results in an exact opposite proportional movement in the other relative to its mean.
+- If $$\text{Corr}(R_i, R_j) = 0$$, there is no linear relationship between the variables, indicating that prediction of $$R_i$$ cannot be made on the basis of $$R_j$$ using linear methods.

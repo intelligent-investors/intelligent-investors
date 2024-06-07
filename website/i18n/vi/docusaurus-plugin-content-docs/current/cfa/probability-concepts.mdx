@@ -353,3 +353,104 @@ flowchart LR
     C -->|60%| F[EPS = $1.30\nProb = 24%]
     C -->|40%| G[EPS = $1.00\nProb = 16%]
 ```
+
+### K: Tính toán và diễn giải hiệp phương sai và tương quan, và diễn giải biểu đồ phân tán.
+
+Phương sai và độ lệch chuẩn đo lường độ phân tán, hoặc độ biến động, của chỉ một biến số. Tuy nhiên, trong nhiều tình huống tài chính, chúng ta quan tâm đến cách hai biến ngẫu nhiên di chuyển liên quan đến nhau. Đối với các ứng dụng đầu tư, một trong những cặp biến ngẫu nhiên được phân tích thường xuyên nhất là lợi nhuận của hai tài sản. Các nhà đầu tư và quản lý thường hỏi những câu như, "mối quan hệ giữa lợi nhuận của cổ phiếu A và cổ phiếu B là gì?" hoặc, "mối quan hệ giữa hiệu suất của S&P 500 và ngành công nghiệp ô tô là gì?"
+
+**Hiệp phương sai** là một phép đo lường cách hai tài sản di chuyển cùng nhau. Nó là giá trị kỳ vọng của tích các độ lệch của hai biến ngẫu nhiên so với các giá trị kỳ vọng tương ứng của chúng. Một ký hiệu phổ biến cho hiệp phương sai giữa các biến ngẫu nhiên X và Y là Cov(X, Y). Vì chúng ta sẽ chủ yếu quan tâm đến hiệp phương sai của lợi nhuận tài sản, công thức sau đây đã được viết theo hiệp phương sai của lợi nhuận của tài sản i, $$ R_i $$, và lợi nhuận của tài sản j, $$ R_j $$:
+
+$$
+\text{Cov}(R_i, R_j) = \mathrm{E}[(R_i - \mathrm{E}(R_i))(R_j - \mathrm{E}(R_j))]
+$$
+
+Dưới đây là **các thuộc tính của hiệp phương sai**:
+
+- Hiệp phương sai là một biểu diễn tổng quát của cùng một khái niệm như phương sai. Đó là, phương sai đo lường cách một biến ngẫu nhiên di chuyển với chính nó, và hiệp phương sai đo lường cách một biến ngẫu nhiên di chuyển với một biến ngẫu nhiên khác.
+- Hiệp phương sai của $$ R_A $$ với chính nó bằng với phương sai của $$ R_A $$; đó là, $$ \text{Cov}(R_A, R_A) = \text{Var}(R_A) $$.
+- Hiệp phương sai có thể dao động từ âm vô cùng đến dương vô cùng.
+
+Để hỗ trợ trong việc diễn giải hiệp phương sai, hãy xem xét lợi nhuận của một cổ phiếu và một quyền chọn bán trên cổ phiếu đó. Hai lợi nhuận này sẽ có hiệp phương sai âm vì chúng di chuyển theo các hướng ngược nhau. Lợi nhuận của hai cổ phiếu ô tô có khả năng có hiệp phương sai dương, và lợi nhuận của một cổ phiếu và một tài sản không rủi ro sẽ có hiệp phương sai bằng không vì lợi nhuận của tài sản không rủi ro không bao giờ thay đổi, bất kể sự di chuyển của lợi nhuận cổ phiếu. Trong khi công thức cho hiệp phương sai được đưa ra trước đây là chính xác, phương pháp tính toán hiệp phương sai của lợi nhuận từ một mô hình xác suất liên hợp sử dụng một trung bình trọng số xác suất của các tích độ lệch của biến ngẫu nhiên so với các giá trị trung bình của chúng cho mỗi kết quả có thể xảy ra. Ví dụ sau đây minh họa cho tính toán này.
+
+:::info[**VÍ DỤ**: Hiệp phương sai]
+
+Giả sử rằng nền kinh tế có thể ở trong ba trạng thái có thể xảy ra (S) vào năm tới: bùng nổ, bình thường, hoặc tăng trưởng kinh tế chậm. Một nguồn tin chuyên gia đã tính toán rằng
+
+$$
+P(\text{bùng nổ}) = 0.30, P(\text{bình thường}) = 0.50,\ \text{và}\ P(\text{tăng trưởng chậm}) = 0.20.
+$$
+
+Lợi nhuận của Cổ phiếu A, $$ R_A $$, và Cổ phiếu B, $$ R_B $$, dưới mỗi trạng thái kinh tế được cung cấp trong mô hình xác suất như sau. Hiệp phương sai của lợi nhuận của Cổ phiếu A và Cổ phiếu B là bao nhiêu?
+
+**Phân phối xác suất của lợi nhuận**
+
+| Sự kiện  | P(S) | $$ R_A $$ | $$ R_B $$ |
+|----------|------|-----------|-----------|
+| Bùng nổ  | 0.3  | 0.20      | 0.30      |
+| Bình thường | 0.5  | 0.12      | 0.10      |
+| Tăng trưởng chậm | 0.2  | 0.05      | 0.00      |
+
+**Trả lời:**
+
+Trước hết, lợi nhuận kỳ vọng cho mỗi cổ phiếu phải được xác định.
+
+$$
+E(R_A) = (0.3)(0.20) + (0.5)(0.12) + (0.2)(0.05) = 0.13
+$$
+
+$$
+E(R_B) = (0.3)(0.30) + (0.5)(0.10) + (0.2)(0.00) = 0.14
+$$
+
+Hiệp phương sai có thể được tính toán bằng cách sử dụng quy trình được mô tả trong bảng sau.
+
+**Tính toán Hiệp phương sai**
+
+| Sự kiện  | P(S) | $$ R_A $$ | $$ R_B $$ | $$ P(S) \times [R_A - E(R_A)] \times [R_B - E(R_B)] $$         |
+|----------|------|-----------|-----------|-------------------------------------------------------------|
+| Bùng nổ  | 0.3  | 0.20      | 0.30      | $$ (0.3)(0.2 - 0.13)(0.3 - 0.14) = 0.00336 $$                 |
+| Bình thường | 0.5  | 0.12      | 0.10      | $$ (0.5)(0.12 - 0.13)(0.1 - 0.14) = 0.00020 $$                |
+| Tăng trưởng chậm | 0.2  | 0.05      | 0.00      | $$ (0.2)(0.05 - 0.13)(0 - 0.14) = 0.00224 $$                  |
+
+$$
+\text{Cov}(R_A, R_B) = \sum \{ P(S) \times [R_A - E(R_A)] \times [R_B - E(R_B)] \} = 0.00580
+$$
+
+:::
+
+Cho đến nay, chúng ta đã tính toán hiệp phương sai từ mô hình xác suất. Chúng ta cũng có thể xác định hiệp phương sai bằng cách sử dụng dữ liệu lịch sử. Việc tính toán hiệp phương sai mẫu dựa trên công thức sau:
+
+$$
+\text{Cov}_{1,2} = \frac{\sum_{t=1}^{n}\{(R_{t,1} - \overline{R_1})(R_{t,2} - \overline{R_2})\}}{n-1}
+$$
+
+trong đó:
+- $$R_{t,1}$$ = lợi nhuận của Tài sản 1 trong giai đoạn $$t$$
+- $$R_{t,2}$$ = lợi nhuận của Tài sản 2 trong giai đoạn $$t$$
+- $$\overline{R_1}$$ = lợi nhuận trung bình của Tài sản 1
+- $$\overline{R_2}$$ = lợi nhuận trung bình của Tài sản 2
+- $$n$$ = số lượng giai đoạn
+
+Trong thực tế, hiệp phương sai khó để diễn giải. Điều này chủ yếu là vì nó có thể có giá trị rất lớn, từ âm đến dương vô cùng, và giống như phương sai, những giá trị này được biểu thị bằng đơn vị bình phương.
+
+Để làm cho hiệp phương sai của hai biến ngẫu nhiên dễ hiểu hơn, nó có thể được chia cho tích của độ lệch chuẩn của các biến ngẫu nhiên. Giá trị kết quả được gọi là **hệ số tương quan**, hoặc đơn giản là **tương quan**. Mối quan hệ giữa hiệp phương sai, độ lệch chuẩn và tương quan có thể thấy trong biểu thức sau cho tương quan của lợi nhuận cho tài sản $$i$$ và $$j$$:
+
+$$
+\text{Corr} (R_i, R_j) = \frac{\text{Cov}(R_i, R_j)}{\sigma (R_i) \sigma (R_j)}
+$$
+
+điều này ngụ ý rằng
+
+$$
+\text{Cov}(R_i, R_j) = \text{Corr} (R_i, R_j) \sigma (R_i) \sigma (R_j)
+$$
+
+Tương quan giữa hai biến lợi nhuận ngẫu nhiên cũng có thể được biểu thị là $$\rho(R_i,R_j)$$, hoặc $$\rho_{i,j}$$. Tương quan có thể là tiên đoán nếu nó sử dụng hiệp phương sai từ mô hình xác suất, hoặc nhìn lại nếu nó sử dụng hiệp phương sai mẫu từ dữ liệu lịch sử.
+
+Các tính chất của tương quan giữa hai biến ngẫu nhiên $$R_i$$ và $$R_j$$ được tóm tắt như sau:
+- Tương quan đo lường độ mạnh của mối quan hệ tuyến tính giữa hai biến ngẫu nhiên.
+- Tương quan không có đơn vị.
+- Tương quan dao động từ $$-1$$ đến $$+1$$. Tức là, $$-1 \leq \text{Corr}(R_i, R_j) \leq +1$$.
+- Nếu $$\text{Corr}(R_i, R_j) = 1.0$$, các biến ngẫu nhiên có tương quan dương hoàn hảo. Điều này có nghĩa là một biến động trong một biến ngẫu nhiên dẫn đến một biến động tỷ lệ dương trong biến kia so với trung bình của nó.
+- Nếu $$\text{Corr}(R_i, R_j) = -1.0$$, các biến ngẫu nhiên có tương quan âm hoàn hảo. Điều này có nghĩa là một biến động trong một biến ngẫu nhiên dẫn đến một biến động ngược lại tỷ lệ chính xác trong biến kia so với trung bình của nó.
+- Nếu $$\text{Corr}(R_i, R_j) = 0$$, không có mối quan hệ tuyến tính giữa các biến, cho thấy rằng việc dự đoán $$R_i$$ không thể được thực hiện dựa trên $$R_j$$ bằng các phương pháp tuyến tính.
