@@ -606,3 +606,48 @@ $$
 = \sqrt{0.0167} = 12.92\%
 $$
 :::
+
+### M: Calculate and interpret covariance given a joint probability function.
+
+:::info[**EXAMPLE: Covariance using a joint probability model**]
+
+The joint probabilities of the returns of Asset A and Asset B are given in the following figure. Calculate the covariance of returns for Asset A and Asset B.
+
+**Probability Table**
+
+| Joint Probabilities | $$ R_B = 0.40 $$ | $$ R_B = 0.20 $$ | $$ R_B = 0.00 $$ |
+|---------------------|------------------|------------------|------------------|
+| $$ R_A = 0.20 $$    | 0.15             | 0                | 0                |
+| $$ R_A = 0.15 $$    | 0                | 0.60             | 0                |
+| $$ R_A = 0.04 $$    | 0                | 0                | 0.25             |
+
+**Answer:**
+
+The expected returns for the individual assets are determined as:
+
+$$ E(R_A) = P(R_{A1}, R_{B1})R_{A1} + P(R_{A2}, R_{B2})R_{A2} + P(R_{A3}, R_{B3})R_{A3} $$
+
+$$ E(R_A) = (0.15)(0.20) + (0.60)(0.15) + (0.25)(0.04) = 0.13 $$
+
+$$ E(R_B) = P(R_{B1}, R_{A1})R_{B1} + P(R_{B2}, R_{A2})R_{B2} + P(R_{B3}, R_{A3})R_{B3} $$
+
+$$ E(R_B) = (0.15)(0.40) + (0.60)(0.20) + (0.25)(0.00) = 0.18 $$
+
+The covariance of the asset returns is determined as:
+
+$$ \text{Cov}(R_A, R_B) = P(R_{A1}, R_{B1})[R_{A1} - E(R_A)][R_{B1} - E(R_B)] $$
+
+$$ + P(R_{A2}, R_{B2})[R_{A2} - E(R_A)][R_{B2} - E(R_B)] $$
+
+$$ + P(R_{A3}, R_{B3})[R_{A3} - E(R_A)][R_{B3} - E(R_B)] $$
+
+$$ \text{Cov}(R_A, R_B) = 0.15(0.20 - 0.13)(0.40 - 0.18) $$
+
+$$ + 0.60(0.15 - 0.13)(0.20 - 0.18) $$
+
+$$ + 0.25(0.04 - 0.13)(0.00 - 0.18) $$
+
+$$ = 0.0066 $$
+
+:::
+
