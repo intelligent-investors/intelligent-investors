@@ -658,3 +658,121 @@ $$ = 0.0066 $$
 
 :::
 
+### N: Tính toán và diễn giải xác suất cập nhật sử dụng công thức Bayes
+
+**Công thức Bayes** được sử dụng để cập nhật tập hợp xác suất tiên nghiệm cho một sự kiện nhất định khi có thông tin mới. Quy tắc cập nhật xác suất tiên nghiệm của một sự kiện là:
+
+$$
+\text{updated probability} = \frac{\text{probability of new information for a given event}}{\text{unconditional probability of new information}} \times \text{prior probability of event}
+$$
+
+Lưu ý trong ví dụ sau về việc áp dụng công thức Bayes, chúng ta có thể đảo ngược tập hợp xác suất có điều kiện đã cho. Điều này có nghĩa là với $P(B)$, $P(A | B)$, và $P(A | B^C)$, có thể sử dụng công thức Bayes để tính $P(B | A)$.
+
+:::info[**VÍ DỤ**: Công thức Bayes]
+
+Có 60\% xác suất nền kinh tế sẽ phát triển tốt, và nếu điều này xảy ra, có 70\% khả năng cổ phiếu sẽ tăng và 30\% khả năng cổ phiếu sẽ giảm. Có 40\% khả năng nền kinh tế sẽ phát triển kém, và nếu điều này xảy ra, có 20\% khả năng cổ phiếu sẽ tăng giá (có lãi) và 80\% khả năng cổ phiếu sẽ không tăng. Biết rằng cổ phiếu đã tăng giá, tính xác suất rằng nền kinh tế đã phát triển tốt.
+
+**Trả lời:**
+
+```mermaid
+flowchart LR
+  A{ } -->|60%: phát triển tốt| B{ }
+  A -->|40% phát triển kém| C{ }
+  B -->|70% tăng| D[42%: phát triển tốt + lãi]
+  B -->|30% giảm| E[18%: phát triển tốt + không lãi]
+  C -->|20% tăng| F[8%: phát triển kém + lãi]
+  C -->|80% giảm| G[32%: phát triển kém + không lãi]
+```
+
+Trong hình trên, chúng ta đã nhân các xác suất để tính xác suất của từng cặp kết quả. Lưu ý rằng tổng các xác suất này là 1. Biết rằng cổ phiếu có lãi, xác suất cập nhật của nền kinh tế phát triển tốt là bao nhiêu? Chúng ta cộng xác suất của cổ phiếu có lãi trong cả hai trạng thái (phát triển tốt và phát triển kém) để được 42\% + 8\% = 50\%. Biết rằng cổ phiếu có lãi, xác suất rằng nền kinh tế phát triển tốt là $$\frac{42\%}{50\%} = 84%$$.
+
+:::
+
+### O: Xác định phương pháp phù hợp nhất để giải quyết một vấn đề đếm cụ thể và giải quyết các vấn đề đếm bằng các khái niệm giai thừa, tổ hợp và hoán vị.
+
+**Gán nhãn** đề cập đến tình huống có $$ n $$ mục và mỗi mục có thể nhận một trong $$ k $$ nhãn khác nhau. Số lượng mục nhận được nhãn 1 là $$ n_1 $$ và số nhận được nhãn 2 là $$ n_2 $$, v.v., sao cho $$ n_1 + n_2 + n_3 + \ldots + n_k = n $$. Tổng số cách mà các nhãn có thể được gán là:
+
+$$
+\frac{n!}{(n_1!)(n_2!) \times \cdots \times (n_k!)}
+$$
+
+trong đó:
+
+* Ký hiệu “$$!$$” là **giai thừa**. Ví dụ, $$ 4! = 4 \times 3 \times 2 \times 1 = 24 $$, và $$ 2! = 2 \times 1 = 2 $$.
+
+Biểu thức tổng quát cho giai thừa $$ n $$ là:
+
+$$
+n! = n \times (n - 1) \times (n - 2) \times (n - 3) \times \ldots \times 1, \\
+\text{mà theo định nghĩa, } 0! = 1
+$$
+
+*Hỗ trợ sử dụng máy tính:* Trên máy tính TI, giai thừa là `[2nd]` `[x!]` (trên dấu nhân). Trên máy tính HP, giai thừa là `[g]` `[n!]`. Để tính $$ 4! $$ trên máy tính TI, nhập `[4]` `[2nd]` `[x!]` = 24. Trên máy tính HP, nhấn `[4]` `[ENTER]` `[g]` `[n!]`.
+
+:::info[**VÍ DỤ**: Gán nhãn]
+
+Xem xét một danh mục đầu tư bao gồm tám cổ phiếu. Mục tiêu của bạn là chỉ định bốn trong số các cổ phiếu là “giữ lâu dài,” ba cổ phiếu là “giữ ngắn hạn,” và một cổ phiếu là “bán.” Có bao nhiêu cách để gán nhãn cho tám cổ phiếu này?
+
+**Trả lời:**
+
+Có $$8! = 40,320$$ tổng số dãy có thể để gán ba nhãn cho tám cổ phiếu. Tuy nhiên, thứ tự mà mỗi cổ phiếu được gán một nhãn không quan trọng. Ví dụ, không quan trọng cổ phiếu nào trong số những cổ phiếu được gán nhãn “giữ lâu dài” là cổ phiếu đầu tiên được gán nhãn. Do đó, có $$4!$$ cách để gán nhãn giữ lâu dài. Tiếp tục suy luận này cho các danh mục khác, có $$4! \times 3! \times 1!$$ dãy tương đương để gán nhãn. Để loại bỏ việc đếm các dãy thừa này, tổng số dãy có thể ($$8!$$) phải được chia cho số dãy thừa ($$4! \times 3! \times 1!$$).
+
+Do đó, số cách khác nhau để gán nhãn cho tám cổ phiếu là:
+
+$$
+\frac{8!}{4! \times 3! \times 1!} = \frac{40,320}{24 \times 6 \times 1} = 280
+$$
+
+:::
+
+Nếu có $$n$$ nhãn $$(k = n)$$, chúng ta có $$\frac{n!}{1} = n!$$. Số cách để gán $$n$$ nhãn khác nhau cho $$n$$ mục đơn giản là $$n!$$.
+
+Một trường hợp đặc biệt của việc gán nhãn phát sinh khi số lượng nhãn bằng 2 $$(k = 2)$$. Đó là, các mục $$n$$ chỉ có thể nằm trong một trong hai nhóm, và $$n_1 + n_2 = n$$. Trong trường hợp này, chúng ta có thể để $$r = n_1$$ và $$n_2 = n - r$$. Vì chỉ có hai danh mục, chúng ta thường nói về việc chọn $$r$$ mục. Sau đó, các mục $$(n - r)$$ không được chọn. Công thức tổng quát cho việc gán nhãn khi $$k = 2$$ được gọi là **công thức tổ hợp** (hoặc **công thức nhị thức**) và được biểu diễn là:
+
+$$
+_nC_r = \frac{n!}{(n-r)!r!}
+$$
+
+trong đó $_nC_r$ là số cách có thể (tổ hợp) để chọn $$r$$ mục từ một tập hợp $$n$$ mục khi thứ tự chọn không quan trọng. Điều này cũng được viết là $\binom{n}{r}$ và đọc là “$$n$$ chọn $$r$$.”
+
+Một công thức hữu ích khác là **công thức hoán vị**. Một hoán vị là một thứ tự cụ thể của một nhóm đối tượng. Câu hỏi về số nhóm khác nhau có kích thước $$r$$ theo thứ tự cụ thể có thể được chọn từ $$n$$ đối tượng được trả lời bởi công thức hoán vị. Số lượng hoán vị của các đối tượng $$r$$ từ các đối tượng $$n$$ là $$ \frac{n!}{(n-r)!}$$. Chúng tôi sẽ đưa ra một ví dụ sử dụng công thức này sớm.
+
+:::note[**LƯU Ý CỦA GIÁO SƯ**]
+
+Công thức tổ hợp $_nC_r$ và công thức hoán vị $_nP_r$ đều có sẵn trên máy tính TI. Để tính số nhóm khác nhau của ba cổ phiếu từ danh sách tám cổ phiếu (tức là, $_8C_3$), chuỗi là `8` `[2nd]` [$_nC_r$] `3` `[=]`, cho kết quả $$56$$. Nếu chúng ta muốn biết số nhóm theo thứ tự khác nhau của ba nhóm có thể được chọn từ danh sách tám, chúng ta nhập `8` `[2nd]` [$_nP_r$] `3` `[=]` để nhận $336$, là số hoán vị, $\frac{8!}{(8-3)!}$. Chức năng này không có sẵn trên máy tính HP. Nhớ rằng, chính sách hiện tại cho phép bạn mang cả hai máy tính vào kỳ thi nếu bạn chọn.
+
+:::
+
+:::info[**VÍ DỤ**: Số lượng lựa chọn trong bất kỳ thứ tự nào]
+Có bao nhiêu cách để bán ba cổ phiếu từ một danh mục đầu tư gồm 8 cổ phiếu?
+
+**Trả lời:**
+Điều này tương tự như ví dụ dán nhãn trước đó. Vì thứ tự không quan trọng, chúng ta lấy tổng số cách có thể chọn ba trong số tám cổ phiếu và chia cho số lượng lựa chọn dư thừa có thể. Do đó, câu trả lời là:
+$$
+\frac{8!}{5! \times 3!} = 56
+$$
+:::
+
+Trong hai ví dụ trước, thứ tự không quan trọng. Tuy nhiên, thứ tự lựa chọn có thể quan trọng. Ví dụ, giả sử chúng ta muốn thanh lý chỉ một vị trí cổ phiếu mỗi tuần trong ba tuần tới. Khi chúng ta chọn ba cổ phiếu cụ thể để bán, thứ tự bán của chúng phải được xác định. Trong trường hợp này, khái niệm hoán vị được đưa vào. **Công thức hoán vị** là:
+$$
+{}_{n}P_{r} = \frac{n!}{(n-r)!}
+$$
+trong đó ${}_{n}P_{r}$ là số cách có thể (hoán vị) để chọn $r$ mục từ một tập hợp gồm $n$ mục khi thứ tự lựa chọn là quan trọng. Công thức hoán vị cho thấy rằng có $r!$ nhiều cách hơn để chọn $r$ mục nếu thứ tự lựa chọn là **quan trọng** hơn là khi thứ tự không quan trọng. Nghĩa là, ${}_{n}P_{r} = r! \times {}_{n}C_{r}$.
+
+:::info[**VÍ DỤ**: Hoán vị]
+Có bao nhiêu cách để bán ba cổ phiếu trong số tám cổ phiếu nếu thứ tự bán là quan trọng?
+
+**Trả lời:**
+$$
+{}_{8}P_{3} = \frac{8!}{(8-3)!} = \frac{8!}{5!} = 336
+$$
+Đây là $3!$ lần 56 cách kết hợp có thể tính toán được trong ví dụ trước để chọn ba cổ phiếu khi thứ tự không quan trọng.
+:::
+
+Có năm hướng dẫn có thể được sử dụng để xác định phương pháp đếm nào cần áp dụng khi giải quyết các vấn đề đếm:
+
+- **Quy tắc nhân của đếm** được sử dụng khi có hai hoặc nhiều nhóm. Chìa khóa là chỉ **một** mục có thể được chọn từ mỗi nhóm. Nếu có $k$ bước cần thiết để hoàn thành một nhiệm vụ và mỗi bước có thể được thực hiện theo $n$ cách, số lượng cách khác nhau để hoàn thành nhiệm vụ là $n_1 \times n_2 \times \ldots \times n_k$.
+- **Giai thừa** được sử dụng riêng khi không có nhóm nào — chúng ta chỉ sắp xếp một tập hợp gồm $n$ mục nhất định. Với $n$ mục, có $n!$ cách sắp xếp chúng.
+- **Công thức dán nhãn** áp dụng cho ba hoặc nhiều nhóm con có kích thước xác định trước. Mỗi phần tử của toàn bộ nhóm phải được gán một vị trí, hoặc nhãn, trong một trong ba hoặc nhiều nhóm con.
+- **Công thức kết hợp** chỉ áp dụng cho hai nhóm có kích thước xác định trước. Tìm từ "chọn" hoặc "kết hợp."
+- **Công thức hoán vị** chỉ áp dụng cho hai nhóm có kích thước xác định trước. Tìm một tham chiếu cụ thể đến "thứ tự" là quan trọng.

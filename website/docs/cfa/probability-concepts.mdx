@@ -651,3 +651,121 @@ $$ = 0.0066 $$
 
 :::
 
+### N: Calculate and interpret an updated probability using Bayes' formula
+
+**Bayes' formula** is used to update a given set of prior probabilities for a given event in response to the arrival of new information. The rule for updating prior probability of an event is:
+
+$$
+\text{updated probability} = \frac{\text{probability of new information for a given event}}{\text{unconditional probability of new information}} \times \text{prior probability of event}
+$$
+
+Note in the following example of the application of Bayes' formula that we can essentially reverse a given set of conditional probabilities. This means that given $P(B)$, $P(A | B)$, and $P(A | B^C)$, it is possible to use Bayes' formula to compute $P(B | A)$.
+
+:::info[**EXAMPLE**: Bayes’ formula]
+
+There is a 60\% probability the economy will outperform, and if it does, there is a 70\% chance a stock will go up and a 30\% chance the stock will go down. There is a 40\% chance the economy will underperform, and if it does, there is a 20\% chance the stock in question will increase in value (have gains) and an 80\% chance it will not. Given that the stock increased in value, calculate the probability that the economy outperformed.
+
+**Answer:**
+
+```mermaid
+flowchart LR
+  A{ } -->|60%: outperform| B{ }
+  A -->|40% underperform| C{ }
+  B -->|70% up| D[42%: outperform + gains]
+  B -->|30% down| E[18%: outperform + no gains]
+  C -->|20% up| F[8%: underperform + gains]
+  C -->|80% down| G[32%: underperform + no gains]
+```
+
+In the figure above, we have multiplied the probabilities to calculate the probabilities of each of the four outcome pairs. Note that these sum to 1. Given that the stock has gains, what is our updated probability of an outperforming economy? We sum the probability of stock gains in both states (outperform and underperform) to get 42\% + 8\% = 50\%. Given that the stock has gains, the probability that the economy has outperformed is $\frac{42\%}{50\%} = 84\%$.
+
+:::
+
+### O: Identify the most appropriate method to solve a particular counting problem and solve counting problems using factorial, combination, and permutation concepts.
+
+**Labeling** refers to the situation where there are $$ n $$ items that can each receive one of $$ k $$ different labels. The number of items that receives label 1 is $$ n_1 $$ and the number that receive label 2 is $$ n_2 $$, and so on, such that $$ n_1 + n_2 + n_3 + \ldots + n_k = n $$. The total number of ways that the labels can be assigned is:
+
+$$
+\frac{n!}{(n_1!)(n_2!) \times \cdots \times (n_k!)}
+$$
+
+where:
+
+* the symbol “$$!$$” stands for **factorial**. For example, $$ 4! = 4 \times 3 \times 2 \times 1 = 24 $$, and $$ 2! = 2 \times 1 = 2 $$.
+
+The general expression for $$ n $$ factorial is:
+
+$$
+n! = n \times (n - 1) \times (n - 2) \times (n - 3) \times \ldots \times 1, \\
+\text{where by definition, } 0! = 1
+$$
+
+*Calculator help:* On the TI, factorial is `[2nd]` `[x!]` (above the multiplication sign). On the HP, factorial is `[g]` `[n!]`. To compute $$ 4! $$ on the TI, enter `[4]` `[2nd]` `[x!]` = 24. On the HP, press `[4]` `[ENTER]` `[g]` `[n!]`.
+
+:::info[**EXAMPLE**: Labeling]
+
+Consider a portfolio consisting of eight stocks. Your goal is to designate four of the stocks as “long-term holds,” three of the stocks as “short-term holds,” and one stock as “sell.” How many ways can these eight stocks be labeled?
+
+**Answer:**
+
+There are $8! = 40,320$ total possible sequences that can be followed to assign the three labels to the eight stocks. However, the order that each stock is assigned a label does not matter. For example, it does not matter which of the stocks labeled “long-term” is the first to be labeled. Thus, there are $4!$ ways to assign the long-term label. Continuing this reasoning to the other categories, there are $4! \times 3! \times 1!$ equivalent sequences for assigning the labels. To eliminate the counting of these redundant sequences, the total number of possible sequences ($8!$) must be divided by the number of redundant sequences ($4! \times 3! \times 1!$).
+
+Thus, the number of different ways to label the eight stocks is:
+
+$$
+\frac{8!}{4! \times 3! \times 1!} = \frac{40,320}{24 \times 6 \times 1} = 280
+$$
+
+:::
+
+If there are $n$ labels $(k = n)$, we have $\frac{n!}{1} = n!$. The number of ways to assign $n$ different labels to $n$ items is simply $n!$.
+
+A special case of labeling arises when the number of labels equals 2 $(k = 2)$. That is, the $n$ items can only be in one of two groups, and $n_1 + n_2 = n$. In this case, we can let $r = n_1$ and $n_2 = n - r$. Since there are only two categories, we usually talk about choosing $r$ items. Then $(n - r)$ items are not chosen. The general formula for labeling when $k = 2$ is called the **combination formula** (or **binomial formula**) and is expressed as:
+
+$$
+_nC_r = \frac{n!}{(n-r)!r!}
+$$
+
+where $_nC_r$ is the number of possible ways (combinations) of selecting $r$ items from a set of $n$ items when the order of selection is not important. This is also written $\binom{n}{r}$ and read “$n$ choose $r$.”
+
+Another useful formula is the **permutation formula**. A permutation is a specific ordering of a group of objects. The question of how many different groups of size $r$ in specific order can be chosen from $n$ objects is answered by the permutation formula. The number of permutations of $r$ objects from $n$ objects is $ \frac{n!}{(n-r)!}$. We will give an example using this formula shortly.
+
+:::note[**PROFESSOR’S NOTE**]
+
+The combination formula $_nC_r$ and the permutation formula $_nP_r$ are both available on the TI calculator. To calculate the number of different groups of three stocks from a list of eight stocks (i.e., $_8C_3$), the sequence is `8` `[2nd]` [$_nC_r$] `3` `[=]`, which yields $$56$$. If we want to know the number of differently ordered groups of three that can be selected from a list of eight, we enter `8` `[2nd]` [$_nP_r$] `3` `[=]` to get $336$, which is the number of permutations, $\frac{8!}{(8-3)!}$. This function is not available on the HP calculator. Remember, current policy permits you to bring both calculators to the exam if you choose.
+
+:::
+
+:::info[**EXAMPLE**: Number of choices in any order]
+How many ways can three stocks be sold from an 8-stock portfolio?
+
+**Answer:**
+This is similar to the preceding labeling example. Since order does not matter, we take the total number of possible ways to select three of the eight stocks and divide by the number of possible redundant selections. Thus, the answer is:
+$$
+\frac{8!}{5! \times 3!} = 56
+$$
+:::
+
+In the preceding two examples, ordering did not matter. The order of selection could, however, be important. For example, suppose we want to liquidate only one stock position per week over the next three weeks. Once we choose three particular stocks to sell, the order in which they are sold must be determined. In this case, the concept of permutation comes into play. The **permutation formula** is:
+$$
+{}_{n}P_{r} = \frac{n!}{(n-r)!}
+$$
+where ${}_{n}P_{r}$ is the number of possible ways (permutations) to select $r$ items from a set of $n$ items when the order of selection is important. The permutation formula implies that there are $r!$ more ways to choose $r$ items if the order of selection is **important** than if order is not important. That is, ${}_{n}P_{r} = r! \times {}_{n}C_{r}$.
+
+:::info[**EXAMPLE**: Permutation]
+How many ways are there to sell three stocks out of eight if the order of the sales is important?
+
+**Answer:**
+$$
+{}_{8}P_{3} = \frac{8!}{(8-3)!} = \frac{8!}{5!} = 336
+$$
+This is $3!$ times the 56 possible combinations computed in the preceding example for selecting the three stocks when the order was not important.
+:::
+
+There are five guidelines that may be used to determine which counting method to employ when dealing with counting problems:
+
+- The **multiplication rule of counting** is used when there are two or more groups. The key is that only **one** item may be selected from each group. If there are $k$ steps required to complete a task and each step can be done in $n$ ways, the number of different ways to complete the task is $n_1 \times n_2 \times \ldots \times n_k$.
+- **Factorial** is used by itself when there are no groups—we are only arranging a given set of $n$ items. Given $n$ items, there are $n!$ ways of arranging them.
+- The **labeling formula** applies to three or more subgroups of predetermined size. Each element of the entire group must be assigned a place, or label, in one of the three or more subgroups.
+- The **combination formula** applies to only two groups of predetermined size. Look for the word "choose" or "combination."
+- The **permutation formula** applies to only two groups of predetermined size. Look for a specific reference to "order" being important.
