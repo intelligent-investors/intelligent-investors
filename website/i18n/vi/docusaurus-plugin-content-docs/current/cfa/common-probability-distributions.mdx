@@ -1,0 +1,65 @@
+import FigureA from "./images/common-probability/figureA.png";
+
+# Các Phân Phối Xác Suất Thông Thường
+
+Bài tổng quan này chứa nhiều kiến thức quan trọng. Hãy tìm hiểu sự khác biệt giữa phân phối xác suất rời rạc và liên tục. Phân phối nhị thức và phân phối chuẩn là những phân phối quan trọng nhất ở đây. Bạn cần học các thuộc tính của cả hai phân phối và ghi nhớ các công thức cho xác suất của một giá trị cụ thể khi được đưa ra phân phối xác suất nhị thức. Tìm hiểu rủi ro thâm hụt là gì và cách tính toán và sử dụng tiêu chuẩn an toàn của Roy. Biết cách chuẩn hóa một biến ngẫu nhiên phân phối chuẩn, sử dụng bảng z, và xây dựng khoảng tin cậy. Những kỹ năng này sẽ được sử dụng lặp lại trong các bài tổng quan chủ đề tiếp theo. Ngoài ra, hãy hiểu các đặc điểm cơ bản của phân phối lognormal, mô phỏng Monte Carlo và mô phỏng lịch sử. Cuối cùng, sẽ là một ý tưởng tốt nếu biết cách nhận được tỷ suất sinh lời kép liên tục từ các khoản hoàn vốn kỳ hạn.
+
+## 1: PHÂN PHỐI ĐỀU VÀ PHÂN PHỐI NHỊ THỨC
+
+### A: Định nghĩa phân phối xác suất và phân biệt giữa các biến ngẫu nhiên rời rạc và liên tục và các hàm xác suất của chúng.
+
+### B: Mô tả tập hợp các kết quả có thể có của một biến ngẫu nhiên rời rạc được chỉ định.
+
+Một **phân phối xác suất** mô tả xác suất của tất cả các kết quả có thể có cho một biến ngẫu nhiên. Các xác suất của tất cả các kết quả có thể có phải cộng lại bằng 1. Một phân phối xác suất đơn giản là phân phối cho một lần tung một con xúc xắc công bằng; có sáu kết quả có thể có và mỗi kết quả có xác suất là 1/6, vì vậy chúng cộng lại bằng 1. Phân phối xác suất của tất cả các khoản hoàn vốn có thể có trên Chỉ số S&P 500 cho năm tới là một phiên bản phức tạp hơn của cùng một ý tưởng.
+
+Một **biến ngẫu nhiên rời rạc** là một biến mà số lượng kết quả có thể có thể được đếm, và đối với mỗi kết quả có thể có, có một xác suất đo lường và dương. Một ví dụ về biến ngẫu nhiên rời rạc là số ngày mưa trong một tháng nhất định, vì có một số lượng kết quả có thể đếm được, từ không đến số ngày trong tháng.
+
+Một **hàm xác suất**, ký hiệu là $$p(x)$$, xác định xác suất rằng một biến ngẫu nhiên bằng một giá trị cụ thể. Nói một cách chính xác hơn, $$p(x)$$ là xác suất rằng biến ngẫu nhiên $$X$$ nhận giá trị $x$, hay $$p(x) = P(X = x)$$.
+
+Hai tính chất chính của hàm xác suất là:
+
+- $$0 \leq p(x) \leq 1$$.
+- $$\sum p(x) = 1$$, tổng của các xác suất cho **tất cả** các kết quả có thể, $$x$$, cho một biến ngẫu nhiên, $$X$$, bằng 1.
+
+:::info[**VÍ DỤ: Đánh giá một hàm xác suất**]
+
+Xét hàm sau: $$X = \{1, 2, 3, 4\}$$, $$p(x) = \frac{x}{10}$$, còn lại thì $$p(x) = 0$$
+
+Xác định xem hàm này có thỏa mãn các điều kiện của một hàm xác suất hay không.
+
+**Trả lời:**
+
+Lưu ý rằng tất cả các xác suất đều nằm trong khoảng từ 0 đến 1, và tổng của tất cả các xác suất bằng 1:
+$$
+\sum p(x) = \frac{1}{10} + \frac{2}{10} + \frac{3}{10} + \frac{4}{10} = 0.1 + 0.2 + 0.3 + 0.4 = 1
+$$
+
+Cả hai điều kiện cho một hàm xác suất đều được thỏa mãn.
+
+:::
+
+Một **biến ngẫu nhiên liên tục** là biến có số kết quả có thể là vô hạn, ngay cả khi có tồn tại các giới hạn dưới và trên. Lượng mưa hàng ngày thực tế giữa không và 100 inch là một ví dụ về biến ngẫu nhiên liên tục vì lượng mưa thực tế có thể có vô số giá trị. Lượng mưa hàng ngày có thể được đo bằng inch, nửa inch, phần tư inch, phần nghìn inch, hoặc thậm chí nhỏ hơn. Do đó, số lượng các lượng mưa hàng ngày có thể xảy ra giữa không và 100 inch là vô hạn.
+
+Việc gán xác suất cho các kết quả có thể cho các biến ngẫu nhiên rời rạc và liên tục cung cấp cho chúng ta các phân phối xác suất rời rạc và phân phối xác suất liên tục. Sự khác biệt giữa các loại phân phối này rõ ràng nhất ở các tính chất sau:
+
+- Đối với **phân phối rời rạc**, $$p(x) = 0$$ khi $$x$$ không thể xảy ra, hoặc $$p(x) > 0$$ nếu nó có thể. Nhớ rằng $$p(x)$$ được đọc là: “xác suất rằng biến ngẫu nhiên $$X = x$$.” Ví dụ, xác suất trời mưa 33 ngày trong tháng Sáu là không vì điều này không thể xảy ra, nhưng xác suất trời mưa 25 ngày trong tháng Sáu có giá trị dương.
+
+- Đối với **phân phối liên tục**, $$p(x) = 0$$ ngay cả khi $$x$$ có thể xảy ra. Chúng ta chỉ có thể xem xét $$P(x_1 \leq X \leq x_2)$$ nơi mà $$x_1$$ và $$x_2$$ là các số thực. Ví dụ, xác suất nhận được hai inch mưa trong tháng Sáu là không vì hai inch là một điểm duy nhất trong một dải vô hạn các giá trị có thể. Mặt khác, xác suất lượng mưa nằm trong khoảng từ 1.999999999 đến 2.000000001 inch có giá trị dương. Trong trường hợp của các phân phối liên tục, $$P(x_1 \leq X \leq x_2) = P(x_1 < X < x_2)$$ vì $$p(x_1) = p(x_2) = 0$$.
+
+Trong tài chính, một số phân phối rời rạc được coi như liên tục vì số lượng kết quả có thể rất lớn. Ví dụ, sự tăng hoặc giảm giá của một cổ phiếu được giao dịch trên một sàn giao dịch Mỹ được ghi lại bằng đô la và xu. Tuy nhiên, xác suất của một thay đổi chính xác là \$1.33 hoặc \$1.34 hoặc bất kỳ thay đổi cụ thể nào khác gần như bằng không. Vì vậy, thường nói về xác suất của một dải thay đổi giá có thể, chẳng hạn như giữa \$1.00 và \$2.00. Nói cách khác, $$p(\text{thay đổi giá} = 1.33)$$ gần như bằng không, nhưng $$P(1 < \text{thay đổi giá} < 2)$$ lớn hơn không.
+
+### C: Diễn giải hàm phân phối tích lũy.
+
+### D: Tính toán và diễn giải xác suất cho một biến ngẫu nhiên, dựa trên hàm phân phối tích lũy của nó.
+
+Một **hàm phân phối tích lũy** (cdf), hay đơn giản là *hàm phân phối*, định nghĩa xác suất rằng một biến ngẫu nhiên, $$X$$, nhận giá trị bằng hoặc nhỏ hơn một giá trị cụ thể, $$x$$. Nó đại diện cho tổng, hoặc *giá trị tích lũy*, của các xác suất cho các kết quả lên đến và bao gồm một kết quả được chỉ định. Hàm phân phối tích lũy cho một biến ngẫu nhiên, $$X$$, có thể được biểu diễn là $$F(X) = P(X \leq x)$$.
+
+Hãy xem xét hàm xác suất đã được định nghĩa trước đó cho $$X = \{1, 2, 3, 4\}$$, $$p(x) = \frac{x}{10}$$. Với phân phối này, $$F(3) = 0.6 = 0.1 + 0.2 + 0.3$$, và $$F(4) = 1 = 0.1 + 0.2 + 0.3 + 0.4$$. Điều này có nghĩa là $$F(3)$$ là xác suất tích lũy rằng các kết quả 1, 2, hoặc 3 xảy ra, và $$F(4)$$ là xác suất tích lũy rằng một trong những kết quả có thể xảy ra.
+
+Hình sau đây minh họa một ví dụ về hàm phân phối tích lũy (cho phân phối chuẩn, được mô tả sau trong chủ đề này). Có xác suất 15.87\% của một giá trị nhỏ hơn -1. Đây là tổng diện tích bên trái của -1 trong pdf ở Panel (a), và giá trị trục y của cdf cho một giá trị của -1 trong Panel (b).
+
+**Hình: Hàm mật độ xác suất chuẩn và hàm phân phối tích lũy**
+
+<div style={{ textAlign: 'center' }}>
+<img src={FigureA} style={{width: 700}} />
+</div>

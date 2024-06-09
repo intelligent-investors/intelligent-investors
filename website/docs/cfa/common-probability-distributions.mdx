@@ -1,0 +1,65 @@
+import FigureA from "./images/common-probability/figureA.png";
+
+# Common Probability Distributions
+
+This topic review contains a lot of key material. Learn the difference between discrete and continuous probability distributions. The binomial and normal distributions are the most important here. You must learn the properties of both distributions and memorize the formulas for the probability of a particular value when given a binomial probability distribution. Learn what shortfall risk is and how to calculate and use Roy’s safety-first criterion. Know how to standardize a normally distributed random variable, use a z-table, and construct confidence intervals. These skills will be used repeatedly in the topic reviews that follow. Additionally, understand the basic features of the lognormal distribution, Monte Carlo simulation, and historical simulation. Finally, it would be a good idea to know how to get continuously compounded rates of return from holding period returns.
+
+## 1: UNIFORM AND BINOMIAL DISTRIBUTIONS
+
+### A: Define a probability distribution and distinguish between discrete and continuous random variables and their probability functions.
+
+### B: Describe the set of possible outcomes of a specified discrete random variable.
+
+A **probability distribution** describes the probabilities of all the possible outcomes for a random variable. The probabilities of all possible outcomes must sum to 1. A simple probability distribution is that for the roll of one fair die; there are six possible outcomes and each one has a probability of 1/6, so they sum to 1. The probability distribution of all the possible returns on the S&P 500 Index for the next year is a more complex version of the same idea.
+
+A **discrete random variable** is one for which the number of possible outcomes can be counted, and for each possible outcome, there is a measurable and positive probability. An example of a discrete random variable is the number of days it will rain in a given month, because there is a countable number of possible outcomes, ranging from zero to the number of days in the month.
+
+A **probability function**, denoted $$p(x)$$, specifies the probability that a random variable is equal to a specific value. More formally, $$p(x)$$ is the probability that random variable $$X$$ takes on the value $x$, or $$p(x) = P(X = x)$$.
+
+The two key properties of a probability function are:
+
+- $$0 \leq p(x) \leq 1$$.
+- $$\sum p(x) = 1$$, the sum of the probabilities for **all** possible outcomes, $$x$$, for a random variable, $$X$$, equals 1.
+
+:::info[**EXAMPLE: Evaluating a probability function**]
+
+Consider the following function: $$X = \{1, 2, 3, 4\}$$, $$p(x) = \frac{x}{10}$$, else $$p(x) = 0$$
+
+Determine whether this function satisfies the conditions for a probability function.
+
+**Answer:**
+
+Note that all of the probabilities are between 0 and 1, and the sum of all probabilities equals 1:
+$$
+\sum p(x) = \frac{1}{10} + \frac{2}{10} + \frac{3}{10} + \frac{4}{10} = 0.1 + 0.2 + 0.3 + 0.4 = 1
+$$
+
+Both conditions for a probability function are satisfied.
+
+:::
+
+A **continuous random variable** is one for which the number of possible outcomes is infinite, even if lower and upper bounds exist. The actual amount of daily rainfall between zero and 100 inches is an example of a continuous random variable because the actual amount of rainfall can take on an infinite number of values. Daily rainfall can be measured in inches, half inches, quarter inches, thousandths of inches, or even smaller increments. Thus, the number of possible daily rainfall amounts between zero and 100 inches is essentially infinite.
+
+The assignment of probabilities to the possible outcomes for discrete and continuous random variables provides us with discrete probability distributions and continuous probability distributions. The difference between these types of distributions is most apparent for the following properties:
+
+- For a **discrete distribution**, $$p(x) = 0$$ when $$x$$ cannot occur, or $$p(x) > 0$$ if it can. Recall that $$p(x)$$ is read: “the probability that random variable $$X = x$$.” For example, the probability of it raining on 33 days in June is zero because this cannot occur, but the probability of it raining 25 days in June has some positive value.
+
+- For a **continuous distribution**, $$p(x) = 0$$ even though $$x$$ can occur. We can only consider $$P(x_1 \leq X \leq x_2)$$ where $$x_1$$ and $$x_2$$ are actual numbers. For example, the probability of receiving two inches of rain in June is zero because two inches is a single point in an infinite range of possible values. On the other hand, the probability of the amount of rain being between 1.999999999 and 2.000000001 inches has some positive value. In the case of continuous distributions, $$P(x_1 \leq X \leq x_2) = P(x_1 < X < x_2)$$ because $$p(x_1) = p(x_2) = 0$$.
+
+In finance, some discrete distributions are treated as though they are continuous because the number of possible outcomes is very large. For example, the increase or decrease in the price of a stock traded on an American exchange is recorded in dollars and cents. Yet, the probability of a change of exactly \$1.33 or \$1.34 or any other specific change is almost zero. It is customary, therefore, to speak in terms of the probability of a range of possible price change, say between \$1.00 and \$2.00. In other words $$p(\text{price change} = 1.33)$$ is essentially zero, but $$P(1 < \text{price change} < 2)$$ is greater than zero.
+
+### C: Interpret a cumulative distribution function.
+
+### D: Calculate and interpret probabilities for a random variable, given its cumulative distribution function.
+
+A **cumulative distribution function** (cdf), or simply *distribution function*, defines the probability that a random variable, $$X$$, takes on a value equal to or less than a specific value, $$x$$. It represents the sum, or *cumulative value*, of the probabilities for the outcomes up to and including a specified outcome. The cumulative distribution function for a random variable, $$X$$, may be expressed as $$F(X) = P(X \leq x)$$.
+
+Consider the probability function defined earlier for $$X = \{1, 2, 3, 4\}$$, $$p(x) = \frac{x}{10}$$. For this distribution, $$F(3) = 0.6 = 0.1 + 0.2 + 0.3$$, and $$F(4) = 1 = 0.1 + 0.2 + 0.3 + 0.4$$. This means that $$F(3)$$ is the cumulative probability that outcomes 1, 2, or 3 occur, and $$F(4)$$ is the cumulative probability that one of the possible outcomes occurs.
+
+The following figure shows an example of a cumulative distribution function (for a standard normal distribution, described later in this topic). There is a 15.87\% probability of a value less than -1. This is the total area to the left of -1 in the pdf in Panel (a), and the y-axis value of the cdf for a value of -1 in Panel (b).
+
+**Figure: Standard Normal Probability Density and Cumulative Distribution Functions**
+
+<div style={{ textAlign: 'center' }}>
+<img src={FigureA} style={{width: 700}} />
+</div>
