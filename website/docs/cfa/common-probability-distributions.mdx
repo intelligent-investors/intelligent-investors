@@ -1,4 +1,5 @@
 import FigureA from "./images/common-probability/figureA.png";
+import FigureB from "./images/common-probability/figureB.png";
 
 # Common Probability Distributions
 
@@ -63,3 +64,49 @@ The following figure shows an example of a cumulative distribution function (for
 <div style={{ textAlign: 'center' }}>
 <img src={FigureA} style={{width: 700}} />
 </div>
+
+:::info[**EXAMPLE**: Cumulative distribution function]
+Return on equity for a firm is defined as a continuous distribution over the range from $$-20\%$$ to $$+30\%$$ and has a cumulative distribution function of $$F(x) = (x + 20) / 50$$. Calculate the probability that ROE will be between $$0\%$$ and $$15\%$$.
+
+**Answer:**
+
+To determine the probability that ROE will be between $$0\%$$ and $$15\%$$, we can first calculate the probability that ROE will be less than or equal to $$15\%$$, or $$F(15)$$, and then subtract the probability that ROE will be less than zero, or $$F(0)$$.
+
+$$P(0 ≤ x ≤ 15) = F(15) – F(0)$$
+
+$$F(15) = (15 + 20) / 50 = 0.70$$
+
+$$F(0) = (0 + 20) / 50 = 0.40$$
+
+$$F(15) – F(0) = 0.70 – 0.40 = 0.30 = 30\%$$
+
+:::
+
+### E: Define a discrete uniform random variable, a Bernoulli random variable, and a binomial random variable.
+
+### F: Calculate and interpret probabilities given the discrete uniform and the binomial distribution functions.
+
+A discrete uniform random variable is one for which the probabilities for all possible outcomes for a discrete random variable are equal. For example, consider the discrete uniform probability distribution defined as $$X = {1, 2, 3, 4, 5}, p(x) = 0.2$$. Here, the probability for each outcome is equal to 0.2 [i.e., $$p(1) = p(2) = p(3) = p(4) = p(5) = 0.2$$]. Also, the cumulative distribution function for the *n*th outcome, $$F(x_n) = np(x)$$, and the probability for a range of outcomes is $$p(x)k$$, where $$k$$ is the number of possible outcomes in the range.
+
+:::info[**EXAMPLE**: Discrete uniform distribution]
+Determine $$p(6)$$, $$F(6)$$, and $$P(2 ≤ X ≤ 8)$$ for the discrete uniform distribution function defined as:
+
+$$X = \{2, 4, 6, 8, 10\}, p(x) = 0.2$$
+
+**Answer:**
+
+$$ p(6) = 0.2 $$, since $$ p(x) = 0.2 $$ for all $$ x $$. $$ F(6) = P(X \leq 6) = np(x) = 3(0.2) = 0.6 $$. Note that $$ n = 3 $$ since 6 is the third outcome in the range of possible outcomes. $$ P(2 \leq X \leq 8) = 4(0.2) = 0.8 $$. Note that $$ k = 4 $$, since there are four outcomes in the range $$ 2 \leq X \leq 8 $$. The following figures illustrate the concepts of a probability function and cumulative distribution function for this distribution.
+
+| X = x | Probability of x Prob (X = x) | Cumulative Distribution Function Prob (X < x)|
+|-------|-------------------------------|----------------------------------------------|
+| 2     | 0.20                          | 0.20                                         |
+| 4     | 0.20                          | 0.40                                         |
+| 6     | 0.20                          | 0.60                                         |
+| 8     | 0.20                          | 0.80                                         |
+
+Cumulative Distribution Function for $$ X \sim \text{Uniform} \{2, 4, 6, 8, 10\} $$
+
+<div style={{ textAlign: 'center' }}>
+<img src={FigureB} style={{width: 500}} />
+</div>
+:::

@@ -1,4 +1,5 @@
 import FigureA from "./images/common-probability/figureA.png";
+import FigureB from "./images/common-probability/figureB.png";
 
 # Các Phân Phối Xác Suất Thông Thường
 
@@ -56,10 +57,57 @@ Một **hàm phân phối tích lũy** (cdf), hay đơn giản là *hàm phân p
 
 Hãy xem xét hàm xác suất đã được định nghĩa trước đó cho $$X = \{1, 2, 3, 4\}$$, $$p(x) = \frac{x}{10}$$. Với phân phối này, $$F(3) = 0.6 = 0.1 + 0.2 + 0.3$$, và $$F(4) = 1 = 0.1 + 0.2 + 0.3 + 0.4$$. Điều này có nghĩa là $$F(3)$$ là xác suất tích lũy rằng các kết quả 1, 2, hoặc 3 xảy ra, và $$F(4)$$ là xác suất tích lũy rằng một trong những kết quả có thể xảy ra.
 
-Hình sau đây minh họa một ví dụ về hàm phân phối tích lũy (cho phân phối chuẩn, được mô tả sau trong chủ đề này). Có xác suất 15.87\% của một giá trị nhỏ hơn -1. Đây là tổng diện tích bên trái của -1 trong pdf ở Panel (a), và giá trị trục y của cdf cho một giá trị của -1 trong Panel (b).
+Hình sau đây minh họa một ví dụ về hàm phân phối tích lũy (cho phân phối chuẩn, được mô tả sau trong chủ đề này). Có xác suất 15.87\% của một giá trị nhỏ hơn -1. Đây là tổng diện tích bên trái của -1 trong pdf ở hình (a), và giá trị trục y của cdf cho một giá trị của -1 trong hình (b).
 
 **Hình: Hàm mật độ xác suất chuẩn và hàm phân phối tích lũy**
 
 <div style={{ textAlign: 'center' }}>
 <img src={FigureA} style={{width: 700}} />
 </div>
+
+:::info[**EXAMPLE**: Hàm phân phối tích lũy]
+Lợi nhuận trên vốn chủ sở hữu (ROE) cho một công ty được định nghĩa là một phân phối liên tục trong khoảng từ $$-20\%$$ đến $$+30\%$$ và có hàm phân phối tích lũy là $$F(x) = (x + 20) / 50$$. Tính xác suất rằng ROE sẽ nằm trong khoảng từ $$0\%$$ đến $$15\%$$.
+
+**Trả lời:**
+
+Để xác định xác suất rằng ROE sẽ nằm trong khoảng từ $$0\%$$ đến $$15\%$$, chúng ta có thể tính xác suất rằng ROE sẽ nhỏ hơn hoặc bằng $$15\%$$, hoặc $$F(15)$$, và sau đó trừ đi xác suất rằng ROE sẽ nhỏ hơn không, hoặc $$F(0)$$.
+
+$$P(0 ≤ x ≤ 15) = F(15) – F(0)$$
+
+$$F(15) = (15 + 20) / 50 = 0.70$$
+
+$$F(0) = (0 + 20) / 50 = 0.40$$
+
+$$F(15) – F(0) = 0.70 – 0.40 = 0.30 = 30\%$$
+
+:::
+
+### E: Định nghĩa biến ngẫu nhiên rời rạc đều, biến ngẫu nhiên Bernoulli và biến ngẫu nhiên nhị thức.
+
+### F: Tính toán và giải thích xác suất dựa trên hàm phân phối rời rạc đều và nhị thức.
+
+Một biến ngẫu nhiên rời rạc đều là một biến ngẫu nhiên rời rạc có xác suất cho tất cả các kết quả có thể xảy ra là bằng nhau. Ví dụ, xem xét phân phối xác suất rời rạc đều được định nghĩa là $$X = \{1, 2, 3, 4, 5\}, p(x) = 0.2$$. Ở đây, xác suất cho mỗi kết quả là bằng 0.2 [tức là, $$p(1) = p(2) = p(3) = p(4) = p(5) = 0.2$$]. Ngoài ra, hàm phân phối tích lũy cho kết quả thứ *n*, $$F(x_n) = np(x)$$, và xác suất cho một khoảng kết quả là $$p(x)k$$, trong đó $$k$$ là số lượng kết quả có thể trong khoảng đó.
+
+:::info[**EXAMPLE**: Phân phối rời rạc đều]
+Xác định $$p(6)$$, $$F(6)$$, và $$P(2 ≤ X ≤ 8)$$ cho hàm phân phối rời rạc đều được định nghĩa như sau:
+
+$$X = \{2, 4, 6, 8, 10\}, p(x) = 0.2$$
+
+**Trả lời:**
+
+$$ p(6) = 0.2 $$, vì $$ p(x) = 0.2 $$ cho tất cả $$ x $$. $$ F(6) = P(X \leq 6) = np(x) = 3(0.2) = 0.6 $$. Lưu ý rằng $$ n = 3 $$ vì 6 là kết quả thứ ba trong các kết quả có thể xảy ra. $$ P(2 \leq X \leq 8) = 4(0.2) = 0.8 $$. Lưu ý rằng $$ k = 4 $$, vì có bốn kết quả trong khoảng $$ 2 \leq X \leq 8 $$.
+
+| X = x | Xác suất của x (Prob (X = x)) | Hàm phân phối tích lũy (Prob (X < x))|
+|-------|-------------------------------|--------------------------------------|
+| 2     | 0.20                          | 0.20                                 |
+| 4     | 0.20                          | 0.40                                 |
+| 6     | 0.20                          | 0.60                                 |
+| 8     | 0.20                          | 0.80                                 |
+
+Hàm phân phối tích lũy cho $$ X \sim \text{Uniform} \{2, 4, 6, 8, 10\} $$
+
+<div style={{ textAlign: 'center' }}>
+<img src={FigureB} style={{width: 500}} />
+</div>
+:::
+
