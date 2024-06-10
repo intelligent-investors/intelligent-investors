@@ -1,7 +1,5 @@
 import { Button, Card } from 'antd';
 import React, { useState } from 'react';
-import '../css/quiz.css';
-
 
 const Quiz = ({ questions }) => {
   const [answers, setAnswers] = useState(Array(questions.length).fill(null));
@@ -22,7 +20,7 @@ const Quiz = ({ questions }) => {
   return (
     <Card title="Quiz">
       {questions.map((question, index) => (
-        <div key={index} className="question-container">
+        <div key={index} style={{ marginBottom: '10px' }}>
           <p>{index + 1}. {question.question}</p>
           <form>
             {question.answer.map((option, i) => (
@@ -41,7 +39,7 @@ const Quiz = ({ questions }) => {
             ))}
           </form>
           {isSubmitted && (
-            <p className={answers[index] === question.answer.find(opt => opt.correct === "true").value ? "correct" : "incorrect"}>
+            <p style={{ color: answers[index] === question.answer.find(opt => opt.correct === "true").value ? '#52c41a' : '#f5222d' }}>
               {answers[index] === question.answer.find(opt => opt.correct === "true").value
                 ? "Correct!"
                 : `Incorrect. The correct answer is ${question.answer.find(opt => opt.correct === "true").value}.`}
@@ -49,7 +47,7 @@ const Quiz = ({ questions }) => {
               {question.answer.find(opt => opt.correct === "true").explaination}
             </p>
           )}
-          {index < questions.length - 1 && <hr className="divider" />}
+          {index < questions.length - 1 && <hr style={{ margin: '20px 0', border: 0, borderTop: '1px solid #d9d9d9' }} />}
         </div>
       ))}
       {!isSubmitted && (
