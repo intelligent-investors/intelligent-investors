@@ -111,3 +111,37 @@ Hàm phân phối tích lũy cho $$ X \sim \text{Uniform} \{2, 4, 6, 8, 10\} $$
 </div>
 :::
 
+#### Phân phối nhị thức
+
+Một **biến ngẫu nhiên nhị thức** có thể được định nghĩa là số lần "thành công" trong một số lần thử nghiệm nhất định, trong đó kết quả có thể là "thành công" hoặc "thất bại." Xác suất thành công, $p$, là không đổi cho mỗi lần thử, và các lần thử là độc lập. Một biến ngẫu nhiên nhị thức mà số lần thử là 1 được gọi là **biến ngẫu nhiên Bernoulli**. Hãy nghĩ về một lần thử như một thí nghiệm nhỏ (hoặc "thử nghiệm Bernoulli"). Kết quả cuối cùng là số lần thành công trong một loạt $n$ lần thử. Trong những điều kiện này, hàm xác suất nhị thức định nghĩa xác suất của $x$ lần thành công trong $n$ lần thử. Nó có thể được biểu diễn bằng công thức sau:
+
+$$
+p(x) = P(X = x) = (\text{number of ways to choose } x \text{ from } n)p^x(1 – p)^{n-x}
+$$
+
+trong đó:
+
+* *số cách chọn x từ n* = $$\frac{n!}{(n-x)!x!}$$ có thể được ký hiệu là $$\binom{n}{x}$$ hoặc nói là "n chọn x"
+* $p$ = xác suất của "thành công" trong mỗi lần thử [đừng nhầm lẫn với p(x)]
+
+Vì vậy, xác suất của chính xác $x$ lần thành công trong $n$ lần thử là:
+
+$$
+p(x) = \frac{n!}{(n-x)!x!}p^x(1 – p)^{n-x}
+$$
+
+:::info[**VÍ DỤ**: Xác suất nhị thức]
+
+Giả sử một phân phối nhị thức, tính xác suất rút được ba hạt đậu đen từ một bát đậu đen và đậu trắng nếu xác suất chọn một hạt đậu đen trong bất kỳ lần thử nào là 0.6. Bạn sẽ rút năm hạt đậu từ bát.
+
+Trả lời:
+
+$$
+P(X = 3) = p(3) = \frac{5!}{2!3!}(0.6)^3(0.4)^2 = (120/12)(0.216)(0.160) = 0.3456
+$$
+
+:::
+
+Một chút trực giác về những kết quả này có thể giúp bạn nhớ các phép tính. Hãy xem xét một bát đậu đen và đậu trắng (rất lớn) có 60\% là đậu đen và mỗi lần bạn chọn một hạt đậu, bạn thay thế nó vào bát trước khi rút lại. Chúng ta muốn biết xác suất chọn chính xác ba hạt đậu đen trong năm lần rút, như trong ví dụ trước.
+
+Một cách để điều này xảy ra là BBBWW. Vì các lần rút là độc lập, xác suất của điều này rất dễ tính. Xác suất chọn một hạt đậu đen là 60\%, và xác suất chọn một hạt đậu trắng là $$1 - 60\% = 40\%$$. Do đó, xác suất chọn BBBWW, theo thứ tự, là $$0.6 \times 0.6 \times 0.6 \times 0.4 \times 0.4 = 3.456\%$$. Đây là $$p^3(1 – p)^2$$ từ công thức và $$p$$ là 60\%, xác suất chọn một hạt đậu đen trong bất kỳ lần rút nào từ bát. Tuy nhiên, BBBWW không phải là cách duy nhất để chọn chính xác ba hạt đậu đen trong năm lần thử. Một khả năng khác là BBWWB, và khả năng thứ ba là BWWBB. Mỗi trường hợp này sẽ có xác suất xảy ra chính xác như kết quả ban đầu của chúng ta, BBBWW. Đó là lý do tại sao chúng ta cần trả lời câu hỏi có bao nhiêu cách (thứ tự khác nhau) để chúng ta chọn ba hạt đậu đen trong năm lần rút. Sử dụng công thức, có $$ \frac{5!}{3!(5-3)!} = 10 \text{ cách;} 10 \times 3.456\% = 34.56\%$$, là câu trả lời chúng ta đã tính ở trên.

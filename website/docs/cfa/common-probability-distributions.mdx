@@ -110,3 +110,39 @@ Cumulative Distribution Function for $$ X \sim \text{Uniform} \{2, 4, 6, 8, 10\}
 <img src={FigureB} style={{width: 500}} />
 </div>
 :::
+
+#### The Binomial Distribution
+
+A **binomial random variable** may be defined as the number of “successes” in a given number of trials, whereby the outcome can be either “success” or “failure.” The probability of success, $$p$$, is constant for each trial, and the trials are independent. A binomial random variable for which the number of trials is 1 is called a **Bernoulli random variable**. Think of a trial as a mini-experiment (or “Bernoulli trial”). The final outcome is the number of successes in a series of $$n$$ trials. Under these conditions, the binomial probability function defines the probability of $$x$$ successes in $$n$$ trials. It can be expressed using the following formula:
+
+$$
+p(x) = P(X = x) = (\text{number of ways to choose } x \text{ from } n)p^x(1 – p)^{n-x}
+$$
+
+where:
+
+* *number of ways to choose x from n* = $$\frac{n!}{(n-x)!x!}$$ which may also be denoted as $$\binom{n}{x}$$ or stated as “n choose x”
+* $p$ = the probability of “success” on each trial [don’t confuse it with p(x)]
+
+So the probability of exactly $x$ successes in $n$ trials is:
+
+$$
+p(x) = \frac{n!}{(n-x)!x!}p^x(1 – p)^{n-x}
+$$
+
+:::info[**EXAMPLE**: Binomial probability]
+
+Assuming a binomial distribution, compute the probability of drawing three black beans from a bowl of black and white beans if the probability of selecting a black bean in any given attempt is 0.6. You will draw five beans from the bowl.
+
+Answer:
+
+$$
+P(X = 3) = p(3) = \frac{5!}{2!3!}(0.6)^3(0.4)^2 = (120/12)(0.216)(0.160) = 0.3456
+$$
+
+:::
+
+Some intuition about these results may help you remember the calculations. Consider that a (very large) bowl of black and white beans has 60\% black beans and that each time you select a bean, you replace it in the bowl before drawing again. We want to know the probability of selecting exactly three black beans in five draws, as in the previous example.
+
+One way this might happen is BBBWW. Since the draws are independent, the probability of this is easy to calculate. The probability of drawing a black bean is 60\%, and the probability of drawing a white bean is $$1 - 60\% = 40\%$$. Therefore, the probability of selecting BBBWW, in order, is $$0.6 \times 0.6 \times 0.6 \times 0.4 \times 0.4 = 3.456\%$$. This is the $$p^3(1 – p)^2$$ from the formula and $$p$$ is 60\%, the probability of selecting a black bean on any single draw from the bowl. BBBWW is not, however, the only way to choose exactly three black beans in five trials. Another possibility is BBWWB, and a third is BWWBB. Each of these will have exactly the same probability of occurring as our initial outcome, BBBWW. That’s why we need to answer the question of how many ways (different orders) there are for us to choose three black beans in five draws. Using the formula, there are $$ \frac{5!}{3!(5-3)!} = 10 \text{ ways;} 10 \times 3.456\% = 34.56\%$$, the answer we computed above.
+
