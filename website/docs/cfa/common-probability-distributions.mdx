@@ -1,5 +1,7 @@
 import FigureA from "./images/common-probability/figureA.png";
 import FigureB from "./images/common-probability/figureB.png";
+import FigureC from "./images/common-probability/figureC.png";
+import FigureD from "./images/common-probability/figureD.png";
 
 # Common Probability Distributions
 
@@ -146,3 +148,117 @@ Some intuition about these results may help you remember the calculations. Consi
 
 One way this might happen is BBBWW. Since the draws are independent, the probability of this is easy to calculate. The probability of drawing a black bean is 60\%, and the probability of drawing a white bean is $$1 - 60\% = 40\%$$. Therefore, the probability of selecting BBBWW, in order, is $$0.6 \times 0.6 \times 0.6 \times 0.4 \times 0.4 = 3.456\%$$. This is the $$p^3(1 – p)^2$$ from the formula and $$p$$ is 60\%, the probability of selecting a black bean on any single draw from the bowl. BBBWW is not, however, the only way to choose exactly three black beans in five trials. Another possibility is BBWWB, and a third is BWWBB. Each of these will have exactly the same probability of occurring as our initial outcome, BBBWW. That’s why we need to answer the question of how many ways (different orders) there are for us to choose three black beans in five draws. Using the formula, there are $$ \frac{5!}{3!(5-3)!} = 10 \text{ ways;} 10 \times 3.456\% = 34.56\%$$, the answer we computed above.
 
+#### Expected Value and Variance of a Binomial Random Variable
+
+For a given series of $$n$$ trials, the expected number of successes, or $$E(X)$$, is given by the following formula:
+
+expected value of $$X = E(X) = np$$
+
+The intuition is straightforward; if we perform $$n$$ trials and the probability of success on each trial is $$p$$, we expect $$np$$ successes.
+
+The variance of a binomial random variable is given by:
+
+variance of $$X = np(1 - p)$$
+
+:::info[**EXAMPLE**: Expected value of a binomial random variable]
+Based on empirical data, the probability that the Dow Jones Industrial Average (DJIA) will increase on any given day has been determined to equal 0.67. Assuming that the only other outcome is that it decreases, we can state p(UP) = 0.67 and p(DOWN) = 0.33. Further, assume that movements in the DJIA are independent (i.e., an increase in one day is independent of what happened on another day).
+
+Using the information provided, compute the expected value of the number of up days in a 5-day period.
+
+**Answer:**
+
+Using binomial terminology, we define success as UP, so $$p = 0.67$$. Note that the definition of success is critical to any binomial problem.
+
+$$E(X \mid n = 5, p = 0.67) = (5)(0.67) = 3.35$$
+
+Recall that the “|” symbol means given. Hence, the preceding statement is read as: the expected value of $$X$$ given that $$n = 5$$, and the probability of success = 67% is 3.35.
+
+We should note that since the binomial distribution is a discrete distribution, the result $$X = 3.35$$ is not possible. However, if we were to record the results of many 5-day periods, the average number of up days (successes) would converge to 3.35.
+:::
+
+### G: Construct a binomial tree to describe stock price movement.
+
+A binomial model can be applied to stock price movements. We just need to define the two possible outcomes and the probability that each outcome will occur. Consider a stock with current price $$S$$ that will, over the next period, either increase in value or decrease in value (the only two possible outcomes). The probability of an up-move (the **up transition probability**, $$u$$) is $$p$$ and the probability of a down-move (the **down transition probability**, $$d$$) is $$(1 - p)$$.
+
+A **binomial tree** is constructed by showing all the possible combinations of up-moves and down-moves over a number of successive periods. For two periods, these combinations are $$uu, ud, du,$$ and $$dd$$. Each of the possible values along a binomial tree is a **node**. The following figure illustrates a binomial tree for three periods.
+
+**Figure: A Binomial Tree**
+
+```mermaid
+graph LR
+    S -->|prob = p| uS
+    S -->|prob = 1-p| dS
+    uS --> uuS
+    uS --> uudS
+    uuS --> uuuS
+    uudS --> uuudS
+    dS --> udS
+    dS --> ddS
+    udS --> uudS
+    udS --> uddS
+    ddS --> dddS
+```
+
+With an initial stock price $$S = 50$$, $$u = 1.01$$, $$d = \frac{1}{1.01}$$, and $$\text{Prob}(u) = 0.6$$, we can calculate the possible stock prices after two periods as:
+
+$$
+\begin{align*}
+uuS & = 1.01^2 \times 50 = 51.01 \quad \text{with probability} \quad (0.6)^2 = 0.36 \\
+udS & = 1.01 \left( \frac{1}{1.01} \right) \times 50 = 50 \quad \text{with probability} \quad (0.6)(0.4) = 0.24 \\
+duS & = \left( \frac{1}{1.01} \right) (1.01) \times 50 = 50 \quad \text{with probability} \quad (0.4)(0.6) = 0.24 \\
+ddS & = \left( \frac{1}{1.01} \right)^2 \times 50 = 49.01 \quad \text{with probability} \quad (0.4)^2 = 0.16
+\end{align*}
+$$
+
+Since a stock price of 50 can result from either $$ud$$ or $$du$$ moves, the probability of a stock price of 50 after two periods (the middle value) is $$2 \times (0.6)(0.4) = 48\%$$.
+
+A binomial tree with $$S = 50$$, $$u = 1.1$$, and $$\text{Prob}(u) = 0.7$$ is illustrated in the following figure . Note that the middle value after two periods (50) is equal to the beginning value because $$d = \frac{1}{u}$$, a special case of the binomial model. The probability that the stock price is down (\<50) after two periods is simply the probability of two down movements, $$(1 - 0.7)^2 = 9\%$$.
+
+**Figure: A Two-Period Binomial Tree $$S = \$50$$, $$U = 1.10$$, $$\text{Prob}(U) = 0.7$$**
+
+```mermaid
+graph LR;
+    A["$50"] --> B["$$50(1.1) = \$55$$<br>$$Prob = 70\%$$"]
+    A["$50"] --> C["$$50/1.1 = \$45.45$$<br>$$Prob = 30\%$$"]
+    B --> D["$$50(1.1)^2 = \$60.50$$<br>$$Prob = (0.7)^2 = 49\%$$"]
+    B --> E["$$50(1.1)(1/1.1) = \$50$$<br>$$Prob = (0.3)(0.7) \times 2 = 42\%$$"]
+    C --> F["$$50/(1.1)^2 = \$41.32$$<br>$$Prob = (0.3)^2 = 9\%$$"]
+```
+
+One of the important applications of a binomial stock price model is in pricing options. We can make a binomial tree for asset prices more realistic by shortening the length of the periods and increasing the number of periods and possible outcomes.
+
+### H: Define the continuous uniform distribution and calculate and interpret probabilities, given a continuous uniform distribution.
+
+The **continuous uniform distribution** is defined over a range that spans between some lower limit, $$ a $$, and some upper limit, $$ b $$, which serve as the parameters of the distribution. Outcomes can only occur between $$ a $$ and $$ b $$, and since we are dealing with a continuous distribution, even if $$ a < x < b $$, P($$ X = x $$) = 0. Formally, the properties of a continuous uniform distribution may be described as follows:
+
+- For all $$ a \leq x_1 < x_2 \leq b $$ (i.e., for all $$ x_1 $$ and $$ x_2 $$ between the boundaries $$ a $$ and $$ b $$).
+- P($$ X < a $$ or $$ X > b $$) = 0 (i.e., the probability of $$ X $$ outside the boundaries is zero).
+- P($$ x_1 \leq X \leq x_2 $$) = $$(x_2 - x_1) / (b - a)$$. This defines the probability of outcomes between $$ x_1 $$ and $$ x_2 $$.
+
+Don’t miss how simple this is just because the notation is so mathematical. For a continuous uniform distribution, the probability of outcomes in a range that is one-half the whole range is 50\%. The probability of outcomes in a range that is one-quarter as large as the whole possible range is 25\%.
+
+:::info[**EXAMPLE**: Continuous uniform distribution]
+$$ X $$ is uniformly distributed between 2 and 12. Calculate the probability that $$ X $$ will be between 4 and 8.
+
+**Answer:**
+
+$$
+\frac{8 - 4}{12 - 2} = \frac{4}{10} = 40\%
+$$
+
+The figure below illustrates this continuous uniform distribution. Note that the area bounded by 4 and 8 is 40\% of the total probability between 2 and 12 (which is 100\%).
+
+**Continuous Uniform Distribution**
+
+<div style={{ textAlign: 'center' }}>
+<img src={FigureC} style={{width: 400}} />
+</div>
+:::
+
+Since outcomes are equal over equal-size possible intervals, the cdf is linear over the variable’s range. The cdf for the distribution in the example, Prob $$(X \leq x)$$, is shown in the following figure.
+
+**Figure: CDF for a Continuous Uniform Variable**
+
+<div style={{ textAlign: 'center' }}>
+<img src={FigureD} style={{width: 500}} />
+</div>

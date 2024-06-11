@@ -1,5 +1,7 @@
 import FigureA from "./images/common-probability/figureA.png";
 import FigureB from "./images/common-probability/figureB.png";
+import FigureC from "./images/common-probability/figureC.png";
+import FigureD from "./images/common-probability/figureD.png";
 
 # Các Phân Phối Xác Suất Thông Thường
 
@@ -145,3 +147,118 @@ $$
 Một chút trực giác về những kết quả này có thể giúp bạn nhớ các phép tính. Hãy xem xét một bát đậu đen và đậu trắng (rất lớn) có 60\% là đậu đen và mỗi lần bạn chọn một hạt đậu, bạn thay thế nó vào bát trước khi rút lại. Chúng ta muốn biết xác suất chọn chính xác ba hạt đậu đen trong năm lần rút, như trong ví dụ trước.
 
 Một cách để điều này xảy ra là BBBWW. Vì các lần rút là độc lập, xác suất của điều này rất dễ tính. Xác suất chọn một hạt đậu đen là 60\%, và xác suất chọn một hạt đậu trắng là $$1 - 60\% = 40\%$$. Do đó, xác suất chọn BBBWW, theo thứ tự, là $$0.6 \times 0.6 \times 0.6 \times 0.4 \times 0.4 = 3.456\%$$. Đây là $$p^3(1 – p)^2$$ từ công thức và $$p$$ là 60\%, xác suất chọn một hạt đậu đen trong bất kỳ lần rút nào từ bát. Tuy nhiên, BBBWW không phải là cách duy nhất để chọn chính xác ba hạt đậu đen trong năm lần thử. Một khả năng khác là BBWWB, và khả năng thứ ba là BWWBB. Mỗi trường hợp này sẽ có xác suất xảy ra chính xác như kết quả ban đầu của chúng ta, BBBWW. Đó là lý do tại sao chúng ta cần trả lời câu hỏi có bao nhiêu cách (thứ tự khác nhau) để chúng ta chọn ba hạt đậu đen trong năm lần rút. Sử dụng công thức, có $$ \frac{5!}{3!(5-3)!} = 10 \text{ cách;} 10 \times 3.456\% = 34.56\%$$, là câu trả lời chúng ta đã tính ở trên.
+
+#### Giá Trị Kỳ Vọng và Phương Sai của Biến Ngẫu Nhiên Nhị Thức
+
+Đối với một loạt $$n$$ thử nghiệm, số lần thành công kỳ vọng, hay $$E(X)$$, được cho bởi công thức sau:
+
+giá trị kỳ vọng của $$X = E(X) = np$$
+
+Trực giác khá đơn giản; nếu chúng ta thực hiện $$n$$ thử nghiệm và xác suất thành công trong mỗi thử nghiệm là $$p$$, chúng ta kỳ vọng có $$np$$ lần thành công.
+
+Phương sai của biến ngẫu nhiên nhị thức được cho bởi:
+
+phương sai của $$X = np(1 - p)$$
+
+:::info[**VÍ DỤ**: Giá trị kỳ vọng của biến ngẫu nhiên nhị thức]
+Dựa trên dữ liệu thực nghiệm, xác suất rằng Chỉ số Công nghiệp Dow Jones (DJIA) sẽ tăng vào bất kỳ ngày nào được xác định là 0.67. Giả sử rằng kết quả duy nhất khác là nó giảm, chúng ta có thể nói p(LÊN) = 0.67 và p(XUỐNG) = 0.33. Hơn nữa, giả sử rằng các chuyển động trong DJIA là độc lập (tức là, việc tăng một ngày không phụ thuộc vào điều gì đã xảy ra vào ngày khác).
+
+Sử dụng thông tin đã cung cấp, tính giá trị kỳ vọng của số ngày tăng trong một khoảng thời gian 5 ngày.
+
+**Trả lời:**
+
+Sử dụng thuật ngữ nhị thức, chúng ta định nghĩa thành công là LÊN, vậy $$p = 0.67$$. Lưu ý rằng định nghĩa của thành công là rất quan trọng đối với bất kỳ bài toán nhị thức nào.
+
+$$E(X \mid n = 5, p = 0.67) = (5)(0.67) = 3.35$$
+
+Hãy nhớ rằng ký hiệu “|” có nghĩa là cho trước. Do đó, câu nói trước đó được đọc là: giá trị kỳ vọng của $$X$$ cho trước $$n = 5$$, và xác suất thành công = 67% là 3.35.
+
+Chúng ta nên lưu ý rằng vì phân phối nhị thức là một phân phối rời rạc, kết quả $$X = 3.35$$ là không thể. Tuy nhiên, nếu chúng ta ghi lại kết quả của nhiều khoảng thời gian 5 ngày, số ngày tăng trung bình (thành công) sẽ hội tụ về 3.35.
+:::
+
+
+Mô hình nhị thức có thể được áp dụng cho các biến động giá cổ phiếu. Chúng ta chỉ cần xác định hai kết quả có thể xảy ra và xác suất mà mỗi kết quả sẽ xảy ra. Hãy xem xét một cổ phiếu với giá hiện tại là $$S$$, trong khoảng thời gian tiếp theo, sẽ hoặc tăng giá trị hoặc giảm giá trị (hai kết quả có thể xảy ra duy nhất). Xác suất của một lần tăng giá (xác suất chuyển tiếp tăng, $$u$$) là $$p$$ và xác suất của một lần giảm giá (xác suất chuyển tiếp giảm, $$d$$) là $$(1 - p)$$.
+
+Một **cây nhị thức** được xây dựng bằng cách hiển thị tất cả các kết hợp có thể của các lần tăng và giảm giá trong một số khoảng thời gian liên tiếp. Đối với hai khoảng thời gian, các kết hợp này là $$uu, ud, du,$$ và $$dd$$. Mỗi giá trị có thể dọc theo cây nhị thức là một **nút**. Hình dưới đây minh họa một cây nhị thức cho ba khoảng thời gian.
+
+**Hình: Cây nhị thức**
+
+```mermaid
+graph LR
+    S -->|prob = p| uS
+    S -->|prob = 1-p| dS
+    uS --> uuS
+    uS --> uudS
+    uuS --> uuuS
+    uudS --> uuudS
+    dS --> udS
+    dS --> ddS
+    udS --> uudS
+    udS --> uddS
+    ddS --> dddS
+```
+
+Với giá cổ phiếu ban đầu $$S = 50$$, $$u = 1.01$$, $$d = \frac{1}{1.01}$$, và $$\text{Prob}(u) = 0.6$$, chúng ta có thể tính toán các giá cổ phiếu có thể xảy ra sau hai giai đoạn như sau:
+
+$$
+\begin{align*}
+uuS & = 1.01^2 \times 50 = 51.01 \quad \text{với xác suất} \quad (0.6)^2 = 0.36 \\
+udS & = 1.01 \left( \frac{1}{1.01} \right) \times 50 = 50 \quad \text{với xác suất} \quad (0.6)(0.4) = 0.24 \\
+duS & = \left( \frac{1}{1.01} \right) (1.01) \times 50 = 50 \quad \text{với xác suất} \quad (0.4)(0.6) = 0.24 \\
+ddS & = \left( \frac{1}{1.01} \right)^2 \times 50 = 49.01 \quad \text{với xác suất} \quad (0.4)^2 = 0.16
+\end{align*}
+$$
+
+Vì giá cổ phiếu là 50 có thể xảy ra từ cả hai chuyển động $$ud$$ hoặc $$du$$, xác suất của giá cổ phiếu là 50 sau hai giai đoạn (giá trị giữa) là $$2 \times (0.6)(0.4) = 48\%$$.
+
+Một cây nhị phân với $$S = 50$$, $$u = 1.1$$, và $$\text{Prob}(u) = 0.7$$ được minh họa trong hình dưới đây. Lưu ý rằng giá trị giữa sau hai giai đoạn (50) bằng với giá trị ban đầu vì $$d = \frac{1}{u}$$, một trường hợp đặc biệt của mô hình nhị phân. Xác suất rằng giá cổ phiếu giảm (\<50) sau hai giai đoạn chỉ đơn giản là xác suất của hai chuyển động giảm, $$(1 - 0.7)^2 = 9\%$$.
+
+**Hình: Cây nhị phân hai giai đoạn $$S = \$50$$, $$U = 1.10$$, $$\text{Prob}(U) = 0.7$$**
+
+```mermaid
+graph LR;
+    A["$50"] --> B["$$50(1.1) = \$55$$<br>$$Prob = 70\%$$"]
+    A["$50"] --> C["$$50/1.1 = \$45.45$$<br>$$Prob = 30\%$$"]
+    B --> D["$$50(1.1)^2 = \$60.50$$<br>$$Prob = (0.7)^2 = 49\%$$"]
+    B --> E["$$50(1.1)(1/1.1) = \$50$$<br>$$Prob = (0.3)(0.7) \times 2 = 42\%$$"]
+    C --> F["$$50/(1.1)^2 = \$41.32$$<br>$$Prob = (0.3)^2 = 9\%$$"]
+```
+
+Một trong những ứng dụng quan trọng của mô hình giá cổ phiếu nhị thức là trong việc định giá quyền chọn. Chúng ta có thể làm cho cây nhị thức cho giá tài sản trở nên thực tế hơn bằng cách rút ngắn độ dài của các giai đoạn và tăng số lượng giai đoạn cũng như các kết quả có thể xảy ra.
+
+
+### H: Định nghĩa phân phối đều liên tục và tính toán, giải thích xác suất, cho một phân phối đều liên tục.
+
+**Phân phối đều liên tục** được định nghĩa trên một khoảng từ giới hạn dưới, $$ a $$, đến giới hạn trên, $$ b $$, là các tham số của phân phối. Các kết quả chỉ có thể xảy ra giữa $$ a $$ và $$ b $$, và vì chúng ta đang xử lý một phân phối liên tục, ngay cả khi $$ a < x < b $$, P($$ X = x $$) = 0. Chính thức, các tính chất của phân phối đều liên tục có thể được mô tả như sau:
+
+- Với tất cả $$ a \leq x_1 < x_2 \leq b $$ (tức là, với tất cả $$ x_1 $$ và $$ x_2 $$ giữa các giới hạn $$ a $$ và $$ b $$).
+- P($$ X < a $$ hoặc $$ X > b $$) = 0 (tức là xác suất của $$ X $$ ngoài các giới hạn là bằng không).
+- P($$ x_1 \leq X \leq x_2 $$) = $$(x_2 - x_1) / (b - a)$$. Điều này định nghĩa xác suất của các kết quả giữa $$ x_1 $$ và $$ x_2 $$.
+
+Đừng bỏ lỡ sự đơn giản của điều này chỉ vì ký hiệu toán học quá phức tạp. Với một phân phối đều liên tục, xác suất của các kết quả trong một khoảng bằng một nửa toàn bộ khoảng là 50\%. Xác suất của các kết quả trong một khoảng bằng một phần tư toàn bộ khoảng có thể là 25\%.
+
+:::info[**VÍ DỤ**: Phân phối đều liên tục]
+$$ X $$ được phân phối đều trong khoảng từ 2 đến 12. Tính xác suất rằng $$ X $$ sẽ nằm trong khoảng từ 4 đến 8.
+
+**Câu trả lời:**
+
+$$
+\frac{8 - 4}{12 - 2} = \frac{4}{10} = 40\%
+$$
+
+Hình dưới đây minh họa phân phối đều liên tục này. Lưu ý rằng diện tích bị giới hạn bởi 4 và 8 là 40\% tổng xác suất giữa 2 và 12 (là 100\%).
+
+**Phân phối đều liên tục**
+
+<div style={{ textAlign: 'center' }}>
+<img src={FigureC} style={{width: 400}} />
+</div>
+:::
+
+Vì các kết quả là bằng nhau trên các khoảng có kích thước bằng nhau, hàm phân phối tích lũy (cdf) là tuyến tính trên khoảng của biến. Hàm cdf cho phân phối trong ví dụ, xác suất $$(X \leq x)$$, được hiển thị trong hình sau.
+
+**Hình: CDF cho biến phân phối đều liên tục**
+
+<div style={{ textAlign: 'center' }}>
+<img src={FigureD} style={{width: 500}} />
+</div>
