@@ -2,6 +2,7 @@ import FigureA from "./images/common-probability/figureA.png";
 import FigureB from "./images/common-probability/figureB.png";
 import FigureC from "./images/common-probability/figureC.png";
 import FigureD from "./images/common-probability/figureD.png";
+import FigureE from "./images/common-probability/figureE.png";
 
 # Các Phân Phối Xác Suất Thông Thường
 
@@ -356,3 +357,53 @@ Sử dụng bảng sau để trả lời các câu hỏi từ 4 đến 8.
 * A. 0.25.
 * B. 0.50.
 * C. 1.00.
+
+### I: Giải thích các đặc tính chính của phân phối chuẩn
+
+Phân phối chuẩn quan trọng vì nhiều lý do. Nhiều biến ngẫu nhiên liên quan đến tài chính và các lĩnh vực chuyên môn khác tuân theo phân phối chuẩn. Trong lĩnh vực đầu tư và quản lý danh mục đầu tư, phân phối chuẩn đóng vai trò trung tâm trong lý thuyết danh mục đầu tư.
+
+**Phân phối chuẩn** có các đặc tính chính sau:
+
+- Nó được mô tả hoàn toàn bởi trung bình, $$\mu$$, và phương sai, $$\sigma^2$$, được biểu diễn là $$X \sim N(\mu, \sigma^2)$$. Nói cách khác, điều này có nghĩa là “X có phân phối chuẩn với trung bình $$\mu$$ và phương sai $$\sigma^2$$.”
+
+- Độ lệch = 0, có nghĩa là phân phối chuẩn đối xứng quanh trung bình của nó, do đó $$P(X \leq \mu) = P(\mu \leq X) = 0.5$$, và trung bình = trung vị = mode.
+
+- Hệ số Kurtosis = 3; đây là một thước đo mức độ phẳng của phân phối. Nhớ rằng kurtosis dư được đo tương đối với 3, hệ số kurtosis của phân phối chuẩn.
+
+- Một tổ hợp tuyến tính của các biến ngẫu nhiên phân phối chuẩn cũng sẽ có phân phối chuẩn.
+
+- Xác suất của các kết quả xa hơn trên và dưới trung bình ngày càng nhỏ hơn nhưng không về không (các đuôi rất mỏng nhưng kéo dài vô tận).
+
+Nhiều đặc tính trong số này có thể được thấy rõ từ việc xem xét đồ thị của hàm mật độ xác suất của phân phối chuẩn như minh họa trong hình dưới.
+
+**Hình: Hàm mật độ xác suất của phân phối chuẩn**
+
+<div style={{ textAlign: 'center' }}>
+<img src={FigureE} style={{width: 500}} />
+</div>
+
+### J: Phân biệt giữa phân phối một biến và phân phối đa biến và giải thích vai trò của tương quan trong phân phối chuẩn đa biến.
+
+Cho đến thời điểm này, chúng ta đã tập trung thảo luận về **phân phối một biến** (tức là, phân phối của một biến ngẫu nhiên duy nhất). Trong thực tế, các mối quan hệ giữa hai hoặc nhiều biến ngẫu nhiên thường có liên quan. Ví dụ, các nhà đầu tư và các nhà quản lý đầu tư thường quan tâm đến mối quan hệ giữa lợi nhuận của một hoặc nhiều tài sản. Thực tế, như bạn sẽ thấy trong nghiên cứu của mình về các mô hình định giá tài sản và lý thuyết danh mục đầu tư hiện đại, lợi nhuận của một cổ phiếu nhất định và lợi nhuận của S&P 500 hoặc một chỉ số thị trường khác sẽ có ý nghĩa đặc biệt. Bất kể các biến cụ thể là gì, phân tích đồng thời hai hoặc nhiều biến ngẫu nhiên đòi hỏi phải hiểu biết về phân phối đa biến.
+
+Một **phân phối đa biến** xác định các xác suất liên quan đến một nhóm các biến ngẫu nhiên và chỉ có ý nghĩa khi hành vi của từng biến ngẫu nhiên trong nhóm phụ thuộc một cách nào đó vào hành vi của các biến khác. Cả biến ngẫu nhiên rời rạc và biến ngẫu nhiên liên tục đều có thể có phân phối đa biến. Phân phối đa biến giữa hai biến ngẫu nhiên rời rạc được mô tả bằng các bảng xác suất chung. Đối với các biến ngẫu nhiên liên tục, có thể sử dụng **phân phối chuẩn đa biến** để mô tả chúng nếu tất cả các biến riêng lẻ đều tuân theo phân phối chuẩn. Như đã đề cập trước đó, một trong những đặc điểm của phân phối chuẩn là một tổ hợp tuyến tính của các biến ngẫu nhiên tuân theo phân phối chuẩn cũng sẽ tuân theo phân phối chuẩn. Ví dụ, nếu lợi nhuận của mỗi cổ phiếu trong một danh mục đầu tư tuân theo phân phối chuẩn, lợi nhuận của danh mục đầu tư cũng sẽ tuân theo phân phối chuẩn.
+
+#### Vai Trò của Tương Quan trong Phân Phối Chuẩn Đa Biến
+
+Tương tự như phân phối chuẩn một biến, một phân phối chuẩn đa biến có thể được mô tả bằng trung bình và phương sai của các biến ngẫu nhiên riêng lẻ. Ngoài ra, cần phải xác định tương quan giữa các cặp biến riêng lẻ khi mô tả một phân phối đa biến. Tương quan là đặc điểm phân biệt một phân phối đa biến với một phân phối chuẩn một biến. Tương quan chỉ ra sức mạnh của mối quan hệ tuyến tính giữa một cặp biến ngẫu nhiên.
+
+Sử dụng lợi nhuận tài sản làm biến ngẫu nhiên của chúng ta, phân phối chuẩn đa biến cho lợi nhuận trên *n* tài sản có thể được định nghĩa hoàn chỉnh bằng ba tập hợp tham số sau:
+
+- n giá trị trung bình của n chuỗi lợi nhuận ($$\mu_1, \mu_2, ..., \mu_n$$).
+- n phương sai của n chuỗi lợi nhuận ($$\sigma_1^2, \sigma_2^2, ..., \sigma_n^2$$).
+- $$\frac{n(n - 1)}{2}$$ tương quan cặp đôi.
+
+Ví dụ, nếu có hai tài sản, $$n = 2$$, thì phân phối lợi nhuận đa biến có thể được mô tả bằng hai giá trị trung bình, hai phương sai và một tương quan $$[0.5(2)(2 - 1) = 1]$$. Nếu có bốn tài sản, $$n = 4$$, phân phối đa biến có thể được mô tả bằng bốn giá trị trung bình, bốn phương sai và sáu tương quan $$[0.5(4)(4 - 1) = 6]$$. Khi xây dựng một danh mục đầu tư, tất cả các yếu tố khác bằng nhau, sẽ là mong muốn kết hợp các tài sản có tương quan lợi nhuận thấp vì điều này sẽ dẫn đến một danh mục đầu tư có phương sai thấp hơn so với một danh mục đầu tư gồm các tài sản có tương quan cao hơn.
+
+### K: Xác định xác suất mà một biến ngẫu nhiên phân phối chuẩn nằm trong một khoảng cho trước.
+
+Một **khoảng tin cậy** là một phạm vi giá trị xung quanh kết quả kỳ vọng mà trong đó chúng ta mong đợi kết quả thực tế sẽ nằm trong một tỷ lệ phần trăm nhất định. Một khoảng tin cậy 95\% là một phạm vi mà chúng ta mong đợi biến ngẫu nhiên sẽ nằm trong đó 95\% thời gian. Đối với phân phối chuẩn, khoảng này dựa trên giá trị kỳ vọng (đôi khi được gọi là ước tính điểm) của biến ngẫu nhiên và dựa trên sự biến thiên của nó, mà chúng ta đo lường bằng độ lệch chuẩn.
+
+Các khoảng tin cậy cho một phân phối chuẩn được minh họa trong hình sau. Đối với bất kỳ biến ngẫu nhiên phân phối chuẩn nào, 68\% kết quả nằm trong một độ lệch chuẩn của giá trị kỳ vọng (trung bình), và khoảng 95\% kết quả nằm trong hai độ lệch chuẩn của giá trị kỳ vọng.
+
+**Hình: Khoảng Tin Cậy cho một Phân Phối Chuẩn**

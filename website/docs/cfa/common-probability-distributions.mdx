@@ -2,6 +2,7 @@ import FigureA from "./images/common-probability/figureA.png";
 import FigureB from "./images/common-probability/figureB.png";
 import FigureC from "./images/common-probability/figureC.png";
 import FigureD from "./images/common-probability/figureD.png";
+import FigureE from "./images/common-probability/figureE.png";
 
 # Common Probability Distributions
 
@@ -356,3 +357,55 @@ Use the following table to answer Questions 4 through 8.
 * A. 0.25.
 * B. 0.50.
 * C. 1.00.
+
+## 2: NORMAL DISTRIBUTIONS
+
+### I: Explain the key properties of the normal distribution.
+
+The normal distribution is important for many reasons. Many of the random variables that are relevant to finance and other professional disciplines follow a normal distribution. In the area of investment and portfolio management, the normal distribution plays a central role in portfolio theory.
+
+The **normal distribution** has the following key properties:
+
+- It is completely described by its mean, $$\mu$$, and variance, $$\sigma^2$$, stated as $$X \sim N(\mu, \sigma^2)$$. In words, this says that “X is normally distributed with mean $$\mu$$ and variance $$\sigma^2$$.”
+
+- Skewness = 0, meaning that the normal distribution is symmetric about its mean, so that $$P(X \leq \mu) = P(\mu \leq X) = 0.5$$, and mean = median = mode.
+
+- Kurtosis = 3; this is a measure of how flat the distribution is. Recall that excess kurtosis is measured relative to 3, the kurtosis of the normal distribution.
+
+- A linear combination of normally distributed random variables is also normally distributed.
+
+- The probabilities of outcomes further above and below the mean get smaller and smaller but do not go to zero (the tails get very thin but extend infinitely).
+
+Many of these properties are evident from examining the graph of a normal distribution’s probability density function as illustrated in the following figure.
+
+**Figure: Normal Distribution Probability Density Function**
+
+<div style={{ textAlign: 'center' }}>
+<img src={FigureE} style={{width: 500}} />
+</div>
+
+### J: Distinguish between a univariate and a multivariate distribution and explain the role of correlation in the multivariate normal distribution.
+
+Up to this point, our discussion has been strictly focused on **univariate distributions** (i.e., the distribution of a single random variable). In practice, however, the relationships between two or more random variables are often relevant. For instance, investors and investment managers are frequently interested in the interrelationship among the returns of one or more assets. In fact, as you will see in your study of asset pricing models and modern portfolio theory, the return on a given stock and the return on the S&P 500 or some other market index will have special significance. Regardless of the specific variables, the simultaneous analysis of two or more random variables requires an understanding of multivariate distributions.
+
+A **multivariate distribution** specifies the probabilities associated with a group of random variables and is meaningful only when the behavior of each random variable in the group is in some way dependent upon the behavior of the others. Both discrete and continuous random variables can have multivariate distributions. Multivariate distributions between two discrete random variables are described using joint probability tables. For continuous random variables, a **multivariate normal distribution** may be used to describe them if all of the individual variables follow a normal distribution. As previously mentioned, one of the characteristics of a normal distribution is that a linear combination of normally distributed random variables is normally distributed as well. For example, if the return of each stock in a portfolio is normally distributed, the return on the portfolio will also be normally distributed.
+
+#### The Role of Correlation in the Multivariate Normal Distribution
+
+Similar to a univariate normal distribution, a multivariate normal distribution can be described by the mean and variance of the individual random variables. Additionally, it is necessary to specify the correlation between the individual pairs of variables when describing a multivariate distribution. Correlation is the feature that distinguishes a multivariate distribution from a univariate normal distribution. Correlation indicates the strength of the linear relationship between a pair of random variables.
+
+Using asset returns as our random variables, the multivariate normal distribution for the returns on *n* assets can be completely defined by the following three sets of parameters:
+
+- n means of the n series of returns ($$\mu_1, \mu_2, ..., \mu_n$$).
+- n variances of the n series of returns ($$\sigma_1^2, \sigma_2^2, ..., \sigma_n^2$$).
+- $$\frac{n(n - 1)}{2}$$ pair-wise correlations.
+
+For example, if there are two assets, $$n = 2$$, then the multivariate returns distribution can be described with two means, two variances, and one correlation $$[0.5(2)(2 - 1) = 1]$$. If there are four assets, $$n = 4$$, the multivariate distribution can be described with four means, four variances, and six correlations $$[0.5(4)(4 - 1) = 6]$$. When building a portfolio of assets, all other things being equal, it is desirable to combine assets having low returns correlation because this will result in a portfolio with a lower variance than one composed of assets with higher correlations.
+
+### K: Determine the probability that a normally distributed random variable lies inside a given interval.
+
+A **confidence interval** is a range of values around the expected outcome within which we expect the actual outcome to be some specified percentage of the time. A 95\% confidence interval is a range that we expect the random variable to be in 95\% of the time. For a normal distribution, this interval is based on the expected value (sometimes called a point estimate) of the random variable and on its variability, which we measure with standard deviation.
+
+Confidence intervals for a normal distribution are illustrated in the following figure. For any normally distributed random variable, 68\% of the outcomes are within one standard deviation of the expected value (mean), and approximately 95\% of the outcomes are within two standard deviations of the expected value.
+
+**Figure: Confidence Intervals for a Normal Distribution**
