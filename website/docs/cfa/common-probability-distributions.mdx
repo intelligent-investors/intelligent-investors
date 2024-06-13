@@ -3,6 +3,7 @@ import FigureB from "./images/common-probability/figureB.png";
 import FigureC from "./images/common-probability/figureC.png";
 import FigureD from "./images/common-probability/figureD.png";
 import FigureE from "./images/common-probability/figureE.png";
+import FigureF from "./images/common-probability/figureF.png";
 
 # Common Probability Distributions
 
@@ -409,3 +410,110 @@ A **confidence interval** is a range of values around the expected outcome withi
 Confidence intervals for a normal distribution are illustrated in the following figure. For any normally distributed random variable, 68\% of the outcomes are within one standard deviation of the expected value (mean), and approximately 95\% of the outcomes are within two standard deviations of the expected value.
 
 **Figure: Confidence Intervals for a Normal Distribution**
+
+<div style={{ textAlign: 'center' }}>
+<img src={FigureF} style={{width: 800}} />
+</div>
+
+In practice, we will not know the actual values for the mean and standard deviation of the distribution, but will have estimated them as $$ \bar{X} $$ and $$ s $$. The three confidence intervals of most interest are given by:
+
+- The 90\% confidence interval for $$ X $$ is $$ \bar{X} - 1.65s $$ to $$ \bar{X} + 1.65s $$.
+- The 95\% confidence interval for $$ X $$ is $$ \bar{X} - 1.96s $$ to $$ \bar{X} + 1.96s $$.
+- The 99\% confidence interval for $$ X $$ is $$ \bar{X} - 2.58s $$ to $$ \bar{X} + 2.58s $$.
+
+:::info[**EXAMPLE: Confidence intervals**]
+The average return of a mutual fund is 10.5\% per year and the standard deviation of annual returns is 18\%. If returns are approximately normal, what is the 95\% confidence interval for the mutual fund return next year?
+
+**Answer:**
+
+Here $$ \mu $$ and $$ \sigma $$ are 10.5\% and 18\%, respectively. Thus, the 95\% confidence interval for the return, $$ R $$, is:
+
+$$
+10.5 \pm 1.96(18) = -24.78\% \text{ to } 45.78\%
+$$
+
+Symbolically, this result can be expressed as:
+
+$$
+P(-24.78 < R < 45.78) = 0.95 \text{ or } 95\%
+$$
+
+The interpretation is that the annual return is expected to be within this interval 95\% of the time, or 95 out of 100 years.
+:::
+
+### L: Define the standard normal distribution, explain how to standardize a random variable, and calculate and interpret probabilities using the standard normal distribution.
+
+The **standard normal distribution** is a normal distribution that has been standardized so that it has a mean of zero and a standard deviation of 1 [i.e., $$N\sim(0,1)$$]. To standardize an observation from a given normal distribution, the **z-value** of the observation must be calculated. The z-value represents the number of standard deviations a given observation is from the population mean. **Standardization** is the process of converting an observed value for a random variable to its z-value. The following formula is used to standardize a random variable:
+
+$$
+z = \frac{\text{observation} - \text{population mean}}{\text{standard deviation}} = \frac{x - \mu}{\sigma}
+$$
+
+:::note[**PROFESSOR’S NOTE**]
+The term **z-value** will be used for a standardized observation in this document. The terms **z-score** and **z-statistic** are also commonly used.
+:::
+
+:::info[**EXAMPLE**: Standardizing a random variable (calculating z-values)]
+Assume that the annual earnings per share (EPS) for a population of firms are normally distributed with a mean of \$6 and a standard deviation of \$2.
+What are the z-values for EPS of \$2 and \$8?
+
+**Answer:**
+
+If $$EPS = x = $$ \$8, then z = (x − μ) / σ = (\$8 − \$6) / \$2 = +1
+
+If $$EPS = x = $$ \$2, then z = (x − μ) / σ = (\$2 − \$6) / \$2 = −2
+
+Here, z = +1 indicates that an EPS of \$8 is one standard deviation above the mean, and z = −2 means that an EPS of \$2 is two standard deviations below the mean.
+:::
+
+#### Calculating Probabilities Using z-Values
+
+Now we will show how to use standardized values (z-values) and a table of probabilities for Z to determine probabilities. A portion of a table of the cumulative distribution function for a standard normal distribution is shown in the following figure. We will refer to this table as the z-table, as it contains values generated using the cumulative density function for a standard normal distribution, denoted by $$F(Z)$$. Thus, the values in the z-table are the probabilities of observing a z-value that is less than a given value, $$z$$ [i.e., $$P(Z < z)$$]. The numbers in the first column are z-values that have only one decimal place. The columns to the right supply probabilities for z-values with two decimal places.
+
+Note that the z-table in the following figure only provides probabilities for positive z-values. This is not a problem because we know from the symmetry of the standard normal distribution that $$F(-Z) = 1 - F(Z)$$. The tables in the back of many texts actually provide probabilities for negative z-values, but we will work with only the positive portion of the table because this may be all you get on the exam. In the following figure, we can find the probability that a standard normal random variable will be less than 1.66, for example. The table value is 95.15%. The probability that the random variable will be less than -1.66 is simply $$1 - 0.9515 = 0.0485 = 4.85\%$$, which is also the probability that the variable will be greater than +1.66.
+
+**Figure: Cumulative Probabilities for a Standard Normal Distribution**
+
+(*Please note that several of the rows have been deleted to save space.*)
+
+| z   | .00   | .01   | .02   | .03   | .04   | .05   | .06   | .07   | .08   | .09   |
+| --- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
+| 0.0 | .5000 | .5040 | .5080 | .5120 | .5160 | .5199 | .5239 | .5279 | .5319 | .5359 |
+| 0.1 | .5398 | .5438 | .5478 | .5517 | .5557 | .5596 | .5636 | .5675 | .5714 | .5753 |
+| 0.2 | .5793 | .5832 | .5871 | .5910 | .5948 | .5987 | .6026 | .6064 | .6103 | .6141 |
+| 0.5 | .6915 |  |
+| 1.2 | .8849 | .8869 | .8888 | .8907 | .8925 | .8944 | .8962 | .8980 | .8997 | .9015 |
+| 1.6 | .9452 | .9463 | .9474 | .9484 | .9495 | .9505 | .9515 | .9525 | .9535 | .9545 |
+| 1.8 | .9641 | .9649 | .9656 | .9664 | .9671 | .9678 | .9686 | .9693 | .9699 | .9706 |
+| 2.0 | .9772 | .9778 | .9783 | .9788 | .9793 | .9798 | .9803 | .9808 | .9812 | .9817 |
+| 2.5 | .9938 | .9940 | .9941 | .9943 | .9945 | .9945 | .9948 | .9949 | .9951 | .9952 |
+| 3.0 | .9987 | .9987 | .9987 | .9988 | .9988 | .9989 | .9989 | .9989 | .9989 | .9990 |
+
+* *A complete cumulative standard normal table is included in Appendix A.*
+
+:::note[**PROFESSOR’S NOTE**]
+When you use the standard normal probabilities, you have formulated the problem in terms of standard deviations from the mean. Consider a security with returns that are approximately normal, an expected return of 10\%, and standard deviation of returns of 12\%. The probability of returns greater than 30\% is calculated based on the number of standard deviations that 30\% is above the expected return of 10\%. 30\% is 20\% above the expected return of 10\%, which is $$20 / 12 = 1.67$$ standard deviations above the mean. We look up the probability of returns less than 1.67 standard deviations above the mean (0.9525 or 95.25\% from the above figure) and calculate the probability of returns more than 1.67 standard deviations above the mean as $$1 - 0.9525 = 4.75\%$$.
+:::
+
+:::info[**EXAMPLE: Using the $z$-table (1)**]
+
+Considering again EPS distributed with $$\mu = \$6$$ and $$\sigma = \$2$$, what is the probability that EPS will be $$\$9.70$$ or more?
+
+**Answer:**
+
+Here we want to know $$P(EPS > \$9.70)$$, which is the area under the curve to the right of the $z$-value corresponding to $$EPS = \$9.70$$ (see the following figure).
+
+The $z$-value for $$EPS = \$9.70$$ is:
+
+$$
+z = \frac{(x - \mu)}{\sigma} = \frac{(9.70 - 6)}{2} = 1.85
+$$
+
+That is, \$9.70 is 1.85 standard deviations above the mean EPS value of \$6.
+
+From the $z$-table we have $F(1.85) = 0.9678$, but this is $P(EPS \le 9.70)$. We want $P(EPS > 9.70)$, which is $1 - P(EPS \le 9.70)$.
+
+$$
+P(EPS > 9.70) = 1 - 0.9678 = 0.0322, \text{or 3.2\%}
+$$
+:::

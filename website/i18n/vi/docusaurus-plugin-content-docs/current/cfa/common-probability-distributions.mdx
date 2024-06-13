@@ -3,6 +3,7 @@ import FigureB from "./images/common-probability/figureB.png";
 import FigureC from "./images/common-probability/figureC.png";
 import FigureD from "./images/common-probability/figureD.png";
 import FigureE from "./images/common-probability/figureE.png";
+import FigureF from "./images/common-probability/figureF.png";
 
 # Các Phân Phối Xác Suất Thông Thường
 
@@ -407,3 +408,106 @@ Một **khoảng tin cậy** là một phạm vi giá trị xung quanh kết qu�
 Các khoảng tin cậy cho một phân phối chuẩn được minh họa trong hình sau. Đối với bất kỳ biến ngẫu nhiên phân phối chuẩn nào, 68\% kết quả nằm trong một độ lệch chuẩn của giá trị kỳ vọng (trung bình), và khoảng 95\% kết quả nằm trong hai độ lệch chuẩn của giá trị kỳ vọng.
 
 **Hình: Khoảng Tin Cậy cho một Phân Phối Chuẩn**
+
+Trong thực tế, chúng ta sẽ không biết các giá trị thực của trung bình và độ lệch chuẩn của phân phối, mà sẽ ước tính chúng như $$ \bar{X} $$ và $$ s $$. Ba khoảng tin cậy quan trọng nhất là:
+
+- Khoảng tin cậy 90\% cho $$ X $$ là từ $$ \bar{X} - 1.65s $$ đến $$ \bar{X} + 1.65s $$.
+- Khoảng tin cậy 95\% cho $$ X $$ là từ $$ \bar{X} - 1.96s $$ đến $$ \bar{X} + 1.96s $$.
+- Khoảng tin cậy 99\% cho $$ X $$ là từ $$ \bar{X} - 2.58s $$ đến $$ \bar{X} + 2.58s $$.
+
+:::info[**VÍ DỤ: Khoảng tin cậy**]
+Lợi nhuận trung bình của một quỹ tương hỗ là 10.5\% mỗi năm và độ lệch chuẩn của lợi nhuận hàng năm là 18\%. Nếu lợi nhuận xấp xỉ phân phối chuẩn, khoảng tin cậy 95\% cho lợi nhuận của quỹ tương hỗ vào năm sau là bao nhiêu?
+
+**Trả lời:**
+
+Ở đây $$ \mu $$ và $$ \sigma $$ lần lượt là 10.5\% và 18\%. Vì vậy, khoảng tin cậy 95\% cho lợi nhuận, $$ R $$, là:
+
+$$
+10.5 \pm 1.96(18) = -24.78\% \text{ đến } 45.78\%
+$$
+
+Một cách tượng trưng, kết quả này có thể được biểu diễn như sau:
+
+$$
+P(-24.78 < R < 45.78) = 0.95 \text{ hoặc } 95\%
+$$
+
+Điều này có nghĩa là lợi nhuận hàng năm dự kiến sẽ nằm trong khoảng này 95\% thời gian, tức là 95 trên 100 năm.
+:::
+
+### L: Định nghĩa phân phối chuẩn tắc, giải thích cách chuẩn hóa một biến ngẫu nhiên và tính toán cũng như diễn giải các xác suất sử dụng phân phối chuẩn tắc.
+
+**Phân phối chuẩn tắc** là một phân phối chuẩn đã được chuẩn hóa để có trung bình bằng không và độ lệch chuẩn bằng 1 [tức là, $$N\sim(0,1)$$]. Để chuẩn hóa một quan sát từ một phân phối chuẩn cho trước, cần tính toán **giá trị z** của quan sát đó. Giá trị z biểu thị số độ lệch chuẩn mà một quan sát cụ thể lệch so với trung bình của tổng thể. **Chuẩn hóa** là quá trình chuyển đổi một giá trị quan sát cho một biến ngẫu nhiên thành giá trị z của nó. Công thức sau đây được sử dụng để chuẩn hóa một biến ngẫu nhiên:
+
+$$
+z = \frac{\text{quan sát} - \text{trung bình tổng thể}}{\text{độ lệch chuẩn}} = \frac{x - \mu}{\sigma}
+$$
+
+:::note[**GHI CHÚ CỦA GIÁO SƯ**]
+Thuật ngữ **giá trị z** sẽ được sử dụng cho một quan sát chuẩn hóa trong tài liệu này. Các thuật ngữ **z-score** và **z-statistic** cũng thường được sử dụng.
+:::
+
+:::info[**VÍ DỤ**: Chuẩn hóa một biến ngẫu nhiên (tính toán giá trị z)]
+Giả sử rằng lợi nhuận hàng năm trên mỗi cổ phần (EPS) của một tổng thể các công ty được phân phối chuẩn với trung bình là \$6 và độ lệch chuẩn là \$2.
+Giá trị z cho EPS là \$2 và \$8 là bao nhiêu?
+
+**Trả lời:**
+
+Nếu $$EPS = x = $$ \$8, thì z = (x − μ) / σ = (\$8 − \$6) / \$2 = +1
+
+Nếu $$EPS = x = $$ \$2, thì z = (x − μ) / σ = (\$2 − \$6) / \$2 = −2
+
+Ở đây, z = +1 chỉ ra rằng một EPS là \$8 cao hơn trung bình một độ lệch chuẩn, và z = −2 có nghĩa là một EPS là \$2 thấp hơn trung bình hai độ lệch chuẩn.
+:::
+
+#### Tính Xác Suất Sử Dụng Giá Trị z
+
+Bây giờ chúng ta sẽ chỉ cách sử dụng giá trị chuẩn hóa (giá trị z) và bảng xác suất cho Z để xác định xác suất. Một phần của bảng phân phối tích lũy cho phân phối chuẩn được hiển thị trong hình dưới đây. Chúng ta sẽ gọi bảng này là bảng z, vì nó chứa các giá trị được tạo bằng cách sử dụng hàm mật độ tích lũy cho phân phối chuẩn, được ký hiệu là $$F(Z)$$. Do đó, các giá trị trong bảng z là xác suất quan sát giá trị z nhỏ hơn một giá trị cho trước, $$z$$ [tức là, $$P(Z < z)$$]. Các số trong cột đầu tiên là các giá trị z có một chữ số thập phân. Các cột bên phải cung cấp xác suất cho các giá trị z có hai chữ số thập phân.
+
+Lưu ý rằng bảng z trong hình dưới đây chỉ cung cấp xác suất cho các giá trị z dương. Điều này không phải là vấn đề vì chúng ta biết từ tính đối xứng của phân phối chuẩn mà $$F(-Z) = 1 - F(Z)$$. Các bảng ở phần sau của nhiều sách thực tế cung cấp xác suất cho các giá trị z âm, nhưng chúng ta sẽ chỉ làm việc với phần dương của bảng vì đây có thể là tất cả những gì bạn nhận được trong kỳ thi. Trong hình dưới đây, chúng ta có thể tìm thấy xác suất mà một biến ngẫu nhiên chuẩn sẽ nhỏ hơn 1.66, chẳng hạn. Giá trị trong bảng là 95.15%. Xác suất mà biến ngẫu nhiên sẽ nhỏ hơn -1.66 đơn giản là $$1 - 0.9515 = 0.0485 = 4.85\%$$, đây cũng là xác suất mà biến số sẽ lớn hơn +1.66.
+
+**Hình: Xác Suất Tích Lũy Cho Phân Phối Chuẩn**
+
+(*Xin lưu ý rằng một số hàng đã bị xóa để tiết kiệm không gian.*)
+
+| z   | .00   | .01   | .02   | .03   | .04   | .05   | .06   | .07   | .08   | .09   |
+| --- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
+| 0.0 | .5000 | .5040 | .5080 | .5120 | .5160 | .5199 | .5239 | .5279 | .5319 | .5359 |
+| 0.1 | .5398 | .5438 | .5478 | .5517 | .5557 | .5596 | .5636 | .5675 | .5714 | .5753 |
+| 0.2 | .5793 | .5832 | .5871 | .5910 | .5948 | .5987 | .6026 | .6064 | .6103 | .6141 |
+| 0.5 | .6915 |  |
+| 1.2 | .8849 | .8869 | .8888 | .8907 | .8925 | .8944 | .8962 | .8980 | .8997 | .9015 |
+| 1.6 | .9452 | .9463 | .9474 | .9484 | .9495 | .9505 | .9515 | .9525 | .9535 | .9545 |
+| 1.8 | .9641 | .9649 | .9656 | .9664 | .9671 | .9678 | .9686 | .9693 | .9699 | .9706 |
+| 2.0 | .9772 | .9778 | .9783 | .9788 | .9793 | .9798 | .9803 | .9808 | .9812 | .9817 |
+| 2.5 | .9938 | .9940 | .9941 | .9943 | .9945 | .9945 | .9948 | .9949 | .9951 | .9952 |
+| 3.0 | .9987 | .9987 | .9987 | .9988 | .9988 | .9989 | .9989 | .9989 | .9989 | .9990 |
+
+* *Bảng phân phối chuẩn đầy đủ được bao gồm trong Phụ lục A.*
+
+:::note[**LƯU Ý CỦA GIÁO SƯ**]
+Khi bạn sử dụng xác suất chuẩn, bạn đã xác định vấn đề theo các độ lệch chuẩn so với giá trị trung bình. Hãy xem xét một chứng khoán có lợi tức xấp xỉ chuẩn, lợi tức kỳ vọng là 10\% và độ lệch chuẩn của lợi tức là 12\%. Xác suất lợi tức lớn hơn 30\% được tính dựa trên số độ lệch chuẩn mà 30\% cao hơn lợi tức kỳ vọng 10\%. 30\% cao hơn 20\% so với lợi tức kỳ vọng 10\%, tức là $$20 / 12 = 1.67$$ độ lệch chuẩn cao hơn giá trị trung bình. Chúng ta tra cứu xác suất của lợi tức nhỏ hơn 1.67 độ lệch chuẩn so với giá trị trung bình (0.9525 hoặc 95.25\% từ hình trên) và tính xác suất của lợi tức lớn hơn 1.67 độ lệch chuẩn so với giá trị trung bình là $$1 - 0.9525 = 4.75\%$$.
+:::
+
+:::info[**EXAMPLE: Sử dụng bảng $z$ (1)**]
+
+Xét EPS được phân phối với $$\mu = \$6$$ và $$\sigma = \$2$$, xác suất rằng EPS sẽ là $$\$9.70$$ hoặc cao hơn là bao nhiêu?
+
+**Trả lời:**
+
+Ở đây, chúng ta muốn biết $$P(EPS > \$9.70)$$, là diện tích dưới đường cong về phía bên phải của giá trị $z$ tương ứng với $$EPS = \$9.70$$ (xem hình dưới đây).
+
+Giá trị $z$ cho $$EPS = \$9.70$$ là:
+
+$$
+z = \frac{(x - \mu)}{\sigma} = \frac{(9.70 - 6)}{2} = 1.85
+$$
+
+Tức là, \$9.70 nằm cách giá trị trung bình EPS \$6 một khoảng 1.85 độ lệch chuẩn.
+
+Từ bảng $z$ ta có $F(1.85) = 0.9678$, nhưng đây là $P(EPS \le 9.70)$. Chúng ta muốn $P(EPS > 9.70)$, tức là $1 - P(EPS \le 9.70)$.
+
+$$
+P(EPS > 9.70) = 1 - 0.9678 = 0.0322, \text{hay 3.2\%}
+$$
+:::
