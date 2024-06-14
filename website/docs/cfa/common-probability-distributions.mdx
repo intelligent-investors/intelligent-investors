@@ -4,6 +4,8 @@ import FigureC from "./images/common-probability/figureC.png";
 import FigureD from "./images/common-probability/figureD.png";
 import FigureE from "./images/common-probability/figureE.png";
 import FigureF from "./images/common-probability/figureF.png";
+import FigureG from "./images/common-probability/figureG.png";
+import FigureH from "./images/common-probability/figureH.png";
 
 # Common Probability Distributions
 
@@ -516,4 +518,37 @@ From the $z$-table we have $F(1.85) = 0.9678$, but this is $P(EPS \le 9.70)$. We
 $$
 P(EPS > 9.70) = 1 - 0.9678 = 0.0322, \text{or 3.2\%}
 $$
+
+**P(EPS > $9.70)**
+
+<div style={{ textAlign: 'center' }}>
+<img src={FigureG} style={{width: 400}} />
+</div>
+
+:::
+
+:::info[**EXAMPLE**: Using the z-table (2)]
+
+Using the distribution of EPS with $$\mu = \$6$$ and $$\sigma = \$2$$ again, what percent of the observed EPS values are likely to be less than $$\$4.10$$?
+
+**Answer:**
+
+As shown graphically in the following figure, we want to know $$\text{P}(\text{EPS} < \$4.10)$$. This requires a 2-step approach like the one taken in the preceding example.
+
+$$
+z = \frac{(4.10 - 6)}{2} = -0.95,
+$$
+
+so $$\$4.10$$ is $$0.95 \$ $$ standard deviations below the mean of $$6.00 \$ $$.
+
+Now, from the z-table for negative values in the back of this book, we find that $\text{F}(-0.95) = 0.1711$, or $17.11\%$.
+
+**Finding a Left-Tail Probability**
+
+
+The z-table gives us the probability that the outcome will be more than $0.95$ standard deviations below the mean.
+
+<div style={{ textAlign: 'center' }}>
+<img src={FigureH} style={{width: 400}} />
+</div>
 :::

@@ -4,6 +4,8 @@ import FigureC from "./images/common-probability/figureC.png";
 import FigureD from "./images/common-probability/figureD.png";
 import FigureE from "./images/common-probability/figureE.png";
 import FigureF from "./images/common-probability/figureF.png";
+import FigureG from "./images/common-probability/figureG.png";
+import FigureH from "./images/common-probability/figureH.png";
 
 # Các Phân Phối Xác Suất Thông Thường
 
@@ -510,4 +512,36 @@ Từ bảng $z$ ta có $F(1.85) = 0.9678$, nhưng đây là $P(EPS \le 9.70)$. C
 $$
 P(EPS > 9.70) = 1 - 0.9678 = 0.0322, \text{hay 3.2\%}
 $$
+
+**P(EPS > $9.70)**
+
+<div style={{ textAlign: 'center' }}>
+<img src={FigureG} style={{width: 400}} />
+</div>
 :::
+
+:::info[**VÍ DỤ**: Sử dụng bảng z (2)]
+
+Sử dụng phân phối của EPS với $$\mu = \$6$$ và $$\sigma = \$2$$, phần trăm giá trị EPS quan sát được có khả năng nhỏ hơn $$\$4.10$$ là bao nhiêu?
+
+**Câu trả lời:**
+
+Như được hiển thị trong hình dưới đây, chúng ta muốn biết $$\text{P}(\text{EPS} < \$4.10)$$. Điều này yêu cầu một cách tiếp cận 2 bước giống như ví dụ trước.
+
+$$
+z = \frac{(4.10 - 6)}{2} = -0.95,
+$$
+
+vì vậy $$\$4.10$$ là $$0.95 \$ $$ độ lệch chuẩn dưới trung bình $$6.00 \$ $$.
+
+Bây giờ, từ bảng z cho các giá trị âm ở cuối sách này, chúng ta thấy rằng $$\text{F}(-0.95) = 0.1711$$, hoặc $$17.11\%$$.
+
+**Tìm xác suất đuôi trái**
+
+Bảng z cho chúng ta xác suất rằng kết quả sẽ nhỏ hơn $$0.95$$ độ lệch chuẩn dưới trung bình.
+
+<div style={{ textAlign: 'center' }}>
+<img src={FigureH} style={{width: 400}} />
+</div>
+:::
+
