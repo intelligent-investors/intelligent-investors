@@ -24,6 +24,7 @@ plt.gca().yaxis.set_major_formatter(plt.FuncFormatter(lambda y, _: '{:.0%}'.form
 # Adjust layout to make sure everything fits
 plt.tight_layout()
 
+
 # Show the plot
 plt.savefig('figure3.png')
 plt.show()

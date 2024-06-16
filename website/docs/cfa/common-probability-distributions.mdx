@@ -6,6 +6,7 @@ import FigureE from "./images/common-probability/figureE.png";
 import FigureF from "./images/common-probability/figureF.png";
 import FigureG from "./images/common-probability/figureG.png";
 import FigureH from "./images/common-probability/figureH.png";
+import FigureI from "./images/common-probability/figureI.png";
 
 # Common Probability Distributions
 
@@ -593,3 +594,33 @@ Use the following table to answer Question 3.
 * B. 0.1.
 * C. 0.5.
 
+## 3: LOGNORMAL DISTRIBUTION, SIMULATIONS
+
+### M: Define shortfall risk, calculate the safety-first ratio, and select an optimal portfolio using Roy’s safety-first criterion.
+
+**Shortfall risk** is the probability that a portfolio value or return will fall below a particular (target) value or return over a given time period.
+
+**Roy’s safety-first criterion** states that the optimal portfolio minimizes the probability that the return of the portfolio falls below some minimum acceptable level. This minimum acceptable level is called the threshold level. Symbolically, Roy’s safety-first criterion can be stated as:
+
+$$
+\text{minimize } P(R_P < R_L)
+$$
+
+where:
+
+* $$ R_P $$ = portfolio return
+* $$ R_L $$ = threshold level return
+
+If portfolio returns are normally distributed, then Roy’s safety-first criterion can be stated as:
+
+$$
+\text{maximize the SFRatio}, \textit{where\ } \text{SFRatio} = \frac{E(R_P) - R_L}{\sigma_P}
+$$
+
+The reasoning behind the safety-first criterion is illustrated in the following figure. Assume an investor is choosing between two portfolios: Portfolio A with expected return of $12\%$ and standard deviation of returns of $18\%$, and Portfolio B with expected return of $10\%$ and standard deviation of returns of $12\%$. The investor has stated that he wants to minimize the probability of losing money (negative returns). Assuming that returns are normally distributed, the portfolio with the larger $\text{SFR}$ using $0\%$ as the threshold return ($$ R_L $$) will be the one with the lower probability of negative returns.
+
+**Figure: The Safety-First Criterion and Shortfall Risk**
+
+<div style={{ textAlign: 'center' }}>
+<img src={FigureI} style={{width: 800}} />
+</div>

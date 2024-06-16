@@ -6,6 +6,7 @@ import FigureE from "./images/common-probability/figureE.png";
 import FigureF from "./images/common-probability/figureF.png";
 import FigureG from "./images/common-probability/figureG.png";
 import FigureH from "./images/common-probability/figureH.png";
+import FigureI from "./images/common-probability/figureI.png";
 
 # Các Phân Phối Xác Suất Thông Thường
 
@@ -584,3 +585,34 @@ Sử dụng bảng sau để trả lời Câu hỏi 3.
 * A. 0.0.
 * B. 0.1.
 * C. 0.5.
+
+## 3: PHÂN PHỐI LOGNORMAL, MÔ PHỎNG
+
+### M: Định nghĩa rủi ro thiếu hụt, tính tỷ lệ an toàn trước và chọn danh mục đầu tư tối ưu bằng cách sử dụng tiêu chí an toàn trước của Roy.
+
+**Rủi ro thâm hụt** là xác suất rằng giá trị hoặc lợi nhuận của danh mục đầu tư sẽ giảm xuống dưới một giá trị (mục tiêu) cụ thể trong một khoảng thời gian nhất định.
+
+**Tiêu chí an toàn đầu tiên của Roy** cho rằng danh mục đầu tư tối ưu là danh mục giảm thiểu xác suất rằng lợi nhuận của danh mục sẽ giảm xuống dưới mức chấp nhận tối thiểu. Mức chấp nhận tối thiểu này được gọi là mức ngưỡng. Về mặt ký hiệu, tiêu chí an toàn đầu tiên của Roy có thể được biểu diễn như sau:
+
+$$
+\text{minimize } P(R_P < R_L)
+$$
+
+trong đó:
+
+* $$ R_P $$ = lợi nhuận danh mục đầu tư
+* $$ R_L $$ = lợi nhuận mức ngưỡng
+
+Nếu lợi nhuận danh mục đầu tư phân phối chuẩn, thì tiêu chí an toàn đầu tiên của Roy có thể được biểu diễn như sau:
+
+$$
+\text{maximize the SFRatio}, \textit{với\ } \text{SFRatio} = \frac{E(R_P) - R_L}{\sigma_P}
+$$
+
+Lý do đằng sau tiêu chí an toàn đầu tiên được minh họa trong hình sau. Giả sử một nhà đầu tư đang chọn giữa hai danh mục đầu tư: Danh mục A với lợi nhuận kỳ vọng là $12\%$ và độ lệch chuẩn của lợi nhuận là $18\%$, và Danh mục B với lợi nhuận kỳ vọng là $10\%$ và độ lệch chuẩn của lợi nhuận là $12\%$. Nhà đầu tư đã tuyên bố rằng anh ta muốn giảm thiểu xác suất mất tiền (lợi nhuận âm). Giả sử rằng lợi nhuận phân phối chuẩn, danh mục đầu tư với $\text{SFR}$ lớn hơn sử dụng $0\%$ làm lợi nhuận ngưỡng ($$ R_L $$) sẽ là danh mục có xác suất lợi nhuận âm thấp hơn.
+
+**Hình: Tiêu chí an toàn đầu tiên và rủi ro thâm hụt**
+
+<div style={{ textAlign: 'center' }}>
+<img src={FigureI} style={{width: 800}} />
+</div>
