@@ -11,7 +11,8 @@
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids"
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "test": "jest"
   },
   "dependencies": {
     "@docusaurus/core": "3.2.1",
@@ -29,8 +30,15 @@
     "remark-math": "^6.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "@babel/preset-react": "^7.24.7",
     "@docusaurus/module-type-aliases": "3.2.1",
-    "@docusaurus/types": "3.2.1"
+    "@docusaurus/types": "3.2.1",
+    "@testing-library/jest-dom": "^6.4.6",
+    "@testing-library/react": "^16.0.0",
+    "babel-jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
   },
   "browserslist": {
     "production": [
