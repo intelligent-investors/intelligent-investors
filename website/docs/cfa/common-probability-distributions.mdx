@@ -671,4 +671,49 @@ In the above figure, we can see that:
 
 If we used a normal distribution of returns to model asset prices over time, we would admit the possibility of returns less than *-100%*, which would admit the possibility of asset prices less than zero. Using a lognormal distribution to model *price relatives* avoids this problem. A price relative is just the end-of-period price of the asset divided by the beginning price ($\text{S1/S0}$) and is equal to ($\text{1 + the holding period return}$). To get the end-of-period asset price, we can simply multiply the price relative times the beginning-of-period asset price. Since a lognormal distribution takes a minimum value of zero, end-of-period asset prices cannot be less than zero. A price relative of zero corresponds to a holding period return of -100% (i.e., the asset price has gone to zero). Recall that we used *price relatives* as the up-move and down-move (multiplier) terms in constructing a binomial tree for stock price changes over a number of periods.
 
+### O: Distinguish between discretely and continuously compounded rates of return and calculate and interpret a continuously compounded rate of return, given a specific holding period return.
+
+**Discretely compounded** returns are just the compound returns we are familiar with, given some discrete compounding period, such as semiannual or quarterly. Recall that the more frequent the compounding, the greater the effective annual return. For a stated rate of 10%, semiannual compounding results in an effective yield of $$\left(1 + \frac{0.10}{2}\right)^2 - 1 = 10.25\%$$ and monthly compounding results in an effective yield of $$\left(1 + \frac{0.10}{12}\right)^{12} - 1 = 10.47\%$$. Daily or even hourly compounding will produce still larger effective yields. The limit of this exercise, as the compounding periods get shorter and shorter, is called **continuous compounding**. The effective annual rate, based on continuous compounding for a stated annual rate of $$R_{cc}$$, can be calculated from the formula:
+
+$$
+\text{effective annual rate} = e^{R_{cc}} - 1
+$$
+
+Based on a stated rate of 10%, the effective rate with continuous compounding is $$e^{0.10} - 1 = 10.5171\%$$. Please verify this by entering 0.1 in your calculator and finding the $$e^x$$ function.
+
+Since the natural log, $$\ln$$, of $$e^x$$ is $$x$$, we can get the continuously compounded rate from an effective annual rate by using the $$\ln$$ calculator function. Using our previous example, $$\ln(1 + 10.517\%) = \ln 1.105171 = 10\%$$. Verify this by entering 1.105171 in your calculator and then entering the $$\ln$$ key. (Using the HP calculator, the keystrokes are 1.105171 [g] [ln].)
+
+We can use this method to find the continuously compounded rate that will generate a particular holding period return. If we are given a holding period return of 12.5% for the year, the equivalent continuously compounded rate is $$\ln 1.125 = 11.778\%$$. Since the calculation is based on 1 plus the holding period return, we can also do the calculation directly from the *price relative*. The price relative is just the end-of-period value divided by the beginning-of-period value. The continuously compounded rate of return is:
+
+$$
+\ln\left(\frac{S_1}{S_0}\right) = \ln(1 + \text{HPR}) = R_{cc}
+$$
+
+:::info[**EXAMPLE: Calculating continuously compounded returns**]
+
+A stock was purchased for \$100 and sold one year later for \$120. Calculate the investor’s annual rate of return on a continuously compounded basis.
+
+Answer:
+
+$$
+\ln\left(\frac{120}{100}\right) = 18.232\%
+$$
+
+If we had been given the return (20%) instead, the calculation is:
+
+$$
+\ln(1 + 0.20) = 18.232\%
+$$
+
+:::
+
+One property of continuously compounded rates of return is that they are additive for multiple periods. Note that the (effective) holding period return over two years is calculated by doubling the continuously compounded annual rate. If $$R_{cc} = 10\%$$, the (effective) holding period return over two years is $$e^{(0.10) \cdot 2} - 1 = 22.14\%$$. In general, the holding period return after $$T$$ years, when the annual continuously compounded rate is $$R_{cc}$$, is given by:
+
+$$
+\text{HPR}_T = e^{R_{CC} \times T} - 1
+$$
+
+Given investment results over a 2-year period, we can calculate the 2-year continuously compounded return and divide by two to get the annual rate. Consider an investment that appreciated from \$1,000 to \$1,221.40 over a 2-year period. The 2-year continuously compounded rate is $$\ln(1,221.40 / 1,000) = 20\%$$, and the annual continuously compounded rate ($$R_{CC}$$) is $$20\% / 2 = 10\%$$.
+
+
 

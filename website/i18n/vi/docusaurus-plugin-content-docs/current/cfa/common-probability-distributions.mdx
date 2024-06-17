@@ -662,3 +662,59 @@ Trong hình trên, chúng ta có thể thấy rằng:
 - *Phân phối lognormal* bị giới hạn từ dưới bởi không, vì vậy nó hữu ích để mô hình hóa giá tài sản, vốn không bao giờ có giá trị âm.
 
 Nếu chúng ta sử dụng phân phối chuẩn của lợi nhuận để mô hình hóa giá tài sản theo thời gian, chúng ta sẽ thừa nhận khả năng lợi nhuận nhỏ hơn *-100%*, điều này sẽ thừa nhận khả năng giá tài sản nhỏ hơn không. Sử dụng phân phối lognormal để mô hình hóa *tỷ lệ giá* tránh được vấn đề này. Tỷ lệ giá chỉ là giá tài sản cuối kỳ chia cho giá đầu kỳ ($\text{S1/S0}$) và bằng ($\text{1 + lợi nhuận kỳ nắm giữ}$). Để có được giá tài sản cuối kỳ, chúng ta có thể đơn giản nhân tỷ lệ giá với giá tài sản đầu kỳ. Vì phân phối lognormal có giá trị tối thiểu là không, giá tài sản cuối kỳ không thể nhỏ hơn không. Tỷ lệ giá bằng không tương ứng với lợi nhuận kỳ nắm giữ là -100% (tức là giá tài sản đã về không). Nhớ rằng chúng ta đã sử dụng *tỷ lệ giá* làm các hệ số tăng và giảm (bội số) trong việc xây dựng cây nhị phân cho các biến động giá cổ phiếu qua một số kỳ.
+
+### O: Phân biệt giữa lãi suất gộp rời rạc và liên tục và tính toán và diễn giải lãi suất gộp liên tục, cho một tỷ suất lợi nhuận giữ trong một thời kỳ nhất định.
+
+**Lãi suất gộp rời rạc** là lãi suất gộp chúng ta quen thuộc, được xác định với một kỳ gộp rời rạc, như nửa năm hoặc hàng quý. Nhớ rằng tần suất gộp càng cao thì lãi suất hàng năm hiệu quả càng lớn. Với lãi suất công bố là 10%, gộp nửa năm cho kết quả là:
+
+$$
+\left(1 + \frac{0.10}{2}\right)^2 - 1 = 10.25\%
+$$
+
+và gộp hàng tháng cho kết quả là:
+
+$$
+\left(1 + \frac{0.10}{12}\right)^{12} - 1 = 10.47\%
+$$
+
+Gộp hàng ngày hoặc thậm chí hàng giờ sẽ cho lãi suất hiệu quả lớn hơn nữa. Giới hạn của bài toán này, khi các kỳ gộp trở nên ngắn hơn và ngắn hơn, được gọi là **gộp liên tục**. Lãi suất hàng năm hiệu quả, dựa trên gộp liên tục cho một lãi suất hàng năm công bố là $$R_{cc}$$, có thể tính từ công thức:
+
+$$
+\text{lãi suất hàng năm hiệu quả} = e^{R_{cc}} - 1
+$$
+
+Dựa trên lãi suất công bố là 10%, lãi suất hiệu quả với gộp liên tục là $$e^{0.10} - 1 = 10.5171\%$$. Hãy kiểm chứng điều này bằng cách nhập 0.1 vào máy tính của bạn và tìm chức năng $$e^x$$.
+
+Vì logarit tự nhiên, $$\ln$$, của $$e^x$$ là $$x$$, chúng ta có thể lấy lãi suất gộp liên tục từ lãi suất hàng năm hiệu quả bằng cách sử dụng chức năng $$\ln$$ của máy tính. Sử dụng ví dụ trước đó, $$\ln(1 + 10.517\%) = \ln 1.105171 = 10\%$$. Kiểm chứng điều này bằng cách nhập 1.105171 vào máy tính của bạn và sau đó nhập phím $$\ln$$. (Sử dụng máy tính HP, các phím là 1.105171 [g] [ln].)
+
+Chúng ta có thể sử dụng phương pháp này để tìm lãi suất gộp liên tục sẽ tạo ra một tỷ suất lợi nhuận giữ trong một thời kỳ nhất định. Nếu chúng ta có một tỷ suất lợi nhuận giữ trong một năm là 12.5%, lãi suất gộp liên tục tương đương là $$\ln 1.125 = 11.778\%$$. Vì tính toán dựa trên 1 cộng với tỷ suất lợi nhuận giữ, chúng ta cũng có thể làm tính toán trực tiếp từ *tỷ lệ giá*. Tỷ lệ giá chỉ là giá trị cuối kỳ chia cho giá trị đầu kỳ. Lãi suất gộp liên tục là:
+
+$$
+\ln\left(\frac{S_1}{S_0}\right) = \ln(1 + \text{HPR}) = R_{cc}
+$$
+
+:::info[**VÍ DỤ: Tính lãi suất gộp liên tục**]
+
+Một cổ phiếu được mua với giá \$100 và bán một năm sau với giá \$120. Tính tỷ suất lợi nhuận hàng năm của nhà đầu tư theo cách gộp liên tục.
+
+Trả lời:
+
+$$
+\ln\left(\frac{120}{100}\right) = 18.232\%
+$$
+
+Nếu chúng ta được cung cấp lợi nhuận (20%) thay vì, tính toán là:
+
+$$
+\ln(1 + 0.20) = 18.232\%
+$$
+
+:::
+
+Một tính chất của lãi suất gộp liên tục là chúng có thể cộng dồn cho nhiều kỳ. Lưu ý rằng tỷ suất lợi nhuận (hiệu quả) trong kỳ giữ hai năm được tính bằng cách nhân đôi lãi suất gộp hàng năm. Nếu $$R_{cc} = 10\%$$, tỷ suất lợi nhuận (hiệu quả) trong kỳ giữ hai năm là $$e^{(0.10) \cdot 2} - 1 = 22.14\%$$. Nói chung, tỷ suất lợi nhuận sau $$T$$ năm, khi lãi suất gộp hàng năm là $$R_{cc}$$, được tính bằng:
+
+$$
+\text{HPR}_T = e^{R_{CC} \times T} - 1
+$$
+
+Dựa trên kết quả đầu tư trong một giai đoạn 2 năm, chúng ta có thể tính lãi suất gộp liên tục 2 năm và chia cho hai để có lãi suất hàng năm. Xem xét một khoản đầu tư tăng từ \$1,000 lên \$1,221.40 trong giai đoạn 2 năm. Lãi suất gộp liên tục 2 năm là $$\ln(1,221.40 / 1,000) = 20\%$$, và lãi suất gộp hàng năm ($$R_{CC}$$) là $$20\% / 2 = 10\%$$.
