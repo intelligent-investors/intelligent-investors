@@ -7,6 +7,7 @@ import FigureF from "./images/common-probability/figureF.png";
 import FigureG from "./images/common-probability/figureG.png";
 import FigureH from "./images/common-probability/figureH.png";
 import FigureI from "./images/common-probability/figureI.png";
+import FigureK from "./images/common-probability/figureK.png";
 
 # Các Phân Phối Xác Suất Thông Thường
 
@@ -616,3 +617,48 @@ Lý do đằng sau tiêu chí an toàn đầu tiên được minh họa trong h�
 <div style={{ textAlign: 'center' }}>
 <img src={FigureI} style={{width: 800}} />
 </div>
+
+Panel B của hình trên liên quan đến **SFRatio** với phân phối chuẩn tắc. Lưu ý rằng SFR là số độ lệch chuẩn dưới trung bình. Do đó, danh mục đầu tư với SFR lớn hơn có xác suất thấp hơn về lợi nhuận dưới mức ngưỡng, là lợi nhuận 0% trong ví dụ của chúng ta. Sử dụng bảng z cho các giá trị âm, chúng ta có thể tìm thấy các xác suất ở các đuôi bên trái như đã chỉ ra. Các xác suất này (25% cho Danh mục đầu tư A và 20% cho Danh mục đầu tư B) cũng là rủi ro thiếu hụt cho lợi nhuận mục tiêu 0%, tức là xác suất lợi nhuận âm. Danh mục đầu tư B có SFR cao hơn, có nghĩa là có xác suất lợi nhuận âm thấp hơn.
+
+Tóm lại, khi lựa chọn giữa các danh mục đầu tư có lợi nhuận phân phối chuẩn tắc sử dụng tiêu chí an toàn của Roy, có hai bước:
+
+Bước 1: Tính $$\text{SFRatio} = \frac{E(R_p) - R_L}{σ_p}$$
+
+Bước 2: Chọn danh mục đầu tư có SFRatio lớn nhất.
+
+:::info[**VÍ DỤ: Tiêu chí an toàn của Roy**]
+
+Trong năm tới, các nhà quản lý của một quỹ hiến tặng trị giá 120 triệu đô la của một trường cao đẳng đã đặt ra giá trị danh mục đầu tư cuối năm tối thiểu chấp nhận được là 123,6 triệu đô la. Ba danh mục đầu tư đang được xem xét có các lợi nhuận kỳ vọng và độ lệch chuẩn được hiển thị ở hai hàng đầu tiên của bảng sau. Xác định danh mục đầu tư nào là mong muốn nhất sử dụng tiêu chí an toàn của Roy và xác suất giá trị danh mục đầu tư sẽ thấp hơn mục tiêu.
+
+**Trả lời:**
+
+Lợi nhuận ngưỡng là $R_L = (123.6 - 120) / 120 = 0.030 = 3\%$. Các SFR được hiển thị trong bảng dưới đây. Như đã chỉ ra, lựa chọn tốt nhất là Danh mục đầu tư A vì nó có SFR lớn nhất.
+
+| Tỷ lệ an toàn của Roy | Danh mục đầu tư A | Danh mục đầu tư B | Danh mục đầu tư C |
+|-----------------------|-------------------|-------------------|-------------------|
+| $E(R_p)$              | 9%                | 11%               | 6.6%              |
+| $σ_p$                 | 12%               | 20%               | 8.2%              |
+| SFRatio               | 0.5 = (9 - 3) / 12 | 0.4 = (11 - 3) / 20 | 0.44 = (6.6 - 3) / 8.2 |
+
+Xác suất giá trị kết thúc của Danh mục đầu tư A thấp hơn 123,6 triệu đô la (lợi nhuận thấp hơn 3%) đơn giản là F(-0.5) mà chúng ta có thể tìm thấy trên bảng z cho các giá trị âm. Xác suất là 0.3085 = 30.85%.
+
+:::
+
+### N: Giải thích mối quan hệ giữa phân phối chuẩn và phân phối lognormal và tại sao phân phối lognormal được sử dụng để mô hình hóa giá tài sản.
+
+**Phân phối lognormal** được tạo ra bởi hàm $$ e^x $$, trong đó $$ x $$ được phân phối chuẩn. Vì logarit tự nhiên, $$ \ln $$, của $$ e^x $$ là $$ x $$, nên logarit của các biến ngẫu nhiên phân phối lognormal được phân phối chuẩn, do đó có tên gọi như vậy.
+
+Hình dưới đây minh họa sự khác biệt giữa phân phối chuẩn và phân phối lognormal.
+
+**Hình: Phân phối Chuẩn vs. Phân phối Lognormal**
+
+<div style={{ textAlign: 'center' }}>
+<img src={FigureK} style={{width: 800}} />
+</div>
+
+Trong hình trên, chúng ta có thể thấy rằng:
+
+- *Phân phối lognormal* có **độ lệch** về phía phải.
+- *Phân phối lognormal* bị giới hạn từ dưới bởi không, vì vậy nó hữu ích để mô hình hóa giá tài sản, vốn không bao giờ có giá trị âm.
+
+Nếu chúng ta sử dụng phân phối chuẩn của lợi nhuận để mô hình hóa giá tài sản theo thời gian, chúng ta sẽ thừa nhận khả năng lợi nhuận nhỏ hơn *-100%*, điều này sẽ thừa nhận khả năng giá tài sản nhỏ hơn không. Sử dụng phân phối lognormal để mô hình hóa *tỷ lệ giá* tránh được vấn đề này. Tỷ lệ giá chỉ là giá tài sản cuối kỳ chia cho giá đầu kỳ ($\text{S1/S0}$) và bằng ($\text{1 + lợi nhuận kỳ nắm giữ}$). Để có được giá tài sản cuối kỳ, chúng ta có thể đơn giản nhân tỷ lệ giá với giá tài sản đầu kỳ. Vì phân phối lognormal có giá trị tối thiểu là không, giá tài sản cuối kỳ không thể nhỏ hơn không. Tỷ lệ giá bằng không tương ứng với lợi nhuận kỳ nắm giữ là -100% (tức là giá tài sản đã về không). Nhớ rằng chúng ta đã sử dụng *tỷ lệ giá* làm các hệ số tăng và giảm (bội số) trong việc xây dựng cây nhị phân cho các biến động giá cổ phiếu qua một số kỳ.
