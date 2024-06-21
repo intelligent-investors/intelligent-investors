@@ -10,7 +10,108 @@ For example, rather than attempting to measure the performance of the U.S. stock
 
 ### A: Define simple random sampling and a sampling distribution.
 
-
 ### B: Explain sampling error.
 
-**Simple random sampling** is a method of selecting a sample in such a way that each item or person in the population being studied has the same likelihood of being included in the sample. As an example of simple random sampling, assume that you want to draw a sample of five items out of a group of 50 items. This can be accomplished by numbering each of the 50 items, placing them in a hat, and shaking the hat. Next, one number can be drawn randomly from the hat. Repeating this process (experiment) four more times results in a set of five numbers. The five drawn numbers (items) comprise a simple random sample from the population. In applications like this one, a random-number table or a computer random-
+**Simple random sampling** is a method of selecting a sample in such a way that each item or person in the population being studied has the same likelihood of being included in the sample. As an example of simple random sampling, assume that you want to draw a sample of five items out of a group of 50 items. This can be accomplished by numbering each of the 50 items, placing them in a hat, and shaking the hat. Next, one number can be drawn randomly from the hat. Repeating this process (experiment) four more times results in a set of five numbers. The five drawn numbers (items) comprise a simple random sample from the population. In applications like this one, a random-number table or a computer random number generator is often used to create the sample. Another way to form an approximately random sample is **systematic sampling**, selecting every nth member from a population. **Sampling error** is the difference between a sample statistic (the mean, variance, or standard deviation of the sample) and its corresponding population parameter (the true mean, variance, or standard deviation of the population). For example, the sampling error for the mean is as follows:
+
+$$
+\text{sampling error of the mean} = \text{sample mean} - \text{population mean} = \bar{x} - \mu
+$$
+
+#### A Sampling Distribution
+
+It is important to recognize that the sample statistic itself is a random variable and, therefore, has a probability distribution. The **sampling distribution** of the sample statistic is a probability distribution of all possible sample statistics computed from a set of equal-size samples that were randomly drawn from the same population. Think of it as the probability distribution of a statistic from many samples.
+
+For example, suppose a random sample of 100 bonds is selected from a population of a major municipal bond index consisting of 1,000 bonds, and then the mean return of the 100-bond sample is calculated. Repeating this process many times will result in many different estimates of the population mean return (i.e., one for each sample). The distribution of these estimates of the mean is the **sampling distribution of the mean**.
+
+It is important to note that this sampling distribution is distinct from the distribution of the actual prices of the 1,000 bonds in the underlying population and will have different parameters.
+
+### C: Distinguish between simple random and stratified random sampling.
+
+**Stratified random sampling** uses a classification system to separate the population into smaller groups based on one or more distinguishing characteristics. From each subgroup, or stratum, a random sample is taken and the results are pooled. The size of the samples from each stratum is based on the size of the stratum relative to the population.
+
+Stratified sampling is often used in bond indexing because of the difficulty and cost of completely replicating the entire population of bonds. In this case, bonds in a population are categorized (stratified) according to major bond risk factors such as duration, maturity, coupon rate, and the like. Then, samples are drawn from each separate category and combined to form a final sample.
+
+To see how this works, suppose you want to construct a bond portfolio that is indexed to the major municipal bond index using a stratified random sampling approach. First, the entire population of 1,000 municipal bonds in the index can be classified on the basis of maturity and coupon rate. Then, cells (stratum) can be created for different maturity/coupon combinations, and random samples can be drawn from each of the maturity/coupon cells. To sample from a cell containing 50 bonds with 2- to 4-year maturities and coupon rates less than 5%, we would select five bonds. The number of bonds drawn from a given cell corresponds to the cell’s weight relative to the population (index), or (50 / 1000) x (100) = 5 bonds. This process is repeated for all of the maturity/coupon cells, and the individual samples are combined to form the portfolio.
+
+By using stratified sampling, we guarantee that we sample five bonds from this cell. If we had used simple random sampling, there would be no guarantee that we would sample any of the bonds in the cell. Or, we may have selected more than five bonds from this cell.
+
+### D: Distinguish between time-series and cross-sectional data.
+
+**Time-series data** consist of observations taken *over a period of time* at specific and equally spaced time intervals. The set of monthly returns on Microsoft stock from January 1994 to January 2004 is an example of a time-series data sample.
+
+**Cross-sectional data** are a sample of observations taken *at a single point in time*. The sample of reported earnings per share of all Nasdaq companies as of December 31, 2004, is an example of a cross-sectional data sample.
+
+Time-series and cross-sectional data can be pooled in the same data set. **Longitudinal data** are observations over time of multiple characteristics of the same entity, such as unemployment, inflation, and GDP growth rates for a country over 10 years. **Panel data** contain observations over time of the same characteristic for multiple entities, such as debt/equity ratios for 20 companies over the most recent 24 quarters. Panel and longitudinal data are typically presented in table or spreadsheet form.
+
+### E: Explain the central limit theorem and its importance.
+
+The **central limit theorem** states that for simple random samples of size n from a population with a mean $μ$ and a finite variance $$\sigma^2$$, the sampling distribution of the sample mean $$\bar{x}$$ approaches a normal probability distribution with mean μ and a variance equal to $$\frac{\sigma^2}{n}$$ as the sample size becomes large.
+
+The central limit theorem is extremely useful because the normal distribution is relatively easy to apply to hypothesis testing and to the construction of confidence intervals. Specific inferences about the population mean can be made from the sample mean, **regardless of the population’s distribution**, as long as the sample size is “sufficiently large,” which usually means n ≥ 30.
+
+**Important properties of the central limit theorem include the following:**
+
+- If the sample size n is sufficiently large (n ≥ 30), the sampling distribution of the sample means will be approximately normal. Remember what’s going on here, random samples of size n are repeatedly being taken from an overall larger population. Each of these random samples has its own mean, which is itself a random variable, and this set of sample means has a distribution that is approximately normal.
+- The mean of the population, μ, and the mean of the distribution of all possible sample means are equal.
+- The variance of the distribution of sample means is $$\frac{\sigma^2}{n}$$, the population variance divided by the sample size.
+
+### F: Calculate and interpret the standard error of the sample mean.
+
+The **standard error of the sample mean** is the standard deviation of the distribution of the sample means.
+
+When the standard deviation of the population, $\sigma$, is known, the standard error of the sample mean is calculated as:
+
+$$
+\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}
+$$
+
+where:
+
+* $\sigma_{\bar{x}}$ = standard error of the sample mean  
+* $\sigma$ = standard deviation of the population  
+* $n$ = size of the sample
+
+:::info[**EXAMPLE**: Standard error of sample mean (known population variance)]
+The mean hourly wage for Iowa farm workers is \$13.50 with a population standard deviation of \$2.90. Calculate and interpret the standard error of the sample mean for a sample size of 30.
+
+**Answer:**
+
+Because the population standard deviation, $\sigma$, is known, the standard error of the sample mean is expressed as:
+
+$$
+\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}} = \frac{2.90}{\sqrt{30}} = \$0.53
+$$
+
+This means that if we were to take many samples of size 30 from the Iowa farm worker population and prepare a sampling distribution of the sample means, we would get a distribution with an expected mean of \$13.50 and standard error (standard deviation of the sample means) of \$0.53.
+
+Practically speaking, the population’s standard deviation is almost never known. Instead, the standard error of the sample mean must be estimated by dividing the standard deviation of the sample by $\sqrt{n}$:
+
+$$
+s_{\bar{x}} = \frac{s}{\sqrt{n}}
+$$
+:::
+
+:::info[**EXAMPLE**: Standard error of sample mean (unknown population variance)]
+Suppose a sample contains the past 30 monthly returns for McCreary, Inc. The mean return is 2% and the sample standard deviation is 20%. Calculate and interpret the standard error of the sample mean.
+
+**Answer:**
+
+Since $\sigma$ is unknown, the standard error of the sample mean is:
+
+$$
+s_{\bar{x}} = \frac{s}{\sqrt{n}} = \frac{20\%}{\sqrt{30}} = 3.6\%
+$$
+
+This implies that if we took all possible samples of size 30 from McCreary’s monthly returns and prepared a sampling distribution of the sample means, the mean would be 2% with a standard error of 3.6%.
+:::
+
+:::info[**EXAMPLE**: Standard error of sample mean (unknown population variance)]
+Continuing with our example, suppose that instead of a sample size of 30, we take a sample of the past 200 monthly returns for McCreary, Inc. In order to highlight the effect of sample size on the sample standard error, let’s assume that the mean return and standard deviation of this larger sample remain at 2% and 20%, respectively. Now, calculate the standard error of the sample mean for the 200-return sample.
+
+**Answer:**
+
+$$
+\text{To be calculated}
+$$
+:::
