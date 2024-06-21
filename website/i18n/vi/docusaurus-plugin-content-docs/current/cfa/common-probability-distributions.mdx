@@ -718,3 +718,81 @@ $$
 $$
 
 Dựa trên kết quả đầu tư trong một giai đoạn 2 năm, chúng ta có thể tính lãi suất gộp liên tục 2 năm và chia cho hai để có lãi suất hàng năm. Xem xét một khoản đầu tư tăng từ \$1,000 lên \$1,221.40 trong giai đoạn 2 năm. Lãi suất gộp liên tục 2 năm là $$\ln(1,221.40 / 1,000) = 20\%$$, và lãi suất gộp hàng năm ($$R_{CC}$$) là $$20\% / 2 = 10\%$$.
+
+### P: Giải thích mô phỏng Monte Carlo và mô tả các ứng dụng và hạn chế của nó.
+
+**Mô phỏng Monte Carlo** là một kỹ thuật dựa trên việc tạo ra lặp đi lặp lại một hoặc nhiều yếu tố rủi ro ảnh hưởng đến giá trị chứng khoán, nhằm tạo ra một phân phối các giá trị chứng khoán. Đối với mỗi yếu tố rủi ro, nhà phân tích phải chỉ định các thông số của phân phối xác suất mà yếu tố rủi ro được giả định tuân theo. Sau đó, một máy tính được sử dụng để tạo ra các giá trị ngẫu nhiên cho mỗi yếu tố rủi ro dựa trên các phân phối xác suất giả định của nó. Mỗi tập hợp các yếu tố rủi ro được tạo ngẫu nhiên được sử dụng với mô hình định giá để định giá chứng khoán. Quy trình này được lặp lại nhiều lần (hàng trăm, hàng ngàn, hoặc hàng chục ngàn lần), và phân phối các giá trị tài sản mô phỏng được sử dụng để rút ra các suy luận về giá trị kỳ vọng (trung bình) của chứng khoán và có thể là phương sai của các giá trị chứng khoán xung quanh trung bình nữa.
+
+Ví dụ, hãy xem xét việc định giá quyền chọn cổ phiếu chỉ có thể được thực hiện vào một ngày cụ thể. Yếu tố rủi ro chính là giá trị của chính cổ phiếu đó, nhưng lãi suất cũng có thể ảnh hưởng đến việc định giá. Quy trình mô phỏng sẽ là:
+
+1. Chỉ định các phân phối xác suất của giá cổ phiếu và lãi suất liên quan, cũng như các thông số (trung bình, phương sai, có thể là độ lệch) của các phân phối này.
+2. Tạo ngẫu nhiên các giá trị cho cả giá cổ phiếu và lãi suất.
+3. Định giá các quyền chọn cho mỗi cặp giá trị yếu tố rủi ro.
+4. Sau nhiều lần lặp lại, tính giá trị trung bình của quyền chọn và sử dụng nó như là ước tính của bạn về giá trị của quyền chọn.
+
+**Mô phỏng Monte Carlo được sử dụng để:**
+
+- Định giá các chứng khoán phức tạp.
+- Mô phỏng lãi/lỗ từ một chiến lược giao dịch.
+- Tính toán ước lượng giá trị rủi ro (VaR) để xác định mức độ rủi ro của một danh mục tài sản và nợ phải trả.
+- Mô phỏng tài sản và nợ phải trả của quỹ hưu trí theo thời gian để kiểm tra sự biến động của sự khác biệt giữa hai yếu tố này.
+- Định giá các danh mục tài sản có phân phối lợi nhuận không chuẩn.
+
+**Hạn chế của mô phỏng Monte Carlo** là nó khá phức tạp và sẽ cung cấp các câu trả lời không tốt hơn các giả định về các phân phối của các yếu tố rủi ro và mô hình định giá/đánh giá được sử dụng. Ngoài ra, mô phỏng không phải là một phương pháp phân tích, mà là một phương pháp thống kê, và không thể cung cấp những hiểu biết sâu sắc mà các phương pháp phân tích có thể.
+
+### Q: So sánh mô phỏng Monte Carlo và mô phỏng lịch sử.
+
+**Mô phỏng lịch sử** dựa trên những thay đổi thực tế về giá trị hoặc những thay đổi thực tế trong các yếu tố rủi ro qua một giai đoạn trước đó. Thay vì mô hình hóa phân phối các yếu tố rủi ro, như trong mô phỏng Monte Carlo, tập hợp tất cả các thay đổi trong các yếu tố rủi ro liên quan qua một giai đoạn trước đó được sử dụng. Mỗi lần lặp lại của mô phỏng bao gồm việc chọn ngẫu nhiên một trong những thay đổi trước đó cho mỗi yếu tố rủi ro và tính toán giá trị của tài sản hoặc danh mục đầu tư dựa trên những thay đổi trong các yếu tố rủi ro đó.
+
+Mô phỏng lịch sử có lợi thế là sử dụng phân phối thực tế của các yếu tố rủi ro do đó phân phối các thay đổi trong các yếu tố rủi ro không cần phải ước tính. Nó gặp phải vấn đề là những thay đổi trong quá khứ của các yếu tố rủi ro có thể không phải là chỉ dẫn tốt cho những thay đổi trong tương lai. Các sự kiện xảy ra không thường xuyên có thể không được phản ánh trong kết quả mô phỏng lịch sử trừ khi các sự kiện đó đã xảy ra trong giai đoạn mà từ đó các giá trị cho các yếu tố rủi ro được lấy. Một hạn chế bổ sung của mô phỏng lịch sử là nó không thể giải quyết các câu hỏi kiểu “điều gì sẽ xảy ra nếu” mà mô phỏng Monte Carlo có thể. Với mô phỏng Monte Carlo, chúng ta có thể điều tra tác động lên phân phối giá trị chứng khoán/danh mục đầu tư nếu chúng ta tăng phương sai của một trong các yếu tố rủi ro lên 20%; với mô phỏng lịch sử chúng ta không thể làm điều này.
+
+### 📝 LUYỆN TẬP
+
+Sử dụng bảng sau để trả lời Câu hỏi 1 và 2.
+
+| Danh mục đầu tư | Danh mục A | Danh mục B | Danh mục C |
+|-----------------|------------|------------|------------|
+| $$E(R_p)$$      | 5%         | 11%        | 18%        |
+| $$\sigma_p$$    | 8%         | 21%        | 40%        |
+
+1. Với mức ngưỡng lợi nhuận là 4%, sử dụng tiêu chí an toàn của Roy để chọn danh mục đầu tư tối ưu. Danh mục:
+
+* A. A.
+* B. B.
+* C. C.
+
+2. Với mức ngưỡng lợi nhuận là 0%, sử dụng tiêu chí an toàn của Roy để chọn danh mục đầu tư tối ưu. Danh mục:
+
+* A. A.
+* B. B.
+* C. C.
+
+3. Danh mục A có tỷ lệ an toàn là 1.3 với mức ngưỡng lợi nhuận là 2%. Rủi ro thiếu hụt cho mức ngưỡng lợi nhuận là 2% là bao nhiêu?
+
+* A. 9.68%.
+* B. 40.30%.
+* C. 90.30%.
+
+4. Đối với phân phối lognormal:
+
+* A. giá trị trung bình bằng giá trị trung vị.
+* B. xác suất của một kết quả âm là bằng không.
+* C. xác suất của một kết quả dương là 50%.
+
+5. Nếu giá ban đầu của một cổ phiếu là 20 đô la và giá cuối năm của nó là 23 đô la, thì tỷ suất lợi nhuận hàng năm liên tục của nó là:
+
+* A. 13.64%.
+* B. 13.98%.
+* C. 15.00%.
+
+6. Một cổ phiếu đã tăng gấp đôi giá trị trong năm ngoái. Tỷ suất lợi nhuận liên tục của nó trong giai đoạn đó gần nhất với:
+
+* A. 18.2%.
+* B. 69.3%.
+* C. 100.0%.
+
+7. Sử dụng các giá trị tham số giả định và trình tạo số ngẫu nhiên để nghiên cứu hành vi của một số loại tài sản là một phần của:
+
+* A. phân tích lịch sử.
+* B. mô phỏng Monte Carlo.
+* C. chuẩn hóa một biến ngẫu nhiên.

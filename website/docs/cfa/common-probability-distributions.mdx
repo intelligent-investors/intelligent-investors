@@ -715,5 +715,82 @@ $$
 
 Given investment results over a 2-year period, we can calculate the 2-year continuously compounded return and divide by two to get the annual rate. Consider an investment that appreciated from \$1,000 to \$1,221.40 over a 2-year period. The 2-year continuously compounded rate is $$\ln(1,221.40 / 1,000) = 20\%$$, and the annual continuously compounded rate ($$R_{CC}$$) is $$20\% / 2 = 10\%$$.
 
+### P: Explain Monte Carlo simulation and describe its applications and limitations.
 
+**Monte Carlo simulation** is a technique based on the repeated generation of one or more risk factors that affect security values, in order to generate a distribution of security values. For each of the risk factors, the analyst must specify the parameters of the probability distribution that the risk factor is assumed to follow. A computer is then used to generate random values for each risk factor based on its assumed probability distributions. Each set of randomly generated risk factors is used with a pricing model to value the security. This procedure is repeated many times (100s, 1,000s, or 10,000s), and the distribution of simulated asset values is used to draw inferences about the expected (mean) value of the security and possibly the variance of security values about the mean as well.
 
+As an example, consider the valuation of stock options that can only be exercised on a particular date. The main risk factor is the value of the stock itself, but interest rates could affect the valuation as well. The simulation procedure would be to:
+
+1. Specify the probability distributions of stock prices and of the relevant interest rate, as well as the parameters (mean, variance, possibly skewness) of the distributions.
+2. Randomly generate values for both stock prices and interest rates.
+3. Value the options for each pair of risk factor values.
+4. After many iterations, calculate the mean option value and use that as your estimate of the option’s value.
+
+**Monte Carlo simulation is used to:**
+
+- Value complex securities.
+- Simulate the profits/losses from a trading strategy.
+- Calculate estimates of value at risk (VaR) to determine the riskiness of a portfolio of assets and liabilities.
+- Simulate pension fund assets and liabilities over time to examine the variability of the difference between the two.
+- Value portfolios of assets that have nonnormal returns distributions.
+
+**The limitations of Monte Carlo simulation** are that it is fairly complex and will provide answers that are no better than the assumptions about the distributions of the risk factors and the pricing/valuation model that is used. Also, simulation is not an analytic method, but a statistical one, and cannot provide the insights that analytic methods can.
+
+### Q: Compare Monte Carlo simulation and historical simulation.
+
+**Historical simulation** is based on actual changes in value or actual changes in risk factors over some prior period. Rather than model the distribution of risk factors, as in Monte Carlo simulation, the set of all changes in the relevant risk factors over some prior period is used. Each iteration of the simulation involves randomly selecting one of these past changes for each risk factor and calculating the value of the asset or portfolio in question, based on those changes in risk factors.
+
+Historical simulation has the advantage of using the actual distribution of risk factors so that the distribution of changes in the risk factors does not have to be estimated. It suffers from the fact that past changes in risk factors may not be a good indication of future changes. Events that occur infrequently may not be reflected in historical simulation results unless the events occurred during the period from which the values for risk factors are drawn. An additional limitation of historical simulation is that it cannot address the sort of “what if” questions that Monte Carlo simulation can. With Monte Carlo simulation, we can investigate the effect on the distribution of security/portfolio values if we increase the variance of one of the risk factors by 20%; with historical simulation we cannot do this.
+
+### 📝 QUIZ
+
+To best evaluate your performance, enter your quiz answers online.
+
+Use the following table to answer Questions 1 and 2.
+
+| Portfolio  | Portfolio A | Portfolio B | Portfolio C |
+|------------|-------------|-------------|-------------|
+| $$E(R_p)$$ | 5%          | 11%         | 18%         |
+| $$\sigma_p$$ | 8%          | 21%         | 40%         |
+
+1. Given a threshold level of return of 4%, use Roy’s safety-first criterion to choose the optimal portfolio. Portfolio:
+
+* A. A.
+* B. B.
+* C. C.
+
+2. Given a threshold level of return of 0%, use Roy’s safety-first criterion to choose the optimal portfolio. Portfolio:
+
+* A. A.
+* B. B.
+* C. C.
+
+3. Portfolio A has a safety-first ratio of 1.3 with a threshold return of 2%. What is the shortfall risk for a threshold return of 2%?
+
+* A. 9.68%.
+* B. 40.30%.
+* C. 90.30%.
+
+4. For a lognormal distribution:
+
+* A. the mean equals the median.
+* B. the probability of a negative outcome is zero.
+* C. the probability of a positive outcome is 50%.
+
+5. If a stock’s initial price is \$20 and its year-end price is \$23, then its continuously compounded annual rate of return is:
+
+* A. 13.64%.
+* B. 13.98%.
+* C. 15.00%.
+
+6. A stock doubled in value last year. Its continuously compounded return over the period was closest to:
+
+* A. 18.2%.
+* B. 69.3%.
+* C. 100.0%.
+
+7. Using hypothesized parameter values and a random number generator to study the behavior of certain asset returns is part of:
+
+* A. historical analysis.
+* B. Monte Carlo simulation.
+* C. standardizing a random variable.
