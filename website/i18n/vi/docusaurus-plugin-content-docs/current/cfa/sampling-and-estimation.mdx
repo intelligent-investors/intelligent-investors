@@ -1,0 +1,15 @@
+# Lấy mẫu và Ước lượng
+
+Chủ đề này bao gồm các mẫu ngẫu nhiên và suy luận về các giá trị trung bình của dân số từ dữ liệu mẫu. Điều quan trọng là bạn phải biết định lý giới hạn trung tâm, vì nó cho phép chúng ta sử dụng thống kê mẫu để xây dựng các khoảng tin cậy cho ước lượng điểm của giá trị trung bình dân số. Đảm bảo rằng bạn có thể tính toán các khoảng tin cậy cho giá trị trung bình dân số dựa trên các ước lượng tham số mẫu và mức ý nghĩa, và biết khi nào nên sử dụng thống kê $z$ so với thống kê $t$. Bạn cũng nên hiểu các thủ tục cơ bản để tạo mẫu ngẫu nhiên và nhận ra các dấu hiệu cảnh báo của các sai lệch mẫu khác nhau từ các mẫu không ngẫu nhiên.
+
+## 1: ĐỊNH LÝ GIỚI HẠN TRUNG TÂM VÀ SAI SỐ CHUẨN
+
+Trong nhiều ứng dụng thống kê thực tế, việc nghiên cứu toàn bộ dân số là không khả thi (hoặc không thể). Khi điều này xảy ra, một nhóm con của dân số, được gọi là mẫu, có thể được đánh giá. Dựa trên mẫu này, các tham số của dân số cơ bản có thể được ước lượng.
+
+Ví dụ, thay vì cố gắng đo lường hiệu suất của thị trường chứng khoán Mỹ bằng cách quan sát hiệu suất của tất cả khoảng 10.000 cổ phiếu giao dịch ở Hoa Kỳ tại bất kỳ thời điểm nào, có thể đo lường hiệu suất của nhóm con 500 cổ phiếu trong S&P 500. Kết quả phân tích thống kê của mẫu này sau đó có thể được sử dụng để rút ra kết luận về toàn bộ dân số cổ phiếu của Mỹ.
+
+### A: Định nghĩa lấy mẫu ngẫu nhiên đơn giản và phân phối mẫu.
+
+### B: Giải thích sai số lấy mẫu.
+
+**Lấy mẫu ngẫu nhiên đơn giản** là một phương pháp chọn mẫu sao cho mỗi mục hoặc người trong dân số được nghiên cứu có cùng khả năng được bao gồm trong mẫu. Ví dụ về lấy mẫu ngẫu nhiên đơn giản, giả sử bạn muốn chọn một mẫu gồm năm mục từ một nhóm gồm 50 mục. Điều này có thể thực hiện bằng cách đánh số từng mục trong số 50 mục, đặt chúng vào một cái mũ, và lắc cái mũ. Tiếp theo, một số có thể được rút ngẫu nhiên từ cái mũ. Lặp lại quá trình này (thí nghiệm) bốn lần nữa sẽ tạo ra một tập hợp gồm năm số. Năm số được rút ra (mục) này tạo thành một mẫu ngẫu nhiên đơn giản từ dân số. Trong các ứng dụng như thế này, một bảng số ngẫu nhiên hoặc máy tính ngẫu nhiên có thể được sử dụng.
