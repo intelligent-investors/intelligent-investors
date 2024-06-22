@@ -201,3 +201,59 @@ Bất kể chúng ta quan tâm đến ước lượng điểm hay khoảng tin c
 * C. Tính nhất quán.
 
 ## 2: KHOẢNG TIN CẬY VÀ PHÂN PHỐI t
+
+### H: Phân biệt giữa ước lượng điểm và ước lượng khoảng tin cậy của một tham số tổng thể.
+
+**Ước lượng điểm** là các giá trị đơn lẻ (mẫu) được sử dụng để ước lượng các tham số tổng thể. Công thức được sử dụng để tính toán ước lượng điểm được gọi là bộ ước lượng. Ví dụ, trung bình mẫu, $$ \bar{x} $$, là một bộ ước lượng của trung bình tổng thể $$ \mu $$ và được tính bằng công thức quen thuộc:
+
+$$
+\bar{x} = \frac{\sum x}{n}
+$$
+
+Giá trị được tạo ra với phép tính này cho một mẫu nhất định được gọi là **ước lượng điểm** của trung bình.
+
+Một **khoảng tin cậy** là một khoảng giá trị mà trong đó tham số tổng thể được kỳ vọng nằm. Việc xây dựng các khoảng tin cậy sẽ được mô tả sau trong phần ôn tập chủ đề này.
+
+### I: Mô tả các thuộc tính của phân phối t của Student và tính toán và giải thích các bậc tự do của nó.
+
+**Phân phối t của Student**, hay đơn giản là **phân phối t**, là một phân phối xác suất có hình chuông và đối xứng quanh giá trị trung bình của nó. Đây là phân phối thích hợp để sử dụng khi xây dựng các khoảng tin cậy dựa trên **mẫu nhỏ** (n < 30) từ các tổng thể có **phương sai chưa biết** và phân phối chuẩn, hoặc gần chuẩn. Nó cũng có thể thích hợp sử dụng **phân phối t** khi phương sai tổng thể chưa biết và kích thước mẫu đủ lớn để định lý giới hạn trung tâm đảm bảo rằng phân phối mẫu gần như phân phối chuẩn.
+
+**Phân phối t của Student có các thuộc tính sau:**
+
+- Nó đối xứng.
+- Nó được xác định bởi một tham số duy nhất, **bậc tự do** ($df$), nơi các bậc tự do bằng số quan sát mẫu trừ 1, $n – 1$, cho các trung bình mẫu.
+- Nó có nhiều xác suất ở đuôi (“đuôi dày hơn”) hơn phân phối chuẩn.
+- Khi số bậc tự do (kích thước mẫu) tăng lên, hình dạng của phân phối $t$ ngày càng gần với phân phối chuẩn.
+
+Khi **so sánh với phân phối chuẩn**, phân phối t phẳng hơn với nhiều diện tích dưới đuôi hơn (tức là nó có đuôi dày hơn). Tuy nhiên, khi số bậc tự do của phân phối t tăng, hình dạng của nó gần hơn với phân phối chuẩn.
+
+Số bậc tự do cho các kiểm định dựa trên trung bình mẫu là $n – 1$ vì, khi biết trung bình, chỉ có $n – 1$ quan sát có thể là duy nhất.
+
+**Phân phối t** là một phân phối đối xứng quanh điểm không. Hình dạng của phân phối t phụ thuộc vào số bậc tự do, và số bậc tự do dựa trên số lượng quan sát mẫu. Phân phối t dẹt hơn và có đuôi dày hơn so với phân phối chuẩn tắc. Khi số lượng quan sát tăng lên (tức là số bậc tự do tăng lên), phân phối $t$ trở nên nhọn hơn và đuôi của nó mỏng hơn. Khi số bậc tự do tăng lên vô hạn, phân phối t hội tụ đến phân phối chuẩn tắc ($z$-phân phối). Độ dày của đuôi so với đuôi của $z$-phân phối quan trọng trong việc kiểm định giả thuyết vì đuôi dày hơn nghĩa là có nhiều quan sát ở xa trung tâm phân phối (nhiều giá trị ngoại lai hơn). Do đó, việc kiểm định giả thuyết sử dụng phân phối $t$ làm cho khó bác bỏ giả thuyết không hơn so với việc kiểm định giả thuyết sử dụng phân phối $z$.
+
+Bảng sau đây chứa các giá trị tới hạn một phía cho phân phối $t$ ở mức ý nghĩa 0.05 và 0.025 với các bậc tự do khác nhau ($df$). Lưu ý rằng, không giống như bảng $z$, các giá trị $t$ nằm trong bảng, và các xác suất nằm ở các tiêu đề cột. Cũng lưu ý rằng mức ý nghĩa của kiểm định $t$ tương ứng với *các xác suất một phía, p*, ở đầu các cột trong bảng t.
+
+**Bảng các giá trị tới hạn t**
+
+| **Xác suất một phía, p**    |||
+|-----------------------------|---------|---------|
+| df                          | p = 0.05| p = 0.025|
+| 5                           | 2.015   | 2.571   |
+| 10                          | 1.812   | 2.228   |
+| 15                          | 1.753   | 2.131   |
+| 20                          | 1.725   | 2.086   |
+| 25                          | 1.708   | 2.060   |
+| 30                          | 1.697   | 2.042   |
+| 40                          | 1.684   | 2.021   |
+| 50                          | 1.676   | 2.009   |
+| 60                          | 1.671   | 2.000   |
+| 70                          | 1.667   | 1.994   |
+| 80                          | 1.664   | 1.990   |
+| 90                          | 1.662   | 1.987   |
+| 100                         | 1.660   | 1.984   |
+| 120                         | 1.658   | 1.980   |
+| ∞                           | 1.645   | 1.960   |
+
+Hình sau minh họa các hình dạng khác nhau của phân phối $t$ liên quan đến các bậc tự do khác nhau. Xu hướng là phân phối $t$ càng giống phân phối chuẩn khi số bậc tự do tăng lên. Thực tế, số bậc tự do càng lớn, phần trăm quan sát gần trung tâm phân phối càng lớn và phần trăm quan sát ở đuôi càng nhỏ, đuôi càng mỏng khi số bậc tự do tăng lên. Điều này có nghĩa là các khoảng tin cậy cho một biến ngẫu nhiên theo phân phối $t$ phải rộng hơn (hẹp hơn) khi số bậc tự do ít (nhiều) hơn đối với một mức ý nghĩa nhất định.
+
+**Hình: Các phân phối $t$ với các bậc tự do khác nhau ($\text{df}$)**

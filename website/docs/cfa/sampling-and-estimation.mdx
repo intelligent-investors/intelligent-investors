@@ -201,3 +201,59 @@ Regardless of whether we are concerned with point estimates or confidence interv
 * C. Consistency.
 
 ## 2: CONFIDENCE INTERVALS AND t-DISTRIBUTION
+
+### H: Distinguish between a point estimate and a confidence interval estimate of a population parameter.
+
+**Point estimates** are single (sample) values used to estimate population parameters. The formula used to compute the point estimate is called the estimator. For example, the sample mean, $$ \bar{x} $$, is an estimator of the population mean $$ \mu $$ and is computed using the familiar formula:
+
+$$
+\bar{x} = \frac{\sum x}{n}
+$$
+
+The value generated with this calculation for a given sample is called the **point estimate** of the mean.
+
+A **confidence interval** is a range of values in which the population parameter is expected to lie. The construction of confidence intervals is described later in this topic review.
+
+### I: Describe properties of Student’s t-distribution and calculate and interpret its degrees of freedom.
+
+**Student’s t-distribution**, or simply the **t-distribution**, is a bell-shaped probability distribution that is symmetrical about its mean. It is the appropriate distribution to use when constructing confidence intervals based on **small samples** (n < 30) from populations with **unknown variance** and a normal, or approximately normal, distribution. It may also be appropriate to use the **t-distribution** when the population variance is unknown and the sample size is large enough that the central limit theorem will assure that the sampling distribution is approximately normal.
+
+**Student’s t-distribution has the following properties:**
+
+- It is symmetrical.
+- It is defined by a single parameter, the **degrees of freedom** ($df$), where the degrees of freedom are equal to the number of sample observations minus 1, $n – 1$, for sample means.
+- It has more probability in the tails (“fatter tails”) than the normal distribution.
+- As the degrees of freedom (the sample size) gets larger, the shape of the t-distribution more closely approaches a standard normal distribution.
+
+When **compared to the normal distribution**, the t-distribution is flatter with more area under the tails (i.e., it has fatter tails). As the degrees of freedom for the t-distribution increase, however, its shape approaches that of the normal distribution.
+
+The degrees of freedom for tests based on sample means are $n – 1$ because, given the mean, only $n – 1$ observations can be unique.
+
+The **t-distribution** is a symmetrical distribution that is centered about zero. The shape of the t-distribution is dependent on the number of degrees of freedom, and degrees of freedom are based on the number of sample observations. The t-distribution is flatter and has thicker tails than the standard normal distribution. As the number of observations increases (i.e., the degrees of freedom increase), the $t$-distribution becomes more spiked and its tails become thinner. As the number of degrees of freedom increases without bound, the t-distribution converges to the standard normal distribution ($z$-distribution). The thickness of the tails relative to those of the $z$-distribution is important in hypothesis testing because thicker tails mean more observations away from the center of the distribution (more outliers). Hence, hypothesis testing using the $t$-distribution makes it more difficult to reject the null relative to hypothesis testing using the $z$-distribution.
+
+The following table contains one-tailed critical values for the $t$-distribution at the 0.05 and 0.025 levels of significance with various degrees of freedom ($df$). Note that, unlike the $z$-table, the $t$-values are contained within the table, and the probabilities are located at the column headings. Also note that the level of significance of a $t$-test corresponds to the *one-tailed probabilities, p*, that head the columns in the t-table.
+
+**Table of Critical t-Values**
+
+| **One-Tailed Probabilities, p** |||
+|-----------------------------|---------|---------|
+| df                          | p = 0.05| p = 0.025|
+| 5                           | 2.015   | 2.571   |
+| 10                          | 1.812   | 2.228   |
+| 15                          | 1.753   | 2.131   |
+| 20                          | 1.725   | 2.086   |
+| 25                          | 1.708   | 2.060   |
+| 30                          | 1.697   | 2.042   |
+| 40                          | 1.684   | 2.021   |
+| 50                          | 1.676   | 2.009   |
+| 60                          | 1.671   | 2.000   |
+| 70                          | 1.667   | 1.994   |
+| 80                          | 1.664   | 1.990   |
+| 90                          | 1.662   | 1.987   |
+| 100                         | 1.660   | 1.984   |
+| 120                         | 1.658   | 1.980   |
+| ∞                           | 1.645   | 1.960   |
+
+The following figure illustrates the different shapes of the $t$-distribution associated with different degrees of freedom. The tendency is for the $t$-distribution to look more and more like the normal distribution as the degrees of freedom increase. Practically speaking, the greater the degrees of freedom, the greater the percentage of observations near the center of the distribution and the lower the percentage of observations in the tails, which are thinner as degrees of freedom increase. This means that confidence intervals for a random variable that follows a $t$-distribution must be wider (narrower) when the degrees of freedom are less (more) for a given significance level.
+
+**Figure: $t$-Distributions for Different Degrees of Freedom ($\text{df}$)**
