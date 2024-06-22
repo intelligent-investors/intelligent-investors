@@ -106,12 +106,98 @@ $$
 Điều này có nghĩa là nếu chúng ta lấy tất cả các mẫu có kích thước 30 từ các mức lợi nhuận hàng tháng của McCreary và tạo ra phân phối mẫu của các trung bình mẫu, trung bình sẽ là 2% với sai số chuẩn là 3.6%.
 :::
 
-:::info[**VÍ DỤ**: Sai số chuẩn của trung bình mẫu (độ lệch chuẩn tổng thể chưa biết)]
-Tiếp tục với ví dụ của chúng ta, giả sử rằng thay vì kích thước mẫu là 30, chúng ta lấy một mẫu của 200 mức lợi nhuận hàng tháng gần đây của McCreary, Inc. Để làm nổi bật ảnh hưởng của kích thước mẫu đối với sai số chuẩn mẫu, hãy giả định rằng trung bình lợi nhuận và độ lệch chuẩn của mẫu lớn hơn này vẫn là 2% và 20%. Bây giờ, tính toán sai số chuẩn của trung bình mẫu cho mẫu 200 mức lợi nhuận.
+:::info[**VÍ DỤ**: Sai số chuẩn của trung bình mẫu (phương sai tổng thể không xác định)]
+Tiếp tục với ví dụ của chúng ta, giả sử rằng thay vì kích thước mẫu là 30, chúng ta lấy mẫu của 200 lợi nhuận hàng tháng trước đây của McCreary, Inc. Để làm nổi bật ảnh hưởng của kích thước mẫu đến sai số chuẩn mẫu, hãy giả định rằng lợi nhuận trung bình và độ lệch chuẩn của mẫu lớn hơn này vẫn là 2% và 20%. Bây giờ, tính sai số chuẩn của trung bình mẫu cho mẫu 200 lợi nhuận.
 
-**Trả lời:**
+**Câu trả lời:**
+
+Sai số chuẩn của trung bình mẫu được tính như sau:
 
 $$
-\text{To be calculated}
+s_{\bar{x}} = \frac{s}{\sqrt{n}} = \frac{20\%}{\sqrt{200}} = 1.4\%
 $$
 :::
+
+Kết quả của hai ví dụ trước minh họa một thuộc tính quan trọng của các phân phối mẫu. Lưu ý rằng giá trị của sai số chuẩn của trung bình mẫu giảm từ 3.6% xuống 1.4% khi kích thước mẫu tăng từ 30 lên 200. Điều này là do khi kích thước mẫu tăng lên, trung bình mẫu gần hơn, trung bình, đến trung bình thực của tổng thể. Nói cách khác, phân phối của các trung bình mẫu quanh trung bình tổng thể ngày càng nhỏ hơn, do đó sai số chuẩn của trung bình mẫu giảm.
+
+:::note[**LƯU Ý CỦA GIÁO SƯ**]
+Tôi nhận được rất nhiều câu hỏi về việc khi nào sử dụng $$\sigma$$ và $$\sigma / \sqrt{n}$$. Chỉ cần nhớ rằng độ lệch chuẩn của các trung bình của nhiều mẫu nhỏ hơn độ lệch chuẩn của các quan sát đơn lẻ. Nếu độ lệch chuẩn của lợi nhuận cổ phiếu hàng tháng là 2%, thì sai số chuẩn (độ lệch chuẩn) của lợi nhuận trung bình hàng tháng trong sáu tháng tới là $$2\% / \sqrt{6} = 0.82\%$$. Trung bình của một số quan sát của một biến ngẫu nhiên sẽ ít phân tán hơn (có độ lệch chuẩn thấp hơn) xung quanh giá trị kỳ vọng so với một quan sát đơn lẻ của biến ngẫu nhiên đó.
+:::
+
+### G: Xác định và mô tả các thuộc tính mong muốn của một ước lượng.
+
+Bất kể chúng ta quan tâm đến ước lượng điểm hay khoảng tin cậy, có một số thuộc tính thống kê làm cho một số ước lượng trở nên mong muốn hơn những ước lượng khác. Các thuộc tính mong muốn của một ước lượng là không chệch, hiệu quả và nhất quán.
+
+- Một ước lượng **không chệch** là ước lượng mà giá trị kỳ vọng của nó bằng với tham số mà bạn đang cố gắng ước lượng. Ví dụ, vì giá trị kỳ vọng của trung bình mẫu bằng với trung bình tổng thể $$\mathbb{E}(\bar{x}) = \mu$$, trung bình mẫu là một ước lượng không chệch của trung bình tổng thể.
+- Một ước lượng không chệch cũng **hiệu quả** nếu phương sai của phân phối mẫu của nó nhỏ hơn tất cả các ước lượng không chệch khác của tham số mà bạn đang cố gắng ước lượng. Ví dụ, trung bình mẫu là một ước lượng không chệch và hiệu quả của trung bình tổng thể.
+- Một ước lượng **nhất quán** là ước lượng mà độ chính xác của ước lượng tham số tăng lên khi kích thước mẫu tăng lên. Khi kích thước mẫu tăng, sai số chuẩn của trung bình mẫu giảm và phân phối mẫu gần hơn với trung bình tổng thể. Thực tế, khi kích thước mẫu tiến tới vô hạn, sai số chuẩn tiến tới không.
+
+### 📝 LUYỆN TẬP
+
+1. Một mẫu ngẫu nhiên đơn giản là một mẫu được rút ra theo cách mà mỗi thành viên của quần thể có:
+
+* A. một số cơ hội được chọn vào mẫu.
+* B. cơ hội bằng nhau để được bao gồm trong mẫu.
+* C. cơ hội 1% để được bao gồm trong mẫu.
+
+2. Phân phối mẫu của một thống kê là phân phối xác suất tạo thành từ tất cả các:
+
+* A. quan sát từ quần thể cơ bản.
+* B. thống kê mẫu được tính từ các mẫu có kích thước khác nhau được rút ra từ cùng một quần thể.
+* C. thống kê mẫu được tính từ các mẫu có cùng kích thước được rút ra từ cùng một quần thể.
+
+3. Sai số lấy mẫu được định nghĩa là:
+
+* A. lỗi xảy ra khi rút ra một mẫu có ít hơn 30 phần tử.
+* B. lỗi xảy ra trong quá trình thu thập, ghi chép và lập bảng dữ liệu.
+* C. sự khác biệt giữa giá trị của một thống kê mẫu và giá trị của tham số quần thể tương ứng.
+
+4. Tuổi trung bình của tất cả các ứng viên CFA là 28 năm. Tuổi trung bình của một mẫu ngẫu nhiên gồm 100 ứng viên được tìm thấy là 26.5 năm. Sự khác biệt 1.5 năm này được gọi là:
+
+* A. lỗi ngẫu nhiên.
+* B. sai số lấy mẫu.
+* C. lỗi quần thể.
+
+5. Mẫu tỷ lệ nợ/vốn chủ sở hữu của 25 ngân hàng niêm yết công khai tại Hoa Kỳ tính đến cuối năm tài chính 2003 là một ví dụ của:
+
+* A. ước tính điểm.
+* B. dữ liệu cắt ngang.
+* C. mẫu ngẫu nhiên phân tầng.
+
+6. Để áp dụng định lý giới hạn trung tâm cho phân phối mẫu của trung bình mẫu, mẫu thường được coi là lớn nếu $$n$$ lớn hơn:
+
+* A. 20.
+* B. 25.
+* C. 30.
+
+7. Nếu $$n$$ lớn và độ lệch chuẩn của quần thể không biết, sai số chuẩn của phân phối mẫu của trung bình mẫu bằng:
+
+* A. độ lệch chuẩn mẫu chia cho kích thước mẫu.
+* B. độ lệch chuẩn quần thể nhân với kích thước mẫu.
+* C. độ lệch chuẩn mẫu chia cho căn bậc hai của kích thước mẫu.
+
+8. Sai số chuẩn của phân phối mẫu của trung bình mẫu cho một kích thước mẫu là $$n$$ được rút ra từ một quần thể có trung bình là $$\mu$$ và độ lệch chuẩn là $$\sigma$$ là:
+
+* A. độ lệch chuẩn mẫu chia cho kích thước mẫu.
+* B. độ lệch chuẩn mẫu chia cho căn bậc hai của kích thước mẫu.
+* C. độ lệch chuẩn quần thể chia cho căn bậc hai của kích thước mẫu.
+
+9. Giả sử rằng một quần thể có trung bình là 14 với độ lệch chuẩn là 2. Nếu một mẫu ngẫu nhiên gồm 49 quan sát được rút ra từ quần thể này, sai số chuẩn của trung bình mẫu gần đúng là:
+
+* A. 0.04.
+* B. 0.29.
+* C. 2.00.
+
+10. Trung bình của quần thể là 30 và trung bình của một mẫu có kích thước 100 là 28.5. Phương sai của mẫu là 25. Sai số chuẩn của trung bình mẫu gần đúng là:
+
+* A. 0.05.
+* B. 0.25.
+* C. 0.50.
+
+11. Điều nào sau đây ít có khả năng là một đặc tính mong muốn của một ước tính?
+
+* A. Độ tin cậy.
+* B. Hiệu quả.
+* C. Tính nhất quán.
+
+## 2: KHOẢNG TIN CẬY VÀ PHÂN PHỐI t

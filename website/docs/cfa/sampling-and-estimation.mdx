@@ -111,7 +111,93 @@ Continuing with our example, suppose that instead of a sample size of 30, we tak
 
 **Answer:**
 
+The standard error of the sample mean is computed as:
+
 $$
-\text{To be calculated}
+s_{\bar{x}} = \frac{s}{\sqrt{n}} = \frac{20\%}{\sqrt{200}} = 1.4\%
 $$
 :::
+
+The result of the preceding two examples illustrates an important property of sampling distributions. Notice that the value of the standard error of the sample mean decreased from 3.6% to 1.4% as the sample size increased from 30 to 200. This is because as the sample size increases, the sample mean gets closer, on average, to the true mean of the population. In other words, the distribution of the sample means about the population mean gets smaller and smaller, so the standard error of the sample mean decreases.
+
+:::note[**PROFESSOR'S NOTE**]
+I get a lot of questions about when to use $$\sigma$$ and $$\sigma / \sqrt{n}$$. Just remember that the standard deviation of the means of multiple samples is less than the standard deviation of single observations. If the standard deviation of monthly stock returns is 2%, the standard error (deviation) of the average monthly return over the next six months is $$2\% / \sqrt{6} = 0.82\%$$. The average of several observations of a random variable will be less widely dispersed (have lower standard deviation) around the expected value than will a single observation of the random variable.
+:::
+
+### G: Identify and describe desirable properties of an estimator.
+
+Regardless of whether we are concerned with point estimates or confidence intervals, there are certain statistical properties that make some estimators more desirable than others. These desirable properties of an estimator are unbiasedness, efficiency, and consistency.
+
+- An **unbiased** estimator is one for which the expected value of the estimator is equal to the parameter you are trying to estimate. For example, because the expected value of the sample mean is equal to the population mean $$\mathbb{E}(\bar{x}) = \mu$$, the sample mean is an unbiased estimator of the population mean.
+- An unbiased estimator is also **efficient** if the variance of its sampling distribution is smaller than all the other unbiased estimators of the parameter you are trying to estimate. The sample mean, for example, is an unbiased and efficient estimator of the population mean.
+- A **consistent** estimator is one for which the accuracy of the parameter estimate increases as the sample size increases. As the sample size increases, the standard error of the sample mean falls, and the sampling distribution bunches more closely around the population mean. In fact, as the sample size approaches infinity, the standard error approaches zero.
+
+### 📝 QUIZ
+
+1. A simple random sample is a sample drawn in such a way that each member of the population has:
+
+* A. some chance of being selected in the sample.
+* B. an equal chance of being included in the sample.
+* C. a 1% chance of being included in the sample.
+
+2. The sampling distribution of a statistic is the probability distribution made up of all possible:
+
+* A. observations from the underlying population.
+* B. sample statistics computed from samples of varying sizes drawn from the same population.
+* C. sample statistics computed from samples of the same size drawn from the same population.
+
+3. Sampling error is defined as:
+
+* A. an error that occurs when a sample of less than 30 elements is drawn.
+* B. an error that occurs during collection, recording, and tabulation of data.
+* C. the difference between the value of a sample statistic and the value of the corresponding population parameter.
+
+4. The mean age of all CFA candidates is 28 years. The mean age of a random sample of 100 candidates is found to be 26.5 years. The difference of 1.5 years is called:
+
+* A. the random error.
+* B. the sampling error.
+* C. the population error.
+
+5. The sample of debt/equity ratios of 25 publicly traded U.S. banks as of fiscal year-end 2003 is an example of:
+
+* A. a point estimate.
+* B. cross-sectional data.
+* C. a stratified random sample.
+
+6. To apply the central limit theorem to the sampling distribution of the sample mean, the sample is usually considered to be large if $$n$$ is greater than:
+
+* A. 20.
+* B. 25.
+* C. 30.
+
+7. If $$n$$ is large and the population standard deviation is unknown, the standard error of the sampling distribution of the sample mean is equal to:
+
+* A. the sample standard deviation divided by the sample size.
+* B. the population standard deviation multiplied by the sample size.
+* C. the sample standard deviation divided by the square root of the sample size.
+
+8. The standard error of the sampling distribution of the sample mean for a sample size of $$n$$ drawn from a population with a mean of $$\mu$$ and a standard deviation of $$\sigma$$ is:
+
+* A. sample standard deviation divided by the sample size.
+* B. sample standard deviation divided by the square root of the sample size.
+* C. population standard deviation divided by the square root of the sample size.
+
+9. Assume that a population has a mean of 14 with a standard deviation of 2. If a random sample of 49 observations is drawn from this population, the standard error of the sample mean is closest to:
+
+* A. 0.04.
+* B. 0.29.
+* C. 2.00.
+
+10. The population’s mean is 30 and the mean of a sample of size 100 is 28.5. The variance of the sample is 25. The standard error of the sample mean is closest to:
+
+* A. 0.05.
+* B. 0.25.
+* C. 0.50.
+
+11. Which of the following is least likely a desirable property of an estimator?
+
+* A. Reliability.
+* B. Efficiency.
+* C. Consistency.
+
+## 2: CONFIDENCE INTERVALS AND t-DISTRIBUTION
