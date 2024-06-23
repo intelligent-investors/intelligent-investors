@@ -263,3 +263,78 @@ The following figure illustrates the different shapes of the $t$-distribution as
 <div style={{ textAlign: 'center' }}>
 <img src={FigureA} style={{width: 800}} />
 </div>
+
+### J: Calculate and interpret a confidence interval for a population mean, given a normal distribution with 1) a known population variance, 2) an unknown population variance, or 3) an unknown population variance and a large sample size.
+
+Confidence interval estimates result in a range of values within which the actual value of a parameter will lie, given the probability of $$1 - \alpha$$. Here, alpha, $$\alpha$$, is called the level of significance for the confidence interval, and the probability $$1 - \alpha$$ is referred to as the degree of confidence. For example, we might estimate that the population mean of random variables will range from 15 to 25 with a 95$$\%$$ degree of confidence, or at the 5$$\%$$ level of significance.
+
+Confidence intervals are usually constructed by adding or subtracting an appropriate value from the point estimate. In general, confidence intervals take on the following form:
+
+$$
+\text{point estimate} \pm (\text{reliability factor} \times \text{standard error})
+$$
+
+where:
+- point estimate = value of a sample statistic of the population parameter
+- reliability factor = number that depends on the sampling distribution of the point estimate and the probability that the point estimate falls in the confidence interval, $$1 - \alpha$$
+- standard error = standard error of the point estimate
+
+If the population has a normal distribution with a known variance, a confidence interval for the population mean can be calculated as:
+
+$$
+\bar{x} \pm z_{\alpha/2} \frac{\sigma}{\sqrt{n}}
+$$
+
+where:
+- $$\bar{x}$$ = point estimate of the population mean (sample mean).
+- $$z_{\alpha/2}$$ = reliability factor, a standard normal random variable for which the probability in the right-hand tail of the distribution is $$\alpha/2$$. In other words, this is the z-score that leaves $$\alpha/2$$ of probability in the upper tail.
+- $$\frac{\sigma}{\sqrt{n}}$$ = the standard error of the sample mean where $$\sigma$$ is the known standard deviation of the population, and $$n$$ is the sample size.
+
+The most commonly used standard normal distribution reliability factors are:
+
+$$
+z_{\alpha/2} = 1.645 \text{ for 90\% confidence intervals (the significance level is 10\%, 5\% in each tail).}
+$$
+$$
+z_{\alpha/2} = 1.960 \text{ for 95\% confidence intervals (the significance level is 5\%, 2.5\% in each tail).}
+$$
+$$
+z_{\alpha/2} = 2.575 \text{ for 99\% confidence intervals (the significance level is 1\%, 0.5\% in each tail).}
+$$
+
+Do these numbers look familiar? They should! In our review of common probability distributions, we found the probability under the standard normal curve between z = –1.96 and z = +1.96 to be 0.95, or 95\%. Owing to symmetry, this leaves a probability of 0.025 under each tail of the curve beyond z = –1.96 or z = +1.96, for a total of 0.05, or 5\%—just what we need for a significance level of 0.05, or 5\%.
+
+:::info[**EXAMPLE: Confidence interval**]
+Consider a practice exam that was administered to 36 Level I candidates. The mean score on this practice exam was 80. Assuming a population standard deviation equal to 15, construct and interpret a 99\% confidence interval for the mean score on the practice exam for 36 candidates. *Note that in this example the population standard deviation is known, so we don’t have to estimate it.*
+
+**Answer:**
+At a confidence level of 99\%, $$z_{\alpha/2} = 2.00$$ so $$\alpha = 0.02$$, so $$z = 2.58$$. So, the 99\% confidence interval is calculated as follows:
+
+$$
+\bar{x} \pm z_{\alpha/2} \frac{\sigma}{\sqrt{n}} = 80 \pm 2.58 \frac{15}{\sqrt{36}} = 80 \pm 6.45
+$$
+
+Thus, the 99\% confidence interval ranges from 73.55 to 86.45.
+:::
+
+:::info[**EXAMPLE: Confidence intervals for a population mean and for a single observation**]
+Annual returns on energy stocks are approximately normally distributed with a mean of 9\% and standard deviation of 6\%. Construct a 90\% confidence interval for the annual returns of a randomly selected energy stock and a 90\% confidence interval for the mean of the annual returns for a sample of 12 energy stocks.
+
+**Answer:**
+A 90\% confidence interval for a single observation is 1.645 standard deviations from the sample mean.
+
+$$
+9\% \pm 1.645(6\%) = -0.87\% \text{ to } 18.87\%
+$$
+
+A 90\% confidence interval for the population mean is 1.645 standard errors from the sample mean.
+
+$$
+9\% \pm 1.645 \left( \frac{6\%}{\sqrt{12}} \right) = 6.15\% \text{ to } 11.85\%
+$$
+:::
+
+Confidence intervals can be interpreted from a probabilistic perspective or a practical perspective. With regard to the outcome of the $\text{CFA}^\circledR$ practice exam example, these two perspectives can be described as follows:
+
+- **Probabilistic interpretation.** After repeatedly taking samples of CFA candidates, administering the practice exam, and constructing confidence intervals for each sample’s mean, 99\% of the resulting confidence intervals will, in the long run, include the population mean.
+- **Practical interpretation.** We are 99\% confident that the population mean score is between 73.55 and 86.45 for candidates from this population.
