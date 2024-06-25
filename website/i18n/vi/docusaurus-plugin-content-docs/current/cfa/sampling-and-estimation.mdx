@@ -264,3 +264,114 @@ Hình sau minh họa các hình dạng khác nhau của phân phối $t$ liên q
 <img src={FigureA} style={{width: 800}} />
 </div>
 
+### J: Tính toán và diễn giải khoảng tin cậy cho trung bình tổng thể, cho một phân phối chuẩn với 1) phương sai tổng thể đã biết, 2) phương sai tổng thể chưa biết, hoặc 3) phương sai tổng thể chưa biết và cỡ mẫu lớn.
+
+Ước lượng khoảng tin cậy dẫn đến một phạm vi giá trị trong đó giá trị thực của một tham số sẽ nằm, với xác suất là $$1 - \alpha$$. Ở đây, alpha, $$\alpha$$, được gọi là mức ý nghĩa của khoảng tin cậy, và xác suất $$1 - \alpha$$ được gọi là mức độ tin cậy. Ví dụ, chúng ta có thể ước tính rằng trung bình tổng thể của các biến ngẫu nhiên sẽ nằm trong khoảng từ 15 đến 25 với mức độ tin cậy 95$$\%$$, hoặc ở mức ý nghĩa 5$$\%$$.
+
+Khoảng tin cậy thường được xây dựng bằng cách cộng hoặc trừ một giá trị phù hợp từ ước lượng điểm. Nói chung, khoảng tin cậy có dạng:
+
+$$
+\text{ước lượng điểm} \pm (\text{hệ số tin cậy} \times \text{sai số chuẩn})
+$$
+
+trong đó:
+- ước lượng điểm = giá trị của thống kê mẫu của tham số tổng thể
+- hệ số tin cậy = số phụ thuộc vào phân phối mẫu của ước lượng điểm và xác suất rằng ước lượng điểm nằm trong khoảng tin cậy, $$1 - \alpha$$
+- sai số chuẩn = sai số chuẩn của ước lượng điểm
+
+Nếu tổng thể có phân phối chuẩn với phương sai đã biết, khoảng tin cậy cho trung bình tổng thể có thể được tính như sau:
+
+$$
+\bar{x} \pm z_{\alpha/2} \frac{\sigma}{\sqrt{n}}
+$$
+
+trong đó:
+- $$\bar{x}$$ = ước lượng điểm của trung bình tổng thể (trung bình mẫu).
+- $$z_{\alpha/2}$$ = hệ số tin cậy, một biến ngẫu nhiên chuẩn tắc mà xác suất ở đuôi phải của phân phối là $$\alpha/2$$. Nói cách khác, đây là giá trị z để lại $$\alpha/2$$ xác suất ở đuôi trên.
+- $$\frac{\sigma}{\sqrt{n}}$$ = sai số chuẩn của trung bình mẫu, trong đó $$\sigma$$ là độ lệch chuẩn đã biết của tổng thể, và $$n$$ là cỡ mẫu.
+
+Các hệ số tin cậy thường được sử dụng trong phân phối chuẩn tắc chuẩn là:
+
+$$
+z_{\alpha/2} = 1.645 \text{ cho khoảng tin cậy 90\% (mức ý nghĩa là 10\%, 5\% ở mỗi đuôi).}
+$$
+$$
+z_{\alpha/2} = 1.960 \text{ cho khoảng tin cậy 95\% (mức ý nghĩa là 5\%, 2.5\% ở mỗi đuôi).}
+$$
+$$
+z_{\alpha/2} = 2.575 \text{ cho khoảng tin cậy 99\% (mức ý nghĩa là 1\%, 0.5\% ở mỗi đuôi).}
+$$
+
+Những con số này có quen thuộc không? Chúng nên như vậy! Trong phần ôn tập về các phân phối xác suất thông thường, chúng ta đã tìm thấy xác suất dưới đường cong chuẩn tắc giữa z = –1.96 và z = +1.96 là 0.95, hoặc 95\%. Nhờ tính đối xứng, điều này để lại xác suất 0.025 dưới mỗi đuôi của đường cong vượt quá z = –1.96 hoặc z = +1.96, tổng cộng là 0.05, hoặc 5\%—chính xác những gì chúng ta cần cho mức ý nghĩa 0.05, hoặc 5\%.
+
+:::info[**VÍ DỤ: Khoảng tin cậy**]
+Xem xét một kỳ thi thử được thực hiện bởi 36 thí sinh Cấp I. Điểm trung bình trên kỳ thi thử này là 80. Giả sử độ lệch chuẩn của tổng thể là 15, xây dựng và diễn giải khoảng tin cậy 99\% cho điểm trung bình trên kỳ thi thử cho 36 thí sinh. *Lưu ý rằng trong ví dụ này, độ lệch chuẩn của tổng thể đã biết, vì vậy chúng ta không cần ước lượng nó.*
+
+**Trả lời:**
+Ở mức độ tin cậy 99\%, $$z_{\alpha/2} = z_{0.005} = 2.58$$. Vì vậy, khoảng tin cậy 99\% được tính như sau:
+
+$$
+\bar{x} \pm z_{\alpha/2} \frac{\sigma}{\sqrt{n}} = 80 \pm 2.58 \frac{15}{\sqrt{36}} = 80 \pm 6.45
+$$
+
+Vì vậy, khoảng tin cậy 99\% dao động từ 73.55 đến 86.45.
+:::
+
+:::info[**VÍ DỤ: Khoảng tin cậy cho trung bình tổng thể và cho một quan sát đơn lẻ**]
+Lợi nhuận hàng năm của cổ phiếu năng lượng phân phối xấp xỉ theo chuẩn với trung bình là 9\% và độ lệch chuẩn là 6\%. Xây dựng khoảng tin cậy 90\% cho lợi nhuận hàng năm của một cổ phiếu năng lượng được chọn ngẫu nhiên và khoảng tin cậy 90\% cho trung bình lợi nhuận hàng năm của mẫu 12 cổ phiếu năng lượng.
+
+**Trả lời:**
+Khoảng tin cậy 90\% cho một quan sát đơn lẻ là 1.645 độ lệch chuẩn từ trung bình mẫu.
+
+$$
+9\% \pm 1.645(6\%) = -0.87\% \text{ đến } 18.87\%
+$$
+
+Khoảng tin cậy 90\% cho trung bình tổng thể là 1.645 sai số chuẩn từ trung bình mẫu.
+
+$$
+9\% \pm 1.645 \left( \frac{6\%}{\sqrt{12}} \right) = 6.15\% \text{ đến } 11.85\%
+$$
+:::
+
+Khoảng tin cậy có thể được diễn giải theo quan điểm xác suất hoặc quan điểm thực tiễn. Đối với kết quả của ví dụ kỳ thi thực hành $\text{CFA}^\circledR$, hai quan điểm này có thể được mô tả như sau:
+
+- **Diễn giải xác suất.** Sau khi lấy mẫu nhiều lần từ các thí sinh CFA, thực hiện kỳ thi thử, và xây dựng khoảng tin cậy cho trung bình của mỗi mẫu, 99\% của các khoảng tin cậy kết quả sẽ, về lâu dài, bao gồm trung bình tổng thể.
+- **Diễn giải thực tiễn.** Chúng ta tin tưởng 99\% rằng điểm trung bình tổng thể nằm trong khoảng từ 73.55 đến 86.45 cho các thí sinh từ tổng thể này.
+
+#### Khoảng Tin Cậy Cho Trung Bình Tổng Thể: Phân Phối Chuẩn Với Phương Sai Không Biết
+
+Nếu phân phối của tổng thể là phân phối chuẩn với phương sai không biết, chúng ta có thể sử dụng phân phối t để xây dựng khoảng tin cậy:
+
+$$
+\bar{x} \pm t_{\alpha/2} \frac{s}{\sqrt{n}}
+$$
+
+trong đó:
+
+- $$\bar{x}$$ = ước lượng điểm của trung bình tổng thể
+- $$t_{\alpha/2}$$ = hệ số tin cậy (còn gọi là giá trị t hoặc giá trị tới hạn t) tương ứng với biến ngẫu nhiên phân phối t với bậc tự do là $$n - 1$$, trong đó $$n$$ là kích thước mẫu. Diện tích dưới đuôi của phân phối t về bên phải của $$t_{\alpha/2}$$ là $$\alpha/2$$
+- $$\frac{s}{\sqrt{n}}$$ = sai số chuẩn của trung bình mẫu
+- $$s$$ = độ lệch chuẩn mẫu
+
+Không giống như phân phối chuẩn chuẩn tắc, các hệ số tin cậy cho phân phối t phụ thuộc vào kích thước mẫu, vì vậy chúng ta không thể dựa vào một bộ hệ số tin cậy thường dùng. Thay vào đó, các hệ số tin cậy cho phân phối t phải được tra cứu trong bảng phân phối t của Student, như bảng ở cuối cuốn sách này.
+
+Do đuôi của phân phối t tương đối lớn hơn, các khoảng tin cậy được xây dựng bằng cách sử dụng các hệ số tin cậy t $$(t_{\alpha/2})$$ sẽ bảo thủ hơn (rộng hơn) so với các khoảng tin cậy được xây dựng bằng cách sử dụng các hệ số tin cậy z $$(z_{\alpha/2})$$.
+
+:::info[**VÍ DỤ: Khoảng tin cậy**]
+Hãy trở lại với ví dụ của McCrary, Inc. Nhớ lại rằng chúng ta đã lấy mẫu 30 lần lợi tức cổ phiếu hàng tháng gần đây của McCrary, Inc. và xác định rằng lợi tức trung bình là 2% và độ lệch chuẩn mẫu là 20%. Vì phương sai tổng thể không biết, sai số chuẩn của mẫu được ước lượng là:
+$$s_{\bar{x}} = \frac{s}{\sqrt{n}} = \frac{20\%}{\sqrt{30}} = 3.65\%$$
+
+Bây giờ, hãy xây dựng một khoảng tin cậy 95% cho lợi tức trung bình hàng tháng.
+
+**Trả lời**:
+Ở đây, chúng ta sẽ sử dụng hệ số tin cậy vì phương sai tổng thể không biết. Vì có 30 quan sát, bậc tự do là $$n - 1 = 30 - 1 = 29$$. Nhớ rằng, vì đây là kiểm tra hai phía, ở mức độ tin cậy 95%, xác suất dưới mỗi đuôi phải là $$\alpha/2 = 2.5\%$$, tổng cộng là 5%. Vì vậy, tra cứu các xác suất một phía cho phân phối t của Student ở cuối cuốn sách này, chúng ta tìm giá trị t tới hạn (hệ số tin cậy) tại $$\alpha/2 = 0.025$$ và $$n - 1 = 29$$ là $$t_{\alpha/2} = 2.045$$. Do đó, khoảng tin cậy 95% cho trung bình tổng thể là:
+$$2\% \pm (t_{\alpha/2} \cdot s_{\bar{x}}) = 2\% \pm 2.045 (3.65\%) = 2\% \pm 7.4\%$$
+
+Do đó, khoảng tin cậy 95% có giới hạn dưới là -5.4% và giới hạn trên là 9.4%.
+
+Chúng ta có thể diễn giải khoảng tin cậy này bằng cách nói rằng chúng ta tin tưởng 95% rằng lợi tức trung bình hàng tháng của cổ phiếu McCrary nằm trong khoảng từ -5.4% đến 9.4%.
+
+:::note[**GHI CHÚ CỦA GIÁO SƯ**]
+Bạn nên luyện tập tra cứu các hệ số tin cậy (tức là giá trị t tới hạn hoặc giá trị t) trong bảng t. Bước đầu tiên luôn là tính toán bậc tự do, là $$n - 1$$. Bước thứ hai là tìm mức độ alpha hoặc mức ý nghĩa phù hợp. Điều này phụ thuộc vào việc kiểm tra bạn đang quan tâm là một phía (như ví dụ của chúng ta) hay hai phía (như ví dụ của chúng ta).
+:::

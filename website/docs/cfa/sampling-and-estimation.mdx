@@ -275,6 +275,7 @@ $$
 $$
 
 where:
+
 - point estimate = value of a sample statistic of the population parameter
 - reliability factor = number that depends on the sampling distribution of the point estimate and the probability that the point estimate falls in the confidence interval, $$1 - \alpha$$
 - standard error = standard error of the point estimate
@@ -286,6 +287,7 @@ $$
 $$
 
 where:
+
 - $$\bar{x}$$ = point estimate of the population mean (sample mean).
 - $$z_{\alpha/2}$$ = reliability factor, a standard normal random variable for which the probability in the right-hand tail of the distribution is $$\alpha/2$$. In other words, this is the z-score that leaves $$\alpha/2$$ of probability in the upper tail.
 - $$\frac{\sigma}{\sqrt{n}}$$ = the standard error of the sample mean where $$\sigma$$ is the known standard deviation of the population, and $$n$$ is the sample size.
@@ -338,3 +340,40 @@ Confidence intervals can be interpreted from a probabilistic perspective or a pr
 
 - **Probabilistic interpretation.** After repeatedly taking samples of CFA candidates, administering the practice exam, and constructing confidence intervals for each sample’s mean, 99\% of the resulting confidence intervals will, in the long run, include the population mean.
 - **Practical interpretation.** We are 99\% confident that the population mean score is between 73.55 and 86.45 for candidates from this population.
+
+#### Confidence Intervals for the Population Mean: Normal With Unknown Variance
+
+If the distribution of the population is normal with unknown variance, we can use the t-distribution to construct a confidence interval:
+
+$$
+\bar{x} \pm t_{\alpha/2} \frac{s}{\sqrt{n}}
+$$
+
+where:
+
+- $$\bar{x}$$ = the point estimate of the population mean
+- $$t_{\alpha/2}$$ = the reliability factor (a.k.a. t-statistic or critical t-value) corresponding to a t-distributed random variable with $$n - 1$$ degrees of freedom, where $$n$$ is the sample size. The area under the tail of the t-distribution to the right of $$t_{\alpha/2}$$ is $$\alpha/2$$
+- $$\frac{s}{\sqrt{n}}$$ = standard error of the sample mean
+- $$s$$ = sample standard deviation
+
+Unlike the standard normal distribution, the reliability factors for the t-distribution depend on the sample size, so we can’t rely on a commonly used set of reliability factors. Instead, reliability factors for the t-distribution have to be looked up in a table of Student’s t-distribution, like the one at the back of this book.
+
+Owing to the relatively fatter tails of the t-distribution, confidence intervals constructed using t-reliability factors $$(t_{\alpha/2})$$ will be more conservative (wider) than those constructed using z-reliability factors $$(z_{\alpha/2})$$.
+
+:::info[**EXAMPLE: Confidence intervals**]
+Let's return to the McCrary, Inc. example. Recall that we took a sample of the past 30 monthly stock returns for McCrary, Inc. and determined that the mean return was 2% and the sample standard deviation was 20%. Since the population variance is unknown, the standard error of the sample was estimated to be:
+$$s_{\bar{x}} = \frac{s}{\sqrt{n}} = \frac{20\%}{\sqrt{30}} = 3.65\%$$
+
+Now, let’s construct a 95% confidence interval for the mean monthly return.
+
+**Answer**:
+Here, we will use the reliability factor because the population variance is unknown. Since there are 30 observations, the degrees of freedom are $$n - 1 = 30 - 1 = 29$$. Remember, because this is a two-tailed test, at the 95% confidence level, the probability under each tail must be $$\alpha/2 = 2.5\%$$, for a total of 5%. So, referencing the one-sided probabilities for Student’s t-distribution at the back of this book, we find the critical t-value (reliability factor) at $$\alpha/2 = 0.025$$ and $$n - 1 = 29$$ to be $$t_{\alpha/2} = 2.045$$. Thus, the 95% confidence interval for the population mean is:
+$$2\% \pm (t_{\alpha/2} \cdot s_{\bar{x}}) = 2\% \pm 2.045 (3.65\%) = 2\% \pm 7.4\%$$
+
+Thus, the 95% confidence has a lower limit of -5.4% and an upper limit of 9.4%.
+
+We can interpret this confidence interval by saying that we are 95% confident that the population mean monthly return for McCrary stock is between -5.4% and 9.4%.
+
+:::note[**PROFESSOR'S NOTE**]
+You should practice looking up reliability factors (i.e., critical t-values or t-statistics) in a t-table. The first step is always to compute the degrees of freedom, which is $$n - 1$$. The second step is to find the appropriate level of alpha or significance. This depends on whether the test you’re concerned with is one-tailed (like our example) or two-tailed (like our example).
+:::

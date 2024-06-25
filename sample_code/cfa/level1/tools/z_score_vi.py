@@ -28,7 +28,7 @@ hơn hoặc bằng một giá trị nhất định z.
 Hàm CDF ngược, còn gọi là hàm lượng tử, cho biết giá trị z cho một mức xác suất 
 cho trước p.
 """
-
+import argparse
 from scipy.stats import norm
 
 def z_score(probability_level: float) -> float:
@@ -52,8 +52,53 @@ def z_score(probability_level: float) -> float:
     """
     return norm.ppf(probability_level)
 
+def probability_level(z: float) -> float:
+    """Tính mức xác suất cho một z-score đã cho.
+
+    Args:
+        z (float): The z-score.
+    
+    Returns:
+        float: Mức xác suất tương ứng với z-score đó.
+
+    Examples:
+        >>> probability_level(2.5758293035489004)
+        0.995
+        
+        >>> probability_level(0.0)
+        0.5
+
+        >>> probability_level(-1.959963984540054)
+        0.025
+    """
+    return norm.cdf(z)
+
+def main():    
+    parser = argparse.ArgumentParser(description="Tính toán z-score hoặc mức xác suất.")
+    group = parser.add_mutually_exclusive_group(required=False)
+    group.add_argument('-p', '--probability', type=float, help="Tính z-score cho một mức xác suất cho trước.")
+    group.add_argument('-z', '--zscore', type=float, help="Tính mức xác suất cho một z-score cho trước.")
+    args = parser.parse_args()
+
+    if args.probability is not None:
+        if 0 < args.probability < 1:
+            z = z_score(args.probability)
+            print(f"z-score cho mức xác suất {args.probability:.3f}: {z:.6f}")
+        else:
+            print("Lỗi: Mức xác suất phải nằm trong khoảng từ 0 đến 1.")
+    elif args.zscore is not None:
+        p = probability_level(args.zscore)
+        print(f"Mức xác suất cho z-score {args.zscore:.6f}: {p:.6f}")
+    else:
+        probability_levels = [0.5, 0.90, 0.95, 0.99, 0.995]
+        for level in probability_levels:
+            z = norm.ppf(level)
+            print(f"z_score cho mức xác suất {level:.3f}: {z:.6f}")
+        
+        z_scores = [0.0, 1.2815515655446004, 1.6448536269514722, 1.959963984540054, 2.3263478740408408, 2.5758293035489004]
+        for z in z_scores:
+            p = probability_level(z)
+            print(f"Mức xác suất cho z_score {z:.6f}: {p:.6f}")
+
 if __name__ == '__main__':
-    probability_levels = [0.5, 0.90, 0.95, 0.99, 0.995]
-    for level in probability_levels:
-        z = norm.ppf(level)
-        print(f"z_score cho mức xác suất {level:.3f}: {z:.6f}")
+    main()
