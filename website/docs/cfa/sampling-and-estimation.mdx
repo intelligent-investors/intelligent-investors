@@ -377,3 +377,178 @@ We can interpret this confidence interval by saying that we are 95% confident th
 :::note[**PROFESSOR'S NOTE**]
 You should practice looking up reliability factors (i.e., critical t-values or t-statistics) in a t-table. The first step is always to compute the degrees of freedom, which is $$n - 1$$. The second step is to find the appropriate level of alpha or significance. This depends on whether the test you’re concerned with is one-tailed (like our example) or two-tailed (like our example).
 :::
+
+#### Confidence Interval for a Population Mean When the Population Variance Is Unknown Given a Large Sample From Any Type of Distribution
+
+We now know that the $z$-statistic should be used to construct confidence intervals when the population distribution is normal and the variance is known, and the t-statistic should be used when the distribution is normal but the variance is unknown. But what do we do when the distribution is nonnormal?
+
+As it turns out, the size of the sample influences whether or not we can construct the appropriate confidence interval for the sample mean.
+
+- If the distribution is normal but the population variance is unknown, the $z$-statistic can be used as long as the sample size is large ($$n \ge 30$$). We can do this because the central limit theorem assures us that the distribution of the sample mean is approximately normal when the sample is large.
+- If the distribution is nonnormal and the population variance is unknown, the $t$-statistic can be used as long as the sample size is large ($$n \ge 30$$). It is also acceptable to use the $z$-statistic, although use of the t-statistic is more conservative.
+
+This means that if we are sampling from a nonnormal distribution (which is sometimes the case in finance), we cannot create a confidence interval if the sample size is less than 30. So, all else equal, make sure you have a sample of at least 30, and the larger, the better.
+
+:::info[**PROFESSOR'S NOTE**]
+You should commit the criteria in the following table to memory.
+:::
+
+**Table: Criteria for Selecting the Appropriate Test Statistic**
+
+
+|                                   | Test Statistic                | Test Statistic                  |
+|----------------------------------:|-------------------------------|---------------------------------|
+| **When sampling from a:**         | **Small Sample ($$n < 30$$)** | **Large Sample ($$n \ge 30$$)** |
+| Normal distribution with known variance      | z-statistic        | z-statistic                     |
+| Normal distribution with unknown variance    | t-statistic        | t-statistic                     |
+| Nonnormal distribution with known variance   | not available      | z-statistic                     |
+| Nonnormal distribution with unknown variance | not available      | t-statistic                     |
+
+**Note:** The t-statistic is theoretically acceptable here, but use of the t-statistic is more conservative.
+
+All of the preceding analysis depends on the sample we draw from the population being random. If the sample isn't random, the central limit theorem doesn't apply, our estimates won't have the desirable properties, and we can't form unbiased confidence intervals. Surprisingly, creating a random sample is not as easy as one might believe. There are a number of potential mistakes in sampling methods that can bias the results. These biases are particularly problematic in financial research, where available historical data are plentiful, but the creation of new sample data by experimentation is restricted.
+
+### K: Describe the issues regarding selection of the appropriate sample size, data- mining bias, sample selection bias, survivorship bias, look-ahead bias, and time-period bias.
+
+We have seen so far that a larger sample reduces the sampling error and the standard deviation of the sample statistic around its true (population) value. Confidence intervals are narrower when samples are larger and the standard errors of the point estimates of population parameters are less.
+
+There are two limitations on this idea of “larger is better” when it comes to selecting an appropriate sample size. One is that larger samples may contain observations from a different population (distribution). If we include observations which come from a different population (one with a different population parameter), we will not necessarily improve, and may even reduce, the precision of our population parameter estimates. The other consideration is cost. The costs of using a larger sample must be weighed against the value of the increase in precision from the increase in sample size. Both of these factors suggest that the largest possible sample size is not always the most appropriate choice.
+
+#### Data-Mining Bias, Sample Selection Bias, Survivorship Bias, Look-Ahead Bias, and Time-Period Bias
+
+**Data mining** occurs when analysts repeatedly use the same database to search for patterns or trading rules until one that “works” is discovered. For example, empirical research has provided evidence that value stocks appear to outperform growth stocks. Some researchers argue that this anomaly is actually the product of data mining. Because the data set of historical stock returns is quite limited, it is difficult to know for sure whether the difference between value and growth stock returns is a true economic phenomenon, or simply a chance pattern that was stumbled upon after repeatedly looking for any identifiable pattern in the data.
+
+**Data-mining bias** refers to results where the statistical significance of the pattern is overestimated because the results were found through data mining.
+
+When reading research findings that suggest a profitable trading strategy, make sure you heed the following warning signs of data mining:
+
+- Evidence that many different variables were tested, most of which are unreported, until significant ones were found.
+- The lack of any economic theory that is consistent with the empirical results.
+
+The best way to avoid data mining is to test a potentially profitable trading rule on a data set different from the one you used to develop the rule (i.e., use out-of-sample data).
+
+**Sample selection bias** occurs when some data is systematically excluded from the analysis, usually because of the lack of availability. This practice renders the observed sample to be nonrandom, and any conclusions drawn from this sample can’t be applied to the population because the observed sample and the portion of the population that was not observed are different.
+
+**Survivorship bias** is the most common form of sample selection bias. A good example of the existence of survivorship bias in investments is the study of mutual fund performance. Most mutual fund databases, like Morningstar®, only include funds currently in existence—the “survivors.” They do not include funds that have ceased to exist due to closure or merger.
+
+This would not be a problem if the characteristics of the surviving funds and the missing funds were the same; then the sample of survivor funds would still be a random sample drawn from the population of mutual funds. As one would expect, however, and as evidence has shown, the funds that are dropped from the sample have lower returns relative to the surviving funds. Thus, the surviving sample is biased toward the better funds (i.e., it is not random). The analysis of a mutual fund sample with survivorship bias will yield results that overestimate the average mutual fund return because the database only includes the better-performing funds. The solution to survivorship bias is to use a sample of funds that all started at the same time and not drop funds that have been dropped from the sample.
+
+**Look-ahead bias** occurs when a study tests a relationship using sample data that was not available on the test date. For example, consider the test of a trading rule that is based on the price-to-book ratio at the end of the fiscal year. Stock prices are available for all companies at the same point in time, while end-of-year book values may not be available until 30 to 60 days after the fiscal year ends. In order to account for this bias, a study that uses price-to-book value ratios to test trading strategies might estimate the book value as reported at fiscal year end and the market value two months later.
+
+**Time-period bias** can result if the time period over which the data is gathered is either too short or too long. If the time period is too short, research results may reflect phenomena specific to that time period, or perhaps even data mining. If the time period is too long, the fundamental economic relationships that underlie the results may have changed.
+
+For example, research findings may indicate that small stocks outperformed large stocks during 1980–1985. This may well be the result of time-period bias—in this case, using too short a time period. It’s not clear whether this relationship will continue in the future or if it is just an isolated occurrence.
+
+On the other hand, a study that quantifies the relationship between inflation and unemployment during the period from 1940–2000 will also result in time-period bias—because this period is too long, and it covers a fundamental change in the relationship between inflation and unemployment that occurred in the 1980s. In this case, the data should be divided into two subsamples that span the period before and after the change.
+
+### 📝 QUIZ
+
+1. Which of the following is least likely a property of Student’s t-distribution?  
+
+* A. As the degrees of freedom get larger, the variance approaches zero.  
+* B. It is defined by a single parameter, the degrees of freedom, which is equal to $$n - 1$$.  
+* C. It has more probability in the tails and less at the peak than a standard normal distribution.
+
+2. A random sample of 100 computer store customers spent an average of \$75 at the store. Assuming the distribution is normal and the population standard deviation is \$20, the 95\% confidence interval for the population mean is closest to:  
+
+* A. \$71.08 to \$78.92.  
+* B. \$73.08 to \$80.11.  
+* C. \$54.55 to \$79.44.
+
+3. Best Computers, Inc., sells computers and computer parts by mail. A sample of 25 recent orders showed the mean time taken to ship out these orders was 70 hours with a sample standard deviation of 14 hours. Assuming the population is normally distributed, the 99\% confidence interval for the population mean is:  
+
+* A. 70 ± 2.809 hours.  
+* B. 70 ± 6.28 hours.  
+* C. 70 ± 7.385 hours.
+
+4. What is the most appropriate test statistic for constructing confidence intervals for the population mean when the population is normally distributed, but the variance is unknown?  
+
+* A. The $$z$$-statistic at $$z$$ with $$n$$ degrees of freedom.  
+* B. The $$t$$-statistic at $$t$$ with $$n - 1$$ degrees of freedom.  
+* C. The $$t$$-statistic at $$t$$ with $$n - 1$$ degrees of freedom.
+
+5. When constructing a confidence interval for the population mean of a nonnormal distribution when the population variance is unknown and the sample size is large ($$n > 30$$), an analyst may acceptably use:  
+
+* A. Either a $$z$$-statistic or a $$t$$-statistic.  
+* B. Only a $$z$$-statistic at $$z$$ with $$n$$ degrees of freedom.  
+* C. Only a $$t$$-statistic at $$t$$ with $$n$$ degrees of freedom.
+
+6. Jenny Fox evaluates managers who have a cross-sectional population standard deviation of returns of 8\%. If returns are independent across managers, how large of a sample does Fox need so the standard error of sample means is 1.26\%?  
+
+* A. 7.  
+* B. 30.  
+* C. 40.
+
+7. Annual returns on small stocks have a population mean of 12\% and a population standard deviation of 20.5\%. If the returns are normally distributed, a 90\% confidence interval on mean returns over a 5-year period is:  
+
+* A. 5.40\% to 18.60\%.  
+* B. –2.79\% to 16.76\%.  
+* C. –5.52\% to 29.52\%.
+
+8. An analyst who uses historical data that was not publicly available at the time period being studied will have a sample with:  
+
+* A. Look-ahead bias.  
+* B. Time-period bias.  
+* C. Sample selection bias.
+
+9. Which of the following is most closely associated with survivorship bias?  
+
+* A. Price-to-book studies.  
+* B. Staffed bond sampling studies.  
+* C. Mutual fund performance studies.
+
+### 📝 QUIZ
+
+1. Điều nào sau đây ít có khả năng là một đặc tính của phân phối Student’s t?
+
+* A. Khi bậc tự do càng lớn, phương sai càng tiến đến 0.
+* B. Nó được xác định bởi một tham số duy nhất, bậc tự do, bằng $$n - 1$$.
+* C. Nó có nhiều xác suất ở đuôi và ít ở đỉnh hơn so với phân phối chuẩn.
+
+2. Một mẫu ngẫu nhiên gồm 100 khách hàng của cửa hàng máy tính đã chi tiêu trung bình \$75 tại cửa hàng. Giả sử phân phối là bình thường và độ lệch chuẩn của dân số là \$20, khoảng tin cậy 95\% cho trung bình dân số gần nhất với:  
+
+* A. \$71.08 đến \$78.92.  
+* B. \$73.08 đến \$80.11.  
+* C. \$54.55 đến \$79.44.
+
+3. Best Computers, Inc., bán máy tính và các bộ phận máy tính qua thư. Một mẫu gồm 25 đơn hàng gần đây cho thấy thời gian trung bình để gửi các đơn hàng này là 70 giờ với độ lệch chuẩn mẫu là 14 giờ. Giả sử dân số được phân phối bình thường, khoảng tin cậy 99\% cho trung bình dân số là:  
+
+* A. 70 ± 2.809 giờ.  
+* B. 70 ± 6.28 giờ.  
+* C. 70 ± 7.385 giờ.
+
+4. Thống kê kiểm định nào thích hợp nhất để xây dựng khoảng tin cậy cho trung bình dân số khi dân số được phân phối bình thường, nhưng phương sai chưa biết?  
+
+* A. Thống kê $$z$$ tại $$z$$ với $$n$$ độ tự do.  
+* B. Thống kê $$t$$ tại $$t$$ với $$n - 1$$ độ tự do.  
+* C. Thống kê $$t$$ tại $$t$$ với $$n - 1$$ độ tự do.
+
+5. Khi xây dựng khoảng tin cậy cho trung bình dân số của một phân phối không bình thường khi phương sai dân số chưa biết và kích thước mẫu lớn ($$n > 30$$), một nhà phân tích có thể chấp nhận sử dụng:  
+
+* A. Hoặc thống kê $$z$$ hoặc thống kê $$t$$.  
+* B. Chỉ thống kê $$z$$ tại $$z$$ với $$n$$ độ tự do.  
+* C. Chỉ thống kê $$t$$ tại $$t$$ với $$n$$ độ tự do.
+
+6. Jenny Fox đánh giá các nhà quản lý có độ lệch chuẩn dân số của tỷ suất lợi nhuận là 8\%. Nếu các tỷ suất lợi nhuận độc lập giữa các nhà quản lý, Jenny cần mẫu lớn bao nhiêu để sai số chuẩn của trung bình mẫu là 1.26\%?  
+
+* A. 7.  
+* B. 30.  
+* C. 40.
+
+7. Tỷ suất lợi nhuận hàng năm trên cổ phiếu nhỏ có trung bình dân số là 12\% và độ lệch chuẩn dân số là 20.5\%. Nếu các tỷ suất lợi nhuận được phân phối bình thường, khoảng tin cậy 90\% cho tỷ suất lợi nhuận trung bình trong 5 năm là:  
+
+* A. 5.40\% đến 18.60\%.  
+* B. –2.79\% đến 16.76\%.  
+* C. –5.52\% đến 29.52\%.
+
+8. Một nhà phân tích sử dụng dữ liệu lịch sử không được công khai vào thời kỳ được nghiên cứu sẽ có một mẫu với:  
+
+* A. Thiên lệch xem trước.  
+* B. Thiên lệch thời kỳ.  
+* C. Thiên lệch chọn mẫu.
+
+9. Thiên lệch nào có liên quan chặt chẽ nhất với thiên lệch sống sót?  
+
+* A. Các nghiên cứu giá trị sổ sách.  
+* B. Các nghiên cứu chọn mẫu trái phiếu.  
+* C. Các nghiên cứu về hiệu suất của quỹ tương hỗ.

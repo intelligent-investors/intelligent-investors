@@ -375,3 +375,65 @@ Chúng ta có thể diễn giải khoảng tin cậy này bằng cách nói rằ
 :::note[**GHI CHÚ CỦA GIÁO SƯ**]
 Bạn nên luyện tập tra cứu các hệ số tin cậy (tức là giá trị t tới hạn hoặc giá trị t) trong bảng t. Bước đầu tiên luôn là tính toán bậc tự do, là $$n - 1$$. Bước thứ hai là tìm mức độ alpha hoặc mức ý nghĩa phù hợp. Điều này phụ thuộc vào việc kiểm tra bạn đang quan tâm là một phía (như ví dụ của chúng ta) hay hai phía (như ví dụ của chúng ta).
 :::
+
+#### Khoảng tin cậy cho Trung bình Quần thể Khi Phương sai Quần thể Không biết Được Mẫu Lớn Từ Bất kỳ Loại Phân phối Nào
+
+Chúng ta hiện đã biết rằng thống kê $z$ nên được sử dụng để xây dựng khoảng tin cậy khi phân phối quần thể là chuẩn và phương sai được biết, và thống kê $t$ nên được sử dụng khi phân phối là chuẩn nhưng phương sai không biết. Nhưng chúng ta làm gì khi phân phối không chuẩn?
+
+Hóa ra, kích thước mẫu ảnh hưởng đến việc liệu chúng ta có thể xây dựng khoảng tin cậy thích hợp cho trung bình mẫu hay không.
+
+- Nếu phân phối là chuẩn nhưng phương sai quần thể không biết, thống kê $z$ có thể được sử dụng miễn là kích thước mẫu lớn ($$n \ge 30$$). Chúng ta có thể làm điều này vì định lý giới hạn trung tâm đảm bảo rằng phân phối của trung bình mẫu xấp xỉ chuẩn khi mẫu lớn.
+- Nếu phân phối không chuẩn và phương sai quần thể không biết, thống kê $t$ có thể được sử dụng miễn là kích thước mẫu lớn ($$n \ge 30$$). Cũng có thể chấp nhận sử dụng thống kê $z$, mặc dù sử dụng thống kê $t$ thận trọng hơn.
+
+Điều này có nghĩa là nếu chúng ta lấy mẫu từ một phân phối không chuẩn (đôi khi là trường hợp trong tài chính), chúng ta không thể tạo khoảng tin cậy nếu kích thước mẫu nhỏ hơn 30. Vì vậy, tất cả các yếu tố khác đều như nhau, hãy đảm bảo bạn có một mẫu ít nhất là 30, và càng lớn càng tốt.
+
+:::info[**LƯU Ý CỦA GIÁO SƯ**]
+Bạn nên ghi nhớ các tiêu chí trong bảng sau.
+:::
+
+**Bảng: Tiêu chí Chọn Thống kê Thử nghiệm Thích hợp**
+
+|                                   | Thống kê Thử nghiệm                | Thống kê Thử nghiệm                  |
+|----------------------------------:|------------------------------------|--------------------------------------|
+| **Khi lấy mẫu từ:**               | **Mẫu Nhỏ ($$n < 30$$)**           | **Mẫu Lớn ($$n \ge 30$$)**           |
+| Phân phối chuẩn với phương sai biết      | thống kê z                       | thống kê z                           |
+| Phân phối chuẩn với phương sai không biết| thống kê t                       | thống kê t                           |
+| Phân phối không chuẩn với phương sai biết| không khả dụng                   | thống kê z                           |
+| Phân phối không chuẩn với phương sai không biết| không khả dụng             | thống kê t                           |
+
+**Lưu ý:** Thống kê $t$ về mặt lý thuyết có thể chấp nhận ở đây, nhưng sử dụng thống kê $t$ thận trọng hơn.
+
+Tất cả các phân tích trước đây phụ thuộc vào việc mẫu chúng ta lấy từ quần thể là ngẫu nhiên. Nếu mẫu không ngẫu nhiên, định lý giới hạn trung tâm không áp dụng, ước tính của chúng ta sẽ không có các tính chất mong muốn, và chúng ta không thể tạo các khoảng tin cậy không thiên lệch. Điều ngạc nhiên là, tạo một mẫu ngẫu nhiên không dễ dàng như người ta tin. Có nhiều sai lầm tiềm tàng trong các phương pháp lấy mẫu có thể gây thiên lệch kết quả. Những thiên lệch này đặc biệt gây rắc rối trong nghiên cứu tài chính, nơi dữ liệu lịch sử sẵn có rất nhiều, nhưng việc tạo dữ liệu mẫu mới thông qua thí nghiệm bị hạn chế.
+
+### K: Mô tả các vấn đề liên quan đến việc lựa chọn kích thước mẫu phù hợp, sai lệch do khai thác dữ liệu, sai lệch do lựa chọn mẫu, sai lệch do tồn tại, sai lệch do nhìn trước, và sai lệch do khoảng thời gian.
+
+Chúng ta đã thấy rằng một mẫu lớn hơn sẽ giảm sai số mẫu và độ lệch chuẩn của thống kê mẫu xung quanh giá trị thật (giá trị tổng thể) của nó. Khoảng tin cậy sẽ hẹp hơn khi mẫu lớn hơn và sai số chuẩn của các ước lượng điểm của các tham số tổng thể sẽ ít hơn.
+
+Có hai giới hạn đối với ý tưởng "càng lớn càng tốt" khi chọn kích thước mẫu phù hợp. Một là các mẫu lớn hơn có thể chứa các quan sát từ một tổng thể khác (phân phối khác). Nếu chúng ta bao gồm các quan sát từ một tổng thể khác (một tổng thể có tham số tổng thể khác), chúng ta sẽ không nhất thiết cải thiện, và có thể thậm chí giảm, độ chính xác của các ước lượng tham số tổng thể của mình. Cân nhắc thứ hai là chi phí. Chi phí sử dụng một mẫu lớn hơn phải được cân nhắc với giá trị của việc tăng độ chính xác từ việc tăng kích thước mẫu. Cả hai yếu tố này đều gợi ý rằng kích thước mẫu lớn nhất có thể không phải luôn là lựa chọn phù hợp nhất.
+
+#### Thiên Kiến Khai Phá Dữ Liệu, Thiên Kiến Chọn Mẫu, Thiên Kiến Tồn Tại, Thiên Kiến Nhìn Trước và Thiên Kiến Thời Gian
+
+**Khai phá dữ liệu** xảy ra khi các nhà phân tích liên tục sử dụng cùng một cơ sở dữ liệu để tìm kiếm các mẫu hoặc quy tắc giao dịch cho đến khi phát hiện ra một mẫu "hoạt động". Ví dụ, nghiên cứu thực nghiệm đã cung cấp bằng chứng rằng các cổ phiếu giá trị có vẻ vượt trội hơn các cổ phiếu tăng trưởng. Một số nhà nghiên cứu cho rằng hiện tượng này thực chất là sản phẩm của việc khai phá dữ liệu. Vì tập dữ liệu của lợi nhuận cổ phiếu lịch sử khá hạn chế, nên khó có thể biết chắc chắn liệu sự khác biệt giữa lợi nhuận cổ phiếu giá trị và tăng trưởng có phải là hiện tượng kinh tế thực sự hay chỉ là một mẫu ngẫu nhiên được phát hiện sau khi liên tục tìm kiếm bất kỳ mẫu nào có thể nhận biết trong dữ liệu.
+
+**Thiên kiến khai phá dữ liệu** đề cập đến các kết quả mà độ tin cậy thống kê của mẫu được đánh giá quá cao vì các kết quả được tìm thấy thông qua khai phá dữ liệu.
+
+Khi đọc các phát hiện nghiên cứu gợi ý một chiến lược giao dịch có lợi nhuận, hãy đảm bảo chú ý đến các dấu hiệu cảnh báo sau về việc khai phá dữ liệu:
+
+- Bằng chứng cho thấy nhiều biến số khác nhau đã được thử nghiệm, hầu hết trong số đó không được báo cáo, cho đến khi tìm thấy các biến số có ý nghĩa.
+- Thiếu bất kỳ lý thuyết kinh tế nào phù hợp với các kết quả thực nghiệm.
+
+Cách tốt nhất để tránh khai phá dữ liệu là kiểm tra một quy tắc giao dịch có thể có lợi nhuận trên một tập dữ liệu khác với tập dữ liệu mà bạn đã sử dụng để phát triển quy tắc đó (tức là, sử dụng dữ liệu ngoài mẫu).
+
+**Thiên kiến chọn mẫu** xảy ra khi một số dữ liệu bị loại bỏ một cách có hệ thống khỏi phân tích, thường là do không có sẵn. Thực tiễn này làm cho mẫu quan sát được trở nên không ngẫu nhiên, và bất kỳ kết luận nào rút ra từ mẫu này không thể áp dụng cho dân số vì mẫu quan sát được và phần dân số không được quan sát là khác nhau.
+
+**Thiên kiến tồn tại** là dạng phổ biến nhất của thiên kiến chọn mẫu. Một ví dụ điển hình về sự tồn tại của thiên kiến tồn tại trong đầu tư là nghiên cứu về hiệu suất quỹ tương hỗ. Hầu hết các cơ sở dữ liệu quỹ tương hỗ, như Morningstar®, chỉ bao gồm các quỹ hiện đang tồn tại - các "người sống sót". Họ không bao gồm các quỹ đã ngừng tồn tại do đóng cửa hoặc hợp nhất.
+
+Điều này sẽ không thành vấn đề nếu các đặc điểm của các quỹ sống sót và các quỹ bị thiếu là giống nhau; khi đó mẫu của các quỹ sống sót vẫn sẽ là một mẫu ngẫu nhiên được rút ra từ tổng thể các quỹ tương hỗ. Tuy nhiên, như người ta mong đợi, và như bằng chứng đã chỉ ra, các quỹ bị loại khỏi mẫu có lợi nhuận thấp hơn so với các quỹ sống sót. Do đó, mẫu sống sót bị thiên vị về phía các quỹ tốt hơn (tức là không ngẫu nhiên). Phân tích một mẫu quỹ tương hỗ có thiên kiến tồn tại sẽ cho ra kết quả ước tính quá cao về lợi nhuận trung bình của quỹ tương hỗ vì cơ sở dữ liệu chỉ bao gồm các quỹ hoạt động tốt hơn. Giải pháp cho thiên kiến tồn tại là sử dụng một mẫu của các quỹ bắt đầu vào cùng một thời điểm và không loại bỏ các quỹ đã bị loại khỏi mẫu.
+
+**Thiên kiến nhìn trước** xảy ra khi một nghiên cứu kiểm tra một mối quan hệ sử dụng dữ liệu mẫu không có sẵn vào ngày kiểm tra. Ví dụ, hãy xem xét việc kiểm tra một quy tắc giao dịch dựa trên tỷ lệ giá trị sổ sách vào cuối năm tài chính. Giá cổ phiếu có sẵn cho tất cả các công ty tại cùng một thời điểm, trong khi giá trị sổ sách cuối năm có thể không có sẵn cho đến 30 đến 60 ngày sau khi năm tài chính kết thúc. Để giải quyết thiên kiến này, một nghiên cứu sử dụng tỷ lệ giá trị sổ sách để kiểm tra các chiến lược giao dịch có thể ước tính giá trị sổ sách được báo cáo vào cuối năm tài chính và giá trị thị trường hai tháng sau đó.
+
+**Thiên kiến thời gian** có thể xảy ra nếu khoảng thời gian mà dữ liệu được thu thập quá ngắn hoặc quá dài. Nếu khoảng thời gian quá ngắn, kết quả nghiên cứu có thể phản ánh các hiện tượng cụ thể của khoảng thời gian đó, hoặc có thể là khai phá dữ liệu. Nếu khoảng thời gian quá dài, các mối quan hệ kinh tế cơ bản làm nền tảng cho kết quả có thể đã thay đổi.
+
+Ví dụ, các kết quả nghiên cứu có thể chỉ ra rằng các cổ phiếu nhỏ vượt trội hơn các cổ phiếu lớn trong giai đoạn 1980-1985. Điều này có thể là kết quả của thiên kiến thời gian - trong trường hợp này, sử dụng khoảng thời gian quá ngắn. Không rõ liệu mối quan hệ này sẽ tiếp tục trong tương lai hay chỉ là một sự kiện riêng lẻ.
+
+Mặt khác, một nghiên cứu định lượng mối quan hệ giữa lạm phát và thất nghiệp trong giai đoạn từ 1940-2000 cũng sẽ dẫn đến thiên kiến thời gian - vì giai đoạn này quá dài, và nó bao gồm một sự thay đổi cơ bản trong mối quan hệ giữa lạm phát và thất nghiệp xảy ra vào những năm 1980. Trong trường hợp này, dữ liệu nên được chia thành hai mẫu con bao gồm giai đoạn trước và sau khi thay đổi.
