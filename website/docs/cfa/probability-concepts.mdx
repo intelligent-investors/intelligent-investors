@@ -1,5 +1,6 @@
 import Figure1 from "./images/probability/figure1.png";
 import FigureA from "./images/probability/figureA.png";
+import Quiz from '@site/src/components/Quiz';
 
 # Probability Concepts
 
@@ -181,47 +182,64 @@ $$
 
 ### 📝 QUIZ
 
-1. An event that includes all of the possible outcomes is said to be:
-
-* A. random.
-* B. exclusive.
-* C. exhaustive.
-
-2. Which of the following values cannot be the probability of an event?
-
-* A. 0.00.
-* B. 1.00.
-* C. 1.25.
-
-3. The probability that the DJIA will increase tomorrow is 2/3. The probability of an increase in the DJIA stated as odds is:
-
-* A. two-to-one.
-* B. one-to-three.
-* C. two-to-three.
-
-4. The multiplication rule of probability determines the joint probability of two events as the product of:
-
-* A. two conditional probabilities.
-* B. two unconditional probabilities.
-* C. a conditional probability and an unconditional probability.
-
-5. If events A and B are mutually exclusive, then:
-
-* A. P(A | B) = P(A).
-* B. P(AB) = P(A) x P(B).
-* C. P(A or B) = P(A) + P(B).
-
-6. At a charity ball, 800 names are put into a hat. Four of the names are identical. On a random draw, what is the probability that one of these four names will be drawn?
-
-* A. 0.004.
-* B. 0.005.
-* C. 0.010.
-
-7. Two mutually exclusive events:
-
-* A. always occur together.
-* B. cannot occur together.
-* C. can sometimes occur together.
+<Quiz questions={[
+  {
+    "question": "An event that includes all of the possible outcomes is said to be:",
+    "answer": [
+      { "value": "random", "correct": "false" },
+      { "value": "exclusive", "correct": "false" },
+      { "value": "exhaustive", "correct": "true", "explanation": "An event is said to be exhaustive if it includes all possible outcomes." }
+    ]
+  },
+  {
+    "question": "Which of the following values cannot be the probability of an event?",
+    "answer": [
+      { "value": "0.00", "correct": "false" },
+      { "value": "1.00", "correct": "false" },
+      { "value": "1.25", "correct": "true", "explanation": "Probabilities may range from 0 (meaning no chance of occurrence) through 1 (which means a sure thing)." }
+    ]
+  },
+  {
+    "question": "The probability that the DJIA will increase tomorrow is 2/3. The probability of an increase in the DJIA stated as odds is:",
+    "answer": [
+      { "value": "two-to-one", "correct": "true", "explanation": "Odds for E = P(E)/[1 − P(E)] = 2/1 = two-to-one" },
+      { "value": "one-to-three", "correct": "false" },
+      { "value": "two-to-three", "correct": "false" }
+    ]
+  },
+  {
+    "question": "The multiplication rule of probability determines the joint probability of two events as the product of:",
+    "answer": [
+      { "value": "two conditional probabilities", "correct": "false" },
+      { "value": "two unconditional probabilities", "correct": "false" },
+      { "value": "a conditional probability and an unconditional probability", "correct": "true", "explanation": "By the multiplication rule of probability, the joint probability of two events, P(AB), is the product of a conditional probability, P(A | B), and an unconditional probability, P(B)." }
+    ]
+  },
+  {
+    "question": "If events A and B are mutually exclusive, then:",
+    "answer": [
+      { "value": "P(A | B) = P(A)", "correct": "false" },
+      { "value": "P(AB) = P(A) x P(B)", "correct": "false" },
+      { "value": "P(A or B) = P(A) + P(B)", "correct": "true", "explanation": "There is no intersection of events when events are mutually exclusive. P(A | B) = P(A) × P(B) is only true for independent events. Note that since A and B are mutually exclusive (cannot both happen), P(A | B) and P(AB) must both be equal to zero" }
+    ]
+  },
+  {
+    "question": "At a charity ball, 800 names are put into a hat. Four of the names are identical. On a random draw, what is the probability that one of these four names will be drawn?",
+    "answer": [
+      { "value": "0.004", "correct": "false" },
+      { "value": "0.005", "correct": "true", "explanation": "P(name 1 or name 2 or name 3 or name 4) = 1/800 + 1/800 + 1/800 + 1/800 = 4/800 = 0.005. " },
+      { "value": "0.010", "correct": "false" }
+    ]
+  },
+  {
+    "question": "Two mutually exclusive events:",
+    "answer": [
+      { "value": "always occur together", "correct": "false" },
+      { "value": "cannot occur together", "correct": "true", "explanation": "One or the other may occur, but not both." },
+      { "value": "can sometimes occur together", "correct": "false" }
+    ]
+  }
+]} />
 
 ## 2: CONDITIONAL EXPECTATIONS, CORRELATION
 
@@ -501,23 +519,32 @@ Here, the passage of time seems to be the “third variable” driving the resul
 
 ### 📝 QUIZ
 
-1. Two events are said to be independent if the occurrence of one event:
-
-* A. means that the second event cannot occur.
-* B. means that the second event is certain to occur.
-* C. does not affect the probability of the occurrence of the other event.
-
-2. An analyst estimates that a share price has an 80% probability of increasing if economic growth exceeds 3%, a 40% probability of increasing if economic growth is positive but less than 3%, and a 10% probability of increasing if economic growth is negative. If economic growth has a 25% probability of exceeding 3% and a 25% probability of being negative, what is the probability that the share price increases?
-
-* A. 22.5%
-* B. 42.5%
-* C. 62.5%
-
-3. Possible values for the covariance of two random variables are:
-
-* A. unbounded.
-* B. bounded by 0 and 1.
-* C. bounded by –1 and 1.
+<Quiz questions={[
+  {
+    "question": "Two events are said to be independent if the occurrence of one event:",
+    "answer": [
+      { "value": "means that the second event cannot occur", "correct": "false" },
+      { "value": "means that the second event is certain to occur", "correct": "false" },
+      { "value": "does not affect the probability of the occurrence of the other event", "correct": "true", "explanation": "Two events are said to be independent if the occurrence of one event does not affect the probability of the occurrence of the other event." }
+    ]
+  },
+  {
+    "question": "An analyst estimates that a share price has an 80% probability of increasing if economic growth exceeds 3%, a 40% probability of increasing if economic growth is positive but less than 3%, and a 10% probability of increasing if economic growth is negative. If economic growth has a 25% probability of exceeding 3% and a 25% probability of being negative, what is the probability that the share price increases?",
+    "answer": [
+      { "value": "22.5%", "correct": "false" },
+      { "value": "42.5%", "correct": "true", "explanation": "he three outcomes given for economic growth are mutually exclusive and exhaustive. The probability that economic growth is positive but less than 3% is 100% – 25% – 25% = 50%. Using the total probability rule, the probability that the share price increases is (80%)(25%) + (40%)(50%) + (10%)(25%) = 42.5%" },
+      { "value": "62.5%", "correct": "false" }
+    ]
+  },
+  {
+    "question": "Possible values for the covariance of two random variables are:",
+    "answer": [
+      { "value": "unbounded", "correct": "true", "explanation": "Covariance may have any value. Correlation is bounded by –1 and 1." },
+      { "value": "bounded by 0 and 1", "correct": "false" },
+      { "value": "bounded by –1 and 1", "correct": "false" }
+    ]
+  }
+]} />
 
 ## PORTFOLIO VARIANCE, BAYES, AND COUNTING PROBLEMS
 
@@ -772,45 +799,82 @@ There are five guidelines that may be used to determine which counting method to
 
 ### 📝 QUIZ
 
-1. Given the conditional probabilities in the table below and the unconditional probabilities $$P(Y = 1) = 0.3$$ and $$P(Y = 2) = 0.7$$, what is the expected value of X?
+<Quiz questions={[
+  {
+    "notes": (
+<div>
+  <p><strong>Use the following table for Questions 1.</strong></p>
+  <table>
+    <thead>
 
-| $$ \mathbf{x_i} $$ | $$\mathbf{P(x_i \vert \ Y = 1)} $$  | $$\mathbf{P(x_i \vert \ Y = 2)}$$| 
-|-----------|-------------------------|-------------------------|
-| 0         | 0.2                     | 0.1                     |
-| 5         | 0.4                     | 0.8                     |
-| 10        | 0.4                     | 0.1                     |
-
-* A. 5.0.  
-* B. 5.3.  
-* C. 5.7.
-
-2. A discrete uniform distribution (each event has an equal probability of occurrence) has the following possible outcomes for X: [1, 2, 3, 4]. The variance of this distribution is closest to:
-
-* A. 1.00.  
-* B. 1.25.  
-* C. 2.00.
-
-3. The correlation of returns between Stocks A and B is 0.50. The covariance between these two securities is 0.0043, and the standard deviation of the return of Stock B is 26%. The variance of returns for Stock A is:
-
-* A. 0.0011.  
-* B. 0.0331.  
-* C. 0.2656.
-
-4. An analyst believes Davies Company has a 40\% probability of earning more than \$2 per share. She estimates that the probability that Davies Company’s credit rating will be upgraded is 70% if its earnings per share are greater than \$2 and 20% if its earnings per share are \$2 or less. Given the information that Davies Company’s credit rating has been upgraded, what is the updated probability that its earnings per share are greater than \$2?
-
-* A. 50%.  
-* B. 60%.  
-* C. 70%.
-
-5. Consider a universe of 10 bonds from which an investor will ultimately purchase six bonds for his portfolio. If the order in which he buys these bonds is not important, how many potential 6-bond combinations are there?
-
-* A. 7.  
-* B. 210.  
-* C. 5,040.
-
-6. There are 10 sprinters in the finals of a race. How many different ways can the gold, silver, and bronze medals be awarded?
-
-* A. 120.  
-* B. 720.  
-* C. 1,440.
-
+    </thead>
+    <tbody>
+      <tr>
+        <td>0</td>
+        <td>0.2</td>
+        <td>0.1</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>0.4</td>
+        <td>0.8</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>0.4</td>
+        <td>0.1</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+    )
+  },
+  {
+    "question": "Given the conditional probabilities in the table above and the unconditional probabilities P(Y = 1) = 0.3 and P\(Y = 2\) = 0.7, what is the expected value of X?",
+    "answer": [
+      { "value": "5.0", "correct": "false" },
+      { "value": "5.3", "correct": "true", "explanation": "E(X | Y = 1) = (0.2)(0) + (0.4)(5) + (0.4)(10) = 6; E(X | Y = 2) = (0.1)(0) + (0.8)(5) + (0.1)(10) = 5; E(X) = (0.3)(6) + (0.7)(5) = 5.30" },
+      { "value": "5.7", "correct": "false" }
+    ]
+  },
+  {
+    "question": "A discrete uniform distribution (each event has an equal probability of occurrence) has the following possible outcomes for X: [1, 2, 3, 4]. The variance of this distribution is closest to:",
+    "answer": [
+      { "value": "1.00", "correct": "false" },
+      { "value": "1.25", "correct": "true", "explanation": "Expected value = (1/4)(1 + 2 + 3 + 4) = 2.5; Variance = (1/4)[(1 − 2.5)2 + (2 − 2.5)2 + (3 − 2.5)2 + (4 − 2.5)2] = 1.25; Note that since each observation is equally likely, each has 25% (1/4) chance of occurrence." },
+      { "value": "2.00", "correct": "false" }
+    ]
+  },
+  {
+    "question": "The correlation of returns between Stocks A and B is 0.50. The covariance between these two securities is 0.0043, and the standard deviation of the return of Stock B is 26%. The variance of returns for Stock A is:",
+    "answer": [
+      { "value": "0.0011", "correct": "true", "explanation": "Corr(RA,RB) = Cov(RA,RB)/[σ(RA)][σ(RB)]; σ^2(RA) = [Cov(RA,RB)/(σ(RB)Corr(RA,RB))]^2 = [0.0043/((0.26)(0.5))]^2 = 0.03312 = 0.0011." },
+      { "value": "0.0331", "correct": "false" },
+      { "value": "0.2656", "correct": "false" }
+    ]
+  },
+  {
+    "question": "An analyst believes Davies Company has a 40\% probability of earning more than \\$2 per share. She estimates that the probability that Davies Company’s credit rating will be upgraded is 70% if its earnings per share are greater than \\$2 and 20% if its earnings per share are \\$2 or less. Given the information that Davies Company’s credit rating has been upgraded, what is the updated probability that its earnings per share are greater than \\$2?",
+    "answer": [
+      { "value": "50%", "correct": "false" },
+      { "value": "60%", "correct": "true", "explanation": "This is an application of Bayes’ formula. The updated probability that earnings per share are greater than $2 is 28%/(28%+12%) = 70%" },
+      { "value": "70%", "correct": "false" }
+    ]
+  },
+  {
+    "question": "Consider a universe of 10 bonds from which an investor will ultimately purchase six bonds for his portfolio. If the order in which he buys these bonds is not important, how many potential 6-bond combinations are there?",
+    "answer": [
+      { "value": "7", "correct": "false" },
+      { "value": "210", "correct": "true", "explanation": "nCr = n!/((n−r)!r!)= 10C6 = 10!/((10−6)!6!) = 10!(4!6!) = 210" },
+      { "value": "5,040", "correct": "false" }
+    ]
+  },
+  {
+    "question": "There are 10 sprinters in the finals of a race. How many different ways can the gold, silver, and bronze medals be awarded?",
+    "answer": [
+      { "value": "120", "correct": "false" },
+      { "value": "720", "correct": "true", "explanation": "Since the order of the top three finishers matters, we need to use the permutation formula. 10P3 = 10!/(10−3)!= 720" },
+      { "value": "1,440", "correct": "false" }
+    ]
+  }
+]} />

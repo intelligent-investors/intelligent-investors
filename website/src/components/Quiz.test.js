@@ -7,6 +7,7 @@ describe('Quiz Component', () => {
 
   beforeEach(() => {
     questions = [
+      {notes:"This is a sample note"},
       {
         question: 'What is 2 + 2?',
         answer: [
@@ -24,9 +25,10 @@ describe('Quiz Component', () => {
     expect(screen.getByText(/Quiz/i)).toBeInTheDocument();
   });
 
-  it('should display questions and options', () => {
+  it('should display notes, questions and options', () => {
     render(<Quiz questions={questions} />);
 
+    expect(screen.getByText(/This is a sample note/)).toBeInTheDocument();
     expect(screen.getByText(/What is 2 \+ 2\?/)).toBeInTheDocument();
     expect(screen.getByText(/A. 3/)).toBeInTheDocument();
     expect(screen.getByText(/B. 4/)).toBeInTheDocument();

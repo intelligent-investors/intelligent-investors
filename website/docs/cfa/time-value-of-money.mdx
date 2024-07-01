@@ -5,6 +5,7 @@ import Figure4 from "./images/figure4.png";
 import Figure5 from "./images/figure5.png";
 import Figure6 from "./images/figure6.png";
 import Figure7 from "./images/figure7.png";
+import Quiz from '@site/src/components/Quiz';
 
 # Time Value Of Money
 
@@ -366,41 +367,56 @@ $$
 
 ### 📝 Quiz
 
-1. The amount an investor will have in 15 years if \$1,000 is invested today at an annual interest rate of 9% will be closest to:
-
-* A. \$1,350.
-* B. \$3,518.
-* C. \$3,642.
-
-2. How much must be invested today, at 8% interest, to accumulate enough to retire a \$10,000 debt due seven years from today?
-
-* A. \$5,835.
-* B. \$6,123.
-* C. \$8,794.
-
-3. An investor has just won the lottery and will receive \$50,000 per year at the end of each of the next 20 years. At a 10% interest rate, the present value of the winnings is closest to:
-
-* A. \$425,678.
-* B. \$637,241.
-* C. \$2,863,750.
-
-4. An investor is to receive a 15-year, \$8,000 annuity, with the first payment to be received today. At an 11% discount rate, this annuity's worth today is closest to:
-
-* A. \$55,855.
-* B. \$57,527.
-* C. \$63,855.
-
-5. If \$1,000 is invested today and \$1,000 is invested at the beginning of each of the next three years at 12% interest (compounded annually), the amount an investor will have at the end of the fourth year will be closest to:
-
-* A. \$4,779.
-* B. \$5,353.
-* C. \$6,792.
-
-6. Terry Corporation preferred stocks are expected to pay a \$9 annual dividend forever. If the required rate of return on equivalent investments is 11%, a share of Terry preferred should be worth:
-
-* A. \$81.82.
-* B. \$99.00.
-* C. \$122.22.
+<Quiz questions={[
+  {
+    question: "The amount an investor will have in 15 years if \$1,000 is invested today at an annual interest rate of 9% will be closest to:",
+    answer: [
+      { value: "\$1,350", correct: "false" },
+      { value: "\$3,518", correct: "false"},
+      { value: "\$3,642", correct: "true", explanation: "N = 15; I/Y = 9; PV = –1,000; PMT = 0; CPT → FV = $3,642.48."}
+    ]
+  },
+  {
+    question: "How much must be invested today, at 8% interest, to accumulate enough to retire a \$10,000 debt due seven years from today?",
+    answer: [
+      { value: "\$5,835", correct: "true", explanation: "N = 7; I/Y = 8; FV = –10,000; PMT = 0; CPT → PV = $5,834.90." },
+      { value: "\$6,123", correct: "false"},
+      { value: "\$8,794", correct: "false"}
+    ]
+  },
+  {
+    question: "An investor has just won the lottery and will receive \$50,000 per year at the end of each of the next 20 years. At a 10% interest rate, the present value of the winnings is closest to:",
+    answer: [
+      { value: "\$425,678", correct: "true", explanation: "N = 20; I/Y = 10; PMT = –50,000; FV = 0; CPT → PV = $425,678.19." },
+      { value: "\$637,241", correct: "false"},
+      { value: "\$2,863,750", correct: "false" }
+    ]
+  },
+  {
+    question: "An investor is to receive a 15-year, \$8,000 annuity, with the first payment to be received today. At an 11% discount rate, this annuity's worth today is closest to:",
+    answer: [
+      { value: "\$55,855", correct: "false" },
+      { value: "\$57,527", correct: "false" },
+      { value: "\$63,855", correct: "true", "explanation": "This is an annuity due. Switch to BGN mode: N = 15; PMT = –8,000; I/Y = 11; FV = 0; CPT → PV = 63,854.92. Switch back to END mode" }
+    ]
+  },
+  {
+    question: "If \$1,000 is invested today and \$1,000 is invested at the beginning of each of the next three years at 12% interest (compounded annually), the amount an investor will have at the end of the fourth year will be closest to:",
+    answer: [
+      { value: "\$4,779", correct: "false" },
+      { value: "\$5,353", correct: "true", "explanation": "The key to this problem is to recognize that it is a 4-year annuity due, so switch to BGN mode: N = 4; PMT = –1,000; PV = 0; I/Y = 12; CPT → FV = 5,352.84. Switch back to END mode." },
+      { value: "\$6,792", correct: "false" }
+    ]
+  },
+  {
+    question: "Terry Corporation preferred stocks are expected to pay a \$9 annual dividend forever. If the required rate of return on equivalent investments is 11%, a share of Terry preferred should be worth:",
+    answer: [
+      { value: "\$81.82", correct: "true", explanation: "9 / 0.11 = $81.82." },
+      { value: "\$99.00", correct: "false"},
+      { value: "\$122.22", correct: "false"}
+    ]
+  }
+]} />
 
 ### Uneven Cash Flows
 
@@ -798,57 +814,64 @@ $$
 
 ### 📝 Quiz
 
-1. An analyst estimates that XYZ’s earnings will grow from \$3.00 a share to \$4.50 per share
-over the next eight years. The rate of growth in XYZ’s earnings is closest to:
-
-* A. 4.9%.
-* B. 5.2%.
-* C. 6.7%.
-
-2. If \$5,000 is invested in a fund offering a rate of return of 12% per year, approximately how
-many years will it take for the investment to reach \$10,000?
-
-* A. 4 years.
-* B. 5 years.
-* C. 6 years.
-
-3. An investment is expected to produce the cash flows of \$500, \$200, and \$800 at the end of
-the next three years. If the required rate of return is 12%, the present value of this
-investment is closest to:
-
-* A. $835.
-* B. $1,175.
-* C. $1,235.
-
-4. If \$10,000 is invested today in an account that earns interest at a rate of 9.5%, what is the
-value of the equal withdrawals that can be taken out of the account at the end of each of the
-next five years if the investor plans to deplete the account at the end of the time period?
-
-* A. $2,453.
-* B. $2,604.
-* C. $2,750.
-
-5. Given an 11% rate of return, the amount that must be put into an investment account at the
-end of each of the next 10 years in order to accumulate \$60,000 to pay for a child’s
-education is closest to:
-
-* A. $2,500.
-* B. $3,588.
-* C. $4,432.
-
-6. An investor will receive an annuity of \$4,000 a year for 10 years. The first payment is to be
-received five years from today. At a 9% discount rate, this annuity’s worth today is closest to:
-
-* A. $16,684.
-* B. $18,186.
-* C. $25,671.
-
-7. An investor is looking at a \$150,000 home. If 20% must be put down and the balance is
-financed at 9% over the next 30 years, what is the monthly mortgage payment?
-
-* A. $799.33.
-* B. $895.21.
-* C. $965.55.
+<Quiz questions={[
+  {
+    "question": "$$An analyst estimates that XYZ’s earnings will grow from $3.00 a share to $4.50 per share over the next eight years. The rate of growth in XYZ’s earnings is closest to:$$",
+    "answer": [
+      { "value": "4.9%", "correct": "false" },
+      { "value": "5.2%", "correct": "true", "explanation": "N = 8; PV = –3; FV = 4.50; PMT = 0; CPT → I/Y = 5.1989." },
+      { "value": "6.7%", "correct": "false" }
+    ]
+  },
+  {
+    "question": "If $5,000 is invested in a fund offering a rate of return of 12% per year, approximately how many years will it take for the investment to reach $10,000?",
+    "answer": [
+      { "value": "4 years", "correct": "false" },
+      { "value": "5 years", "correct": "false" },
+      { "value": "6 years", "correct": "true", "explanation": "PV = –5,000; I/Y = 12; FV = 10,000; PMT = 0; CPT → N = 6.12."}
+    ]
+  },
+  {
+    "question": "$$An investment is expected to produce the cash flows of $500, $200, and $800 at the end of the next three years. If the required rate of return is 12%, the present value of this investment is closest to:$$",
+    "answer": [
+      { "value": "$835", "correct": "false" },
+      { "value": "$1,175", "correct": "true", "explanation": "Add up the present values of each single cash flow. PV1 = N = 1; FV = –500; I/Y = 12; CPT → PV = 446.43. PV2 = N = 2; FV = –200; I/Y = 12; CPT → PV = 159.44. PV3 = N = 3; FV = –800; I/Y = 12; CPT → PV = 569.42. Hence, 446.43 + 159.44 + 569.42 = $1,175.29." },
+      { "value": "$1,235", "correct": "false" }
+    ]
+  },
+  {
+    "question": "If $10,000 is invested today in an account that earns interest at a rate of 9.5%, what is the value of the equal withdrawals that can be taken out of the account at the end of each of the next five years if the investor plans to deplete the account at the end of the time period?",
+    "answer": [
+      { "value": "$2,453", "correct": "false" },
+      { "value": "$2,604", "correct": "true", "explanation": "PV = –10,000; I/Y = 9.5; N = 5; FV = 0; CPT → PMT = $2,604.36." },
+      { "value": "$2,750", "correct": "false" }
+    ]
+  },
+  {
+    "question": "Given an 11% rate of return, the amount that must be put into an investment account at the end of each of the next 10 years in order to accumulate $60,000 to pay for a child’s education is closest to:",
+    "answer": [
+      { "value": "$2,500", "correct": "false" },
+      { "value": "$3,588", "correct": "true", "explanation": "N = 10; I/Y = 11; FV = –60,000; PV = 0; CPT → PMT = $3,588.08." },
+      { "value": "$4,432", "correct": "false" }
+    ]
+  },
+  {
+    "question": "An investor will receive an annuity of $4,000 a year for 10 years. The first payment is to be received five years from today. At a 9% discount rate, this annuity’s worth today is closest to:",
+    "answer": [
+      { "value": "$16,684", "correct": "false" },
+      { "value": "$18,186", "correct": "true", "explanation": "Two steps: (1) Find the PV of the 10-year annuity: N = 10; I/Y = 9; PMT = –4,000; FV = 0; CPT → PV = 25,670.63. This is the present value as of the end of Year 4; (2) Discount PV of the annuity back four years: N = 4; PMT = 0; FV = –25,670.63; I/Y = 9; CPT → PV = 18,185.72."},
+      { "value": "$25,671", "correct": "false" }
+    ]
+  },
+  {
+    "question": "An investor is looking at a $150,000 home. If 20% must be put down and the balance is financed at 9% over the next 30 years, what is the monthly mortgage payment?",
+    "answer": [
+      { "value": "$799.33", "correct": "false" },
+      { "value": "$895.21", "correct": "false" },
+      { "value": "$965.55", "correct": "true", "explanation": "N = 30 × 12 = 360; I/Y = 9 / 12 = 0.75; PV = –150,000(1 − 0.2) = –120,000; FV = 0; CPT → PMT = $965.55" }
+    ]
+  }
+]} />
 
 ## References
 

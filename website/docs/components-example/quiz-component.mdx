@@ -6,11 +6,21 @@ Here is a sample quiz:
 
 
 <Quiz questions={[
+  {notes:"This is a sample note"},
   {
+    notes:"This is a note inside a question",
     question: "An investor plans to buy a property worth $200,000 for which he has agreed to 20 percent today as down payment. The remainder will be in the form of monthly payments over thenext 15 years at 9 percent per year compounded monthly. Which of the following is most likely to be the monthly payment?",
     answer: [
       { value: "$1,137", correct: "true", explanation: "Some explain." },
       { value: "$1,440", correct: "false"},
+      { value: "$1,623", correct: "false"}
+    ]
+  },
+  {
+    question: "An investor plans to buy a property worth $600,000 for which he has agreed to 50 percent today as down payment. The remainder will be in the form of monthly payments over thenext 15 years at 9 percent per year compounded monthly. Which of the following is most likely to be the monthly payment?",
+    answer: [
+      { value: "$1,137", correct: "true"},
+      { value: "$1,440", correct: "false", explanation: "Some explain." },
       { value: "$1,623", correct: "false"}
     ]
   },
