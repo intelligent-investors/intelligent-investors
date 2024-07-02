@@ -18,13 +18,14 @@ Hypothesis testing procedures, based on sample statistics and probability theory
 **Figure: Hypothesis Testing Procedure**
 
 ```mermaid
-graph TD;
-    A[State the hypothesis] --> B[Select the appropriate test statistic]
-    B --> C[Specify the level of significance]
-    C --> D[State the decision rule regarding the hypothesis]
-    D --> E[Collect the sample and calculate the sample statistics]
-    E --> F[Make a decision regarding the hypothesis]
-    F --> G[Make a decision based on the results of the test]
+graph TD
+
+A[State the hypothesis] --> B[Select the appropriate test statistic]
+B --> C[Specify the level of significance]
+C --> D[State the decision rule regarding the hypothesis]
+D --> E[Collect the sample and calculate the sample statistics]
+E --> F[Make a decision regarding the hypothesis]
+F --> G[Make a decision based on the results of the test]
 ```
 
 #### The Null Hypothesis and Alternative Hypothesis
@@ -87,8 +88,8 @@ For a **one-tailed hypothesis test** of the population mean, the null and altern
 
 $$
 \begin{aligned}
-    &\text{Upper tail: } & H_0: \mu \leq \mu_0 \ & \textbf{versus} & H_a: \mu > \mu_0 & \textit{, or} \\
-    &\text{Lower tail: } & H_0: \mu \geq \mu_0 \ & \textbf{versus} & H_a: \mu < \mu_0 & \textit{.}
+* &\text{Upper tail: } & H_0: \mu \leq \mu_0 \ & \textbf{versus} & H_a: \mu > \mu_0 & \textit{, or} \\
+* &\text{Lower tail: } & H_0: \mu \geq \mu_0 \ & \textbf{versus} & H_a: \mu < \mu_0 & \textit{.}
 \end{aligned}
 $$
 
@@ -168,11 +169,11 @@ The following figure shows the relationship between the level of significance, t
 
 **Figure: Type I and Type II Errors in Hypothesis Testing**
 
-|               | True Condition   |                     |
+||True Condition   |True Condition|
 |---------------|:----------------:|:-------------------:|
-| Decision      | $$H_0$$ **is true**  | $$H_0$$ **is false**    |
+| **Decision**   | $$H_0$$ **is true**  | $$H_0$$ **is false** |
 | Do not reject $$H_0$$ | Correct decision  | Incorrect decision <br/> **Type II error**|
-| Reject $$H_0$$       | Incorrect decision<br/>**Type I error** <br/>Significance level, $$\alpha$$ <br/> =P(Type I error)| Correct decision<br/>Power of the test <br/> = $$1 - P(\text{Type II error})$$) | 
+| Reject $$H_0$$    | Incorrect decision<br/>**Type I error** <br/>*Significance level*, $$\alpha$$ <br/> =P(Type I error)| Correct decision<br/>*Power of the test* <br/> = $$1 - P(\text{Type II error})$$) | 
 
 Sample size and the choice of significance level (Type I error probability) will together determine the probability of a Type II error. The relation is not simple, however, and calculating the probability of a Type II error in practice is quite difficult. Decreasing the significance level (probability of a Type I error) from 5% to 1%, for example, will increase the probability of failing to reject a false null (Type II error) and therefore reduce the power of the test. Conversely, for a given sample size, we can increase the power of a test only with the cost that the probability of rejecting a true null (Type I error) increases. For a given significance level, we can decrease the probability of a Type II error and increase the power of a test, only by increasing the sample size.
 
@@ -277,3 +278,29 @@ Since 6.33 > 1.96, we reject the null hypothesis that the mean daily option retu
 
 Notice the similarity of this analysis with our confidence interval. We rejected the hypothesis $\mu = 0$ because the sample mean of 0.1\% is more than 1.96 standard errors from zero. Based on the 95\% confidence interval, we reject $\mu = 0$ because zero is more than 1.96 standard errors from the sample mean of 0.1\%.
 :::
+
+### 📝 QUIZ
+
+1. To test whether the mean of a population is greater than 20, the appropriate null hypothesis is that the population mean is:
+
+* A. less than 20.
+* B. greater than 20.
+* C. less than or equal to 20.
+
+2. Which of the following statements about hypothesis testing is most accurate?
+
+* A. A Type II error is rejecting the null when it is actually true.
+* B. The significance level equals one minus the probability of a Type I error.
+* C. A two-tailed test with a significance level of 5\% has z-critical values of $$\pm 1.96$$.
+
+3. For a hypothesis test with a probability of a Type II error of 60\% and a probability of a Type I error of 5\%, which of the following statements is most accurate?
+
+* A. The power of the test is 40\%, and there is a 5\% probability that the test statistic will exceed the critical value(s).
+* B. There is a 95\% probability that the test statistic will be between the critical values if this is a two-tailed test.
+* C. There is a 5\% probability that the null hypothesis will be rejected when actually true, and the probability of rejecting the null when it is false is 40\%.
+
+4. If the significance level of a test is 0.05 and the probability of a Type II error is 0.15, what is the power of the test?
+
+* A. 0.850.
+* B. 0.950.
+* C. 0.975.
