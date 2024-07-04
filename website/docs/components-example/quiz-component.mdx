@@ -1,15 +1,83 @@
 import Quiz from '@site/src/components/Quiz';
 
-# Welcome to the Quiz
+# Quiz Component
+
+The `Quiz` component allows you to render a quiz within your document.
+
+## API
+
+### `Quiz`
+
+| Property     | Description                                      | Type   | Default |
+|--------------|--------------------------------------------------|--------|---------|
+| description  | The description of the quiz.                     | String |         |
+| questions    | An array of question objects for the quiz.       | `Array<QuizQuestion>`  |       |
+
+### `QuizQuestion`
+
+A `QuizQuestion` object should have the following properties:
+
+| Property     | Description                                      | Type   | Default |
+|--------------|--------------------------------------------------|--------|---------|
+| notes        | Any additional notes about the question.         | String |       |
+| question     | The question text.                               | String |       |
+| answers       | An array of possible answers for the question.  | `Array<QuizAnswerOption>` |      |
+| explanation  | The explanation for all answer options (supports math equations and multiple lines).  | String |       |
+
+### `QuizAnswerOption`
+
+An `QuizAnswerOption` object should have the following properties:
+
+| Property     | Description                                      | Type   | Default |
+|--------------|--------------------------------------------------|--------|---------|
+| value        | The text of the answer option.                   | String |       |
+| correct      | Whether this answer is correct (`true` or `false`). | Boolean |   |
+
+## Example
 
 Here is a sample quiz:
 
+```jsx title="/src/components/QuizSample.mdx"
+<Quiz
+  description="This is a sample note"
+  questions={[
+  {
+    notes:"This is a note inside a question",
+    question: "An investor plans to buy a property worth $x^2 + y^2 = z^2$ $200,000 for which he has agreed to 20 percent today as down payment. The remainder will be in the form of monthly payments over thenext 15 years at 9 percent per year compounded monthly. Which of the following is most likely to be the monthly payment?",
+    answer: [
+      { value: "$1,137", correct: "true"},
+      { value: "$1,440", correct: "false"},
+      { value: "$1,623", correct: "false"}
+    ],
+    explanation: "Some explain." 
+  },
+  {
+    question: "An investor plans to buy a property worth $600,000 for which he has agreed to 50 percent today as down payment. The remainder will be in the form of monthly payments over thenext 15 years at 9 percent per year compounded monthly. Which of the following is most likely to be the monthly payment?",
+    answer: [
+      { value: "$1,137", correct: "true"},
+      { value: "$1,440", correct: "false"},
+      { value: "$1,623", correct: "false"},
+    ],
+    explanation: "Some explain." 
+  },
+  {
+    question: "An investor plans to buy a property worth $x^2 + y^2 = z^2$ \$200,000 for which he has agreed to 20?",
+    answer: [
+      { value: "$1,137", correct: "true"},
+      { value: "$1,440", correct: "false"},
+      { value: "$1,623", correct: "false"},
+      { value: "$1,693", correct: "false"}
+    ],
+    explanation: "Some explain. $x^2 + y^2 = z^2$" 
+  }
+]} />
+```
 
 <Quiz questions={[
   {notes:"This is a sample note"},
   {
     notes:"This is a note inside a question",
-    question: "An investor plans to buy a property worth $200,000 for which he has agreed to 20 percent today as down payment. The remainder will be in the form of monthly payments over thenext 15 years at 9 percent per year compounded monthly. Which of the following is most likely to be the monthly payment?",
+    question: "An investor plans to buy a property worth $x^2 + y^2 = z^2$ $200,000 for which he has agreed to 20 percent today as down payment. The remainder will be in the form of monthly payments over thenext 15 years at 9 percent per year compounded monthly. Which of the following is most likely to be the monthly payment?",
     answer: [
       { value: "$1,137", correct: "true", explanation: "Some explain." },
       { value: "$1,440", correct: "false"},
@@ -25,9 +93,9 @@ Here is a sample quiz:
     ]
   },
   {
-    question: "An investor plans to buy a property worth $200,000 for which he has agreed to 20?",
+    question: "An investor plans to buy a property worth $x^2 + y^2 = z^2$ \$200,000 for which he has agreed to 20?",
     answer: [
-      { value: "$1,137", correct: "true", explanation: "Some explain." },
+      { value: "$1,137", correct: "true", explanation: "Some explain. x^2 + y^2 = z^2" },
       { value: "$1,440", correct: "false"},
       { value: "$1,623", correct: "false"},
       { value: "$1,693", correct: "false"}
