@@ -304,3 +304,39 @@ Notice the similarity of this analysis with our confidence interval. We rejected
 * A. 0.850.
 * B. 0.950.
 * C. 0.975.
+
+## TESTS OF MEANS AND *p*-VALUES
+
+### E: Distinguish between a statistical result and an economically meaningful result.
+
+**Statistical significance** does not necessarily imply **economic significance**. For example, we may have tested a null hypothesis that a strategy of going long all the stocks that satisfy some criteria and shorting all the stocks that do not satisfy the criteria resulted in returns that were less than or equal to zero over a 20-year period. Assume we have rejected the null in favor of the alternative hypothesis that the returns to the strategy are greater than zero (positive). This does not necessarily mean that investing in that strategy will result in economically meaningful positive returns. Several factors must be considered.
+
+One important consideration is transactions costs. Once we consider the costs of buying and selling the securities, we may find that the mean positive returns to the strategy are not enough to generate positive returns. Taxes are another factor that may make a seemingly attractive strategy a poor one in practice. A third reason that statistically significant results may not be economically significant is risk. In the above strategy, we have additional risk from short sales (they may have to be closed out earlier than in the test strategy). Since the statistically significant results were for a period of 20 years, it may be the case that there is significant variation from year to year in the returns from the strategy, even though the mean strategy return is greater than zero. This variation in returns from period to period is an additional risk to the strategy that is not accounted for in our test of statistical significance.
+
+Any of these factors could make committing funds to a strategy unattractive, even though the statistical evidence of positive returns is highly significant. By the nature of statistical tests, a very large sample size can result in highly (statistically) significant results that are quite small in absolute terms.
+
+### F: Explain and interpret the *p*-value as it relates to hypothesis testing.
+
+The *p*-value is the probability of obtaining a test statistic that would lead to a rejection of the null hypothesis, assuming the null hypothesis is true. It is the smallest level of significance for which the null hypothesis can be rejected. For one-tailed tests, the *p*-value is the probability that lies above the computed test statistic for upper tail tests or below the computed test statistic for lower tail tests. For two-tailed tests, the *p*-value is the probability that lies above the positive value of the computed test statistic *plus* the probability that lies below the negative value of the computed test statistic.
+
+Consider a two-tailed hypothesis test about the mean value of a random variable at the 95\% significance level where the test statistic is 2.3, greater than the upper critical value of 1.96. If we consult the Z-table, we find the probability of getting a value greater than 2.3 is (1 – 0.9893) = 1.07\%. Since it’s a two-tailed test, our *p*-value is 2 × 1.07 = 2.14\%, as illustrated in *the following figure*. At a 3\%, 4\%, or 5\% significance level, we would reject the null hypothesis, but at a 2\% or 1\% significance level we would not. Many researchers report *p*-values without selecting a significance level and allow the reader to judge how strong the evidence for rejection is.
+
+**Figure: Two-Tailed Hypothesis Test With *p*-Value = 2.14\%**
+
+## KIỂM TRA TRUNG BÌNH VÀ *p*-GIÁ TRỊ
+
+### E: Phân biệt giữa kết quả thống kê và kết quả có ý nghĩa kinh tế.
+
+**Ý nghĩa thống kê** không nhất thiết đồng nghĩa với **ý nghĩa kinh tế**. Ví dụ, chúng ta có thể đã kiểm tra một giả thuyết không rằng một chiến lược mua dài tất cả các cổ phiếu thỏa mãn một số tiêu chí và bán ngắn tất cả các cổ phiếu không thỏa mãn các tiêu chí đó đã mang lại lợi nhuận nhỏ hơn hoặc bằng không trong suốt 20 năm. Giả sử chúng ta đã bác bỏ giả thuyết không để ủng hộ giả thuyết thay thế rằng lợi nhuận từ chiến lược lớn hơn không (dương). Điều này không nhất thiết có nghĩa là đầu tư vào chiến lược đó sẽ mang lại lợi nhuận dương có ý nghĩa kinh tế. Cần phải xem xét một số yếu tố.
+
+Một yếu tố quan trọng cần xem xét là chi phí giao dịch. Khi xem xét chi phí mua và bán chứng khoán, chúng ta có thể thấy rằng lợi nhuận trung bình dương từ chiến lược không đủ để tạo ra lợi nhuận dương. Thuế cũng là một yếu tố khác có thể làm cho một chiến lược dường như hấp dẫn trở nên kém hiệu quả trong thực tế. Một lý do thứ ba khiến kết quả có ý nghĩa thống kê có thể không có ý nghĩa kinh tế là rủi ro. Trong chiến lược trên, chúng ta có thêm rủi ro từ việc bán khống (chúng có thể phải đóng sớm hơn so với chiến lược kiểm tra). Vì kết quả có ý nghĩa thống kê trong một khoảng thời gian 20 năm, có thể có sự biến đổi đáng kể từ năm này sang năm khác trong lợi nhuận từ chiến lược, mặc dù lợi nhuận trung bình của chiến lược lớn hơn không. Sự biến đổi này trong lợi nhuận từ kỳ này sang kỳ khác là một rủi ro bổ sung cho chiến lược mà không được tính đến trong kiểm tra ý nghĩa thống kê của chúng ta.
+
+Bất kỳ yếu tố nào trong số này cũng có thể làm cho việc cam kết đầu tư vào một chiến lược trở nên không hấp dẫn, ngay cả khi bằng chứng thống kê về lợi nhuận dương là rất đáng kể. Theo bản chất của các kiểm tra thống kê, một cỡ mẫu rất lớn có thể dẫn đến kết quả có ý nghĩa (thống kê) cao mà lại khá nhỏ về mặt tuyệt đối.
+
+### F: Giải thích và diễn giải *p*-giá trị liên quan đến kiểm tra giả thuyết.
+
+*p*-giá trị là xác suất nhận được một thống kê kiểm tra dẫn đến việc bác bỏ giả thuyết không, giả sử giả thuyết không là đúng. Đây là mức độ nhỏ nhất của ý nghĩa mà tại đó giả thuyết không có thể bị bác bỏ. Đối với kiểm tra một phía, *p*-giá trị là xác suất nằm trên thống kê kiểm tra đã tính cho các kiểm tra phía trên hoặc dưới thống kê kiểm tra đã tính cho các kiểm tra phía dưới. Đối với kiểm tra hai phía, *p*-giá trị là xác suất nằm trên giá trị dương của thống kê kiểm tra đã tính *cộng với* xác suất nằm dưới giá trị âm của thống kê kiểm tra đã tính.
+
+Xem xét một kiểm tra giả thuyết hai phía về giá trị trung bình của một biến ngẫu nhiên ở mức độ ý nghĩa 95\% nơi thống kê kiểm tra là 2.3, lớn hơn giá trị tới hạn phía trên là 1.96. Nếu chúng ta tham khảo bảng Z, chúng ta sẽ thấy xác suất nhận được giá trị lớn hơn 2.3 là (1 – 0.9893) = 1.07\%. Vì đây là kiểm tra hai phía, *p*-giá trị của chúng ta là 2 × 1.07 = 2.14\%, như minh họa trong *hình dưới đây*. Ở mức độ ý nghĩa 3\%, 4\% hoặc 5\%, chúng ta sẽ bác bỏ giả thuyết không, nhưng ở mức độ ý nghĩa 2\% hoặc 1\% thì không. Nhiều nhà nghiên cứu báo cáo *p*-giá trị mà không chọn mức độ ý nghĩa và cho phép người đọc đánh giá mức độ mạnh mẽ của bằng chứng cho việc bác bỏ.
+
+**Hình: Kiểm tra Giả thuyết Hai phía Với *p*-Giá trị = 2.14\%**
